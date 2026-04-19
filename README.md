@@ -71,3 +71,6 @@ npx ts-node scheduler.ts
 
 ## Security Notes
 The project is configured out-of-the-box (`.gitignore`) to prevent sensitive files like `users.json` or `.env` from being pushed to public GitHub repositories. Do not override this behavior.
+
+
+npx ts-node --compiler-options '{"module":"commonjs","esModuleInterop":true}' scheduler.ts
