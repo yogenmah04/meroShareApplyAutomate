@@ -16,9 +16,8 @@ function loadUsers() {
 }
 
 // Main Scheduler
-function initializeScheduler() {
-  const users = loadUsers();
-  console.log(`Loaded ${users.length} user configuration(s) from users.json`);
+export function initializeScheduler(users: any[]) {
+  console.log(`Loaded ${users.length} user configuration(s) for scheduling.`);
 
   users.forEach((user: any) => {
     // Check if we should apply for this user
@@ -27,8 +26,6 @@ function initializeScheduler() {
       return;
     }
 
-    // We expect user.applyAt to be an ISO string (e.g. "2026-04-10T10:15:00")
-    // or a parseable Date string
     if (!user.applyAt) {
       console.error(`User ${user.name || user.username} is missing applyAt schedule. Skipping.`);
       return;
@@ -36,7 +33,6 @@ function initializeScheduler() {
 
     const scheduledDate = new Date(user.applyAt);
 
-    // If the scheduled time is already in the past, notify the user.
     if (scheduledDate.getTime() < Date.now()) {
       console.warn(`[WARNING] The scheduled time for ${user.name || user.username} (${scheduledDate.toLocaleString()}) has already passed.`);
       return;
@@ -44,7 +40,6 @@ function initializeScheduler() {
 
     console.log(`[SCHEDULED] IPO Application for ${user.name || user.username} set to run at: ${scheduledDate.toLocaleString()}`);
 
-    // Schedule the task
     schedule.scheduleJob(scheduledDate, async () => {
       console.log(`\n================================`);
       console.log(`[STARTING TASK] Executing scheduled application for ${user.name || user.username} at ${new Date().toLocaleString()}`);
@@ -58,7 +53,13 @@ function initializeScheduler() {
     });
   });
 
-  console.log('\nScheduler is running and waiting for events... (Press Ctrl+C to exit)');
+  console.log('\nScheduler is running and waiting for events...');
 }
 
-initializeScheduler();
+if (require.main === module) {
+  const usersPath = path.resolve(__dirname, 'users.json');
+  if (fs.existsSync(usersPath)) {
+      const users = JSON.parse(fs.readFileSync(usersPath, 'utf8'));
+      initializeScheduler(users);
+  }
+}

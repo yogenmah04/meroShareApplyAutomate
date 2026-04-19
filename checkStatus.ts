@@ -6,21 +6,25 @@ import path from 'path';
 // Load environment variables from .env
 dotenv.config();
 
-interface User {
+export interface User {
     id: number;
     dp: string;
     username: string;
     password: string;
+    crn?: string;
+    pin?: string;
+    kitta?: string;
+    applyAt?: string;
     name: string;
     isApply?: boolean;
 }
 
-interface StatusEntry {
+export interface StatusEntry {
     name: string;
     status: string;
 }
 
-interface StockReport {
+export interface StockReport {
     stockName: string;
     nameStatusList: StatusEntry[];
 }
@@ -53,18 +57,12 @@ async function login(page: Page, user: User) {
 }
 
 
-async function run() {
-    const usersPath = path.resolve(__dirname, 'users.json');
-    const stocksPath = path.resolve(__dirname, 'checkStockStatus.json');
+export async function runCheckStatus(
+    users: User[], 
+    stockNames: string[], 
+    onResult?: (stockName: string, userName: string, status: string) => Promise<void>
+) {
     const reportPath = path.resolve(__dirname, 'reportStatus.json');
-
-    if (!fs.existsSync(usersPath) || !fs.existsSync(stocksPath)) {
-        console.error('Missing configuration files (users.json or checkStockStatus.json)');
-        process.exit(1);
-    }
-
-    const users: User[] = JSON.parse(fs.readFileSync(usersPath, 'utf8'));
-    const stockNames: string[] = JSON.parse(fs.readFileSync(stocksPath, 'utf8'));
 
     let existingReports: StockReport[] = [];
     if (fs.existsSync(reportPath)) {
@@ -80,6 +78,8 @@ async function run() {
     const context = await browser.newContext();
 
     for (const user of users) {
+        if (user.isApply === false) continue;
+        
         const page = await context.newPage();
         try {
             await login(page, user);
@@ -120,8 +120,7 @@ async function run() {
                         status = statusText.replace(/^Status\s+/i, '').trim();
                         console.log(`[${user.name}] Status for ${stockName}: ${status}`);
 
-                        // After getting status, click back/close if a button exists, 
-                        // otherwise the next iteration will re-click the Report Tab.
+                        // After getting status, click back/close if a button exists
                         const closeButton = page.locator('button', { hasText: 'Close' });
                         if (await closeButton.isVisible()) {
                             await closeButton.click();
@@ -134,7 +133,12 @@ async function run() {
                     console.warn(`[${user.name}] Stock not found in list: ${stockName}`);
                 }
 
-                // Update the central report data
+                // Call the result callback if provided
+                if (onResult) {
+                    await onResult(stockName, user.name, status);
+                }
+
+                // Update the central report data (local JSON fallback)
                 let stockReport = existingReports.find(r => r.stockName === stockName);
                 if (!stockReport) {
                     stockReport = { stockName, nameStatusList: [] };
@@ -155,7 +159,17 @@ async function run() {
     }
 
     await browser.close();
-    console.log('All status checks completed. Results saved to reportStatus.json');
+    console.log('All status checks completed.');
 }
 
-run().catch(console.error);
+// Logic to run directly if needed
+if (require.main === module) {
+    const usersPath = path.resolve(__dirname, 'users.json');
+    const stocksPath = path.resolve(__dirname, 'checkStockStatus.json');
+    
+    if (fs.existsSync(usersPath) && fs.existsSync(stocksPath)) {
+        const users: User[] = JSON.parse(fs.readFileSync(usersPath, 'utf8'));
+        const stockNames: string[] = JSON.parse(fs.readFileSync(stocksPath, 'utf8'));
+        runCheckStatus(users, stockNames).catch(console.error);
+    }
+}
