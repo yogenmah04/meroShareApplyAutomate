@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "check-status": "npx ts-node --compiler-options '{\"module\":\"commonjs\",\"esModuleInterop\":true}' checkStatus.ts"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",

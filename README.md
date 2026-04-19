@@ -69,8 +69,48 @@ npx ts-node scheduler.ts
 - It will open the Playwright browser, execute the full Meroshare UI login, search for an unapplied standard IPO, enter data, wait 5 seconds for visual confirmation, add the PIN, and apply!
 - *(Note: Ensure the machine running `scheduler.ts` stays powered on at the scheduled time!)*
 
+## Stock Status Checker
+
+You can now check the allotment status of specific stocks for all users in your `users.json` file.
+
+### 1. Configuration
+
+- **`checkStockStatus.json`**: Add the names of the stocks you want to check in this file. It should be an array of strings.
+  ```json
+  [
+    "Palpa Cement Industries Limited",
+    "Some Other Stock Name"
+  ]
+  ```
+
+### 2. How to Run
+
+Execute the following command to start the status check:
+
+```bash
+npm run check-status
+```
+
+### 3. Viewing Results
+
+The results will be saved (and appended) to a file named `reportStatus.json`. It will maintain a list of status results grouped by stock name.
+
+```json
+[
+  {
+    "stockName": "Palpa Cement Industries Limited",
+    "nameStatusList": [
+      {
+        "name": "Yogen Maharjan",
+        "status": "Allotted"
+      }
+    ]
+  }
+]
+```
+
 ## Security Notes
-The project is configured out-of-the-box (`.gitignore`) to prevent sensitive files like `users.json` or `.env` from being pushed to public GitHub repositories. Do not override this behavior.
+The project is configured out-of-the-box (`.gitignore`) to prevent sensitive files like `users.json`, `.env`, and now `reportStatus.json` from being pushed to public GitHub repositories.
 
 
 npx ts-node --compiler-options '{"module":"commonjs","esModuleInterop":true}' scheduler.ts
