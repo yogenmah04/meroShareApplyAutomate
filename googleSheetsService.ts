@@ -71,7 +71,6 @@ export async function fetchStocksFromSheet() {
     if (!sheet) throw new Error('Sheet "Stocks" not found');
 
     const rows = await sheet.getRows();
-    console.log('stock info', rows);
     return rows.map(row => row.get('Stock Name')).filter(Boolean);
 }
 
