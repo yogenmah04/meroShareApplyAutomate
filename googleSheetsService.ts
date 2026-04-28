@@ -120,3 +120,28 @@ export async function addResultToSheet(stockName: string, userName: string, stat
         'Status': status
     });
 }
+
+export async function overrideSheetData(tabName: string, headers: string[], data: string[][]) {
+    let sheet = doc.sheetsByTitle[tabName];
+    // Create sheet if it doesn't exist
+    if (!sheet) {
+        sheet = await doc.addSheet({ title: tabName, headerValues: headers });
+    } else {
+        // Clear all rows
+        await sheet.clear();
+        await sheet.setHeaderRow(headers);
+    }
+
+    // Add multiple rows (rows must be objects matching the header keys)
+    const rowsToAdd = data.map(rowData => {
+        const obj: any = {};
+        headers.forEach((header, index) => {
+            obj[header] = rowData[index] || '';
+        });
+        return obj;
+    });
+
+    if (rowsToAdd.length > 0) {
+        await sheet.addRows(rowsToAdd);
+    }
+}

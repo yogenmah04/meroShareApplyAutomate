@@ -40,6 +40,45 @@ async function main() {
                 await control.resetCommand();
                 console.log('CHECK_STATUS process completed.');
 
+            } else if (command === 'PROMOTER_UNLOCK_CHECK' && status !== 'IN_PROGRESS') {
+                console.log('Detected command: PROMOTER_UNLOCK_CHECK. Starting scraper...');
+                await control.updateStatus('IN_PROGRESS', 'Scraping data from Nepse Alpha...');
+
+                try {
+                    const { fetchPromoterUnlockData } = require('./promoterUnlock');
+                    const { overrideSheetData } = require('./googleSheetsService');
+                    
+                    const { headers, data } = await fetchPromoterUnlockData();
+                    await control.updateStatus('IN_PROGRESS', `Updating Google Sheet tab: PromoterShareUnlock...`);
+                    
+                    await overrideSheetData('PromoterShareUnlock', headers, data);
+                    
+                    await control.updateStatus('COMPLETED', `Scraped ${data.length} rows successfully.`);
+                    await control.resetCommand();
+                    console.log('PROMOTER_UNLOCK_CHECK process completed.');
+                } catch (e: any) {
+                    await control.updateStatus('ERROR', `Scraper failed: ${e.message}`);
+                    await control.resetCommand();
+                }
+
+            } else if (command === 'EXTRACT_FUNDA_DATA' && status !== 'IN_PROGRESS') {
+                console.log('Detected command: EXTRACT_FUNDA_DATA. Starting scraper...');
+                await control.updateStatus('IN_PROGRESS', 'Scraping fundamental data from Nepse Alpha...');
+
+                try {
+                    const { fetchFundamentalData } = require('./fundaScraper');
+                    
+                    const { headers, data } = await fetchFundamentalData();
+                    // fundaScraper internally saves the data to Google Sheets
+                    
+                    await control.updateStatus('COMPLETED', `Scraped ${data.length} rows successfully.`);
+                    await control.resetCommand();
+                    console.log('EXTRACT_FUNDA_DATA process completed.');
+                } catch (e: any) {
+                    await control.updateStatus('ERROR', `Scraper failed: ${e.message}`);
+                    await control.resetCommand();
+                }
+
             } else if (command === 'START_SCHEDULER' && status !== 'SCHEDULER_RUNNING') {
                 console.log('Detected command: START_SCHEDULER. Starting scheduler...');
                 await control.updateStatus('IN_PROGRESS', 'Fetching user data for scheduler...');
