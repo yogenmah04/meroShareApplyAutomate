@@ -7,7 +7,7 @@
     "check-status": "npx ts-node --compiler-options '{\"module\":\"commonjs\",\"esModuleInterop\":true}' checkStatus.ts",
     "watch-sheets": "npx ts-node --compiler-options '{\"module\":\"commonjs\",\"esModuleInterop\":true}' syncService.ts",
     "check-promoter-unlock": "npx ts-node --compiler-options '{\"module\":\"commonjs\",\"esModuleInterop\":true}' promoterUnlock.ts",
-    "check-funda": "npx ts-node --compiler-options '{\"module\":\"commonjs\",\"esModuleInterop\":true}' fundaScraper.ts"
+    "check-funda": "npx ts-node --compiler-options '{\"module\":\"commonjs\",\"esModuleInterop\":true}' fundaScraper.ts",
   },
   "keywords": [],
   "author": "",

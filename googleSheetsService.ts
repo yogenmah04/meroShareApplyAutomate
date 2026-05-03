@@ -145,3 +145,27 @@ export async function overrideSheetData(tabName: string, headers: string[], data
         await sheet.addRows(rowsToAdd);
     }
 }
+
+export async function markUserAsIPOApplied(username: string) {
+    const sheet = doc.sheetsByTitle['Users'];
+    if (!sheet) throw new Error('Sheet "Users" not found');
+
+    const rows = await sheet.getRows();
+    const userRow = rows.find(r => r.get('Username') === username);
+
+    if (userRow) {
+        const rowIndex = userRow.rowNumber - 1;
+        // Load cells for column I (index 8) to K (index 10) for this row
+        await sheet.loadCells(`I${userRow.rowNumber}:K${userRow.rowNumber}`);
+        
+        const isApplyCell = sheet.getCell(rowIndex, 8); // Column I
+        const statusCell = sheet.getCell(rowIndex, 10); // Column K
+        
+        isApplyCell.value = 'FALSE';
+        statusCell.value = 'IPO applied';
+        
+        await sheet.saveUpdatedCells();
+    } else {
+        console.warn(`User ${username} not found in the Google Sheet.`);
+    }
+}

@@ -47,6 +47,17 @@ export function initializeScheduler(users: any[]) {
 
       try {
         await runAutomation(user);
+        
+        try {
+          const { markUserAsIPOApplied, initSheets } = require('./googleSheetsService');
+          // In case it wasn't initialized yet by the scheduler stand-alone run
+          try { await initSheets(); } catch (e) { /* ignore if already loaded */ }
+          
+          await markUserAsIPOApplied(user.username);
+          console.log(`[SUCCESS] Updated Google Sheet for ${user.name || user.username}: marked as IPO applied.`);
+        } catch (sheetErr: any) {
+          console.error(`[ERROR] Failed to update Google Sheet for ${user.name || user.username}:`, sheetErr.message);
+        }
       } catch (e) {
         console.error(`Execution failed for ${user.name || user.username}:`, e);
       }
