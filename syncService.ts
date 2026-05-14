@@ -1,7 +1,9 @@
 import { initSheets, fetchUsersFromSheet, fetchStocksFromSheet, getControlCommand, addResultToSheet } from './googleSheetsService';
 import { runCheckStatus } from './checkStatus';
 import { initializeScheduler } from './scheduler';
+import { scheduleNepseScraper } from './nepseScraper';
 import * as dotenv from 'dotenv';
+import schedule from 'node-schedule';
 
 dotenv.config();
 
@@ -15,6 +17,40 @@ async function main() {
         console.error('Failed to initialize Google Sheets:', e.message);
         process.exit(1);
     }
+
+    // Start parallel scheduled jobs
+    scheduleNepseScraper();
+
+    const promoterUnlockScheduleRule = "35 11 * * *"; // 11:35 AM
+    const fundaScraperScheduleRule = "40 11 * * *"; // 11:40 AM
+    
+    // Schedule Promoter Unlock Scraper
+    schedule.scheduleJob(promoterUnlockScheduleRule, async () => {
+        try {
+            console.log(`[${new Date().toLocaleString()}] Scheduled Job: Running Promoter Unlock Scraper...`);
+            const { fetchPromoterUnlockData } = require('./promoterUnlock');
+            const { overrideSheetData } = require('./googleSheetsService');
+            const { headers, data } = await fetchPromoterUnlockData();
+            await overrideSheetData('PromoterShareUnlock', headers, data);
+            console.log(`[${new Date().toLocaleString()}] Scheduled Job: Promoter Unlock Scraper completed successfully.`);
+        } catch (e: any) {
+            console.error(`[${new Date().toLocaleString()}] Scheduled Job Error (Promoter Unlock):`, e.message);
+        }
+    });
+
+    // Schedule Fundamental Data Scraper
+    schedule.scheduleJob(fundaScraperScheduleRule, async () => {
+        try {
+            console.log(`[${new Date().toLocaleString()}] Scheduled Job: Running Fundamental Data Scraper...`);
+            const { fetchFundamentalData } = require('./fundaScraper');
+            await fetchFundamentalData();
+            console.log(`[${new Date().toLocaleString()}] Scheduled Job: Fundamental Data Scraper completed successfully.`);
+        } catch (e: any) {
+            console.error(`[${new Date().toLocaleString()}] Scheduled Job Error (Fundamental Data):`, e.message);
+        }
+    });
+
+    console.log(`Scheduled Promoter Unlock (daily at ${promoterUnlockScheduleRule}) and Fundamental Data (${fundaScraperScheduleRule}) scrapers.`);
 
     console.log(`Polling Google Sheets every ${POLLING_INTERVAL_MS / 1000} seconds...`);
 

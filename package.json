@@ -4,10 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "scan-accumulation": "node nepseAccumulation.js",
     "check-status": "npx ts-node --compiler-options '{\"module\":\"commonjs\",\"esModuleInterop\":true}' checkStatus.ts",
     "watch-sheets": "npx ts-node --compiler-options '{\"module\":\"commonjs\",\"esModuleInterop\":true}' syncService.ts",
     "check-promoter-unlock": "npx ts-node --compiler-options '{\"module\":\"commonjs\",\"esModuleInterop\":true}' promoterUnlock.ts",
     "check-funda": "npx ts-node --compiler-options '{\"module\":\"commonjs\",\"esModuleInterop\":true}' fundaScraper.ts",
+    "start-nepse": "npx ts-node --compiler-options '{\"module\":\"commonjs\",\"esModuleInterop\":true}' nepseScraper.ts"
   },
   "keywords": [],
   "author": "",
@@ -26,6 +28,7 @@
     "node-schedule": "^2.1.1",
     "p-limit": "^3.1.0",
     "playwright-extra": "^4.3.6",
-    "puppeteer-extra-plugin-stealth": "^2.11.2"
+    "puppeteer-extra-plugin-stealth": "^2.11.2",
+    "xlsx": "^0.18.5"
   }
 }
