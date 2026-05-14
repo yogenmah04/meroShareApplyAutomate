@@ -1,4 +1,5 @@
-import { initSheets, fetchUsersFromSheet, fetchStocksFromSheet, getControlCommand, addResultToSheet } from './googleSheetsService';
+import { initSheets, fetchUsersFromSheet, fetchStocksFromSheet, getControlCommand, addResultToSheet, getTmsScheduleTime } from './googleSheetsService';
+import { exec } from 'child_process';
 import { runCheckStatus } from './checkStatus';
 import { initializeScheduler } from './scheduler';
 import { scheduleNepseScraper } from './nepseScraper';
@@ -8,6 +9,11 @@ import schedule from 'node-schedule';
 dotenv.config();
 
 const POLLING_INTERVAL_MS = 30000; // 30 seconds
+
+let tmsScheduledJob: schedule.Job | null = null;
+let currentTmsScheduleTime: string | null = null;
+
+// Using Date objects directly for full date and time scheduling
 
 async function main() {
     console.log('Starting Google Sheets Sync Service...');
@@ -134,6 +140,54 @@ async function main() {
 
         } catch (error: any) {
             console.error('Error during polling loop:', error.message);
+        }
+
+        try {
+            const scheduledTime = await getTmsScheduleTime();
+            
+            // If the time has changed, update the schedule
+            if (scheduledTime && scheduledTime !== currentTmsScheduleTime) {
+                const scheduledDate = new Date(scheduledTime);
+                
+                if (!isNaN(scheduledDate.getTime())) {
+                    if (tmsScheduledJob) {
+                        tmsScheduledJob.cancel();
+                        console.log(`[${new Date().toLocaleString()}] Cancelled previous TMS schedule for ${currentTmsScheduleTime}.`);
+                    }
+
+                    if (scheduledDate > new Date()) {
+                        tmsScheduledJob = schedule.scheduleJob(scheduledDate, () => {
+                            console.log(`[${new Date().toLocaleString()}] Scheduled time reached (${scheduledTime}). Triggering TMS Automation...`);
+                            exec('npm run start-tms', (error, stdout, stderr) => {
+                                if (error) {
+                                    console.error(`TMS Automation execution error: ${error.message}`);
+                                    return;
+                                }
+                                if (stderr) console.error(`TMS Automation stderr: ${stderr}`);
+                                console.log(`TMS Automation output: \n${stdout}`);
+                            });
+                        });
+
+                        currentTmsScheduleTime = scheduledTime;
+                        console.log(`[${new Date().toLocaleString()}] TMS Automation successfully scheduled for ${scheduledDate.toLocaleString()}`);
+                    } else {
+                        console.warn(`[${new Date().toLocaleString()}] Scheduled time '${scheduledTime}' is in the past. Will not schedule.`);
+                        currentTmsScheduleTime = scheduledTime; // Store it so we don't spam the warning every 30s
+                    }
+                } else {
+                    console.warn(`[${new Date().toLocaleString()}] Invalid date/time format in B1: '${scheduledTime}'.`);
+                }
+            } else if (!scheduledTime && currentTmsScheduleTime) {
+                // If the cell was cleared, cancel the job
+                if (tmsScheduledJob) {
+                    tmsScheduledJob.cancel();
+                    tmsScheduledJob = null;
+                }
+                currentTmsScheduleTime = null;
+                console.log(`[${new Date().toLocaleString()}] TMS Automation schedule cleared because B1 is empty.`);
+            }
+        } catch (e: any) {
+            console.error('Error handling TMS scheduled time:', e.message);
         }
 
         await new Promise(resolve => setTimeout(resolve, POLLING_INTERVAL_MS));

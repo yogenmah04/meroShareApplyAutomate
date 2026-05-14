@@ -203,3 +203,44 @@ export async function markUserAsIPOApplied(username: string) {
     }
   });
 }
+
+export async function fetchAutoBuySellData() {
+  return callWithRetry(async () => {
+    const sheet = doc.sheetsByTitle["autoBuySellScript"];
+    if (!sheet) throw new Error('Sheet "autoBuySellScript" not found');
+
+    await sheet.loadCells("B3:E200"); // Assuming maximum 200 rows for trades
+    const trades = [];
+
+    for (let i = 2; i < 200; i++) { // i=2 is row 3
+      const symbolCell = sheet.getCell(i, 1); // Col B
+      const qtyCell = sheet.getCell(i, 2);    // Col C
+      const priceCell = sheet.getCell(i, 3);  // Col D
+      const actionCell = sheet.getCell(i, 4); // Col E
+
+      const symbol = symbolCell.value?.toString().trim();
+      if (!symbol) continue;
+
+      const qty = qtyCell.value?.toString().trim();
+      const price = priceCell.value?.toString().trim();
+      const action = actionCell.value?.toString().trim().toUpperCase();
+
+      if (action === "BUY" || action === "SELL") {
+        trades.push({ symbol, qty: qty || "0", price: price || "0", action });
+      }
+    }
+
+    return trades;
+  });
+}
+
+export async function getTmsScheduleTime() {
+  return callWithRetry(async () => {
+    const sheet = doc.sheetsByTitle["autoBuySellScript"];
+    if (!sheet) return null;
+    await sheet.loadCells("B1:B1");
+    const cell = sheet.getCell(0, 1);
+    const value = cell.formattedValue || cell.value;
+    return value ? value.toString().trim() : null;
+  });
+}

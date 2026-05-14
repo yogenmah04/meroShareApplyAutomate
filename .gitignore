@@ -7,7 +7,7 @@ test-results/
 /blob-report/
 /playwright/.cache/
 /playwright/.auth/
-
+tms_user_data/
 # Secrets
 .env
 users.json
