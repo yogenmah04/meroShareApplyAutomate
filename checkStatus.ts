@@ -38,11 +38,26 @@ export interface StockReport {
 
 async function login(page: Page, user: User) {
     console.log(`[${user.name}] Navigating to Meroshare...`);
-    await page.goto('https://meroshare.cdsc.com.np/', { waitUntil: 'networkidle' });
+    
+    let pageLoaded = false;
+    for (let attempt = 0; attempt < 2; attempt++) {
+        await page.goto('https://meroshare.cdsc.com.np/', { waitUntil: 'networkidle' });
+        try {
+            const dpSelect = page.locator('.select2-selection__rendered');
+            await dpSelect.waitFor({ state: 'visible', timeout: 3000 });
+            pageLoaded = true;
+            break;
+        } catch (e) {
+            console.log(`[${user.name}] White screen or failed to load. Reloading...`);
+        }
+    }
+
+    if (!pageLoaded) {
+        throw new Error(`[${user.name}] Failed to load Meroshare page after retries.`);
+    }
 
     // Select the DP
     const dpSelect = page.locator('.select2-selection__rendered');
-    await dpSelect.waitFor({ state: 'visible' });
     await humanClick(page, dpSelect);
 
     const dpSearchInput = page.locator('.select2-search__field');

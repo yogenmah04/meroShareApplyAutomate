@@ -28,11 +28,26 @@ export async function runAutomation(user: any) {
 
   try {
     console.log('Navigating to Meroshare...');
-    await page.goto('https://meroshare.cdsc.com.np/', { waitUntil: 'networkidle' });
+    
+    let pageLoaded = false;
+    for (let attempt = 0; attempt < 2; attempt++) {
+      await page.goto('https://meroshare.cdsc.com.np/', { waitUntil: 'networkidle' });
+      try {
+        const dpSelect = page.locator('.select2-selection__rendered');
+        await dpSelect.waitFor({ state: 'visible', timeout: 3000 });
+        pageLoaded = true;
+        break;
+      } catch (e) {
+        console.log('White screen or failed to load. Reloading...');
+      }
+    }
+
+    if (!pageLoaded) {
+      throw new Error("Failed to load Meroshare page after retries.");
+    }
 
     // Select the DP
     const dpSelect = page.locator('.select2-selection__rendered');
-    await dpSelect.waitFor({ state: 'visible' });
     await humanClick(page, dpSelect);
 
     await humanType(page, '.select2-search__field', dp);
@@ -124,13 +139,16 @@ export async function runAutomation(user: any) {
       console.log('The application has been successfully submitted!');
 
       await jitterSleep(5000, 7000);
+      return true; // Successfully applied
 
     } catch (error) {
       console.log('No "Ordinary Shares" available or error during application steps.');
+      throw error;
     }
 
   } catch (error) {
     console.error('An error occurred during automation:', error);
+    throw error;
   } finally {
     console.log('Closing browser...');
     await browser.close();

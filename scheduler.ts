@@ -53,13 +53,21 @@ export function initializeScheduler(users: any[]) {
           // In case it wasn't initialized yet by the scheduler stand-alone run
           try { await initSheets(); } catch (e) { /* ignore if already loaded */ }
           
-          await markUserAsIPOApplied(user.username);
+          await markUserAsIPOApplied(user.username, "IPO applied");
           console.log(`[SUCCESS] Updated Google Sheet for ${user.name || user.username}: marked as IPO applied.`);
         } catch (sheetErr: any) {
           console.error(`[ERROR] Failed to update Google Sheet for ${user.name || user.username}:`, sheetErr.message);
         }
       } catch (e) {
         console.error(`Execution failed for ${user.name || user.username}:`, e);
+        try {
+          const { markUserAsIPOApplied, initSheets } = require('./googleSheetsService');
+          try { await initSheets(); } catch (err) { /* ignore */ }
+          await markUserAsIPOApplied(user.username, "IPO applied failed");
+          console.log(`[FAILED] Updated Google Sheet for ${user.name || user.username}: marked as IPO applied failed.`);
+        } catch (sheetErr: any) {
+          console.error(`[ERROR] Failed to update Google Sheet with failure status for ${user.name || user.username}:`, sheetErr.message);
+        }
       }
     });
   });

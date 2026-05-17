@@ -179,7 +179,7 @@ export async function overrideSheetData(
   });
 }
 
-export async function markUserAsIPOApplied(username: string) {
+export async function markUserAsIPOApplied(username: string, status: string = "IPO applied") {
   return callWithRetry(async () => {
     const sheet = doc.sheetsByTitle["Users"];
     if (!sheet) throw new Error('Sheet "Users" not found');
@@ -195,7 +195,7 @@ export async function markUserAsIPOApplied(username: string) {
       const statusCell = sheet.getCell(rowIndex, 10); // Column K
 
       isApplyCell.value = "FALSE";
-      statusCell.value = "IPO applied";
+      statusCell.value = status;
 
       await sheet.saveUpdatedCells();
     } else {
