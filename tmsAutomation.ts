@@ -38,6 +38,33 @@ async function humanClick(page: any, selector: string) {
   await element.click({ delay: Math.floor(Math.random() * 150) + 50 });
 }
 
+async function fetchExistingTrades(page: any) {
+  console.log("🔍 Fetching existing open trades from the Daily Order Book...");
+  const existingTrades: string[] = [];
+  
+  try {
+    const selectLocator = page.locator('//*[@id="nav-open-info"]/kendo-grid/kendo-pager/kendo-pager-page-sizes/select');
+    await selectLocator.waitFor({ state: "visible", timeout: 5000 });
+    // Attempt to set to 50 by value or label. Usually the values are "10", "20", "50"
+    await selectLocator.selectOption({ value: "50" }).catch(() => selectLocator.selectOption({ label: "50" }));
+    await delay(2000);
+  } catch(e) {
+    console.log("Could not set items per page to 50 (maybe dropdown not present).");
+  }
+
+  const gridLocator = page.locator('//*[@id="nav-open-info"]/kendo-grid/div');
+  const rows = gridLocator.locator('tr');
+  const rowCount = await rows.count();
+  
+  for (let i = 0; i < rowCount; i++) {
+      const text = await rows.nth(i).innerText();
+      // Store text in uppercase for case-insensitive matching, removing commas
+      existingTrades.push(text.toUpperCase().replace(/,/g, ''));
+  }
+  
+  return existingTrades;
+}
+
 async function executeSingleTrade(
   page: any,
   action: "BUY" | "SELL",
@@ -85,6 +112,32 @@ async function executeSingleTrade(
     await humanClick(page, submitBtn);
 
     console.log(`✅ ${action} order submitted.`);
+
+    // 5. Clear fields and reset toggle
+    try {
+      await delay(1500); // Give it a moment for any success toast to appear
+
+      // Clear the inputs explicitly
+      const symbolInput = "xpath=/html/body/app-root/tms/main/div/div/app-member-client-order-entry/div/div/div[3]/form/div[2]/div[2]/input";
+      const qtyInput = "xpath=/html/body/app-root/tms/main/div/div/app-member-client-order-entry/div/div/div[3]/form/div[2]/div[3]/input";
+      const priceInput = "xpath=/html/body/app-root/tms/main/div/div/app-member-client-order-entry/div/div/div[3]/form/div[2]/div[4]/input";
+
+      // We use clearInput or direct fill. fill('') is safer and doesn't require clicking.
+      await page.locator(symbolInput).fill('', { timeout: 2000 });
+      await page.locator(qtyInput).fill('', { timeout: 2000 });
+      await page.locator(priceInput).fill('', { timeout: 2000 });
+      console.log(`🧹 Cleared symbol, qty, and price fields.`);
+
+      // Reset toggle
+      const resetToggle = "xpath=/html/body/app-root/tms/main/div/div/app-member-client-order-entry/div/div/div[1]/div[2]/app-three-state-toggle/div/div/label[2]";
+      // Use force: true because a success toast message might be overlaying the top of the screen blocking the click.
+      await page.locator(resetToggle).click({ force: true, timeout: 3000 });
+      console.log(`🔄 Reset toggle to neutral.`);
+
+    } catch (cleanupErr) {
+      console.log(`⚠️ Note: Timeout while clearing fields or resetting toggle (toast might be blocking). Proceeding to next row.`);
+    }
+
   } catch (err) {
     console.error(`❌ Trade Execution Error for ${symbol}:`, err);
   }
@@ -122,7 +175,7 @@ async function runAutomation() {
     await page.waitForSelector(".dashboard-wrapper", { timeout: 0 });
   }
 
-  // 2. Navigation
+  // 2. Navigation to Daily Order Book (Open Trades)
   await humanClick(
     page,
     "xpath=/html/body/app-root/tms/app-menubar/aside/nav/ul/li[10]/a",
@@ -130,11 +183,34 @@ async function runAutomation() {
   await delay(800);
   await humanClick(
     page,
+    "xpath=/html/body/app-root/tms/app-menubar/aside/nav/ul/li[10]/ul/li[2]/a",
+  );
+  await delay(2000);
+
+  const existingTrades = await fetchExistingTrades(page);
+  console.log(`📊 Found ${existingTrades.length} open trades in the daily order book.`);
+
+  // Now navigate to Order Entry page
+  await humanClick(
+    page,
     "xpath=/html/body/app-root/tms/app-menubar/aside/nav/ul/li[10]/ul/li[1]/a",
   );
-  await delay(1000);
+  await delay(2000);
 
   for (const trade of trades) {
+    // Check if trade already exists
+    const tradeMatch = existingTrades.find(rowText => {
+        return rowText.includes(trade.symbol.toUpperCase()) &&
+               rowText.includes(trade.qty.replace(/,/g, '')) &&
+               rowText.includes(trade.price.replace(/,/g, '')) &&
+               rowText.includes(trade.action.toUpperCase());
+    });
+
+    if (tradeMatch) {
+        console.log(`⏩ Skipping ${trade.action} for ${trade.symbol} (${trade.qty} @ ${trade.price}) as it already exists in the open trades list.`);
+        continue;
+    }
+
     await executeSingleTrade(page, trade.action as "BUY" | "SELL", trade.symbol, trade.qty, trade.price);
     await delay(2000);
   }
