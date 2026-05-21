@@ -85,6 +85,31 @@ async function executeSingleTrade(
     await page.keyboard.press("Enter");
     await delay(1500);
 
+    let finalPrice = price;
+    // The Google Sheet might send "0" when the cell is blank. We treat 0 as an empty price.
+    if (!finalPrice || finalPrice.toString().trim() === "" || finalPrice.toString().trim() === "0" || parseFloat(finalPrice) === 0) {
+      try {
+        if (action === "SELL") {
+          const highPriceLocator = page.locator("xpath=/html/body/app-root/tms/main/div/div/app-member-client-order-entry/div/div/div[3]/form/div[3]/div[1]/div[3]");
+          const highPriceText = await highPriceLocator.innerText();
+          const highPriceValue = parseFloat(highPriceText.replace(/[^0-9.]/g, ''));
+          if (!isNaN(highPriceValue)) {
+            finalPrice = (highPriceValue - 0.5).toString();
+          }
+        } else if (action === "BUY") {
+          const lowPriceLocator = page.locator("xpath=/html/body/app-root/tms/main/div/div/app-member-client-order-entry/div/div/div[3]/form/div[3]/div[1]/div[2]");
+          const lowPriceText = await lowPriceLocator.innerText();
+          const lowPriceValue = parseFloat(lowPriceText.replace(/[^0-9.]/g, ''));
+          if (!isNaN(lowPriceValue)) {
+            finalPrice = (lowPriceValue + 0.5).toString();
+          }
+        }
+        console.log(`Fetched dynamic price for ${symbol}: ${finalPrice}`);
+      } catch (err) {
+        console.log(`⚠️ Could not fetch dynamic price for ${symbol}, using default/empty.`);
+      }
+    }
+
     // Toggle Selection logic
     if (action === "BUY") {
       const buyToggle =
@@ -103,7 +128,7 @@ async function executeSingleTrade(
 
     const priceInput = "xpath=/html/body/app-root/tms/main/div/div/app-member-client-order-entry/div/div/div[3]/form/div[2]/div[4]/input";
     await clearInput(page, priceInput);
-    await humanType(page, priceInput, price);
+    await humanType(page, priceInput, finalPrice);
 
     // 4. Final Click
     await delay(1000);
@@ -148,11 +173,14 @@ async function runAutomation() {
   const trades = await fetchAutoBuySellData();
 
   if (trades.length === 0) {
-    console.log("No trades found in autoBuySellScript sheet.");
+    console.log("No trades found with BUY/SELL actions in autoBuySellScript sheet.");
     return;
   }
 
-  console.log(`Found ${trades.length} trades to execute.`);
+  console.log(`Found ${trades.length} valid trades (BUY/SELL) from Google Sheet:`);
+  trades.forEach((trade, index) => {
+    console.log(` [${index + 1}] Action: ${trade.action} | Symbol: ${trade.symbol} | Qty: ${trade.qty} | Price: ${trade.price === "0" ? "Dynamic" : trade.price}`);
+  });
 
   const userDataDir = path.join(__dirname, "tms_user_data");
   const context = await chromium.launchPersistentContext(userDataDir, {
