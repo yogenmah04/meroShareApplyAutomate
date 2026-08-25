@@ -10,7 +10,10 @@
     "watch-sheets": "npx ts-node --compiler-options '{\"module\":\"commonjs\",\"esModuleInterop\":true}' syncService.ts",
     "check-promoter-unlock": "npx ts-node --compiler-options '{\"module\":\"commonjs\",\"esModuleInterop\":true}' promoterUnlock.ts",
     "check-funda": "npx ts-node --compiler-options '{\"module\":\"commonjs\",\"esModuleInterop\":true}' fundaScraper.ts",
-    "start-nepse": "npx ts-node --compiler-options '{\"module\":\"commonjs\",\"esModuleInterop\":true}' nepseScraper.ts"
+    "start-nepse": "npx ts-node --compiler-options '{\"module\":\"commonjs\",\"esModuleInterop\":true}' nepseScraper.ts",
+    "auth:kimi": "npx ts-node --compiler-options '{\"module\":\"commonjs\",\"esModuleInterop\":true,\"lib\":[\"es2022\",\"dom\"]}' saveAuthSession.ts",
+    "parse:id": "npx ts-node --compiler-options '{\"module\":\"commonjs\",\"esModuleInterop\":true,\"lib\":[\"es2022\",\"dom\"]}' autonomousParser.ts",
+    "start-naasa": "npx ts-node --compiler-options '{\"module\":\"commonjs\",\"esModuleInterop\":true}' naasaLogin.ts"
   },
   "keywords": [],
   "author": "",

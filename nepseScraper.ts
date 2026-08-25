@@ -94,12 +94,21 @@ async function scrapeNepseAndSave() {
 }
 
 export function scheduleNepseScraper() {
-  // Schedule the job to run automatically every day at 11:05 AM
-  const scheduleRule = "8 11 * * *";
-  schedule.scheduleJob(scheduleRule, () => {
+  // Schedule the job to run at 11:01:00 and 15:05:00 (4:05 PM)
+  const scheduleRuleMorning = "00 01 11 * * *";
+  const scheduleRuleAfternoon = "0 05 16 * * *";
+
+  schedule.scheduleJob(scheduleRuleMorning, () => {
     scrapeNepseAndSave();
   });
-  console.log(`NEPSE scraper scheduled to run every day at ${scheduleRule}.`);
+
+  schedule.scheduleJob(scheduleRuleAfternoon, () => {
+    scrapeNepseAndSave();
+  });
+
+  console.log(
+    `NEPSE scraper scheduled to run every day at ${scheduleRuleMorning} and ${scheduleRuleAfternoon}.`,
+  );
 }
 
 // Execute standalone if this file is run directly
