@@ -3,6 +3,7 @@ import stealth from "puppeteer-extra-plugin-stealth";
 import path from "path";
 import * as dotenv from "dotenv";
 import { initSheets, fetchAutoBuySellData } from "./googleSheetsService";
+import { launchPersistentContextWithViewMode } from "./humanUtils";
 
 dotenv.config();
 chromium.use(stealth());
@@ -183,11 +184,7 @@ async function runAutomation() {
   });
 
   const userDataDir = path.join(__dirname, "tms_user_data");
-  const context = await chromium.launchPersistentContext(userDataDir, {
-    headless: false,
-    args: ["--start-maximized"],
-    viewport: null,
-  });
+  const context = await launchPersistentContextWithViewMode(chromium, userDataDir);
 
   const page = await context.newPage();
   await page.goto("https://tms52.nepsetms.com.np/tms/client/dashboard");

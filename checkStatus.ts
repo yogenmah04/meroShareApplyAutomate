@@ -5,7 +5,7 @@ import * as dotenv from 'dotenv';
 import fs from 'fs';
 import path from 'path';
 import pLimit from 'p-limit';
-import { humanClick, humanType, jitterSleep, getRandomUserAgent } from './humanUtils';
+import { humanClick, humanType, jitterSleep, getRandomUserAgent, launchBrowserWithViewMode } from './humanUtils';
 
 // Initialize stealth plugin
 chromium.use(StealthPlugin());
@@ -99,10 +99,7 @@ export async function runCheckStatus(
         }
     }
 
-    const browser = await chromium.launch({ 
-        headless: false, 
-        args: ['--disable-blink-features=AutomationControlled'] 
-    });
+    const browser = await launchBrowserWithViewMode(chromium);
 
     const tasks = users.map((user) => 
         limit(async () => {

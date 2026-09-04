@@ -40,3 +40,114 @@ export function getRandomUserAgent() {
     ];
     return agents[Math.floor(Math.random() * agents.length)];
 }
+
+/**
+ * Ensures background processes (e.g., Supervisor) are bridged to the active desktop session.
+ */
+export function ensureDesktopDisplay() {
+    const fs = require('fs');
+    const path = require('path');
+    const uid = process.getuid ? process.getuid() : 1000;
+    const runtimeDir = `/run/user/${uid}`;
+
+    if (!process.env.XDG_RUNTIME_DIR && fs.existsSync(runtimeDir)) {
+        process.env.XDG_RUNTIME_DIR = runtimeDir;
+    }
+    if (!process.env.DISPLAY) {
+        process.env.DISPLAY = ':0';
+    }
+    if (!process.env.WAYLAND_DISPLAY && fs.existsSync(path.join(runtimeDir, 'wayland-0'))) {
+        process.env.WAYLAND_DISPLAY = 'wayland-0';
+    }
+    if (!process.env.XAUTHORITY && fs.existsSync(runtimeDir)) {
+        try {
+            const files = fs.readdirSync(runtimeDir);
+            const authFile = files.find((f: string) => f.startsWith('.mutter-Xwaylandauth') || f.startsWith('.Xauthority'));
+            if (authFile) {
+                process.env.XAUTHORITY = path.join(runtimeDir, authFile);
+            }
+        } catch (_) {}
+    }
+}
+
+/**
+ * Launches Chromium in view mode (headed) by default, falling back to headless if no display is accessible.
+ */
+export async function launchBrowserWithViewMode(chromium: any, customOptions: any = {}) {
+    ensureDesktopDisplay();
+
+    const wantHeadless = process.env.HEADLESS === 'true';
+    const baseArgs = [
+        '--disable-blink-features=AutomationControlled',
+        '--no-sandbox',
+        '--disable-setuid-sandbox',
+        ...(customOptions.args || []),
+    ];
+
+    if (wantHeadless) {
+        return await chromium.launch({
+            ...customOptions,
+            headless: true,
+            args: baseArgs,
+        });
+    }
+
+    try {
+        return await chromium.launch({
+            ...customOptions,
+            headless: false,
+            args: baseArgs,
+        });
+    } catch (err: any) {
+        if (err?.message?.includes('Missing X server') || err?.message?.includes('Target page, context or browser has been closed')) {
+            console.warn(`[Display Warning] Could not open GUI window on screen: ${err.message}. Falling back to background headless mode.`);
+            return await chromium.launch({
+                ...customOptions,
+                headless: true,
+                args: baseArgs,
+            });
+        }
+        throw err;
+    }
+}
+
+/**
+ * Launches persistent context in view mode by default, falling back to headless if no display is accessible.
+ */
+export async function launchPersistentContextWithViewMode(chromium: any, userDataDir: string, customOptions: any = {}) {
+    ensureDesktopDisplay();
+
+    const wantHeadless = process.env.HEADLESS === 'true';
+    const baseArgs = [
+        ...(customOptions.args || []),
+    ];
+
+    if (wantHeadless) {
+        return await chromium.launchPersistentContext(userDataDir, {
+            ...customOptions,
+            headless: true,
+            args: ['--no-sandbox', '--disable-setuid-sandbox', ...baseArgs],
+            viewport: { width: 1366, height: 768 },
+        });
+    }
+
+    try {
+        return await chromium.launchPersistentContext(userDataDir, {
+            ...customOptions,
+            headless: false,
+            args: ['--start-maximized', ...baseArgs],
+            viewport: null,
+        });
+    } catch (err: any) {
+        if (err?.message?.includes('Missing X server') || err?.message?.includes('Target page, context or browser has been closed')) {
+            console.warn(`[Display Warning] Could not open GUI window on screen: ${err.message}. Falling back to background headless mode.`);
+            return await chromium.launchPersistentContext(userDataDir, {
+                ...customOptions,
+                headless: true,
+                args: ['--no-sandbox', '--disable-setuid-sandbox', ...baseArgs],
+                viewport: { width: 1366, height: 768 },
+            });
+        }
+        throw err;
+    }
+}

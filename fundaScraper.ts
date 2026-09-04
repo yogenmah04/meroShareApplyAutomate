@@ -1,17 +1,13 @@
 import { chromium } from 'playwright-extra';
 import StealthPlugin from 'puppeteer-extra-plugin-stealth';
-import { jitterSleep, getRandomUserAgent, humanClick } from './humanUtils';
+import { jitterSleep, getRandomUserAgent, humanClick, launchBrowserWithViewMode } from './humanUtils';
 import { initSheets, overrideSheetData } from './googleSheetsService';
 
 // Initialize stealth plugin
 chromium.use(StealthPlugin());
 
 export async function fetchFundamentalData() {
-    console.log('Launching browser for Fundamental Info scraper...');
-    const browser = await chromium.launch({
-        headless: false,
-        args: ['--disable-blink-features=AutomationControlled']
-    });
+    const browser = await launchBrowserWithViewMode(chromium);
 
     const context = await browser.newContext({
         userAgent: getRandomUserAgent(),
@@ -53,7 +49,7 @@ export async function fetchFundamentalData() {
 
         // Extract headers
         const headers = await headerTable.locator('thead tr th').allInnerTexts();
-        const cleanedHeaders = headers.map(h => h.trim()).filter(h => h.length > 0);
+        const cleanedHeaders = headers.map((h: string) => h.trim()).filter((h: string) => h.length > 0);
         console.log(`Detected headers: ${cleanedHeaders.join(', ')}`);
 
         if (cleanedHeaders.length === 0) {
@@ -76,7 +72,7 @@ export async function fetchFundamentalData() {
 
             for (const row of rowLocators) {
                 const cells = await row.locator('td').allInnerTexts();
-                const cleanedCells = cells.map(c => c.trim().replace(/\n+/g, ' '));
+                const cleanedCells = cells.map((c: string) => c.trim().replace(/\n+/g, ' '));
 
                 // Skip "No data available" rows
                 if (cleanedCells.length > 1 || (cleanedCells.length === 1 && cleanedCells[0] !== 'No data available in table')) {
@@ -88,7 +84,7 @@ export async function fetchFundamentalData() {
 
             // Check if next button is disabled
             const nextButton = page.locator('xpath=//*[@id="funda-table_next"]');
-            const isDisabled = await nextButton.evaluate(el => el.classList.contains('disabled')).catch(() => true);
+            const isDisabled = await nextButton.evaluate((el: any) => el.classList.contains('disabled')).catch(() => true);
 
             if (!isDisabled) {
                 console.log('Moving to next page...');

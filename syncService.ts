@@ -5,13 +5,24 @@ import { initializeScheduler } from './scheduler';
 import { scheduleNepseScraper } from './nepseScraper';
 import * as dotenv from 'dotenv';
 import schedule from 'node-schedule';
+import { ensureDesktopDisplay } from './humanUtils';
 
 dotenv.config();
+ensureDesktopDisplay();
 
 const POLLING_INTERVAL_MS = 30000; // 30 seconds
 
 let tmsScheduledJob: schedule.Job | null = null;
 let currentTmsScheduleTime: string | null = null;
+
+// Process-level safety guards to ensure background service resilience
+process.on('unhandledRejection', (reason, promise) => {
+    console.error(`[${new Date().toLocaleString()}] Unhandled Rejection at:`, promise, 'reason:', reason);
+});
+
+process.on('uncaughtException', (error) => {
+    console.error(`[${new Date().toLocaleString()}] Uncaught Exception:`, error);
+});
 
 // Using Date objects directly for full date and time scheduling
 
@@ -67,20 +78,28 @@ async function main() {
 
             if (command === 'CHECK_STATUS' && status !== 'IN_PROGRESS') {
                 console.log('Detected command: CHECK_STATUS. Starting process...');
-                await control.updateStatus('IN_PROGRESS', 'Fetching data from sheets...');
+                try {
+                    await control.updateStatus('IN_PROGRESS', 'Fetching data from sheets...');
 
-                const users = await fetchUsersFromSheet();
-                const stocks = await fetchStocksFromSheet();
+                    const users = await fetchUsersFromSheet();
+                    const stocks = await fetchStocksFromSheet();
 
-                await control.updateStatus('IN_PROGRESS', `Running status check for ${users.length} users and ${stocks.length} stocks...`);
+                    await control.updateStatus('IN_PROGRESS', `Running status check for ${users.length} users and ${stocks.length} stocks...`);
 
-                await runCheckStatus(users, stocks, async (stockName, userName, status) => {
-                    await addResultToSheet(stockName, userName, status);
-                });
+                    await runCheckStatus(users, stocks, async (stockName, userName, status) => {
+                        await addResultToSheet(stockName, userName, status);
+                    });
 
-                await control.updateStatus('COMPLETED', 'Status check finished successfully.');
-                await control.resetCommand();
-                console.log('CHECK_STATUS process completed.');
+                    await control.updateStatus('COMPLETED', 'Status check finished successfully.');
+                    await control.resetCommand();
+                    console.log('CHECK_STATUS process completed.');
+                } catch (e: any) {
+                    console.error('Error during CHECK_STATUS execution:', e?.message || e);
+                    try {
+                        await control.updateStatus('ERROR', `Status check failed: ${e?.message || e}`);
+                        await control.resetCommand();
+                    } catch (_) {}
+                }
 
             } else if (command === 'PROMOTER_UNLOCK_CHECK' && status !== 'IN_PROGRESS') {
                 console.log('Detected command: PROMOTER_UNLOCK_CHECK. Starting scraper...');

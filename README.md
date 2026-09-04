@@ -20,7 +20,7 @@ This project contains a complete automation suite and background scheduling syst
 
 ## Configuration
 
-To handle multiple accounts and schedule unique application times, the core configurations are handled inside a `users.json` file. 
+To handle multiple accounts and schedule unique application times, the core configurations are handled inside a `users.json` file.
 
 Create or modify `users.json` at the root of the project to match your credentials:
 
@@ -50,6 +50,7 @@ Create or modify `users.json` at the root of the project to match your credentia
 ```
 
 ### Explanation of JSON Fields:
+
 - `dp`: Your exact Depository Participant as it appears in the dropdown (Ex: `"130 - XYZ CAPITAL LTD."`).
 - `crn`: Your unique CRN Number.
 - `pin`: Your 4-digit transaction verification PIN.
@@ -58,13 +59,13 @@ Create or modify `users.json` at the root of the project to match your credentia
 
 ## How to Run the Scheduled Flow
 
-Once your `users.json` is ready, launch the primary scheduler. 
+Once your `users.json` is ready, launch the primary scheduler.
 
 ```bash
 npx ts-node scheduler.ts
 ```
 
-- When you start this file, it will load all the users in `users.json` and silently idle in the background. 
+- When you start this file, it will load all the users in `users.json` and silently idle in the background.
 - When the internal clock reaches the target `applyAt` time for a specific user, it automatically jumps into the `automate.ts` logic.
 - It will open the Playwright browser, execute the full Meroshare UI login, search for an unapplied standard IPO, enter data, wait 5 seconds for visual confirmation, add the PIN, and apply!
 - *(Note: Ensure the machine running `scheduler.ts` stays powered on at the scheduled time!)*
@@ -110,7 +111,12 @@ The results will be saved (and appended) to a file named `reportStatus.json`. It
 ```
 
 ## Security Notes
+
 The project is configured out-of-the-box (`.gitignore`) to prevent sensitive files like `users.json`, `.env`, and now `reportStatus.json` from being pushed to public GitHub repositories.
 
-
 npx ts-node --compiler-options '{"module":"commonjs","esModuleInterop":true}' scheduler.ts
+
+
+sudo supervisorctl restart meroshare-watch-sheets  # Restart service
+sudo supervisorctl stop meroshare-watch-sheets     # Stop service
+sudo supervisorctl tail -f meroshare-watch-sheets  # View live logs

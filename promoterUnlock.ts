@@ -1,16 +1,12 @@
 import { chromium } from 'playwright-extra';
 import StealthPlugin from 'puppeteer-extra-plugin-stealth';
-import { jitterSleep, getRandomUserAgent, humanClick } from './humanUtils';
+import { jitterSleep, getRandomUserAgent, humanClick, launchBrowserWithViewMode } from './humanUtils';
 
 // Initialize stealth plugin
 chromium.use(StealthPlugin());
 
 export async function fetchPromoterUnlockData() {
-    console.log('Launching browser for Nepse Alpha scraper...');
-    const browser = await chromium.launch({ 
-        headless: false, 
-        args: ['--disable-blink-features=AutomationControlled'] 
-    });
+    const browser = await launchBrowserWithViewMode(chromium);
     
     const context = await browser.newContext({
         userAgent: getRandomUserAgent(),
@@ -38,7 +34,7 @@ export async function fetchPromoterUnlockData() {
 
         // Extract headers
         const headers = await table.locator('thead th').allInnerTexts();
-        const cleanedHeaders = headers.map(h => h.trim()).filter(h => h.length > 0);
+        const cleanedHeaders = headers.map((h: string) => h.trim()).filter((h: string) => h.length > 0);
         console.log(`Detected headers: ${cleanedHeaders.join(', ')}`);
 
         if (cleanedHeaders.length === 0) {
@@ -52,7 +48,7 @@ export async function fetchPromoterUnlockData() {
         for (const row of rowLocators) {
             const cells = await row.locator('td').allInnerTexts();
             // Clean cell data (handle newlines and extra spaces)
-            const cleanedCells = cells.map(c => c.trim().replace(/\n+/g, ' '));
+            const cleanedCells = cells.map((c: string) => c.trim().replace(/\n+/g, ' '));
             if (cleanedCells.length > 0 && cleanedCells[0] !== 'No data available in table') {
                 data.push(cleanedCells);
             }

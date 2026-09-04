@@ -2,7 +2,7 @@ import { chromium } from 'playwright-extra';
 import StealthPlugin from 'puppeteer-extra-plugin-stealth';
 import * as dotenv from 'dotenv';
 import path from 'path';
-import { humanClick, humanType, jitterSleep, getRandomUserAgent } from './humanUtils';
+import { humanClick, humanType, jitterSleep, getRandomUserAgent, launchBrowserWithViewMode } from './humanUtils';
 
 // Initialize stealth plugin
 chromium.use(StealthPlugin());
@@ -15,10 +15,7 @@ export async function runAutomation(user: any) {
   console.log(`Starting automation for user: ${username}...`);
 
   // Launch browser with stealth args
-  const browser = await chromium.launch({ 
-    headless: false, 
-    args: ['--disable-blink-features=AutomationControlled'] 
-  });
+  const browser = await launchBrowserWithViewMode(chromium);
   
   const context = await browser.newContext({
     userAgent: getRandomUserAgent(),

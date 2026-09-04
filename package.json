@@ -8,6 +8,7 @@
     "start-tms": "npx ts-node --compiler-options '{\"module\":\"commonjs\",\"esModuleInterop\":true}' tmsAutomation.ts",
     "check-status": "npx ts-node --compiler-options '{\"module\":\"commonjs\",\"esModuleInterop\":true}' checkStatus.ts",
     "watch-sheets": "npx ts-node --compiler-options '{\"module\":\"commonjs\",\"esModuleInterop\":true}' syncService.ts",
+    "supervise-watch-sheets": "npx ts-node --compiler-options '{\"module\":\"commonjs\",\"esModuleInterop\":true}' supervisor.ts",
     "check-promoter-unlock": "npx ts-node --compiler-options '{\"module\":\"commonjs\",\"esModuleInterop\":true}' promoterUnlock.ts",
     "check-funda": "npx ts-node --compiler-options '{\"module\":\"commonjs\",\"esModuleInterop\":true}' fundaScraper.ts",
     "start-nepse": "npx ts-node --compiler-options '{\"module\":\"commonjs\",\"esModuleInterop\":true}' nepseScraper.ts",

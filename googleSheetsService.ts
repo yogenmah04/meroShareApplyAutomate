@@ -39,15 +39,23 @@ async function callWithRetry<T>(
   try {
     return await limit(fn);
   } catch (error: any) {
+    const errorMsg = error?.message || "";
     const isTransient =
       error.code === "EAI_AGAIN" || // DNS resolution error
-      error.message?.includes("500") || // Internal server error
-      error.message?.includes("fetch failed") || // Network drops
-      error.message?.includes("socket hang up");
+      error.code === "ECONNRESET" ||
+      error.code === "ETIMEDOUT" ||
+      errorMsg.includes("500") || // Internal server error
+      errorMsg.includes("502") || // Bad Gateway
+      errorMsg.includes("503") || // Service Unavailable
+      errorMsg.includes("504") || // Gateway Timeout
+      errorMsg.includes("429") || // Rate Limit
+      errorMsg.includes("Bad Gateway") ||
+      errorMsg.includes("fetch failed") || // Network drops
+      errorMsg.includes("socket hang up");
 
     if (isTransient && retries > 0) {
       console.warn(
-        `[Network Warning] Transient error encountered: ${error.message}. Retrying in ${delay / 1000}s...`,
+        `[Network Warning] Transient error encountered: ${errorMsg}. Retrying in ${delay / 1000}s...`,
       );
       await wait(delay);
       return callWithRetry(fn, retries - 1, delay * 2);
