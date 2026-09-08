@@ -79,6 +79,15 @@ export async function fetchUsersFromSheet() {
     const rows = await sheet.getRows();
     return rows.map((row) => {
       const rawIsApply = row.get("isApply");
+      // Column L is the 12th column (0-indexed 11, header: 'checkForThis')
+      const colLHeader = sheet.headerValues?.[11];
+      const rawCheckForThis =
+        (colLHeader ? row.get(colLHeader) : undefined) ??
+        row.get("checkForThis") ??
+        (row as any)._rawData?.[11];
+      const checkStr = rawCheckForThis?.toString().trim().toLowerCase();
+      const isCheckForThis = checkStr === "true" || checkStr === "ture";
+
       return {
         id: parseInt(row.get("ID")),
         dp: row.get("DP"),
@@ -89,6 +98,7 @@ export async function fetchUsersFromSheet() {
         kitta: row.get("Kitta"),
         name: row.get("Name"),
         isApply: rawIsApply?.toString().trim().toLowerCase() === "true",
+        checkForThis: isCheckForThis,
         applyAt: row.get("ApplyAt"),
       };
     });

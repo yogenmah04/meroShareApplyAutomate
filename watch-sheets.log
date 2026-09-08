@@ -1,0 +1,2044 @@
+
+> meroshare@1.0.0 watch-sheets
+> npx ts-node --compiler-options '{"module":"commonjs","esModuleInterop":true}' syncService.ts
+
+◇ injected env (7) from .env // tip: ⌁ auth for agents [www.vestauth.com]
+◇ injected env (0) from .env // tip: ◈ encrypted .env [www.dotenvx.com]
+◇ injected env (0) from .env // tip: ⌘ enable debugging { debug: true }
+/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+nepseScraper.ts(81,88): error TS2339: Property 'message' does not exist on type '{}'.
+nepseScraper.ts(133,14): error TS2339: Property 'message' does not exist on type '{}'.
+
+    at createTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1617:30)
+    at node:internal/modules/cjs/loader:1839:10
+    at Object.require.extensions.<computed> [as .ts] (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14) {
+  diagnosticCodes: [ 2339, 2339 ]
+}
+
+> meroshare@1.0.0 watch-sheets
+> npx ts-node --compiler-options '{"module":"commonjs","esModuleInterop":true}' syncService.ts
+
+◇ injected env (7) from .env // tip: ⌁ auth for agents [www.vestauth.com]
+◇ injected env (0) from .env // tip: ⌘ multiple files { path: ['.env.local', '.env'] }
+◇ injected env (0) from .env // tip: ⌘ enable debugging { debug: true }
+/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+nepseScraper.ts(81,88): error TS2339: Property 'message' does not exist on type '{}'.
+nepseScraper.ts(133,14): error TS2339: Property 'message' does not exist on type '{}'.
+
+    at createTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1617:30)
+    at node:internal/modules/cjs/loader:1839:10
+    at Object.require.extensions.<computed> [as .ts] (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14) {
+  diagnosticCodes: [ 2339, 2339 ]
+}
+
+> meroshare@1.0.0 watch-sheets
+> npx ts-node --compiler-options '{"module":"commonjs","esModuleInterop":true}' syncService.ts
+
+◇ injected env (7) from .env // tip: ⌘ override existing { override: true }
+◇ injected env (0) from .env // tip: ◈ encrypted .env [www.dotenvx.com]
+◇ injected env (0) from .env // tip: ◈ encrypted .env [www.dotenvx.com]
+/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+nepseScraper.ts(81,88): error TS2339: Property 'message' does not exist on type '{}'.
+nepseScraper.ts(133,14): error TS2339: Property 'message' does not exist on type '{}'.
+
+    at createTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1617:30)
+    at node:internal/modules/cjs/loader:1839:10
+    at Object.require.extensions.<computed> [as .ts] (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14) {
+  diagnosticCodes: [ 2339, 2339 ]
+}
+
+> meroshare@1.0.0 watch-sheets
+> npx ts-node --compiler-options '{"module":"commonjs","esModuleInterop":true}' syncService.ts
+
+◇ injected env (7) from .env // tip: ⌁ auth for agents [www.vestauth.com]
+◇ injected env (0) from .env // tip: ⌘ enable debugging { debug: true }
+◇ injected env (0) from .env // tip: ⌘ multiple files { path: ['.env.local', '.env'] }
+/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+nepseScraper.ts(81,88): error TS2339: Property 'message' does not exist on type '{}'.
+nepseScraper.ts(133,14): error TS2339: Property 'message' does not exist on type '{}'.
+
+    at createTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1617:30)
+    at node:internal/modules/cjs/loader:1839:10
+    at Object.require.extensions.<computed> [as .ts] (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14) {
+  diagnosticCodes: [ 2339, 2339 ]
+}
+
+> meroshare@1.0.0 watch-sheets
+> npx ts-node --compiler-options '{"module":"commonjs","esModuleInterop":true}' syncService.ts
+
+◇ injected env (7) from .env // tip: ⌘ suppress logs { quiet: true }
+◇ injected env (0) from .env // tip: ⌘ custom filepath { path: '/custom/path/.env' }
+◇ injected env (0) from .env // tip: ⌘ multiple files { path: ['.env.local', '.env'] }
+/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+nepseScraper.ts(81,88): error TS2339: Property 'message' does not exist on type '{}'.
+nepseScraper.ts(133,14): error TS2339: Property 'message' does not exist on type '{}'.
+
+    at createTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1617:30)
+    at node:internal/modules/cjs/loader:1839:10
+    at Object.require.extensions.<computed> [as .ts] (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14) {
+  diagnosticCodes: [ 2339, 2339 ]
+}
+
+> meroshare@1.0.0 watch-sheets
+> npx ts-node --compiler-options '{"module":"commonjs","esModuleInterop":true}' syncService.ts
+
+◇ injected env (7) from .env // tip: ⌘ enable debugging { debug: true }
+◇ injected env (0) from .env // tip: ⌘ override existing { override: true }
+◇ injected env (0) from .env // tip: ⌁ auth for agents [www.vestauth.com]
+/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+nepseScraper.ts(81,88): error TS2339: Property 'message' does not exist on type '{}'.
+nepseScraper.ts(133,14): error TS2339: Property 'message' does not exist on type '{}'.
+
+    at createTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1617:30)
+    at node:internal/modules/cjs/loader:1839:10
+    at Object.require.extensions.<computed> [as .ts] (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14) {
+  diagnosticCodes: [ 2339, 2339 ]
+}
+
+> meroshare@1.0.0 watch-sheets
+> npx ts-node --compiler-options '{"module":"commonjs","esModuleInterop":true}' syncService.ts
+
+◇ injected env (7) from .env // tip: ⌘ override existing { override: true }
+◇ injected env (0) from .env // tip: ⌘ enable debugging { debug: true }
+◇ injected env (0) from .env // tip: ◈ encrypted .env [www.dotenvx.com]
+/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+nepseScraper.ts(81,88): error TS2339: Property 'message' does not exist on type '{}'.
+nepseScraper.ts(133,14): error TS2339: Property 'message' does not exist on type '{}'.
+
+    at createTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1617:30)
+    at node:internal/modules/cjs/loader:1839:10
+    at Object.require.extensions.<computed> [as .ts] (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14) {
+  diagnosticCodes: [ 2339, 2339 ]
+}
+
+> meroshare@1.0.0 watch-sheets
+> npx ts-node --compiler-options '{"module":"commonjs","esModuleInterop":true}' syncService.ts
+
+◇ injected env (7) from .env // tip: ⌁ auth for agents [www.vestauth.com]
+◇ injected env (0) from .env // tip: ⌘ suppress logs { quiet: true }
+◇ injected env (0) from .env // tip: ⌘ multiple files { path: ['.env.local', '.env'] }
+/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+nepseScraper.ts(81,88): error TS2339: Property 'message' does not exist on type '{}'.
+nepseScraper.ts(133,14): error TS2339: Property 'message' does not exist on type '{}'.
+
+    at createTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1617:30)
+    at node:internal/modules/cjs/loader:1839:10
+    at Object.require.extensions.<computed> [as .ts] (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14) {
+  diagnosticCodes: [ 2339, 2339 ]
+}
+
+> meroshare@1.0.0 watch-sheets
+> npx ts-node --compiler-options '{"module":"commonjs","esModuleInterop":true}' syncService.ts
+
+◇ injected env (7) from .env // tip: ⌘ suppress logs { quiet: true }
+◇ injected env (0) from .env // tip: ◈ secrets for agents [www.dotenvx.com]
+◇ injected env (0) from .env // tip: ⌘ suppress logs { quiet: true }
+/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+nepseScraper.ts(81,88): error TS2339: Property 'message' does not exist on type '{}'.
+nepseScraper.ts(133,14): error TS2339: Property 'message' does not exist on type '{}'.
+
+    at createTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1617:30)
+    at node:internal/modules/cjs/loader:1839:10
+    at Object.require.extensions.<computed> [as .ts] (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14) {
+  diagnosticCodes: [ 2339, 2339 ]
+}
+
+> meroshare@1.0.0 watch-sheets
+> npx ts-node --compiler-options '{"module":"commonjs","esModuleInterop":true}' syncService.ts
+
+◇ injected env (7) from .env // tip: ⌘ suppress logs { quiet: true }
+◇ injected env (0) from .env // tip: ⌘ enable debugging { debug: true }
+◇ injected env (0) from .env // tip: ⌘ suppress logs { quiet: true }
+/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+nepseScraper.ts(81,88): error TS2339: Property 'message' does not exist on type '{}'.
+nepseScraper.ts(133,14): error TS2339: Property 'message' does not exist on type '{}'.
+
+    at createTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1617:30)
+    at node:internal/modules/cjs/loader:1839:10
+    at Object.require.extensions.<computed> [as .ts] (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14) {
+  diagnosticCodes: [ 2339, 2339 ]
+}
+
+> meroshare@1.0.0 watch-sheets
+> npx ts-node --compiler-options '{"module":"commonjs","esModuleInterop":true}' syncService.ts
+
+◇ injected env (7) from .env // tip: ⌁ auth for agents [www.vestauth.com]
+◇ injected env (0) from .env // tip: ⌘ override existing { override: true }
+◇ injected env (0) from .env // tip: ◈ secrets for agents [www.dotenvx.com]
+/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+nepseScraper.ts(81,88): error TS2339: Property 'message' does not exist on type '{}'.
+nepseScraper.ts(133,14): error TS2339: Property 'message' does not exist on type '{}'.
+
+    at createTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1617:30)
+    at node:internal/modules/cjs/loader:1839:10
+    at Object.require.extensions.<computed> [as .ts] (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14) {
+  diagnosticCodes: [ 2339, 2339 ]
+}
+
+> meroshare@1.0.0 watch-sheets
+> npx ts-node --compiler-options '{"module":"commonjs","esModuleInterop":true}' syncService.ts
+
+◇ injected env (7) from .env // tip: ◈ secrets for agents [www.dotenvx.com]
+◇ injected env (0) from .env // tip: ⌘ suppress logs { quiet: true }
+◇ injected env (0) from .env // tip: ⌘ suppress logs { quiet: true }
+/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+nepseScraper.ts(81,88): error TS2339: Property 'message' does not exist on type '{}'.
+nepseScraper.ts(133,14): error TS2339: Property 'message' does not exist on type '{}'.
+
+    at createTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1617:30)
+    at node:internal/modules/cjs/loader:1839:10
+    at Object.require.extensions.<computed> [as .ts] (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14) {
+  diagnosticCodes: [ 2339, 2339 ]
+}
+
+> meroshare@1.0.0 watch-sheets
+> npx ts-node --compiler-options '{"module":"commonjs","esModuleInterop":true}' syncService.ts
+
+◇ injected env (7) from .env // tip: ◈ secrets for agents [www.dotenvx.com]
+◇ injected env (0) from .env // tip: ⌁ auth for agents [www.vestauth.com]
+◇ injected env (0) from .env // tip: ◈ secrets for agents [www.dotenvx.com]
+/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+nepseScraper.ts(81,88): error TS2339: Property 'message' does not exist on type '{}'.
+nepseScraper.ts(133,14): error TS2339: Property 'message' does not exist on type '{}'.
+
+    at createTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1617:30)
+    at node:internal/modules/cjs/loader:1839:10
+    at Object.require.extensions.<computed> [as .ts] (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14) {
+  diagnosticCodes: [ 2339, 2339 ]
+}
+
+> meroshare@1.0.0 watch-sheets
+> npx ts-node --compiler-options '{"module":"commonjs","esModuleInterop":true}' syncService.ts
+
+◇ injected env (7) from .env // tip: ◈ encrypted .env [www.dotenvx.com]
+◇ injected env (0) from .env // tip: ◈ secrets for agents [www.dotenvx.com]
+◇ injected env (0) from .env // tip: ◈ secrets for agents [www.dotenvx.com]
+/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+nepseScraper.ts(81,88): error TS2339: Property 'message' does not exist on type '{}'.
+nepseScraper.ts(133,14): error TS2339: Property 'message' does not exist on type '{}'.
+
+    at createTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1617:30)
+    at node:internal/modules/cjs/loader:1839:10
+    at Object.require.extensions.<computed> [as .ts] (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14) {
+  diagnosticCodes: [ 2339, 2339 ]
+}
+
+> meroshare@1.0.0 watch-sheets
+> npx ts-node --compiler-options '{"module":"commonjs","esModuleInterop":true}' syncService.ts
+
+◇ injected env (7) from .env // tip: ⌘ enable debugging { debug: true }
+◇ injected env (0) from .env // tip: ⌘ override existing { override: true }
+◇ injected env (0) from .env // tip: ⌘ override existing { override: true }
+/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+nepseScraper.ts(81,88): error TS2339: Property 'message' does not exist on type '{}'.
+nepseScraper.ts(133,14): error TS2339: Property 'message' does not exist on type '{}'.
+
+    at createTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1617:30)
+    at node:internal/modules/cjs/loader:1839:10
+    at Object.require.extensions.<computed> [as .ts] (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14) {
+  diagnosticCodes: [ 2339, 2339 ]
+}
+
+> meroshare@1.0.0 watch-sheets
+> npx ts-node --compiler-options '{"module":"commonjs","esModuleInterop":true}' syncService.ts
+
+◇ injected env (7) from .env // tip: ◈ secrets for agents [www.dotenvx.com]
+◇ injected env (0) from .env // tip: ⌘ custom filepath { path: '/custom/path/.env' }
+◇ injected env (0) from .env // tip: ⌘ custom filepath { path: '/custom/path/.env' }
+/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+nepseScraper.ts(81,88): error TS2339: Property 'message' does not exist on type '{}'.
+nepseScraper.ts(133,14): error TS2339: Property 'message' does not exist on type '{}'.
+
+    at createTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1617:30)
+    at node:internal/modules/cjs/loader:1839:10
+    at Object.require.extensions.<computed> [as .ts] (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14) {
+  diagnosticCodes: [ 2339, 2339 ]
+}
+
+> meroshare@1.0.0 watch-sheets
+> npx ts-node --compiler-options '{"module":"commonjs","esModuleInterop":true}' syncService.ts
+
+◇ injected env (7) from .env // tip: ◈ secrets for agents [www.dotenvx.com]
+◇ injected env (0) from .env // tip: ◈ encrypted .env [www.dotenvx.com]
+◇ injected env (0) from .env // tip: ⌘ suppress logs { quiet: true }
+/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+nepseScraper.ts(81,88): error TS2339: Property 'message' does not exist on type '{}'.
+nepseScraper.ts(133,14): error TS2339: Property 'message' does not exist on type '{}'.
+
+    at createTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1617:30)
+    at node:internal/modules/cjs/loader:1839:10
+    at Object.require.extensions.<computed> [as .ts] (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14) {
+  diagnosticCodes: [ 2339, 2339 ]
+}
+
+> meroshare@1.0.0 watch-sheets
+> npx ts-node --compiler-options '{"module":"commonjs","esModuleInterop":true}' syncService.ts
+
+◇ injected env (7) from .env // tip: ◈ secrets for agents [www.dotenvx.com]
+◇ injected env (0) from .env // tip: ⌘ suppress logs { quiet: true }
+◇ injected env (0) from .env // tip: ⌘ multiple files { path: ['.env.local', '.env'] }
+/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+nepseScraper.ts(81,88): error TS2339: Property 'message' does not exist on type '{}'.
+nepseScraper.ts(133,14): error TS2339: Property 'message' does not exist on type '{}'.
+
+    at createTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1617:30)
+    at node:internal/modules/cjs/loader:1839:10
+    at Object.require.extensions.<computed> [as .ts] (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14) {
+  diagnosticCodes: [ 2339, 2339 ]
+}
+
+> meroshare@1.0.0 watch-sheets
+> npx ts-node --compiler-options '{"module":"commonjs","esModuleInterop":true}' syncService.ts
+
+◇ injected env (7) from .env // tip: ◈ secrets for agents [www.dotenvx.com]
+◇ injected env (0) from .env // tip: ⌘ enable debugging { debug: true }
+◇ injected env (0) from .env // tip: ⌘ override existing { override: true }
+/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+nepseScraper.ts(81,88): error TS2339: Property 'message' does not exist on type '{}'.
+nepseScraper.ts(133,14): error TS2339: Property 'message' does not exist on type '{}'.
+
+    at createTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1617:30)
+    at node:internal/modules/cjs/loader:1839:10
+    at Object.require.extensions.<computed> [as .ts] (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14) {
+  diagnosticCodes: [ 2339, 2339 ]
+}
+
+> meroshare@1.0.0 watch-sheets
+> npx ts-node --compiler-options '{"module":"commonjs","esModuleInterop":true}' syncService.ts
+
+◇ injected env (7) from .env // tip: ⌘ multiple files { path: ['.env.local', '.env'] }
+◇ injected env (0) from .env // tip: ◈ encrypted .env [www.dotenvx.com]
+◇ injected env (0) from .env // tip: ◈ secrets for agents [www.dotenvx.com]
+/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+nepseScraper.ts(81,88): error TS2339: Property 'message' does not exist on type '{}'.
+nepseScraper.ts(133,14): error TS2339: Property 'message' does not exist on type '{}'.
+
+    at createTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1617:30)
+    at node:internal/modules/cjs/loader:1839:10
+    at Object.require.extensions.<computed> [as .ts] (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14) {
+  diagnosticCodes: [ 2339, 2339 ]
+}
+
+> meroshare@1.0.0 watch-sheets
+> npx ts-node --compiler-options '{"module":"commonjs","esModuleInterop":true}' syncService.ts
+
+◇ injected env (7) from .env // tip: ⌁ auth for agents [www.vestauth.com]
+◇ injected env (0) from .env // tip: ⌘ enable debugging { debug: true }
+◇ injected env (0) from .env // tip: ⌘ multiple files { path: ['.env.local', '.env'] }
+/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+nepseScraper.ts(81,88): error TS2339: Property 'message' does not exist on type '{}'.
+nepseScraper.ts(133,14): error TS2339: Property 'message' does not exist on type '{}'.
+
+    at createTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1617:30)
+    at node:internal/modules/cjs/loader:1839:10
+    at Object.require.extensions.<computed> [as .ts] (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14) {
+  diagnosticCodes: [ 2339, 2339 ]
+}
+
+> meroshare@1.0.0 watch-sheets
+> npx ts-node --compiler-options '{"module":"commonjs","esModuleInterop":true}' syncService.ts
+
+◇ injected env (7) from .env // tip: ⌘ suppress logs { quiet: true }
+◇ injected env (0) from .env // tip: ⌘ multiple files { path: ['.env.local', '.env'] }
+◇ injected env (0) from .env // tip: ⌘ suppress logs { quiet: true }
+/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+nepseScraper.ts(81,88): error TS2339: Property 'message' does not exist on type '{}'.
+nepseScraper.ts(133,14): error TS2339: Property 'message' does not exist on type '{}'.
+
+    at createTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1617:30)
+    at node:internal/modules/cjs/loader:1839:10
+    at Object.require.extensions.<computed> [as .ts] (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14) {
+  diagnosticCodes: [ 2339, 2339 ]
+}
+
+> meroshare@1.0.0 watch-sheets
+> npx ts-node --compiler-options '{"module":"commonjs","esModuleInterop":true}' syncService.ts
+
+◇ injected env (7) from .env // tip: ⌘ multiple files { path: ['.env.local', '.env'] }
+◇ injected env (0) from .env // tip: ⌘ custom filepath { path: '/custom/path/.env' }
+◇ injected env (0) from .env // tip: ⌘ override existing { override: true }
+/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+nepseScraper.ts(81,88): error TS2339: Property 'message' does not exist on type '{}'.
+nepseScraper.ts(133,14): error TS2339: Property 'message' does not exist on type '{}'.
+
+    at createTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1617:30)
+    at node:internal/modules/cjs/loader:1839:10
+    at Object.require.extensions.<computed> [as .ts] (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14) {
+  diagnosticCodes: [ 2339, 2339 ]
+}
+
+> meroshare@1.0.0 watch-sheets
+> npx ts-node --compiler-options '{"module":"commonjs","esModuleInterop":true}' syncService.ts
+
+◇ injected env (7) from .env // tip: ⌘ multiple files { path: ['.env.local', '.env'] }
+◇ injected env (0) from .env // tip: ⌘ multiple files { path: ['.env.local', '.env'] }
+◇ injected env (0) from .env // tip: ⌘ enable debugging { debug: true }
+/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+nepseScraper.ts(81,88): error TS2339: Property 'message' does not exist on type '{}'.
+nepseScraper.ts(133,14): error TS2339: Property 'message' does not exist on type '{}'.
+
+    at createTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1617:30)
+    at node:internal/modules/cjs/loader:1839:10
+    at Object.require.extensions.<computed> [as .ts] (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14) {
+  diagnosticCodes: [ 2339, 2339 ]
+}
+
+> meroshare@1.0.0 watch-sheets
+> npx ts-node --compiler-options '{"module":"commonjs","esModuleInterop":true}' syncService.ts
+
+◇ injected env (7) from .env // tip: ◈ encrypted .env [www.dotenvx.com]
+◇ injected env (0) from .env // tip: ◈ encrypted .env [www.dotenvx.com]
+◇ injected env (0) from .env // tip: ⌘ enable debugging { debug: true }
+/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+nepseScraper.ts(81,88): error TS2339: Property 'message' does not exist on type '{}'.
+nepseScraper.ts(133,14): error TS2339: Property 'message' does not exist on type '{}'.
+
+    at createTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1617:30)
+    at node:internal/modules/cjs/loader:1839:10
+    at Object.require.extensions.<computed> [as .ts] (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14) {
+  diagnosticCodes: [ 2339, 2339 ]
+}
+
+> meroshare@1.0.0 watch-sheets
+> npx ts-node --compiler-options '{"module":"commonjs","esModuleInterop":true}' syncService.ts
+
+◇ injected env (7) from .env // tip: ⌘ multiple files { path: ['.env.local', '.env'] }
+◇ injected env (0) from .env // tip: ⌘ suppress logs { quiet: true }
+◇ injected env (0) from .env // tip: ⌘ override existing { override: true }
+/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+nepseScraper.ts(81,88): error TS2339: Property 'message' does not exist on type '{}'.
+nepseScraper.ts(133,14): error TS2339: Property 'message' does not exist on type '{}'.
+
+    at createTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1617:30)
+    at node:internal/modules/cjs/loader:1839:10
+    at Object.require.extensions.<computed> [as .ts] (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14) {
+  diagnosticCodes: [ 2339, 2339 ]
+}
+
+> meroshare@1.0.0 watch-sheets
+> npx ts-node --compiler-options '{"module":"commonjs","esModuleInterop":true}' syncService.ts
+
+◇ injected env (7) from .env // tip: ⌘ custom filepath { path: '/custom/path/.env' }
+◇ injected env (0) from .env // tip: ⌘ enable debugging { debug: true }
+◇ injected env (0) from .env // tip: ⌘ override existing { override: true }
+/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+nepseScraper.ts(81,88): error TS2339: Property 'message' does not exist on type '{}'.
+nepseScraper.ts(133,14): error TS2339: Property 'message' does not exist on type '{}'.
+
+    at createTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1617:30)
+    at node:internal/modules/cjs/loader:1839:10
+    at Object.require.extensions.<computed> [as .ts] (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14) {
+  diagnosticCodes: [ 2339, 2339 ]
+}
+
+> meroshare@1.0.0 watch-sheets
+> npx ts-node --compiler-options '{"module":"commonjs","esModuleInterop":true}' syncService.ts
+
+◇ injected env (7) from .env // tip: ◈ secrets for agents [www.dotenvx.com]
+◇ injected env (0) from .env // tip: ⌘ custom filepath { path: '/custom/path/.env' }
+◇ injected env (0) from .env // tip: ⌘ suppress logs { quiet: true }
+/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+nepseScraper.ts(81,88): error TS2339: Property 'message' does not exist on type '{}'.
+nepseScraper.ts(133,14): error TS2339: Property 'message' does not exist on type '{}'.
+
+    at createTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1617:30)
+    at node:internal/modules/cjs/loader:1839:10
+    at Object.require.extensions.<computed> [as .ts] (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14) {
+  diagnosticCodes: [ 2339, 2339 ]
+}
+
+> meroshare@1.0.0 watch-sheets
+> npx ts-node --compiler-options '{"module":"commonjs","esModuleInterop":true}' syncService.ts
+
+◇ injected env (7) from .env // tip: ⌘ custom filepath { path: '/custom/path/.env' }
+◇ injected env (0) from .env // tip: ⌘ suppress logs { quiet: true }
+◇ injected env (0) from .env // tip: ◈ encrypted .env [www.dotenvx.com]
+/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+nepseScraper.ts(81,88): error TS2339: Property 'message' does not exist on type '{}'.
+nepseScraper.ts(133,14): error TS2339: Property 'message' does not exist on type '{}'.
+
+    at createTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1617:30)
+    at node:internal/modules/cjs/loader:1839:10
+    at Object.require.extensions.<computed> [as .ts] (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14) {
+  diagnosticCodes: [ 2339, 2339 ]
+}
+
+> meroshare@1.0.0 watch-sheets
+> npx ts-node --compiler-options '{"module":"commonjs","esModuleInterop":true}' syncService.ts
+
+◇ injected env (7) from .env // tip: ◈ encrypted .env [www.dotenvx.com]
+◇ injected env (0) from .env // tip: ⌘ multiple files { path: ['.env.local', '.env'] }
+◇ injected env (0) from .env // tip: ⌁ auth for agents [www.vestauth.com]
+/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+nepseScraper.ts(81,88): error TS2339: Property 'message' does not exist on type '{}'.
+nepseScraper.ts(133,14): error TS2339: Property 'message' does not exist on type '{}'.
+
+    at createTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1617:30)
+    at node:internal/modules/cjs/loader:1839:10
+    at Object.require.extensions.<computed> [as .ts] (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14) {
+  diagnosticCodes: [ 2339, 2339 ]
+}
+
+> meroshare@1.0.0 watch-sheets
+> npx ts-node --compiler-options '{"module":"commonjs","esModuleInterop":true}' syncService.ts
+
+◇ injected env (7) from .env // tip: ⌘ custom filepath { path: '/custom/path/.env' }
+◇ injected env (0) from .env // tip: ⌘ suppress logs { quiet: true }
+◇ injected env (0) from .env // tip: ⌘ enable debugging { debug: true }
+/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+nepseScraper.ts(81,88): error TS2339: Property 'message' does not exist on type '{}'.
+nepseScraper.ts(133,14): error TS2339: Property 'message' does not exist on type '{}'.
+
+    at createTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1617:30)
+    at node:internal/modules/cjs/loader:1839:10
+    at Object.require.extensions.<computed> [as .ts] (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14) {
+  diagnosticCodes: [ 2339, 2339 ]
+}
+
+> meroshare@1.0.0 watch-sheets
+> npx ts-node --compiler-options '{"module":"commonjs","esModuleInterop":true}' syncService.ts
+
+◇ injected env (7) from .env // tip: ⌘ override existing { override: true }
+◇ injected env (0) from .env // tip: ⌘ multiple files { path: ['.env.local', '.env'] }
+◇ injected env (0) from .env // tip: ◈ encrypted .env [www.dotenvx.com]
+/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+nepseScraper.ts(81,88): error TS2339: Property 'message' does not exist on type '{}'.
+nepseScraper.ts(133,14): error TS2339: Property 'message' does not exist on type '{}'.
+
+    at createTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1617:30)
+    at node:internal/modules/cjs/loader:1839:10
+    at Object.require.extensions.<computed> [as .ts] (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14) {
+  diagnosticCodes: [ 2339, 2339 ]
+}
+
+> meroshare@1.0.0 watch-sheets
+> npx ts-node --compiler-options '{"module":"commonjs","esModuleInterop":true}' syncService.ts
+
+◇ injected env (7) from .env // tip: ⌘ enable debugging { debug: true }
+◇ injected env (0) from .env // tip: ⌘ suppress logs { quiet: true }
+◇ injected env (0) from .env // tip: ◈ encrypted .env [www.dotenvx.com]
+/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+nepseScraper.ts(81,88): error TS2339: Property 'message' does not exist on type '{}'.
+nepseScraper.ts(133,14): error TS2339: Property 'message' does not exist on type '{}'.
+
+    at createTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1617:30)
+    at node:internal/modules/cjs/loader:1839:10
+    at Object.require.extensions.<computed> [as .ts] (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14) {
+  diagnosticCodes: [ 2339, 2339 ]
+}
+
+> meroshare@1.0.0 watch-sheets
+> npx ts-node --compiler-options '{"module":"commonjs","esModuleInterop":true}' syncService.ts
+
+◇ injected env (7) from .env // tip: ⌘ suppress logs { quiet: true }
+◇ injected env (0) from .env // tip: ◈ encrypted .env [www.dotenvx.com]
+◇ injected env (0) from .env // tip: ⌁ auth for agents [www.vestauth.com]
+/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+nepseScraper.ts(81,88): error TS2339: Property 'message' does not exist on type '{}'.
+nepseScraper.ts(133,14): error TS2339: Property 'message' does not exist on type '{}'.
+
+    at createTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1617:30)
+    at node:internal/modules/cjs/loader:1839:10
+    at Object.require.extensions.<computed> [as .ts] (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14) {
+  diagnosticCodes: [ 2339, 2339 ]
+}
+
+> meroshare@1.0.0 watch-sheets
+> npx ts-node --compiler-options '{"module":"commonjs","esModuleInterop":true}' syncService.ts
+
+◇ injected env (7) from .env // tip: ⌁ auth for agents [www.vestauth.com]
+◇ injected env (0) from .env // tip: ◈ secrets for agents [www.dotenvx.com]
+◇ injected env (0) from .env // tip: ◈ secrets for agents [www.dotenvx.com]
+/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+nepseScraper.ts(81,88): error TS2339: Property 'message' does not exist on type '{}'.
+nepseScraper.ts(133,14): error TS2339: Property 'message' does not exist on type '{}'.
+
+    at createTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1617:30)
+    at node:internal/modules/cjs/loader:1839:10
+    at Object.require.extensions.<computed> [as .ts] (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14) {
+  diagnosticCodes: [ 2339, 2339 ]
+}
+
+> meroshare@1.0.0 watch-sheets
+> npx ts-node --compiler-options '{"module":"commonjs","esModuleInterop":true}' syncService.ts
+
+◇ injected env (7) from .env // tip: ⌘ custom filepath { path: '/custom/path/.env' }
+◇ injected env (0) from .env // tip: ⌘ suppress logs { quiet: true }
+◇ injected env (0) from .env // tip: ⌘ custom filepath { path: '/custom/path/.env' }
+/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+nepseScraper.ts(81,88): error TS2339: Property 'message' does not exist on type '{}'.
+nepseScraper.ts(133,14): error TS2339: Property 'message' does not exist on type '{}'.
+
+    at createTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1617:30)
+    at node:internal/modules/cjs/loader:1839:10
+    at Object.require.extensions.<computed> [as .ts] (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14) {
+  diagnosticCodes: [ 2339, 2339 ]
+}
+
+> meroshare@1.0.0 watch-sheets
+> npx ts-node --compiler-options '{"module":"commonjs","esModuleInterop":true}' syncService.ts
+
+◇ injected env (7) from .env // tip: ⌘ suppress logs { quiet: true }
+◇ injected env (0) from .env // tip: ⌘ suppress logs { quiet: true }
+◇ injected env (0) from .env // tip: ⌘ override existing { override: true }
+/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+nepseScraper.ts(81,88): error TS2339: Property 'message' does not exist on type '{}'.
+nepseScraper.ts(133,14): error TS2339: Property 'message' does not exist on type '{}'.
+
+    at createTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1617:30)
+    at node:internal/modules/cjs/loader:1839:10
+    at Object.require.extensions.<computed> [as .ts] (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14) {
+  diagnosticCodes: [ 2339, 2339 ]
+}
+
+> meroshare@1.0.0 watch-sheets
+> npx ts-node --compiler-options '{"module":"commonjs","esModuleInterop":true}' syncService.ts
+
+◇ injected env (7) from .env // tip: ◈ secrets for agents [www.dotenvx.com]
+◇ injected env (0) from .env // tip: ◈ secrets for agents [www.dotenvx.com]
+◇ injected env (0) from .env // tip: ⌁ auth for agents [www.vestauth.com]
+/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+nepseScraper.ts(81,88): error TS2339: Property 'message' does not exist on type '{}'.
+nepseScraper.ts(133,14): error TS2339: Property 'message' does not exist on type '{}'.
+
+    at createTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1617:30)
+    at node:internal/modules/cjs/loader:1839:10
+    at Object.require.extensions.<computed> [as .ts] (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14) {
+  diagnosticCodes: [ 2339, 2339 ]
+}
+
+> meroshare@1.0.0 watch-sheets
+> npx ts-node --compiler-options '{"module":"commonjs","esModuleInterop":true}' syncService.ts
+
+◇ injected env (7) from .env // tip: ⌘ enable debugging { debug: true }
+◇ injected env (0) from .env // tip: ◈ encrypted .env [www.dotenvx.com]
+◇ injected env (0) from .env // tip: ⌁ auth for agents [www.vestauth.com]
+/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+nepseScraper.ts(81,88): error TS2339: Property 'message' does not exist on type '{}'.
+nepseScraper.ts(133,14): error TS2339: Property 'message' does not exist on type '{}'.
+
+    at createTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1617:30)
+    at node:internal/modules/cjs/loader:1839:10
+    at Object.require.extensions.<computed> [as .ts] (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14) {
+  diagnosticCodes: [ 2339, 2339 ]
+}
+
+> meroshare@1.0.0 watch-sheets
+> npx ts-node --compiler-options '{"module":"commonjs","esModuleInterop":true}' syncService.ts
+
+◇ injected env (7) from .env // tip: ⌘ enable debugging { debug: true }
+◇ injected env (0) from .env // tip: ⌘ suppress logs { quiet: true }
+◇ injected env (0) from .env // tip: ◈ encrypted .env [www.dotenvx.com]
+/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+nepseScraper.ts(81,88): error TS2339: Property 'message' does not exist on type '{}'.
+nepseScraper.ts(133,14): error TS2339: Property 'message' does not exist on type '{}'.
+
+    at createTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1617:30)
+    at node:internal/modules/cjs/loader:1839:10
+    at Object.require.extensions.<computed> [as .ts] (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14) {
+  diagnosticCodes: [ 2339, 2339 ]
+}
+
+> meroshare@1.0.0 watch-sheets
+> npx ts-node --compiler-options '{"module":"commonjs","esModuleInterop":true}' syncService.ts
+
+◇ injected env (7) from .env // tip: ⌘ custom filepath { path: '/custom/path/.env' }
+◇ injected env (0) from .env // tip: ⌘ suppress logs { quiet: true }
+◇ injected env (0) from .env // tip: ⌘ multiple files { path: ['.env.local', '.env'] }
+/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+nepseScraper.ts(81,88): error TS2339: Property 'message' does not exist on type '{}'.
+nepseScraper.ts(133,14): error TS2339: Property 'message' does not exist on type '{}'.
+
+    at createTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1617:30)
+    at node:internal/modules/cjs/loader:1839:10
+    at Object.require.extensions.<computed> [as .ts] (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14) {
+  diagnosticCodes: [ 2339, 2339 ]
+}
+
+> meroshare@1.0.0 watch-sheets
+> npx ts-node --compiler-options '{"module":"commonjs","esModuleInterop":true}' syncService.ts
+
+◇ injected env (7) from .env // tip: ◈ encrypted .env [www.dotenvx.com]
+◇ injected env (0) from .env // tip: ⌘ suppress logs { quiet: true }
+◇ injected env (0) from .env // tip: ⌘ enable debugging { debug: true }
+/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+nepseScraper.ts(81,88): error TS2339: Property 'message' does not exist on type '{}'.
+nepseScraper.ts(133,14): error TS2339: Property 'message' does not exist on type '{}'.
+
+    at createTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1617:30)
+    at node:internal/modules/cjs/loader:1839:10
+    at Object.require.extensions.<computed> [as .ts] (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14) {
+  diagnosticCodes: [ 2339, 2339 ]
+}
+
+> meroshare@1.0.0 watch-sheets
+> npx ts-node --compiler-options '{"module":"commonjs","esModuleInterop":true}' syncService.ts
+
+◇ injected env (7) from .env // tip: ⌁ auth for agents [www.vestauth.com]
+◇ injected env (0) from .env // tip: ◈ encrypted .env [www.dotenvx.com]
+◇ injected env (0) from .env // tip: ⌘ custom filepath { path: '/custom/path/.env' }
+/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+nepseScraper.ts(81,88): error TS2339: Property 'message' does not exist on type '{}'.
+nepseScraper.ts(133,14): error TS2339: Property 'message' does not exist on type '{}'.
+
+    at createTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1617:30)
+    at node:internal/modules/cjs/loader:1839:10
+    at Object.require.extensions.<computed> [as .ts] (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14) {
+  diagnosticCodes: [ 2339, 2339 ]
+}
+
+> meroshare@1.0.0 watch-sheets
+> npx ts-node --compiler-options '{"module":"commonjs","esModuleInterop":true}' syncService.ts
+
+◇ injected env (7) from .env // tip: ⌘ multiple files { path: ['.env.local', '.env'] }
+◇ injected env (0) from .env // tip: ⌘ suppress logs { quiet: true }
+◇ injected env (0) from .env // tip: ⌘ multiple files { path: ['.env.local', '.env'] }
+/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+nepseScraper.ts(81,88): error TS2339: Property 'message' does not exist on type '{}'.
+nepseScraper.ts(133,14): error TS2339: Property 'message' does not exist on type '{}'.
+
+    at createTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1617:30)
+    at node:internal/modules/cjs/loader:1839:10
+    at Object.require.extensions.<computed> [as .ts] (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14) {
+  diagnosticCodes: [ 2339, 2339 ]
+}
+
+> meroshare@1.0.0 watch-sheets
+> npx ts-node --compiler-options '{"module":"commonjs","esModuleInterop":true}' syncService.ts
+
+◇ injected env (7) from .env // tip: ⌘ custom filepath { path: '/custom/path/.env' }
+◇ injected env (0) from .env // tip: ⌘ enable debugging { debug: true }
+◇ injected env (0) from .env // tip: ◈ secrets for agents [www.dotenvx.com]
+/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+nepseScraper.ts(81,88): error TS2339: Property 'message' does not exist on type '{}'.
+nepseScraper.ts(133,14): error TS2339: Property 'message' does not exist on type '{}'.
+
+    at createTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1617:30)
+    at node:internal/modules/cjs/loader:1839:10
+    at Object.require.extensions.<computed> [as .ts] (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14) {
+  diagnosticCodes: [ 2339, 2339 ]
+}
+
+> meroshare@1.0.0 watch-sheets
+> npx ts-node --compiler-options '{"module":"commonjs","esModuleInterop":true}' syncService.ts
+
+◇ injected env (7) from .env // tip: ◈ encrypted .env [www.dotenvx.com]
+◇ injected env (0) from .env // tip: ⌘ multiple files { path: ['.env.local', '.env'] }
+◇ injected env (0) from .env // tip: ⌘ multiple files { path: ['.env.local', '.env'] }
+/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+nepseScraper.ts(81,88): error TS2339: Property 'message' does not exist on type '{}'.
+nepseScraper.ts(133,14): error TS2339: Property 'message' does not exist on type '{}'.
+
+    at createTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1617:30)
+    at node:internal/modules/cjs/loader:1839:10
+    at Object.require.extensions.<computed> [as .ts] (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14) {
+  diagnosticCodes: [ 2339, 2339 ]
+}
+
+> meroshare@1.0.0 watch-sheets
+> npx ts-node --compiler-options '{"module":"commonjs","esModuleInterop":true}' syncService.ts
+
+◇ injected env (7) from .env // tip: ⌁ auth for agents [www.vestauth.com]
+◇ injected env (0) from .env // tip: ⌘ suppress logs { quiet: true }
+◇ injected env (0) from .env // tip: ⌘ custom filepath { path: '/custom/path/.env' }
+/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+nepseScraper.ts(81,88): error TS2339: Property 'message' does not exist on type '{}'.
+nepseScraper.ts(133,14): error TS2339: Property 'message' does not exist on type '{}'.
+
+    at createTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1617:30)
+    at node:internal/modules/cjs/loader:1839:10
+    at Object.require.extensions.<computed> [as .ts] (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14) {
+  diagnosticCodes: [ 2339, 2339 ]
+}
+
+> meroshare@1.0.0 watch-sheets
+> npx ts-node --compiler-options '{"module":"commonjs","esModuleInterop":true}' syncService.ts
+
+◇ injected env (7) from .env // tip: ⌘ suppress logs { quiet: true }
+◇ injected env (0) from .env // tip: ◈ encrypted .env [www.dotenvx.com]
+◇ injected env (0) from .env // tip: ⌁ auth for agents [www.vestauth.com]
+/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+nepseScraper.ts(133,14): error TS2339: Property 'message' does not exist on type '{}'.
+
+    at createTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1617:30)
+    at node:internal/modules/cjs/loader:1839:10
+    at Object.require.extensions.<computed> [as .ts] (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14) {
+  diagnosticCodes: [ 2339 ]
+}
+
+> meroshare@1.0.0 watch-sheets
+> npx ts-node --compiler-options '{"module":"commonjs","esModuleInterop":true}' syncService.ts
+
+◇ injected env (7) from .env // tip: ⌘ custom filepath { path: '/custom/path/.env' }
+◇ injected env (0) from .env // tip: ⌘ custom filepath { path: '/custom/path/.env' }
+◇ injected env (0) from .env // tip: ⌘ suppress logs { quiet: true }
+/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+nepseScraper.ts(133,14): error TS2339: Property 'message' does not exist on type '{}'.
+
+    at createTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1617:30)
+    at node:internal/modules/cjs/loader:1839:10
+    at Object.require.extensions.<computed> [as .ts] (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14) {
+  diagnosticCodes: [ 2339 ]
+}
+
+> meroshare@1.0.0 watch-sheets
+> npx ts-node --compiler-options '{"module":"commonjs","esModuleInterop":true}' syncService.ts
+
+◇ injected env (7) from .env // tip: ⌘ override existing { override: true }
+◇ injected env (0) from .env // tip: ⌘ override existing { override: true }
+◇ injected env (0) from .env // tip: ⌘ multiple files { path: ['.env.local', '.env'] }
+/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+nepseScraper.ts(133,14): error TS2339: Property 'message' does not exist on type '{}'.
+
+    at createTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1617:30)
+    at node:internal/modules/cjs/loader:1839:10
+    at Object.require.extensions.<computed> [as .ts] (/home/yogen/Desktop/workspace/playwrite/meroshare/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14) {
+  diagnosticCodes: [ 2339 ]
+}
+
+> meroshare@1.0.0 watch-sheets
+> npx ts-node --compiler-options '{"module":"commonjs","esModuleInterop":true}' syncService.ts
+
+◇ injected env (7) from .env // tip: ⌘ enable debugging { debug: true }
+◇ injected env (0) from .env // tip: ⌘ suppress logs { quiet: true }
+◇ injected env (0) from .env // tip: ⌁ auth for agents [www.vestauth.com]
+◇ injected env (0) from .env // tip: ⌘ enable debugging { debug: true }
+◇ injected env (0) from .env // tip: ⌘ multiple files { path: ['.env.local', '.env'] }
+Starting Google Sheets Sync Service...
+Connected to Spreadsheet: share info
+NEPSE scraper scheduled to run every day at 00 01 11 * * * and 0 05 16 * * *.
+Scheduled Promoter Unlock (daily at 35 11 * * *) and Fundamental Data (40 11 * * *) scrapers.
+Polling Google Sheets every 30 seconds...
+[9/4/2026, 12:18:35 PM] Scheduled time '2026-05-27 11:01:02' is in the past. Will not schedule.
+Detected command: CHECK_STATUS. Starting process...
+Error during polling loop: Request failed with status code 502 Bad Gateway: POST https://sheets.googleapis.com/v4/spreadsheets/1lv6yqKJG0GteIrlGPONtOXDW28h5KSCjg7xzph6yUw4/:batchUpdate
+Detected command: CHECK_STATUS. Starting process...
+Starting status check with concurrency limit: 2
+Error during polling loop: browserType.launch: Target page, context or browser has been closed
+Browser logs:
+
+╔════════════════════════════════════════════════════════════════════════════════════════════════╗
+║ Looks like you launched a headed browser without having a XServer running.                     ║
+║ Set either 'headless: true' or use 'xvfb-run <your-playwright-app>' before running Playwright. ║
+║                                                                                                ║
+║ <3 Playwright Team                                                                             ║
+╚════════════════════════════════════════════════════════════════════════════════════════════════╝
+Call log:
+  - <launching> /home/yogen/.cache/ms-playwright/chromium-1217/chrome-linux64/chrome --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-update --no-default-browser-check --disable-dev-shm-usage --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate,AutoDeElevate,RenderDocument,OptimizationHints --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --enable-automation --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --no-sandbox --disable-blink-features=AutomationControlled,AutomationControlled --user-data-dir=/tmp/playwright_chromiumdev_profile-G2XrfI --remote-debugging-pipe --no-startup-window
+  - <launched> pid=948510
+  - [pid=948510][err] [948510:948510:0904/122430.353676:ERROR:ui/ozone/platform/x11/ozone_platform_x11.cc:256] Missing X server or $DISPLAY
+  - [pid=948510][err] [948510:948510:0904/122430.354406:ERROR:ui/aura/env.cc:246] The platform failed to initialize.  Exiting.
+  - [pid=948510] <gracefully close start>
+  - [pid=948510] <kill>
+  - [pid=948510] <will force kill>
+  - [pid=948510] <process did exit: exitCode=1, signal=null>
+  - [pid=948510] starting temporary directories cleanup
+  - [pid=948510] finished temporary directories cleanup
+  - [pid=948510] <gracefully close end>
+
+Detected command: CHECK_STATUS. Starting process...
+Starting status check with concurrency limit: 2
+Error during polling loop: browserType.launch: Target page, context or browser has been closed
+Browser logs:
+
+╔════════════════════════════════════════════════════════════════════════════════════════════════╗
+║ Looks like you launched a headed browser without having a XServer running.                     ║
+║ Set either 'headless: true' or use 'xvfb-run <your-playwright-app>' before running Playwright. ║
+║                                                                                                ║
+║ <3 Playwright Team                                                                             ║
+╚════════════════════════════════════════════════════════════════════════════════════════════════╝
+Call log:
+  - <launching> /home/yogen/.cache/ms-playwright/chromium-1217/chrome-linux64/chrome --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-update --no-default-browser-check --disable-dev-shm-usage --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate,AutoDeElevate,RenderDocument,OptimizationHints --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --enable-automation --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --no-sandbox --disable-blink-features=AutomationControlled,AutomationControlled --user-data-dir=/tmp/playwright_chromiumdev_profile-geLKKj --remote-debugging-pipe --no-startup-window
+  - <launched> pid=949618
+  - [pid=949618][err] [949618:949618:0904/122639.442502:ERROR:ui/ozone/platform/x11/ozone_platform_x11.cc:256] Missing X server or $DISPLAY
+  - [pid=949618][err] [949618:949618:0904/122639.442541:ERROR:ui/aura/env.cc:246] The platform failed to initialize.  Exiting.
+  - [pid=949618] <gracefully close start>
+  - [pid=949618] <kill>
+  - [pid=949618] <will force kill>
+  - [pid=949618] <process did exit: exitCode=1, signal=null>
+  - [pid=949618] starting temporary directories cleanup
+  - [pid=949618] finished temporary directories cleanup
+  - [pid=949618] <gracefully close end>
+
+Detected command: CHECK_STATUS. Starting process...
+Starting status check with concurrency limit: 2
+Error during polling loop: browserType.launch: Target page, context or browser has been closed
+Browser logs:
+
+╔════════════════════════════════════════════════════════════════════════════════════════════════╗
+║ Looks like you launched a headed browser without having a XServer running.                     ║
+║ Set either 'headless: true' or use 'xvfb-run <your-playwright-app>' before running Playwright. ║
+║                                                                                                ║
+║ <3 Playwright Team                                                                             ║
+╚════════════════════════════════════════════════════════════════════════════════════════════════╝
+Call log:
+  - <launching> /home/yogen/.cache/ms-playwright/chromium-1217/chrome-linux64/chrome --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-update --no-default-browser-check --disable-dev-shm-usage --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate,AutoDeElevate,RenderDocument,OptimizationHints --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --enable-automation --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --no-sandbox --disable-blink-features=AutomationControlled,AutomationControlled --user-data-dir=/tmp/playwright_chromiumdev_profile-5jbpWE --remote-debugging-pipe --no-startup-window
+  - <launched> pid=950095
+  - [pid=950095][err] [950095:950095:0904/122744.605670:ERROR:ui/ozone/platform/x11/ozone_platform_x11.cc:256] Missing X server or $DISPLAY
+  - [pid=950095][err] [950095:950095:0904/122744.605724:ERROR:ui/aura/env.cc:246] The platform failed to initialize.  Exiting.
+  - [pid=950095] <gracefully close start>
+  - [pid=950095] <kill>
+  - [pid=950095] <will force kill>
+  - [pid=950095] <process did exit: exitCode=1, signal=null>
+  - [pid=950095] starting temporary directories cleanup
+  - [pid=950095] finished temporary directories cleanup
+  - [pid=950095] <gracefully close end>
+
+Detected command: CHECK_STATUS. Starting process...
+Starting status check with concurrency limit: 2
+Error during polling loop: browserType.launch: Target page, context or browser has been closed
+Browser logs:
+
+╔════════════════════════════════════════════════════════════════════════════════════════════════╗
+║ Looks like you launched a headed browser without having a XServer running.                     ║
+║ Set either 'headless: true' or use 'xvfb-run <your-playwright-app>' before running Playwright. ║
+║                                                                                                ║
+║ <3 Playwright Team                                                                             ║
+╚════════════════════════════════════════════════════════════════════════════════════════════════╝
+Call log:
+  - <launching> /home/yogen/.cache/ms-playwright/chromium-1217/chrome-linux64/chrome --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-update --no-default-browser-check --disable-dev-shm-usage --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate,AutoDeElevate,RenderDocument,OptimizationHints --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --enable-automation --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --no-sandbox --disable-blink-features=AutomationControlled,AutomationControlled --user-data-dir=/tmp/playwright_chromiumdev_profile-8PMDzu --remote-debugging-pipe --no-startup-window
+  - <launched> pid=950347
+  - [pid=950347][err] [950347:950347:0904/122818.678203:ERROR:ui/ozone/platform/x11/ozone_platform_x11.cc:256] Missing X server or $DISPLAY
+  - [pid=950347][err] [950347:950347:0904/122818.678250:ERROR:ui/aura/env.cc:246] The platform failed to initialize.  Exiting.
+  - [pid=950347] <gracefully close start>
+  - [pid=950347] <kill>
+  - [pid=950347] <will force kill>
+  - [pid=950347] <process did exit: exitCode=1, signal=null>
+  - [pid=950347] starting temporary directories cleanup
+  - [pid=950347] finished temporary directories cleanup
+  - [pid=950347] <gracefully close end>
+
+Detected command: CHECK_STATUS. Starting process...
+Starting status check with concurrency limit: 2
+Error during polling loop: browserType.launch: Target page, context or browser has been closed
+Browser logs:
+
+╔════════════════════════════════════════════════════════════════════════════════════════════════╗
+║ Looks like you launched a headed browser without having a XServer running.                     ║
+║ Set either 'headless: true' or use 'xvfb-run <your-playwright-app>' before running Playwright. ║
+║                                                                                                ║
+║ <3 Playwright Team                                                                             ║
+╚════════════════════════════════════════════════════════════════════════════════════════════════╝
+Call log:
+  - <launching> /home/yogen/.cache/ms-playwright/chromium-1217/chrome-linux64/chrome --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-update --no-default-browser-check --disable-dev-shm-usage --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate,AutoDeElevate,RenderDocument,OptimizationHints --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --enable-automation --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --no-sandbox --disable-blink-features=AutomationControlled,AutomationControlled --user-data-dir=/tmp/playwright_chromiumdev_profile-oyiIsu --remote-debugging-pipe --no-startup-window
+  - <launched> pid=950571
+  - [pid=950571][err] [950571:950571:0904/122852.605754:ERROR:ui/ozone/platform/x11/ozone_platform_x11.cc:256] Missing X server or $DISPLAY
+  - [pid=950571][err] [950571:950571:0904/122852.605785:ERROR:ui/aura/env.cc:246] The platform failed to initialize.  Exiting.
+  - [pid=950571] <gracefully close start>
+  - [pid=950571] <kill>
+  - [pid=950571] <will force kill>
+  - [pid=950571] <process did exit: exitCode=1, signal=null>
+  - [pid=950571] starting temporary directories cleanup
+  - [pid=950571] finished temporary directories cleanup
+  - [pid=950571] <gracefully close end>
+
+
+> meroshare@1.0.0 watch-sheets
+> npx ts-node --compiler-options '{"module":"commonjs","esModuleInterop":true}' syncService.ts
+
+◇ injected env (7) from .env // tip: ⌁ auth for agents [www.vestauth.com]
+◇ injected env (0) from .env // tip: ⌘ custom filepath { path: '/custom/path/.env' }
+◇ injected env (0) from .env // tip: ⌘ custom filepath { path: '/custom/path/.env' }
+◇ injected env (0) from .env // tip: ◈ secrets for agents [www.dotenvx.com]
+◇ injected env (0) from .env // tip: ⌘ override existing { override: true }
+Starting Google Sheets Sync Service...
+Connected to Spreadsheet: share info
+NEPSE scraper scheduled to run every day at 00 01 11 * * * and 0 05 16 * * *.
+Scheduled Promoter Unlock (daily at 35 11 * * *) and Fundamental Data (40 11 * * *) scrapers.
+Polling Google Sheets every 30 seconds...
+[9/4/2026, 1:36:58 PM] Scheduled time '2026-05-27 11:01:02' is in the past. Will not schedule.
+Detected command: CHECK_STATUS. Starting process...
+Starting status check with concurrency limit: 2
+[Yug maharjan] Navigating to Meroshare...
+[Yug maharjan] Logging in...
+[Yug maharjan] Navigating to MY ASBA for Everest Colour Limited...
+[Yug maharjan] Stock not found in list: Everest Colour Limited
+[Yug maharjan] Navigating to MY ASBA for Sarvottam Paints Industries Ltd...
+[Yug maharjan] Stock not found in list: Sarvottam Paints Industries Ltd
+All status checks completed.
+CHECK_STATUS process completed.
+
+> meroshare@1.0.0 watch-sheets
+> npx ts-node --compiler-options '{"module":"commonjs","esModuleInterop":true}' syncService.ts
+
+◇ injected env (7) from .env // tip: ⌘ suppress logs { quiet: true }
+◇ injected env (0) from .env // tip: ⌁ auth for agents [www.vestauth.com]
+◇ injected env (0) from .env // tip: ⌘ multiple files { path: ['.env.local', '.env'] }
+◇ injected env (0) from .env // tip: ⌘ override existing { override: true }
+◇ injected env (0) from .env // tip: ⌘ enable debugging { debug: true }
+Starting Google Sheets Sync Service...
+Connected to Spreadsheet: share info
+NEPSE scraper scheduled to run every day at 00 01 11 * * * and 0 05 16 * * *.
+Scheduled Promoter Unlock (daily at 35 11 * * *) and Fundamental Data (40 11 * * *) scrapers.
+Polling Google Sheets every 30 seconds...
+[9/4/2026, 1:51:21 PM] Scheduled time '2026-05-27 11:01:02' is in the past. Will not schedule.
+
+> meroshare@1.0.0 watch-sheets
+> npx ts-node --compiler-options '{"module":"commonjs","esModuleInterop":true}' syncService.ts
+
+◇ injected env (7) from .env // tip: ◈ encrypted .env [www.dotenvx.com]
+◇ injected env (0) from .env // tip: ◈ encrypted .env [www.dotenvx.com]
+◇ injected env (0) from .env // tip: ⌘ suppress logs { quiet: true }
+◇ injected env (0) from .env // tip: ⌘ enable debugging { debug: true }
+◇ injected env (0) from .env // tip: ⌘ override existing { override: true }
+Starting Google Sheets Sync Service...
+Connected to Spreadsheet: share info
+NEPSE scraper scheduled to run every day at 00 01 11 * * * and 0 05 16 * * *.
+Scheduled Promoter Unlock (daily at 35 11 * * *) and Fundamental Data (40 11 * * *) scrapers.
+Polling Google Sheets every 30 seconds...
+[9/4/2026, 1:51:24 PM] Scheduled time '2026-05-27 11:01:02' is in the past. Will not schedule.
+[Network Warning] Transient error encountered: fetch failed. Retrying in 2s...
+[Network Warning] Transient error encountered: fetch failed. Retrying in 2s...
+[Network Warning] Transient error encountered: fetch failed. Retrying in 4s...
+
+> meroshare@1.0.0 watch-sheets
+> npx ts-node --compiler-options '{"module":"commonjs","esModuleInterop":true}' syncService.ts
+
+◇ injected env (7) from .env // tip: ⌁ auth for agents [www.vestauth.com]
+◇ injected env (0) from .env // tip: ◈ secrets for agents [www.dotenvx.com]
+◇ injected env (0) from .env // tip: ◈ secrets for agents [www.dotenvx.com]
+◇ injected env (0) from .env // tip: ◈ encrypted .env [www.dotenvx.com]
+◇ injected env (0) from .env // tip: ⌘ suppress logs { quiet: true }
+Starting Google Sheets Sync Service...
+Connected to Spreadsheet: share info
+NEPSE scraper scheduled to run every day at 00 01 11 * * * and 0 05 16 * * *.
+Scheduled Promoter Unlock (daily at 35 11 * * *) and Fundamental Data (40 11 * * *) scrapers.
+Polling Google Sheets every 30 seconds...
+[9/4/2026, 3:17:00 PM] Scheduled time '2026-05-27 11:01:02' is in the past. Will not schedule.
+Detected command: CHECK_STATUS. Starting process...
+Starting status check with concurrency limit: 2
+[Yug maharjan] Navigating to Meroshare...
+[Yug maharjan] Logging in...
+[Yug maharjan] Navigating to MY ASBA for Everest Colour Limited...
+[Yug maharjan] Stock not found in list: Everest Colour Limited
+[Yug maharjan] Navigating to MY ASBA for Sarvottam Paints Industries Ltd...
+[Yug maharjan] Stock not found in list: Sarvottam Paints Industries Ltd
+All status checks completed.
+CHECK_STATUS process completed.
+[9/4/2026, 4:05:00 PM] Starting NEPSE scraper...
+[9/4/2026, 4:05:00 PM] NEPSE scraper attempt 1/3...
+Navigating to https://www.nepalstock.com/ ...
+Waiting for element...
+Browser closed.
+Extracted Value: Market Closed
+Connecting to Google Sheets...
+Connected to Document: share info
+Successfully saved "Market Closed" to 'Report' sheet at B1.
+Error during polling loop: Request timed out: POST https://sheets.googleapis.com/v4/spreadsheets/1lv6yqKJG0GteIrlGPONtOXDW28h5KSCjg7xzph6yUw4/:getByDataFilter
+Error handling TMS scheduled time: Request timed out: POST https://sheets.googleapis.com/v4/spreadsheets/1lv6yqKJG0GteIrlGPONtOXDW28h5KSCjg7xzph6yUw4/:getByDataFilter
+[Network Warning] Transient error encountered: fetch failed. Retrying in 2s...
+[9/5/2026, 11:01:00 AM] Starting NEPSE scraper...
+[9/5/2026, 11:01:00 AM] NEPSE scraper attempt 1/3...
+Navigating to https://www.nepalstock.com/ ...
+Waiting for element...
+Browser closed.
+Extracted Value: Market Closed
+Connecting to Google Sheets...
+Connected to Document: share info
+Successfully saved "Market Closed" to 'Report' sheet at B1.
+[9/5/2026, 11:35:00 AM] Scheduled Job: Running Promoter Unlock Scraper...
+Navigating to Nepse Alpha Promoter Lock-In page...
+Error in fetchPromoterUnlockData: page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to "https://nepsealpha.com/promoter-lock-in", waiting until "networkidle"
+
+    at fetchPromoterUnlockData (/home/yogen/Desktop/workspace/playwrite/meroshare/promoterUnlock.ts:19:20)
+    at async Job.job (/home/yogen/Desktop/workspace/playwrite/meroshare/syncService.ts:50:39) {
+  name: 'TimeoutError'
+}
+[9/5/2026, 11:35:34 AM] Scheduled Job Error (Promoter Unlock): page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to "https://nepsealpha.com/promoter-lock-in", waiting until "networkidle"
+
+[9/5/2026, 11:40:00 AM] Scheduled Job: Running Fundamental Data Scraper...
+Navigating to Nepse Alpha Fundamental Info page...
+Error in fetchFundamentalData: page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to "https://www.nepsealpha.com/trading-signals/funda", waiting until "networkidle"
+
+    at fetchFundamentalData (/home/yogen/Desktop/workspace/playwrite/meroshare/fundaScraper.ts:20:20)
+    at async Job.job (/home/yogen/Desktop/workspace/playwrite/meroshare/syncService.ts:63:13) {
+  name: 'TimeoutError'
+}
+[9/5/2026, 11:40:31 AM] Scheduled Job Error (Fundamental Data): page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to "https://www.nepsealpha.com/trading-signals/funda", waiting until "networkidle"
+
+[Network Warning] Transient error encountered: fetch failed. Retrying in 2s...
+[9/5/2026, 4:05:00 PM] Starting NEPSE scraper...
+[9/5/2026, 4:05:00 PM] NEPSE scraper attempt 1/3...
+Navigating to https://www.nepalstock.com/ ...
+Waiting for element...
+Browser closed.
+Extracted Value: Market Closed
+Connecting to Google Sheets...
+Connected to Document: share info
+Successfully saved "Market Closed" to 'Report' sheet at B1.
+[Network Warning] Transient error encountered: fetch failed. Retrying in 2s...
+[9/6/2026, 11:01:00 AM] Starting NEPSE scraper...
+[9/6/2026, 11:01:00 AM] NEPSE scraper attempt 1/3...
+Navigating to https://www.nepalstock.com/ ...
+Waiting for element...
+Browser closed.
+Extracted Value: Market Closed
+Connecting to Google Sheets...
+Connected to Document: share info
+Successfully saved "Market Closed" to 'Report' sheet at B1.
+[9/6/2026, 11:35:00 AM] Scheduled Job: Running Promoter Unlock Scraper...
+Navigating to Nepse Alpha Promoter Lock-In page...
+Error in fetchPromoterUnlockData: page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to "https://nepsealpha.com/promoter-lock-in", waiting until "networkidle"
+
+    at fetchPromoterUnlockData (/home/yogen/Desktop/workspace/playwrite/meroshare/promoterUnlock.ts:19:20)
+    at async Job.job (/home/yogen/Desktop/workspace/playwrite/meroshare/syncService.ts:50:39) {
+  name: 'TimeoutError'
+}
+[9/6/2026, 11:35:33 AM] Scheduled Job Error (Promoter Unlock): page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to "https://nepsealpha.com/promoter-lock-in", waiting until "networkidle"
+
+[9/6/2026, 11:40:00 AM] Scheduled Job: Running Fundamental Data Scraper...
+Navigating to Nepse Alpha Fundamental Info page...
+Error in fetchFundamentalData: page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to "https://www.nepsealpha.com/trading-signals/funda", waiting until "networkidle"
+
+    at fetchFundamentalData (/home/yogen/Desktop/workspace/playwrite/meroshare/fundaScraper.ts:20:20)
+    at async Job.job (/home/yogen/Desktop/workspace/playwrite/meroshare/syncService.ts:63:13) {
+  name: 'TimeoutError'
+}
+[9/6/2026, 11:40:31 AM] Scheduled Job Error (Fundamental Data): page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to "https://www.nepsealpha.com/trading-signals/funda", waiting until "networkidle"
+
+[9/6/2026, 4:05:00 PM] Starting NEPSE scraper...
+[9/6/2026, 4:05:00 PM] NEPSE scraper attempt 1/3...
+Navigating to https://www.nepalstock.com/ ...
+Waiting for element...
+Browser closed.
+Extracted Value: Market Closed
+Connecting to Google Sheets...
+Connected to Document: share info
+Successfully saved "Market Closed" to 'Report' sheet at B1.
+[Network Warning] Transient error encountered: fetch failed. Retrying in 2s...
+[Network Warning] Transient error encountered: fetch failed. Retrying in 2s...
+[Network Warning] Transient error encountered: fetch failed. Retrying in 2s...
+[Network Warning] Transient error encountered: fetch failed. Retrying in 2s...
+[Network Warning] Transient error encountered: fetch failed. Retrying in 4s...
+[Network Warning] Transient error encountered: fetch failed. Retrying in 8s...
+Detected command: CHECK_STATUS. Starting process...
+Starting status check with concurrency limit: 2
+[Yug maharjan] Navigating to Meroshare...
+[Yug maharjan] Logging in...
+[Yug maharjan] Navigating to MY ASBA for Everest Colour Limited...
+Failed execution for user Yug maharjan: locator.waitFor: Target page, context or browser has been closed
+Call log:
+  - waiting for locator('//*[@id="sideBar"]/nav/ul/li[8]/a') to be visible
+
+    at /home/yogen/Desktop/workspace/playwrite/meroshare/checkStatus.ts:123:38
+All status checks completed.
+CHECK_STATUS process completed.
+Detected command: START_SCHEDULER. Starting scheduler...
+Loaded 11 user configuration(s) for scheduling.
+[SKIPPED] User Yug maharjan is marked with isApply: false.
+[SCHEDULED] IPO Application for Maya chori maharjan set to run at: 9/7/2026, 10:15:00 AM
+[SCHEDULED] IPO Application for Jyoti Maharjan set to run at: 9/7/2026, 10:15:00 AM
+[SCHEDULED] IPO Application for Macha kaji Maharjan set to run at: 9/7/2026, 10:15:00 AM
+[SCHEDULED] IPO Application for Urmila tyata set to run at: 9/7/2026, 10:15:00 AM
+[SCHEDULED] IPO Application for Sankha maya tyata set to run at: 9/7/2026, 10:15:00 AM
+[SCHEDULED] IPO Application for Shova Maharjan set to run at: 9/7/2026, 10:15:00 AM
+[SCHEDULED] IPO Application for Macha raja Maharjan set to run at: 9/7/2026, 10:15:00 AM
+[SCHEDULED] IPO Application for Adil Maharjan set to run at: 9/7/2026, 10:15:00 AM
+[SCHEDULED] IPO Application for Yogen Maharjan set to run at: 9/7/2026, 10:15:00 AM
+[SKIPPED] User  is marked with isApply: false.
+
+Scheduler is running and waiting for events...
+Scheduler started via Google Sheets.
+Detected command: START_SCHEDULER. Starting scheduler...
+Loaded 11 user configuration(s) for scheduling.
+[SKIPPED] User Yug maharjan is marked with isApply: false.
+[SCHEDULED] IPO Application for Maya chori maharjan set to run at: 9/7/2026, 10:15:00 AM
+[SCHEDULED] IPO Application for Jyoti Maharjan set to run at: 9/7/2026, 10:15:00 AM
+[SCHEDULED] IPO Application for Macha kaji Maharjan set to run at: 9/7/2026, 10:15:00 AM
+[SCHEDULED] IPO Application for Urmila tyata set to run at: 9/7/2026, 10:15:00 AM
+[SCHEDULED] IPO Application for Sankha maya tyata set to run at: 9/7/2026, 10:15:00 AM
+[SCHEDULED] IPO Application for Shova Maharjan set to run at: 9/7/2026, 10:15:00 AM
+[SCHEDULED] IPO Application for Macha raja Maharjan set to run at: 9/7/2026, 10:15:00 AM
+[SCHEDULED] IPO Application for Adil Maharjan set to run at: 9/7/2026, 10:15:00 AM
+[SCHEDULED] IPO Application for Yogen Maharjan set to run at: 9/7/2026, 10:15:00 AM
+[SKIPPED] User  is marked with isApply: false.
+
+Scheduler is running and waiting for events...
+Scheduler started via Google Sheets.
+                                                                                                                                                                                                                                                                                                                                 
+> meroshare@1.0.0 watch-sheets
+> npx ts-node --compiler-options '{"module":"commonjs","esModuleInterop":true}' syncService.ts
+
+◇ injected env (7) from .env // tip: ⌘ multiple files { path: ['.env.local', '.env'] }
+◇ injected env (0) from .env // tip: ⌘ enable debugging { debug: true }
+◇ injected env (0) from .env // tip: ◈ encrypted .env [www.dotenvx.com]
+◇ injected env (0) from .env // tip: ⌘ override existing { override: true }
+◇ injected env (0) from .env // tip: ⌘ multiple files { path: ['.env.local', '.env'] }
+Starting Google Sheets Sync Service...
+Connected to Spreadsheet: share info
+NEPSE scraper scheduled to run every day at 00 01 11 * * * and 0 05 16 * * *.
+Scheduled Promoter Unlock (daily at 35 11 * * *) and Fundamental Data (40 11 * * *) scrapers.
+Polling Google Sheets every 30 seconds...
+[9/7/2026, 10:16:43 AM] Scheduled time '2026-05-27 11:01:02' is in the past. Will not schedule.
+Detected command: START_SCHEDULER. Starting scheduler...
+Loaded 11 user configuration(s) for scheduling.
+[SCHEDULED] IPO Application for Yug maharjan set to run at: 9/7/2026, 10:20:00 AM
+[SKIPPED] User Maya chori maharjan is marked with isApply: false.
+[SKIPPED] User Jyoti Maharjan is marked with isApply: false.
+[SKIPPED] User Macha kaji Maharjan is marked with isApply: false.
+[SKIPPED] User Urmila tyata is marked with isApply: false.
+[SKIPPED] User Sankha maya tyata is marked with isApply: false.
+[SKIPPED] User Shova Maharjan is marked with isApply: false.
+[SKIPPED] User Macha raja Maharjan is marked with isApply: false.
+[SKIPPED] User Adil Maharjan is marked with isApply: false.
+[SKIPPED] User Yogen Maharjan is marked with isApply: false.
+[SKIPPED] User  is marked with isApply: false.
+
+Scheduler is running and waiting for events...
+Scheduler started via Google Sheets.
+
+================================
+[STARTING TASK] Executing scheduled application for Yug maharjan at 9/7/2026, 10:20:00 AM
+================================
+
+Starting automation for user: 2831033...
+Navigating to Meroshare...
+Logging in...
+Clicking on sidebar item (My ASBA)...
+Scanning list for "Ordinary Shares" with an "Apply" button...
+Clicked apply button successfully.
+Filling out the application form...
+Waiting for verification pause...
+Clicking the proceed button...
+Entering transaction PIN...
+Clicking the final Apply button...
+The application has been successfully submitted!
+Closing browser...
+Connected to Spreadsheet: share info
+[SUCCESS] Updated Google Sheet for Yug maharjan: marked as IPO applied.
+Detected command: START_SCHEDULER. Starting scheduler...
+Loaded 10 user configuration(s) for scheduling.
+[SKIPPED] User Yug maharjan is marked with isApply: false.
+[SCHEDULED] IPO Application for Maya chori maharjan set to run at: 9/7/2026, 6:00:00 PM
+[SCHEDULED] IPO Application for Jyoti Maharjan set to run at: 9/8/2026, 6:15:00 AM
+[SCHEDULED] IPO Application for Macha kaji Maharjan set to run at: 9/8/2026, 1:15:00 PM
+[SCHEDULED] IPO Application for Urmila tyata set to run at: 9/8/2026, 11:15:00 PM
+[SCHEDULED] IPO Application for Sankha maya tyata set to run at: 9/9/2026, 6:15:00 AM
+[SCHEDULED] IPO Application for Shova Maharjan set to run at: 9/9/2026, 11:15:00 AM
+[SCHEDULED] IPO Application for Macha raja Maharjan set to run at: 9/9/2026, 8:15:00 PM
+[SCHEDULED] IPO Application for Adil Maharjan set to run at: 9/10/2026, 3:15:00 AM
+[SCHEDULED] IPO Application for Yogen Maharjan set to run at: 9/10/2026, 1:15:00 PM
+
+Scheduler is running and waiting for events...
+Scheduler started via Google Sheets.
+Detected command: CHECK_STATUS. Starting process...
+Starting status check with concurrency limit: 2
+[Yug maharjan] Navigating to Meroshare...
+[Yug maharjan] Logging in...
+[Yug maharjan] Navigating to MY ASBA for Beni Hydropower Project Limited...
+[Yug maharjan] Extracting status for Beni Hydropower Project Limited...
+[Yug maharjan] Status for Beni Hydropower Project Limited: Unverified
+All status checks completed.
+CHECK_STATUS process completed.
+Detected command: START_SCHEDULER. Starting scheduler...
+Loaded 10 user configuration(s) for scheduling.
+[SKIPPED] User Yug maharjan is marked with isApply: false.
+[SCHEDULED] IPO Application for Maya chori maharjan set to run at: 9/7/2026, 6:00:00 PM
+[SCHEDULED] IPO Application for Jyoti Maharjan set to run at: 9/8/2026, 6:15:00 AM
+[SCHEDULED] IPO Application for Macha kaji Maharjan set to run at: 9/8/2026, 1:15:00 PM
+[SCHEDULED] IPO Application for Urmila tyata set to run at: 9/8/2026, 11:15:00 PM
+[SCHEDULED] IPO Application for Sankha maya tyata set to run at: 9/9/2026, 6:15:00 AM
+[SCHEDULED] IPO Application for Shova Maharjan set to run at: 9/9/2026, 11:15:00 AM
+[SCHEDULED] IPO Application for Macha raja Maharjan set to run at: 9/9/2026, 8:15:00 PM
+[SCHEDULED] IPO Application for Adil Maharjan set to run at: 9/10/2026, 3:15:00 AM
+[SCHEDULED] IPO Application for Yogen Maharjan set to run at: 9/10/2026, 1:15:00 PM
+
+Scheduler is running and waiting for events...
+Scheduler started via Google Sheets.
+[9/7/2026, 11:01:00 AM] Starting NEPSE scraper...
+[9/7/2026, 11:01:00 AM] NEPSE scraper attempt 1/3...
+Navigating to https://www.nepalstock.com/ ...
+Waiting for element...
+Browser closed.
+Extracted Value: Live Market
+Connecting to Google Sheets...
+Connected to Document: share info
+Successfully saved "Live Market" to 'Report' sheet at B1.
+[Network Warning] Transient error encountered: fetch failed. Retrying in 2s...
+[Network Warning] Transient error encountered: fetch failed. Retrying in 4s...
+[Network Warning] Transient error encountered: fetch failed. Retrying in 8s...
+[9/7/2026, 11:41:35 AM] Scheduled Job: Running Promoter Unlock Scraper...
+[9/7/2026, 11:41:35 AM] Scheduled Job: Running Fundamental Data Scraper...
+Navigating to Nepse Alpha Promoter Lock-In page...
+Navigating to Nepse Alpha Fundamental Info page...
+Clicking "Next 3 Months" button...
+Waiting for table to refresh data...
+Detected headers: Symbol, Listed In NEPSE, LTP, Share Outstanding, Shares Floated, Promoter Shares, Promoter Lock-In Till, Locked Share, MF & Others Lock-In Till, Price Before 1 Month, Price After 1 Month
+Successfully extracted 7 rows.
+[9/7/2026, 11:41:51 AM] Scheduled Job: Promoter Unlock Scraper completed successfully.
+Setting table length to 1000...
+Extracting data from funda-table...
+Detected headers: Symbol, Ratios Summary, Financial Strength, Sector, Daily Gain, LTP, PE, PB, ROE, ROA, PEG, Discount From Graham Number, PE vs Sector, PB vs Sector, PEG vs Sector, Dividend Yield vs Sector, ROE Vs Sector, YOY Growth Vs Sector, QOQ Growth Vs Sector, ROA Vs Sector, Dividend Yield, Payout Ratio
+Extracting data from page 1...
+Extracted 100 rows from page 1.
+Moving to next page...
+Extracting data from page 2...
+Extracted 100 rows from page 2.
+Moving to next page...
+Extracting data from page 3...
+Extracted 83 rows from page 3.
+Reached the last page.
+Successfully extracted a total of 283 rows.
+Saving data to Google Sheets...
+Connected to Spreadsheet: share info
+Successfully saved data to Google Sheets tab "fundamentalInfo"
+[9/7/2026, 11:42:06 AM] Scheduled Job: Fundamental Data Scraper completed successfully.
+[Network Warning] Transient error encountered: Request failed with status code 502 Bad Gateway: POST https://sheets.googleapis.com/v4/spreadsheets/1lv6yqKJG0GteIrlGPONtOXDW28h5KSCjg7xzph6yUw4/:getByDataFilter. Retrying in 2s...
+[9/7/2026, 4:05:00 PM] Starting NEPSE scraper...
+[9/7/2026, 4:05:00 PM] NEPSE scraper attempt 1/3...
+Navigating to https://www.nepalstock.com/ ...
+Waiting for element...
+Browser closed.
+Extracted Value: Market Closed
+Connecting to Google Sheets...
+Connected to Document: share info
+Successfully saved "Market Closed" to 'Report' sheet at B1.
+
+================================
+[STARTING TASK] Executing scheduled application for Maya chori maharjan at 9/7/2026, 6:00:00 PM
+================================
+
+Starting automation for user: 490863...
+
+================================
+[STARTING TASK] Executing scheduled application for Maya chori maharjan at 9/7/2026, 6:00:00 PM
+================================
+
+Starting automation for user: 490863...
+Navigating to Meroshare...
+Navigating to Meroshare...
+White screen or failed to load. Reloading...
+White screen or failed to load. Reloading...
+Logging in...
+Logging in...
+Clicking on sidebar item (My ASBA)...
+Clicking on sidebar item (My ASBA)...
+Scanning list for "Ordinary Shares" with an "Apply" button...
+Clicked apply button successfully.
+Filling out the application form...
+Waiting for verification pause...
+An error occurred during automation: locator.waitFor: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator('//*[@id="sideBar"]/nav/ul/li[8]/a') to be visible
+
+    at runAutomation (/home/yogen/Desktop/workspace/playwrite/meroshare/automate.ts:66:22)
+    at async Job.job (/home/yogen/Desktop/workspace/playwrite/meroshare/scheduler.ts:49:9) {
+  name: 'TimeoutError'
+}
+Closing browser...
+Execution failed for Maya chori maharjan: locator.waitFor: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator('//*[@id="sideBar"]/nav/ul/li[8]/a') to be visible
+
+    at runAutomation (/home/yogen/Desktop/workspace/playwrite/meroshare/automate.ts:66:22)
+    at async Job.job (/home/yogen/Desktop/workspace/playwrite/meroshare/scheduler.ts:49:9) {
+  name: 'TimeoutError'
+}
+Connected to Spreadsheet: share info
+[FAILED] Updated Google Sheet for Maya chori maharjan: marked as IPO applied failed.
+Clicking the proceed button...
+Entering transaction PIN...
+Clicking the final Apply button...
+The application has been successfully submitted!
+Closing browser...
+Connected to Spreadsheet: share info
+[SUCCESS] Updated Google Sheet for Maya chori maharjan: marked as IPO applied.
+
+================================
+[STARTING TASK] Executing scheduled application for Jyoti Maharjan at 9/8/2026, 6:15:00 AM
+================================
+
+Starting automation for user: 489241...
+
+================================
+[STARTING TASK] Executing scheduled application for Jyoti Maharjan at 9/8/2026, 6:15:00 AM
+================================
+
+Starting automation for user: 489241...
+Navigating to Meroshare...
+Navigating to Meroshare...
+White screen or failed to load. Reloading...
+White screen or failed to load. Reloading...
+Logging in...
+Logging in...
+Clicking on sidebar item (My ASBA)...
+Clicking on sidebar item (My ASBA)...
+An error occurred during automation: locator.waitFor: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator('//*[@id="sideBar"]/nav/ul/li[8]/a') to be visible
+
+    at runAutomation (/home/yogen/Desktop/workspace/playwrite/meroshare/automate.ts:66:22)
+    at async Job.job (/home/yogen/Desktop/workspace/playwrite/meroshare/scheduler.ts:49:9) {
+  name: 'TimeoutError'
+}
+Closing browser...
+Execution failed for Jyoti Maharjan: locator.waitFor: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator('//*[@id="sideBar"]/nav/ul/li[8]/a') to be visible
+
+    at runAutomation (/home/yogen/Desktop/workspace/playwrite/meroshare/automate.ts:66:22)
+    at async Job.job (/home/yogen/Desktop/workspace/playwrite/meroshare/scheduler.ts:49:9) {
+  name: 'TimeoutError'
+}
+An error occurred during automation: locator.waitFor: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator('//*[@id="sideBar"]/nav/ul/li[8]/a') to be visible
+
+    at runAutomation (/home/yogen/Desktop/workspace/playwrite/meroshare/automate.ts:66:22)
+    at async Job.job (/home/yogen/Desktop/workspace/playwrite/meroshare/scheduler.ts:49:9) {
+  name: 'TimeoutError'
+}
+Closing browser...
+Connected to Spreadsheet: share info
+Execution failed for Jyoti Maharjan: locator.waitFor: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator('//*[@id="sideBar"]/nav/ul/li[8]/a') to be visible
+
+    at runAutomation (/home/yogen/Desktop/workspace/playwrite/meroshare/automate.ts:66:22)
+    at async Job.job (/home/yogen/Desktop/workspace/playwrite/meroshare/scheduler.ts:49:9) {
+  name: 'TimeoutError'
+}
+Connected to Spreadsheet: share info
+[FAILED] Updated Google Sheet for Jyoti Maharjan: marked as IPO applied failed.
+[FAILED] Updated Google Sheet for Jyoti Maharjan: marked as IPO applied failed.
+Detected command: CHECK_STATUS. Starting process...
+Starting status check with concurrency limit: 2
+[Urmila tyata] Navigating to Meroshare...
+[Macha kaji Maharjan] Navigating to Meroshare...
+[Macha kaji Maharjan] White screen or failed to load. Reloading...
+Failed execution for user Urmila tyata: keyboard.type: Target page, context or browser has been closed
+    at humanType (/home/yogen/Desktop/workspace/playwrite/meroshare/humanUtils.ts:17:29)
+    at async login (/home/yogen/Desktop/workspace/playwrite/meroshare/checkStatus.ts:69:5)
+    at async /home/yogen/Desktop/workspace/playwrite/meroshare/checkStatus.ts:115:17
+[Sankha maya tyata] Navigating to Meroshare...
+Failed execution for user Sankha maya tyata: page.goto: Target page, context or browser has been closed
+Call log:
+  - navigating to "https://meroshare.cdsc.com.np/", waiting until "networkidle"
+
+    at login (/home/yogen/Desktop/workspace/playwrite/meroshare/checkStatus.ts:44:20)
+    at /home/yogen/Desktop/workspace/playwrite/meroshare/checkStatus.ts:115:23
+[Shova Maharjan] Navigating to Meroshare...
+Failed execution for user Shova Maharjan: page.goto: Target page, context or browser has been closed
+Call log:
+  - navigating to "https://meroshare.cdsc.com.np/", waiting until "networkidle"
+
+    at login (/home/yogen/Desktop/workspace/playwrite/meroshare/checkStatus.ts:44:20)
+    at /home/yogen/Desktop/workspace/playwrite/meroshare/checkStatus.ts:115:23
+[Macha raja Maharjan] Navigating to Meroshare...
+Failed execution for user Macha raja Maharjan: page.goto: Target page, context or browser has been closed
+Call log:
+  - navigating to "https://meroshare.cdsc.com.np/", waiting until "networkidle"
+
+    at login (/home/yogen/Desktop/workspace/playwrite/meroshare/checkStatus.ts:44:20)
+    at /home/yogen/Desktop/workspace/playwrite/meroshare/checkStatus.ts:115:23
+[Adil Maharjan] Navigating to Meroshare...
+Failed execution for user Adil Maharjan: page.goto: Target page, context or browser has been closed
+Call log:
+  - navigating to "https://meroshare.cdsc.com.np/", waiting until "networkidle"
+
+    at login (/home/yogen/Desktop/workspace/playwrite/meroshare/checkStatus.ts:44:20)
+    at /home/yogen/Desktop/workspace/playwrite/meroshare/checkStatus.ts:115:23
+[Yogen Maharjan] Navigating to Meroshare...
+Failed execution for user Yogen Maharjan: page.goto: Target page, context or browser has been closed
+Call log:
+  - navigating to "https://meroshare.cdsc.com.np/", waiting until "networkidle"
+
+    at login (/home/yogen/Desktop/workspace/playwrite/meroshare/checkStatus.ts:44:20)
+    at /home/yogen/Desktop/workspace/playwrite/meroshare/checkStatus.ts:115:23
+[Macha kaji Maharjan] Logging in...
+Failed execution for user Macha kaji Maharjan: locator.hover: Target page, context or browser has been closed
+Call log:
+  - waiting for locator('button[type="submit"]').filter({ hasText: 'Login' })
+    - locator resolved to <button type="submit" _ngcontent-c0="" class="btn sign-in">Login</button>
+  - attempting hover action
+    - waiting for element to be visible and stable
+
+    at humanClick (/home/yogen/Desktop/workspace/playwrite/meroshare/humanUtils.ts:26:19)
+    at login (/home/yogen/Desktop/workspace/playwrite/meroshare/checkStatus.ts:75:21)
+    at async /home/yogen/Desktop/workspace/playwrite/meroshare/checkStatus.ts:115:17
+All status checks completed.
+CHECK_STATUS process completed.
+Terminated
+
+> meroshare@1.0.0 watch-sheets
+> npx ts-node --compiler-options '{"module":"commonjs","esModuleInterop":true}' syncService.ts
+
+◇ injected env (7) from .env // tip: ◈ encrypted .env [www.dotenvx.com]
+◇ injected env (0) from .env // tip: ⌁ auth for agents [www.vestauth.com]
+◇ injected env (0) from .env // tip: ⌘ multiple files { path: ['.env.local', '.env'] }
+◇ injected env (0) from .env // tip: ⌘ enable debugging { debug: true }
+◇ injected env (0) from .env // tip: ⌘ override existing { override: true }
+Starting Google Sheets Sync Service...
+Connected to Spreadsheet: share info
+NEPSE scraper scheduled to run every day at 00 01 11 * * * and 0 05 16 * * *.
+Scheduled Promoter Unlock (daily at 35 11 * * *) and Fundamental Data (40 11 * * *) scrapers.
+Polling Google Sheets every 30 seconds...
+[9/8/2026, 9:47:42 AM] Scheduled time '2026-05-27 11:01:02' is in the past. Will not schedule.
+
+> meroshare@1.0.0 watch-sheets
+> npx ts-node --compiler-options '{"module":"commonjs","esModuleInterop":true}' syncService.ts
+
+◇ injected env (7) from .env // tip: ⌁ auth for agents [www.vestauth.com]
+◇ injected env (0) from .env // tip: ⌘ custom filepath { path: '/custom/path/.env' }
+◇ injected env (0) from .env // tip: ⌘ suppress logs { quiet: true }
+◇ injected env (0) from .env // tip: ◈ encrypted .env [www.dotenvx.com]
+◇ injected env (0) from .env // tip: ⌁ auth for agents [www.vestauth.com]
+Starting Google Sheets Sync Service...
+Connected to Spreadsheet: share info
+NEPSE scraper scheduled to run every day at 00 01 11 * * * and 0 05 16 * * *.
+Scheduled Promoter Unlock (daily at 35 11 * * *) and Fundamental Data (40 11 * * *) scrapers.
+Polling Google Sheets every 30 seconds...
+[9/8/2026, 9:50:38 AM] Scheduled time '2026-05-27 11:01:02' is in the past. Will not schedule.
+Detected command: START_SCHEDULER. Starting scheduler...
+Loaded 10 user configuration(s) for scheduling.
+[SKIPPED] User Yug maharjan is marked with isApply: false.
+[SKIPPED] User Maya chori maharjan is marked with isApply: false.
+[SKIPPED] User Jyoti Maharjan is marked with isApply: false.
+[SCHEDULED] IPO Application for Macha kaji Maharjan set to run at: 9/8/2026, 6:20:00 PM
+[SCHEDULED] IPO Application for Urmila tyata set to run at: 9/9/2026, 2:20:00 AM
+[SCHEDULED] IPO Application for Sankha maya tyata set to run at: 9/9/2026, 10:20:00 AM
+[SCHEDULED] IPO Application for Shova Maharjan set to run at: 9/9/2026, 6:20:00 PM
+[SCHEDULED] IPO Application for Macha raja Maharjan set to run at: 9/10/2026, 2:20:00 AM
+[SCHEDULED] IPO Application for Adil Maharjan set to run at: 9/10/2026, 10:20:00 AM
+[SCHEDULED] IPO Application for Yogen Maharjan set to run at: 9/10/2026, 6:20:00 PM
+
+Scheduler is running and waiting for events...
+Scheduler started via Google Sheets.
+Detected command: CHECK_STATUS. Starting process...
+[CHECK_STATUS] Found 10 total users in sheet; 3 user(s) have Column L set to TRUE.
+Starting status check with concurrency limit: 2
+[Maya chori maharjan] Navigating to Meroshare...
+[Yug maharjan] Navigating to Meroshare...
+[Maya chori maharjan] White screen or failed to load. Reloading...
+[Yug maharjan] White screen or failed to load. Reloading...
+[Maya chori maharjan] Logging in...
+[Yug maharjan] Logging in...
+[Maya chori maharjan] Navigating to MY ASBA for Beni Hydropower Project Limited...
+[Yug maharjan] Navigating to MY ASBA for Beni Hydropower Project Limited...
+[Maya chori maharjan] Extracting status for Beni Hydropower Project Limited...
+[Yug maharjan] Extracting status for Beni Hydropower Project Limited...
+[Maya chori maharjan] Status for Beni Hydropower Project Limited: Unverified
+[Jyoti Maharjan] Navigating to Meroshare...
+[Yug maharjan] Status for Beni Hydropower Project Limited: Verified
+[Jyoti Maharjan] Logging in...
+[Jyoti Maharjan] Navigating to MY ASBA for Beni Hydropower Project Limited...
+[Jyoti Maharjan] Extracting status for Beni Hydropower Project Limited...
+[Jyoti Maharjan] Status for Beni Hydropower Project Limited: Unverified
+All status checks completed.
+CHECK_STATUS process completed.

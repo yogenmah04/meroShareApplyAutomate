@@ -84,15 +84,24 @@ async function main() {
                     const users = await fetchUsersFromSheet();
                     const stocks = await fetchStocksFromSheet();
 
-                    await control.updateStatus('IN_PROGRESS', `Running status check for ${users.length} users and ${stocks.length} stocks...`);
+                    const usersToCheck = users.filter((u: any) => u.checkForThis === true);
+                    console.log(`[CHECK_STATUS] Found ${users.length} total users in sheet; ${usersToCheck.length} user(s) have Column L set to TRUE.`);
 
-                    await runCheckStatus(users, stocks, async (stockName, userName, status) => {
-                        await addResultToSheet(stockName, userName, status);
-                    });
+                    if (usersToCheck.length === 0) {
+                        console.log('[CHECK_STATUS] No users marked with TRUE in Column L. Skipping status check.');
+                        await control.updateStatus('COMPLETED', 'No users marked with TRUE in Column L.');
+                        await control.resetCommand();
+                    } else {
+                        await control.updateStatus('IN_PROGRESS', `Running status check for ${usersToCheck.length} users and ${stocks.length} stocks...`);
 
-                    await control.updateStatus('COMPLETED', 'Status check finished successfully.');
-                    await control.resetCommand();
-                    console.log('CHECK_STATUS process completed.');
+                        await runCheckStatus(usersToCheck, stocks, async (stockName, userName, status) => {
+                            await addResultToSheet(stockName, userName, status);
+                        });
+
+                        await control.updateStatus('COMPLETED', 'Status check finished successfully.');
+                        await control.resetCommand();
+                        console.log('CHECK_STATUS process completed.');
+                    }
                 } catch (e: any) {
                     console.error('Error during CHECK_STATUS execution:', e?.message || e);
                     try {

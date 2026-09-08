@@ -24,6 +24,7 @@ export interface User {
     applyAt?: string;
     name: string;
     isApply?: boolean;
+    checkForThis?: boolean;
 }
 
 export interface StatusEntry {
@@ -103,7 +104,12 @@ export async function runCheckStatus(
 
     const tasks = users.map((user) => 
         limit(async () => {
-            if (user.isApply === false) return;
+            // Check Column L (checkForThis). If 'checkForThis' is defined (e.g. from Google Sheet), require it to be true; otherwise fallback to isApply !== false
+            const shouldCheck = user.checkForThis !== undefined ? user.checkForThis : (user.isApply !== false);
+            if (!shouldCheck) {
+                console.log(`[SKIPPED] User ${user.name || user.username} is skipped (Column L is not TRUE).`);
+                return;
+            }
 
             const context = await browser.newContext({
                 userAgent: getRandomUserAgent(),
