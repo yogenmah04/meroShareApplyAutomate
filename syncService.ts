@@ -149,6 +149,42 @@ async function main() {
                     await control.resetCommand();
                 }
 
+            } else if (command === 'EXTRACT_PORTFOLIO' && status !== 'IN_PROGRESS') {
+                console.log('Detected command: EXTRACT_PORTFOLIO. Starting portfolio scraper...');
+                await control.updateStatus('IN_PROGRESS', 'Scraping portfolio data...');
+
+                try {
+                    const { scrapePortfolio } = require('./portfolioScraper');
+                    const users = await fetchUsersFromSheet();
+                    // Just take the first valid user for demonstration
+                    const validUser = users.find(u => u.username && u.password && u.dp);
+
+                    if (validUser) {
+                        await scrapePortfolio(validUser);
+                        await control.updateStatus('COMPLETED', 'Portfolio scraped successfully.');
+                    } else {
+                        await control.updateStatus('ERROR', 'No valid user found for portfolio scraping.');
+                    }
+                    await control.resetCommand();
+                } catch (e: any) {
+                    await control.updateStatus('ERROR', `Portfolio scraper failed: ${e.message}`);
+                    await control.resetCommand();
+                }
+
+            } else if (command === 'EXTRACT_TECH_SIGNALS' && status !== 'IN_PROGRESS') {
+                console.log('Detected command: EXTRACT_TECH_SIGNALS. Starting technical signals scraper...');
+                await control.updateStatus('IN_PROGRESS', 'Scraping technical signals...');
+
+                try {
+                    const { scrapeTechnicalSignals } = require('./techScraper');
+                    await scrapeTechnicalSignals();
+                    await control.updateStatus('COMPLETED', 'Technical signals scraped successfully.');
+                    await control.resetCommand();
+                } catch (e: any) {
+                    await control.updateStatus('ERROR', `Technical signals scraper failed: ${e.message}`);
+                    await control.resetCommand();
+                }
+
             } else if (command === 'START_SCHEDULER' && status !== 'SCHEDULER_RUNNING') {
                 console.log('Detected command: START_SCHEDULER. Starting scheduler...');
                 await control.updateStatus('IN_PROGRESS', 'Fetching user data for scheduler...');

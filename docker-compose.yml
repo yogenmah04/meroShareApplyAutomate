@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  meroshare-scheduler:
+    build: .
+    environment:
+      - GOOGLE_SERVICE_ACCOUNT_EMAIL=${GOOGLE_SERVICE_ACCOUNT_EMAIL}
+      - GOOGLE_PRIVATE_KEY=${GOOGLE_PRIVATE_KEY}
+      - GOOGLE_SHEET_ID=${GOOGLE_SHEET_ID}
+      - CONCURRENCY_LIMIT=${CONCURRENCY_LIMIT:-2}
+      - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
+      - TELEGRAM_CHAT_ID=${TELEGRAM_CHAT_ID}
+    volumes:
+      - ./users.json:/app/users.json
+      - ./checkStockStatus.json:/app/checkStockStatus.json
+      - ./reportStatus.json:/app/reportStatus.json
+    restart: unless-stopped
+
+  meroshare-sync:
+    build: .
+    command: npx ts-node --compiler-options '{"module":"commonjs","esModuleInterop":true}' syncService.ts
+    environment:
+      - GOOGLE_SERVICE_ACCOUNT_EMAIL=${GOOGLE_SERVICE_ACCOUNT_EMAIL}
+      - GOOGLE_PRIVATE_KEY=${GOOGLE_PRIVATE_KEY}
+      - GOOGLE_SHEET_ID=${GOOGLE_SHEET_ID}
+      - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
+      - TELEGRAM_CHAT_ID=${TELEGRAM_CHAT_ID}
+    restart: unless-stopped

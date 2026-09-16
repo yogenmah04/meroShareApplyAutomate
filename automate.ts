@@ -3,6 +3,7 @@ import StealthPlugin from 'puppeteer-extra-plugin-stealth';
 import * as dotenv from 'dotenv';
 import path from 'path';
 import { humanClick, humanType, jitterSleep, getRandomUserAgent, launchBrowserWithViewMode } from './humanUtils';
+import { sendTelegramNotification } from './notificationService';
 
 // Initialize stealth plugin
 chromium.use(StealthPlugin());
@@ -68,10 +69,10 @@ export async function runAutomation(user: any) {
     
     await jitterSleep(3000, 5000);
 
-    console.log('Scanning list for "Ordinary Shares" with an "Apply" button...');
+    console.log('Scanning list for "Ordinary Shares", "Mutual Fund", or "Right Share" with an "Apply" button...');
     const listContainer = page.locator('//*[@id="main"]/div/app-asba/div/div[2]/app-applicable-issue/div/div/div/div/div');
     const targetItem = listContainer.locator('> div')
-      .filter({ hasText: 'Ordinary Shares' })
+      .filter({ hasText: /(Ordinary Shares|Mutual Fund|Right Share)/ })
       .filter({ has: page.locator('button', { hasText: 'Apply' }) })
       .first();
 
@@ -135,11 +136,13 @@ export async function runAutomation(user: any) {
       await humanClick(page, finalApplyButton);
       console.log('The application has been successfully submitted!');
 
+      await sendTelegramNotification(`✅ <b>IPO Applied Successfully</b>\nUser: ${username}\nShares: ${kitta}\nIssue Type: Ordinary/Mutual/Right`);
+
       await jitterSleep(5000, 7000);
       return true; // Successfully applied
 
     } catch (error) {
-      console.log('No "Ordinary Shares" available or error during application steps.');
+      console.log('No "Ordinary Shares", "Mutual Fund", or "Right Share" available or error during application steps.');
       throw error;
     }
 
