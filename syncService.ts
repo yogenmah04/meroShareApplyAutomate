@@ -179,6 +179,20 @@ async function main() {
                     await control.resetCommand();
                 }
 
+            } else if (command === 'EXTRACT_TECH_SIGNALS' && status !== 'IN_PROGRESS') {
+                console.log('Detected command: EXTRACT_TECH_SIGNALS. Starting technical signals scraper...');
+                await control.updateStatus('IN_PROGRESS', 'Scraping technical signals...');
+
+                try {
+                    const { scrapeTechnicalSignals } = require('./techScraper');
+                    await scrapeTechnicalSignals();
+                    await control.updateStatus('COMPLETED', 'Technical signals scraped successfully.');
+                    await control.resetCommand();
+                } catch (e: any) {
+                    await control.updateStatus('ERROR', `Technical signals scraper failed: ${e.message}`);
+                    await control.resetCommand();
+                }
+
             } else if (command === 'START_SCHEDULER' && status !== 'SCHEDULER_RUNNING') {
                 console.log('Detected command: START_SCHEDULER. Starting scheduler...');
                 await control.updateStatus('IN_PROGRESS', 'Fetching user data for scheduler...');

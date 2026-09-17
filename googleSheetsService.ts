@@ -271,3 +271,56 @@ export async function getTmsScheduleTime() {
     return value ? value.toString().trim() : null;
   });
 }
+
+export async function overridePortfolioData(
+  holdings: { symbol: string, quantity: string }[]
+) {
+  return callWithRetry(async () => {
+    const tabName = "Portfolio";
+    const headers = ["Symbol", "Quantity"];
+
+    let sheet = doc.sheetsByTitle[tabName];
+    if (!sheet) {
+      sheet = await doc.addSheet({ title: tabName, headerValues: headers });
+    } else {
+      await sheet.clear();
+      await sheet.setHeaderRow(headers);
+    }
+
+    const rowsToAdd = holdings.map((holding) => ({
+      Symbol: holding.symbol,
+      Quantity: holding.quantity
+    }));
+
+    if (rowsToAdd.length > 0) {
+      await sheet.addRows(rowsToAdd);
+    }
+  });
+}
+
+export async function overrideTechnicalSignalsData(
+  signals: { symbol: string, signal: string, rsi: string }[]
+) {
+  return callWithRetry(async () => {
+    const tabName = "TechnicalSignals";
+    const headers = ["Symbol", "Signal", "RSI"];
+
+    let sheet = doc.sheetsByTitle[tabName];
+    if (!sheet) {
+      sheet = await doc.addSheet({ title: tabName, headerValues: headers });
+    } else {
+      await sheet.clear();
+      await sheet.setHeaderRow(headers);
+    }
+
+    const rowsToAdd = signals.map((s) => ({
+      Symbol: s.symbol,
+      Signal: s.signal,
+      RSI: s.rsi
+    }));
+
+    if (rowsToAdd.length > 0) {
+      await sheet.addRows(rowsToAdd);
+    }
+  });
+}
