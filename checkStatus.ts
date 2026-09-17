@@ -6,7 +6,6 @@ import fs from 'fs';
 import path from 'path';
 import pLimit from 'p-limit';
 import { humanClick, humanType, jitterSleep, getRandomUserAgent, launchBrowserWithViewMode } from './humanUtils';
-import { sendTelegramNotification } from './notificationService';
 
 // Initialize stealth plugin
 chromium.use(StealthPlugin());
@@ -170,10 +169,6 @@ export async function runCheckStatus(
 
                     if (onResult) {
                         await onResult(stockName, user.name, status);
-                    }
-
-                    if (status && status !== 'Not Found' && status !== 'Error') {
-                        await sendTelegramNotification(`📊 <b>IPO Allotment Status</b>\nUser: ${user.name}\nStock: ${stockName}\nStatus: ${status}`);
                     }
 
                     // Update existingReports (Note: this shared variable should be updated carefully if running many threads)

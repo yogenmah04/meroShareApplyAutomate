@@ -156,32 +156,26 @@ async function main() {
                 try {
                     const { scrapePortfolio } = require('./portfolioScraper');
                     const users = await fetchUsersFromSheet();
-                    // Just take the first valid user for demonstration
-                    const validUser = users.find(u => u.username && u.password && u.dp);
 
-                    if (validUser) {
-                        await scrapePortfolio(validUser);
-                        await control.updateStatus('COMPLETED', 'Portfolio scraped successfully.');
+                    const validUsers = users.filter((u: any) => u.username && u.password && u.dp && u.checkPortfolio === true);
+
+                    if (validUsers.length > 0) {
+                        let successCount = 0;
+                        for (const validUser of validUsers) {
+                            try {
+                                await scrapePortfolio(validUser);
+                                successCount++;
+                            } catch (err) {
+                                console.error(`Failed to scrape portfolio for user ${validUser.username}:`, err);
+                            }
+                        }
+                        await control.updateStatus('COMPLETED', `Portfolio scraped successfully for ${successCount} users.`);
                     } else {
-                        await control.updateStatus('ERROR', 'No valid user found for portfolio scraping.');
+                        await control.updateStatus('ERROR', 'No valid user found with checkPortfolio=TRUE for portfolio scraping.');
                     }
                     await control.resetCommand();
                 } catch (e: any) {
                     await control.updateStatus('ERROR', `Portfolio scraper failed: ${e.message}`);
-                    await control.resetCommand();
-                }
-
-            } else if (command === 'EXTRACT_TECH_SIGNALS' && status !== 'IN_PROGRESS') {
-                console.log('Detected command: EXTRACT_TECH_SIGNALS. Starting technical signals scraper...');
-                await control.updateStatus('IN_PROGRESS', 'Scraping technical signals...');
-
-                try {
-                    const { scrapeTechnicalSignals } = require('./techScraper');
-                    await scrapeTechnicalSignals();
-                    await control.updateStatus('COMPLETED', 'Technical signals scraped successfully.');
-                    await control.resetCommand();
-                } catch (e: any) {
-                    await control.updateStatus('ERROR', `Technical signals scraper failed: ${e.message}`);
                     await control.resetCommand();
                 }
 
