@@ -88,6 +88,14 @@ export async function fetchUsersFromSheet() {
       const checkStr = rawCheckForThis?.toString().trim().toLowerCase();
       const isCheckForThis = checkStr === "true" || checkStr === "ture";
 
+      const colMHeader = sheet.headerValues?.[12];
+      const rawCheckPortfolio =
+        (colMHeader ? row.get(colMHeader) : undefined) ??
+        row.get("checkPortfolio") ??
+        (row as any)._rawData?.[12];
+      const checkPortfolioStr = rawCheckPortfolio?.toString().trim().toLowerCase();
+      const isCheckPortfolio = checkPortfolioStr === "true" || checkPortfolioStr === "ture";
+
       return {
         id: parseInt(row.get("ID")),
         dp: row.get("DP"),
@@ -99,6 +107,7 @@ export async function fetchUsersFromSheet() {
         name: row.get("Name"),
         isApply: rawIsApply?.toString().trim().toLowerCase() === "true",
         checkForThis: isCheckForThis,
+        checkPortfolio: isCheckPortfolio,
         applyAt: row.get("ApplyAt"),
       };
     });
@@ -260,5 +269,58 @@ export async function getTmsScheduleTime() {
     const cell = sheet.getCell(0, 1);
     const value = cell.formattedValue || cell.value;
     return value ? value.toString().trim() : null;
+  });
+}
+
+export async function overridePortfolioData(
+  holdings: { symbol: string, quantity: string }[]
+) {
+  return callWithRetry(async () => {
+    const tabName = "Portfolio";
+    const headers = ["Symbol", "Quantity"];
+
+    let sheet = doc.sheetsByTitle[tabName];
+    if (!sheet) {
+      sheet = await doc.addSheet({ title: tabName, headerValues: headers });
+    } else {
+      await sheet.clear();
+      await sheet.setHeaderRow(headers);
+    }
+
+    const rowsToAdd = holdings.map((holding) => ({
+      Symbol: holding.symbol,
+      Quantity: holding.quantity
+    }));
+
+    if (rowsToAdd.length > 0) {
+      await sheet.addRows(rowsToAdd);
+    }
+  });
+}
+
+export async function overrideTechnicalSignalsData(
+  signals: { symbol: string, signal: string, rsi: string }[]
+) {
+  return callWithRetry(async () => {
+    const tabName = "TechnicalSignals";
+    const headers = ["Symbol", "Signal", "RSI"];
+
+    let sheet = doc.sheetsByTitle[tabName];
+    if (!sheet) {
+      sheet = await doc.addSheet({ title: tabName, headerValues: headers });
+    } else {
+      await sheet.clear();
+      await sheet.setHeaderRow(headers);
+    }
+
+    const rowsToAdd = signals.map((s) => ({
+      Symbol: s.symbol,
+      Signal: s.signal,
+      RSI: s.rsi
+    }));
+
+    if (rowsToAdd.length > 0) {
+      await sheet.addRows(rowsToAdd);
+    }
   });
 }
