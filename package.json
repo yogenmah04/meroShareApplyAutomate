@@ -18,7 +18,8 @@
     "scrape-portfolio": "npx ts-node --compiler-options '{\"module\":\"commonjs\",\"esModuleInterop\":true}' portfolioScraper.ts",
     "check-tech": "npx ts-node --compiler-options '{\"module\":\"commonjs\",\"esModuleInterop\":true}' techScraper.ts",
     "test-notification": "npx ts-node --compiler-options '{\"module\":\"commonjs\",\"esModuleInterop\":true}' notificationService.ts",
-    "flush-notifications": "npx ts-node --compiler-options '{\"module\":\"commonjs\",\"esModuleInterop\":true}' notificationService.ts --flush"
+    "flush-notifications": "npx ts-node --compiler-options '{\"module\":\"commonjs\",\"esModuleInterop\":true}' notificationService.ts --flush",
+    "check-52-week": "npx ts-node --compiler-options '{\"module\":\"commonjs\",\"esModuleInterop\":true}' week52Scraper.ts"
   },
   "keywords": [],
   "author": "",

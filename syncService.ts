@@ -47,6 +47,7 @@ async function main() {
 
     const promoterUnlockScheduleRule = "35 11 * * *"; // 11:35 AM
     const fundaScraperScheduleRule = "40 11 * * *"; // 11:40 AM
+    const week52ScraperScheduleRule = "45 11 * * *"; // 11:45 AM
 
     // Schedule Promoter Unlock Scraper
     schedule.scheduleJob(promoterUnlockScheduleRule, async () => {
@@ -74,7 +75,20 @@ async function main() {
         }
     });
 
-    console.log(`Scheduled Promoter Unlock (daily at ${promoterUnlockScheduleRule}) and Fundamental Data (${fundaScraperScheduleRule}) scrapers.`);
+    // Schedule 52-Week High/Low Scraper
+    schedule.scheduleJob(week52ScraperScheduleRule, async () => {
+        try {
+            console.log(`[${new Date().toLocaleString()}] Scheduled Job: Running 52-Week High/Low Scraper...`);
+            const { scrape52WeekHighLow } = require('./week52Scraper');
+            await scrape52WeekHighLow();
+            console.log(`[${new Date().toLocaleString()}] Scheduled Job: 52-Week High/Low Scraper completed successfully.`);
+        } catch (e: any) {
+            console.error(`[${new Date().toLocaleString()}] Scheduled Job Error (52-Week Scraper):`, e.message);
+        }
+    });
+
+    console.log(`Scheduled Promoter Unlock (daily at ${promoterUnlockScheduleRule}), Fundamental Data (${fundaScraperScheduleRule}), and 52-Week High/Low (${week52ScraperScheduleRule}) scrapers.`);
+
 
     console.log(`Polling Google Sheets every ${POLLING_INTERVAL_MS / 1000} seconds...`);
 
@@ -213,6 +227,22 @@ async function main() {
                     await control.updateStatus('ERROR', `Technical signals scraper failed: ${e.message}`);
                     await control.resetCommand();
                 }
+
+            } else if (command === 'EXTRACT_52_WEEK' && status !== 'IN_PROGRESS') {
+                console.log('Detected command: EXTRACT_52_WEEK. Starting 52-week scraper...');
+                await control.updateStatus('IN_PROGRESS', 'Scraping 52-week High and Low stocks...');
+
+                try {
+                    const { scrape52WeekHighLow } = require('./week52Scraper');
+                    const results = await scrape52WeekHighLow();
+                    await control.updateStatus('COMPLETED', `52-week data scraped successfully (${results.length} stocks).`);
+                    await control.resetCommand();
+                    console.log('EXTRACT_52_WEEK process completed.');
+                } catch (e: any) {
+                    await control.updateStatus('ERROR', `52-week scraper failed: ${e.message}`);
+                    await control.resetCommand();
+                }
+
 
             } else if (command === 'START_SCHEDULER' && status !== 'SCHEDULER_RUNNING') {
                 console.log('Detected command: START_SCHEDULER. Starting scheduler...');

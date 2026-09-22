@@ -324,3 +324,61 @@ export async function overrideTechnicalSignalsData(
     }
   });
 }
+
+export interface Week52Record {
+  category: string;
+  symbol: string;
+  ltp: string;
+  highPrice: string;
+  highDate: string;
+  lowPrice: string;
+  lowDate: string;
+  rangePercent: string;
+  updatedAt?: string;
+}
+
+export async function override52WeekData(records: Week52Record[]) {
+  return callWithRetry(async () => {
+    const tabName = "52WeekHighLow";
+    const headers = [
+      "Category",
+      "Symbol",
+      "LTP",
+      "52W High",
+      "52W High Date",
+      "52W Low",
+      "52W Low Date",
+      "Range %",
+      "Updated At",
+    ];
+
+    let sheet = doc.sheetsByTitle[tabName];
+    if (!sheet) {
+      sheet = await doc.addSheet({ title: tabName, headerValues: headers });
+    } else {
+      await sheet.clear();
+      await sheet.setHeaderRow(headers);
+    }
+
+    const rowsToAdd = records.map((r) => ({
+      Category: r.category,
+      Symbol: r.symbol,
+      LTP: r.ltp,
+      "52W High": r.highPrice,
+      "52W High Date": r.highDate,
+      "52W Low": r.lowPrice,
+      "52W Low Date": r.lowDate,
+      "Range %": r.rangePercent,
+      "Updated At": r.updatedAt || new Date().toLocaleString(),
+    }));
+
+    if (rowsToAdd.length > 0) {
+      const chunkSize = 100;
+      for (let i = 0; i < rowsToAdd.length; i += chunkSize) {
+        const chunk = rowsToAdd.slice(i, i + chunkSize);
+        await sheet.addRows(chunk);
+      }
+    }
+  });
+}
+
