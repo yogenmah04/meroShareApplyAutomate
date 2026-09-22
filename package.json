@@ -14,7 +14,11 @@
     "start-nepse": "npx ts-node --compiler-options '{\"module\":\"commonjs\",\"esModuleInterop\":true}' nepseScraper.ts",
     "auth:kimi": "npx ts-node --compiler-options '{\"module\":\"commonjs\",\"esModuleInterop\":true,\"lib\":[\"es2022\",\"dom\"]}' saveAuthSession.ts",
     "parse:id": "npx ts-node --compiler-options '{\"module\":\"commonjs\",\"esModuleInterop\":true,\"lib\":[\"es2022\",\"dom\"]}' autonomousParser.ts",
-    "start-naasa": "npx ts-node --compiler-options '{\"module\":\"commonjs\",\"esModuleInterop\":true}' naasaLogin.ts"
+    "start-naasa": "npx ts-node --compiler-options '{\"module\":\"commonjs\",\"esModuleInterop\":true}' naasaLogin.ts",
+    "scrape-portfolio": "npx ts-node --compiler-options '{\"module\":\"commonjs\",\"esModuleInterop\":true}' portfolioScraper.ts",
+    "check-tech": "npx ts-node --compiler-options '{\"module\":\"commonjs\",\"esModuleInterop\":true}' techScraper.ts",
+    "test-notification": "npx ts-node --compiler-options '{\"module\":\"commonjs\",\"esModuleInterop\":true}' notificationService.ts",
+    "flush-notifications": "npx ts-node --compiler-options '{\"module\":\"commonjs\",\"esModuleInterop\":true}' notificationService.ts --flush"
   },
   "keywords": [],
   "author": "",

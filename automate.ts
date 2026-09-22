@@ -4,6 +4,7 @@ import * as dotenv from 'dotenv';
 import path from 'path';
 import { humanClick, humanType, jitterSleep, getRandomUserAgent, launchBrowserWithViewMode } from './humanUtils';
 import { sendTelegramNotification } from './notificationService';
+import { formatShortError } from './checkStatus';
 
 // Initialize stealth plugin
 chromium.use(StealthPlugin());
@@ -146,8 +147,10 @@ export async function runAutomation(user: any) {
       throw error;
     }
 
-  } catch (error) {
-    console.error('An error occurred during automation:', error);
+  } catch (error: any) {
+    const shortErr = formatShortError(error);
+    console.error('An error occurred during automation:', shortErr);
+    await sendTelegramNotification(`❌ <b>IPO Application Failed</b>\nUser: <b>${username}</b>\nError: <code>${shortErr}</code>`).catch(() => {});
     throw error;
   } finally {
     console.log('Closing browser...');

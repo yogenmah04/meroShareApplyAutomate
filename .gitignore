@@ -11,3 +11,4 @@ tms_user_data/
 # Secrets
 .env
 users.json
+notification_queue/

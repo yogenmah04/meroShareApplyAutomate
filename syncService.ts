@@ -1,6 +1,7 @@
 import { initSheets, fetchUsersFromSheet, fetchStocksFromSheet, getControlCommand, addResultToSheet, getTmsScheduleTime } from './googleSheetsService';
 import { exec } from 'child_process';
-import { runCheckStatus } from './checkStatus';
+import { runCheckStatus, formatShortError } from './checkStatus';
+import { sendTelegramNotification, flushNotificationQueue } from './notificationService';
 import { initializeScheduler } from './scheduler';
 import { scheduleNepseScraper } from './nepseScraper';
 import * as dotenv from 'dotenv';
@@ -30,8 +31,14 @@ async function main() {
     console.log('Starting Google Sheets Sync Service...');
     try {
         await initSheets();
+        await sendTelegramNotification(
+            `🟢 <b>MeroShare Watch Service Online</b>\n` +
+            `Supervisor service restarted/started successfully.\n` +
+            `Time: <i>${new Date().toLocaleTimeString()}</i>`
+        ).catch(() => {});
     } catch (e: any) {
         console.error('Failed to initialize Google Sheets:', e.message);
+        await sendTelegramNotification(`🚨 <b>MeroShare Service Failed to Start</b>\nError initializing Google Sheets: <code>${e.message}</code>`).catch(() => {});
         process.exit(1);
     }
 
@@ -40,7 +47,7 @@ async function main() {
 
     const promoterUnlockScheduleRule = "35 11 * * *"; // 11:35 AM
     const fundaScraperScheduleRule = "40 11 * * *"; // 11:40 AM
-    
+
     // Schedule Promoter Unlock Scraper
     schedule.scheduleJob(promoterUnlockScheduleRule, async () => {
         try {
@@ -91,23 +98,37 @@ async function main() {
                         console.log('[CHECK_STATUS] No users marked with TRUE in Column L. Skipping status check.');
                         await control.updateStatus('COMPLETED', 'No users marked with TRUE in Column L.');
                         await control.resetCommand();
+                        await sendTelegramNotification('ℹ️ <b>IPO Status Check Skipped</b>\nNo users marked with Column L (<code>checkForThis = TRUE</code>) in Google Sheets.');
                     } else {
                         await control.updateStatus('IN_PROGRESS', `Running status check for ${usersToCheck.length} users and ${stocks.length} stocks...`);
 
+                        const summaryResults: { user: string; stock: string; status: string }[] = [];
                         await runCheckStatus(usersToCheck, stocks, async (stockName, userName, status) => {
                             await addResultToSheet(stockName, userName, status);
+                            summaryResults.push({ user: userName, stock: stockName, status });
                         });
 
                         await control.updateStatus('COMPLETED', 'Status check finished successfully.');
                         await control.resetCommand();
                         console.log('CHECK_STATUS process completed.');
+
+                        const resultLines = summaryResults.map(r => `• <b>${r.user}</b> (${r.stock}): <code>${r.status}</code>`).join('\n');
+                        await sendTelegramNotification(
+                            `📋 <b>IPO Status Check Completed</b>\n\n` +
+                            (resultLines || 'All accounts processed.')
+                        ).catch(() => {});
                     }
                 } catch (e: any) {
-                    console.error('Error during CHECK_STATUS execution:', e?.message || e);
+                    const shortErr = formatShortError(e);
+                    console.error('Error during CHECK_STATUS execution:', shortErr);
+                    await sendTelegramNotification(
+                        `🚨 <b>CHECK_STATUS Process Error</b>\n` +
+                        `Error: <code>${shortErr}</code>`
+                    );
                     try {
-                        await control.updateStatus('ERROR', `Status check failed: ${e?.message || e}`);
+                        await control.updateStatus('ERROR', `Status check failed: ${shortErr}`);
                         await control.resetCommand();
-                    } catch (_) {}
+                    } catch (_) { }
                 }
 
             } else if (command === 'PROMOTER_UNLOCK_CHECK' && status !== 'IN_PROGRESS') {
@@ -117,12 +138,12 @@ async function main() {
                 try {
                     const { fetchPromoterUnlockData } = require('./promoterUnlock');
                     const { overrideSheetData } = require('./googleSheetsService');
-                    
+
                     const { headers, data } = await fetchPromoterUnlockData();
                     await control.updateStatus('IN_PROGRESS', `Updating Google Sheet tab: PromoterShareUnlock...`);
-                    
+
                     await overrideSheetData('PromoterShareUnlock', headers, data);
-                    
+
                     await control.updateStatus('COMPLETED', `Scraped ${data.length} rows successfully.`);
                     await control.resetCommand();
                     console.log('PROMOTER_UNLOCK_CHECK process completed.');
@@ -137,10 +158,10 @@ async function main() {
 
                 try {
                     const { fetchFundamentalData } = require('./fundaScraper');
-                    
+
                     const { headers, data } = await fetchFundamentalData();
                     // fundaScraper internally saves the data to Google Sheets
-                    
+
                     await control.updateStatus('COMPLETED', `Scraped ${data.length} rows successfully.`);
                     await control.resetCommand();
                     console.log('EXTRACT_FUNDA_DATA process completed.');
@@ -196,7 +217,7 @@ async function main() {
             } else if (command === 'START_SCHEDULER' && status !== 'SCHEDULER_RUNNING') {
                 console.log('Detected command: START_SCHEDULER. Starting scheduler...');
                 await control.updateStatus('IN_PROGRESS', 'Fetching user data for scheduler...');
-                    
+
                 const users = await fetchUsersFromSheet();
                 initializeScheduler(users);
 
@@ -216,11 +237,11 @@ async function main() {
 
         try {
             const scheduledTime = await getTmsScheduleTime();
-            
+
             // If the time has changed, update the schedule
             if (scheduledTime && scheduledTime !== currentTmsScheduleTime) {
                 const scheduledDate = new Date(scheduledTime);
-                
+
                 if (!isNaN(scheduledDate.getTime())) {
                     if (tmsScheduledJob) {
                         tmsScheduledJob.cancel();
@@ -261,6 +282,9 @@ async function main() {
         } catch (e: any) {
             console.error('Error handling TMS scheduled time:', e.message);
         }
+
+        // Drain any pending notifications queued during network dropouts
+        await flushNotificationQueue().catch(() => {});
 
         await new Promise(resolve => setTimeout(resolve, POLLING_INTERVAL_MS));
     }
