@@ -6,6 +6,7 @@ import fs from 'fs';
 import path from 'path';
 import pLimit from 'p-limit';
 import { humanClick, humanType, jitterSleep, getRandomUserAgent, launchBrowserWithViewMode } from './humanUtils';
+import { sendTelegramNotification } from './notificationService';
 
 // Initialize stealth plugin
 chromium.use(StealthPlugin());
@@ -35,6 +36,45 @@ export interface StatusEntry {
 export interface StockReport {
     stockName: string;
     nameStatusList: StatusEntry[];
+}
+
+/**
+ * Strips verbose stack traces, Playwright ASCII art, and call logs
+ * into a concise, readable error message for Telegram notifications.
+ */
+export function formatShortError(err: any): string {
+    if (!err) return 'Unknown error';
+    const raw = typeof err === 'string' ? err : (err.message || String(err));
+    // Strip playwright internal ASCII art banners and call logs
+    const stripped = raw.replace(/╔═+[\s\S]*?═+╝/g, '').trim();
+    const firstLine = stripped.split('\n')[0].trim();
+
+    if (raw.includes('Missing X server') || raw.includes('Target page, context or browser has been closed')) {
+        return 'Browser display error (Headed mode launched without active X11 display)';
+    }
+    if (raw.includes('Failed to load Meroshare page')) {
+        return 'Meroshare website unreachable or white screen after retries';
+    }
+    if (raw.includes('Login rejected') || raw.includes('Login failed')) {
+        return firstLine.slice(0, 160);
+    }
+    if (raw.includes('Timeout') && raw.includes('exceeded')) {
+        if (raw.includes('li[8]/a') || raw.includes('sideBar')) {
+            return 'Timeout waiting for My ASBA in sidebar (login may have failed or timed out)';
+        }
+        if (raw.includes('.select2')) {
+            return 'Timeout waiting for DP selector on Meroshare login page';
+        }
+        if (raw.includes('app-application-report')) {
+            return 'Timeout loading application report dialog';
+        }
+        return 'Operation timed out waiting for element or response';
+    }
+    if (raw.includes('net::ERR_')) {
+        const match = raw.match(/net::ERR_[A-Z0-9_]+/);
+        return `Network error (${match ? match[0] : 'Connection dropped'})`;
+    }
+    return firstLine.slice(0, 160);
 }
 
 async function login(page: Page, user: User) {
@@ -76,7 +116,24 @@ async function login(page: Page, user: User) {
     await humanClick(page, loginButton);
 
     // Wait for login to complete
-    await jitterSleep(5000, 7000);
+    await jitterSleep(4000, 6000);
+
+    // Check if error toast or alert appeared
+    const toast = page.locator('.toast-message, .alert-danger, .toastr-message, div[role="alert"]');
+    if (await toast.isVisible({ timeout: 1500 }).catch(() => false)) {
+        const msg = (await toast.innerText().catch(() => '')).trim();
+        if (msg) {
+            throw new Error(`Login rejected by Meroshare: ${msg}`);
+        }
+    }
+
+    // If password input is still visible on the page, login did not succeed
+    const isPasswordStillVisible = await page.locator('input[name="password"]').isVisible().catch(() => false);
+    if (isPasswordStillVisible) {
+        const alertEl = page.locator('.toast-message, .alert, .error, .has-error, div[role="alert"]');
+        const alertMsg = (await alertEl.first().innerText().catch(() => '')).trim();
+        throw new Error(alertMsg ? `Login failed: ${alertMsg}` : `Login failed: Invalid credentials or session error for ${user.username}`);
+    }
 }
 
 export async function runCheckStatus(
@@ -159,9 +216,16 @@ export async function runCheckStatus(
                             if (await closeButton.isVisible()) {
                                 await humanClick(page, closeButton);
                             }
-                        } catch (e) {
-                            console.warn(`[${user.name}] Error fetching status for ${stockName}:`, e);
+                        } catch (e: any) {
+                            const shortErr = formatShortError(e);
+                            console.warn(`[${user.name}] Error fetching status for ${stockName}:`, shortErr);
                             status = 'Error';
+                            await sendTelegramNotification(
+                                `⚠️ <b>IPO Status Check Error</b>\n` +
+                                `User: <b>${user.name || user.username}</b> (ID: ${user.username})\n` +
+                                `Stock: <b>${stockName}</b>\n` +
+                                `Error: <code>${shortErr}</code>`
+                            );
                         }
                     } else {
                         console.warn(`[${user.name}] Stock not found in list: ${stockName}`);
@@ -171,8 +235,11 @@ export async function runCheckStatus(
                         await onResult(stockName, user.name, status);
                     }
 
-                    // Update existingReports (Note: this shared variable should be updated carefully if running many threads)
-                    // For now we keep the local file sync as a fallback.
+                    if (status && status !== 'Not Found' && status !== 'Error') {
+                        await sendTelegramNotification(`📊 <b>IPO Allotment Status</b>\nUser: ${user.name}\nStock: ${stockName}\nStatus: ${status}`);
+                    }
+
+                    // Update existingReports
                     let stockReport = existingReports.find(r => r.stockName === stockName);
                     if (!stockReport) {
                         stockReport = { stockName, nameStatusList: [] };
@@ -182,8 +249,20 @@ export async function runCheckStatus(
                     stockReport.nameStatusList.push({ name: user.name, status });
                     fs.writeFileSync(reportPath, JSON.stringify(existingReports, null, 2));
                 }
-            } catch (error) {
-                console.error(`Failed execution for user ${user.name}:`, error);
+            } catch (error: any) {
+                const shortErr = formatShortError(error);
+                console.error(`Failed execution for user ${user.name}:`, shortErr);
+                await sendTelegramNotification(
+                    `❌ <b>IPO Status Check Failed</b>\n` +
+                    `User: <b>${user.name || user.username}</b> (ID: ${user.username})\n` +
+                    `DP: <i>${user.dp || 'N/A'}</i>\n` +
+                    `Error: <code>${shortErr}</code>`
+                );
+                if (onResult) {
+                    for (const stockName of stockNames) {
+                        await onResult(stockName, user.name, 'Error').catch(() => {});
+                    }
+                }
             } finally {
                 await context.close();
             }

@@ -114,9 +114,30 @@ The results will be saved (and appended) to a file named `reportStatus.json`. It
 
 The project is configured out-of-the-box (`.gitignore`) to prevent sensitive files like `users.json`, `.env`, and now `reportStatus.json` from being pushed to public GitHub repositories.
 
-npx ts-node --compiler-options '{"module":"commonjs","esModuleInterop":true}' scheduler.ts
+## 52-Week High & Low Stock Scraper
 
+You can scrape NEPSE 52-week High and Low stocks and automatically synchronize them to the Google Sheet tab `52WeekHighLow`:
 
+### 1. Manual Execution (CLI)
+```bash
+npm run check-52-week
+```
+
+### 2. Remote Trigger via Google Sheets
+In the `Control` tab of your Google Spreadsheet, set the command cell to:
+```
+EXTRACT_52_WEEK
+```
+The background service will automatically scrape all 52-week High and Low stocks, update the `52WeekHighLow` tab, and send a Telegram notification summary.
+
+### 3. Scheduled Daily Run
+The background `syncService` runs the 52-week scraper daily at 11:45 AM automatically.
+
+## Supervisor Commands
+```bash
 sudo supervisorctl restart meroshare-watch-sheets  # Restart service
 sudo supervisorctl stop meroshare-watch-sheets     # Stop service
 sudo supervisorctl tail -f meroshare-watch-sheets  # View live logs
+sudo supervisorctl clear meroshare-watch-sheets     # Clear log
+```
+

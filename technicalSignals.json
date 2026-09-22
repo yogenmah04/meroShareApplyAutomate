@@ -1,0 +1,502 @@
+[
+  {
+    "symbol": "ACLBSL",
+    "signal": "Medium Bullish",
+    "rsi": "47.13"
+  },
+  {
+    "symbol": "ADBL",
+    "signal": "Strong Bullish",
+    "rsi": "65.78"
+  },
+  {
+    "symbol": "AHL",
+    "signal": "Strong Bullish",
+    "rsi": "55.58"
+  },
+  {
+    "symbol": "AHPC",
+    "signal": "Strong Bullish",
+    "rsi": "60.79"
+  },
+  {
+    "symbol": "AKJCL",
+    "signal": "Strong Bullish",
+    "rsi": "56.82"
+  },
+  {
+    "symbol": "AKPL",
+    "signal": "Strong Bullish",
+    "rsi": "59.13"
+  },
+  {
+    "symbol": "ALBSL",
+    "signal": "Strong Bullish",
+    "rsi": "59.04"
+  },
+  {
+    "symbol": "ALICL",
+    "signal": "Strong Bullish",
+    "rsi": "67.68"
+  },
+  {
+    "symbol": "ANLB",
+    "signal": "Weak Bullish",
+    "rsi": "44.38"
+  },
+  {
+    "symbol": "APHL",
+    "signal": "Medium Bullish",
+    "rsi": "41.43"
+  },
+  {
+    "symbol": "API",
+    "signal": "Strong Bullish",
+    "rsi": "53.99"
+  },
+  {
+    "symbol": "AVYAN",
+    "signal": "Strong Bullish",
+    "rsi": "54.96"
+  },
+  {
+    "symbol": "BANDIPUR",
+    "signal": "Medium Bullish",
+    "rsi": "44.85"
+  },
+  {
+    "symbol": "BARUN",
+    "signal": "Strong Bullish",
+    "rsi": "65.14"
+  },
+  {
+    "symbol": "BBC",
+    "signal": "Strong Bullish",
+    "rsi": "53.57"
+  },
+  {
+    "symbol": "BEDC",
+    "signal": "Strong Bullish",
+    "rsi": "56.61"
+  },
+  {
+    "symbol": "BFC",
+    "signal": "Strong Bullish",
+    "rsi": "48.9"
+  },
+  {
+    "symbol": "BGWT",
+    "signal": "Medium Bullish",
+    "rsi": "42.78"
+  },
+  {
+    "symbol": "BHCL",
+    "signal": "Medium Bullish",
+    "rsi": "56.69"
+  },
+  {
+    "symbol": "BHDC",
+    "signal": "Strong Bullish",
+    "rsi": "58.33"
+  },
+  {
+    "symbol": "BHL",
+    "signal": "Strong Bullish",
+    "rsi": "66.69"
+  },
+  {
+    "symbol": "BHPL",
+    "signal": "Strong Bullish",
+    "rsi": "52.71"
+  },
+  {
+    "symbol": "BJHL",
+    "signal": "-",
+    "rsi": "44.17"
+  },
+  {
+    "symbol": "BNHC",
+    "signal": "Strong Bullish",
+    "rsi": "57.49"
+  },
+  {
+    "symbol": "BNL",
+    "signal": "-",
+    "rsi": "52.81"
+  },
+  {
+    "symbol": "BNT",
+    "signal": "Strong Bullish",
+    "rsi": "70.45"
+  },
+  {
+    "symbol": "BPCL",
+    "signal": "Strong Bullish",
+    "rsi": "69.81"
+  },
+  {
+    "symbol": "BUNGAL",
+    "signal": "-",
+    "rsi": "42.36"
+  },
+  {
+    "symbol": "CBBL",
+    "signal": "Strong Bullish",
+    "rsi": "65.75"
+  },
+  {
+    "symbol": "CFCL",
+    "signal": "Medium Bullish",
+    "rsi": "44.75"
+  },
+  {
+    "symbol": "CGH",
+    "signal": "Strong Bullish",
+    "rsi": "61.65"
+  },
+  {
+    "symbol": "CHCL",
+    "signal": "Weak Bullish",
+    "rsi": "32.63"
+  },
+  {
+    "symbol": "CHDC",
+    "signal": "Strong Bullish",
+    "rsi": "73.32"
+  },
+  {
+    "symbol": "CHL",
+    "signal": "Strong Bullish",
+    "rsi": "58.06"
+  },
+  {
+    "symbol": "CIT",
+    "signal": "Strong Bullish",
+    "rsi": "60.97"
+  },
+  {
+    "symbol": "CITY",
+    "signal": "Strong Bullish",
+    "rsi": "52.45"
+  },
+  {
+    "symbol": "CKHL",
+    "signal": "Strong Bullish",
+    "rsi": "51.61"
+  },
+  {
+    "symbol": "CLI",
+    "signal": "Strong Bullish",
+    "rsi": "58.81"
+  },
+  {
+    "symbol": "CORBL",
+    "signal": "Weak Bullish",
+    "rsi": "27.96"
+  },
+  {
+    "symbol": "CREST",
+    "signal": "Medium Bullish",
+    "rsi": "48.75"
+  },
+  {
+    "symbol": "CYCL",
+    "signal": "Weak Bullish",
+    "rsi": "50.28"
+  },
+  {
+    "symbol": "CZBIL",
+    "signal": "Strong Bullish",
+    "rsi": "67.55"
+  },
+  {
+    "symbol": "DDBL",
+    "signal": "Strong Bullish",
+    "rsi": "61.37"
+  },
+  {
+    "symbol": "DHEL",
+    "signal": "-",
+    "rsi": "49.61"
+  },
+  {
+    "symbol": "DHPL",
+    "signal": "Strong Bullish",
+    "rsi": "51.78"
+  },
+  {
+    "symbol": "DLBS",
+    "signal": "Strong Bullish",
+    "rsi": "58.73"
+  },
+  {
+    "symbol": "DOLTI",
+    "signal": "Strong Bullish",
+    "rsi": "54.2"
+  },
+  {
+    "symbol": "DORDI",
+    "signal": "Strong Bullish",
+    "rsi": "66.58"
+  },
+  {
+    "symbol": "EBL",
+    "signal": "Strong Bullish",
+    "rsi": "62.19"
+  },
+  {
+    "symbol": "ECL",
+    "signal": "-",
+    "rsi": "59.62"
+  },
+  {
+    "symbol": "EDBL",
+    "signal": "Strong Bullish",
+    "rsi": "56.17"
+  },
+  {
+    "symbol": "EHPL",
+    "signal": "Strong Bullish",
+    "rsi": "57.77"
+  },
+  {
+    "symbol": "ENL",
+    "signal": "Weak Bullish",
+    "rsi": "25.72"
+  },
+  {
+    "symbol": "FMDBL",
+    "signal": "Strong Bullish",
+    "rsi": "54.65"
+  },
+  {
+    "symbol": "FOWAD",
+    "signal": "Strong Bullish",
+    "rsi": "53.11"
+  },
+  {
+    "symbol": "GBBL",
+    "signal": "Strong Bullish",
+    "rsi": "74.69"
+  },
+  {
+    "symbol": "GBIME",
+    "signal": "Strong Bullish",
+    "rsi": "68.55"
+  },
+  {
+    "symbol": "GBLBS",
+    "signal": "Medium Bullish",
+    "rsi": "50.18"
+  },
+  {
+    "symbol": "GCIL",
+    "signal": "Medium Bullish",
+    "rsi": "55.58"
+  },
+  {
+    "symbol": "GFCL",
+    "signal": "Medium Bullish",
+    "rsi": "44.67"
+  },
+  {
+    "symbol": "GHL",
+    "signal": "Strong Bullish",
+    "rsi": "59.08"
+  },
+  {
+    "symbol": "GILB",
+    "signal": "Strong Bullish",
+    "rsi": "60.5"
+  },
+  {
+    "symbol": "GLBSL",
+    "signal": "Strong Bullish",
+    "rsi": "57.06"
+  },
+  {
+    "symbol": "GLH",
+    "signal": "Strong Bullish",
+    "rsi": "69.36"
+  },
+  {
+    "symbol": "GMFBS",
+    "signal": "Medium Bullish",
+    "rsi": "43.73"
+  },
+  {
+    "symbol": "GMFIL",
+    "signal": "Medium Bullish",
+    "rsi": "48.82"
+  },
+  {
+    "symbol": "GMLI",
+    "signal": "Strong Bullish",
+    "rsi": "52.43"
+  },
+  {
+    "symbol": "GRDBL",
+    "signal": "Strong Bullish",
+    "rsi": "53.35"
+  },
+  {
+    "symbol": "GUFL",
+    "signal": "Medium Bullish",
+    "rsi": "46.56"
+  },
+  {
+    "symbol": "GVL",
+    "signal": "Strong Bullish",
+    "rsi": "61.16"
+  },
+  {
+    "symbol": "HATHY",
+    "signal": "Weak Bullish",
+    "rsi": "26.45"
+  },
+  {
+    "symbol": "HBL",
+    "signal": "Strong Bullish",
+    "rsi": "64.06"
+  },
+  {
+    "symbol": "HDHPC",
+    "signal": "Strong Bullish",
+    "rsi": "60.56"
+  },
+  {
+    "symbol": "HDL",
+    "signal": "Strong Bullish",
+    "rsi": "71.61"
+  },
+  {
+    "symbol": "HEI",
+    "signal": "Medium Bullish",
+    "rsi": "45.76"
+  },
+  {
+    "symbol": "HEIP",
+    "signal": "-",
+    "rsi": "51.73"
+  },
+  {
+    "symbol": "HFIN",
+    "signal": "-",
+    "rsi": "43.93"
+  },
+  {
+    "symbol": "HHL",
+    "signal": "Strong Bullish",
+    "rsi": "59.81"
+  },
+  {
+    "symbol": "HIDCL",
+    "signal": "Strong Bullish",
+    "rsi": "61.4"
+  },
+  {
+    "symbol": "HIDCLP",
+    "signal": "-",
+    "rsi": "60.53"
+  },
+  {
+    "symbol": "HIMSTAR",
+    "signal": "Medium Bullish",
+    "rsi": "47.09"
+  },
+  {
+    "symbol": "HLBSL",
+    "signal": "Strong Bullish",
+    "rsi": "55.7"
+  },
+  {
+    "symbol": "HLI",
+    "signal": "Strong Bullish",
+    "rsi": "58.17"
+  },
+  {
+    "symbol": "HPPL",
+    "signal": "Strong Bullish",
+    "rsi": "62.01"
+  },
+  {
+    "symbol": "HRL",
+    "signal": "Weak Bullish",
+    "rsi": "38.55"
+  },
+  {
+    "symbol": "HURJA",
+    "signal": "Strong Bullish",
+    "rsi": "68.19"
+  },
+  {
+    "symbol": "ICFC",
+    "signal": "Strong Bullish",
+    "rsi": "60.9"
+  },
+  {
+    "symbol": "IGI",
+    "signal": "Medium Bullish",
+    "rsi": "53.04"
+  },
+  {
+    "symbol": "IHL",
+    "signal": "Strong Bullish",
+    "rsi": "60.66"
+  },
+  {
+    "symbol": "ILBS",
+    "signal": "Strong Bullish",
+    "rsi": "87.28"
+  },
+  {
+    "symbol": "ILI",
+    "signal": "Strong Bullish",
+    "rsi": "65.79"
+  },
+  {
+    "symbol": "JBBL",
+    "signal": "Strong Bullish",
+    "rsi": "60.43"
+  },
+  {
+    "symbol": "JBLB",
+    "signal": "Strong Bullish",
+    "rsi": "55.53"
+  },
+  {
+    "symbol": "JFL",
+    "signal": "Weak Bullish",
+    "rsi": "28.73"
+  },
+  {
+    "symbol": "JHAPA",
+    "signal": "-",
+    "rsi": "50.67"
+  },
+  {
+    "symbol": "JOSHI",
+    "signal": "Strong Bullish",
+    "rsi": "52.7"
+  },
+  {
+    "symbol": "JSLBB",
+    "signal": "Strong Bullish",
+    "rsi": "56.18"
+  },
+  {
+    "symbol": "KAHL",
+    "signal": "-",
+    "rsi": "52.41"
+  },
+  {
+    "symbol": "KBL",
+    "signal": "Strong Bullish",
+    "rsi": "67.65"
+  },
+  {
+    "symbol": "KBSH",
+    "signal": "Weak Bullish",
+    "rsi": "41.54"
+  }
+]

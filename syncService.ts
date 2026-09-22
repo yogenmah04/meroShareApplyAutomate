@@ -1,6 +1,7 @@
 import { initSheets, fetchUsersFromSheet, fetchStocksFromSheet, getControlCommand, addResultToSheet, getTmsScheduleTime } from './googleSheetsService';
 import { exec } from 'child_process';
-import { runCheckStatus } from './checkStatus';
+import { runCheckStatus, formatShortError } from './checkStatus';
+import { sendTelegramNotification, flushNotificationQueue } from './notificationService';
 import { initializeScheduler } from './scheduler';
 import { scheduleNepseScraper } from './nepseScraper';
 import * as dotenv from 'dotenv';
@@ -30,8 +31,14 @@ async function main() {
     console.log('Starting Google Sheets Sync Service...');
     try {
         await initSheets();
+        await sendTelegramNotification(
+            `🟢 <b>MeroShare Watch Service Online</b>\n` +
+            `Supervisor service restarted/started successfully.\n` +
+            `Time: <i>${new Date().toLocaleTimeString()}</i>`
+        ).catch(() => {});
     } catch (e: any) {
         console.error('Failed to initialize Google Sheets:', e.message);
+        await sendTelegramNotification(`🚨 <b>MeroShare Service Failed to Start</b>\nError initializing Google Sheets: <code>${e.message}</code>`).catch(() => {});
         process.exit(1);
     }
 
@@ -40,7 +47,8 @@ async function main() {
 
     const promoterUnlockScheduleRule = "35 11 * * *"; // 11:35 AM
     const fundaScraperScheduleRule = "40 11 * * *"; // 11:40 AM
-    
+    const week52ScraperScheduleRule = "45 11 * * *"; // 11:45 AM
+
     // Schedule Promoter Unlock Scraper
     schedule.scheduleJob(promoterUnlockScheduleRule, async () => {
         try {
@@ -67,7 +75,20 @@ async function main() {
         }
     });
 
-    console.log(`Scheduled Promoter Unlock (daily at ${promoterUnlockScheduleRule}) and Fundamental Data (${fundaScraperScheduleRule}) scrapers.`);
+    // Schedule 52-Week High/Low Scraper
+    schedule.scheduleJob(week52ScraperScheduleRule, async () => {
+        try {
+            console.log(`[${new Date().toLocaleString()}] Scheduled Job: Running 52-Week High/Low Scraper...`);
+            const { scrape52WeekHighLow } = require('./week52Scraper');
+            await scrape52WeekHighLow();
+            console.log(`[${new Date().toLocaleString()}] Scheduled Job: 52-Week High/Low Scraper completed successfully.`);
+        } catch (e: any) {
+            console.error(`[${new Date().toLocaleString()}] Scheduled Job Error (52-Week Scraper):`, e.message);
+        }
+    });
+
+    console.log(`Scheduled Promoter Unlock (daily at ${promoterUnlockScheduleRule}), Fundamental Data (${fundaScraperScheduleRule}), and 52-Week High/Low (${week52ScraperScheduleRule}) scrapers.`);
+
 
     console.log(`Polling Google Sheets every ${POLLING_INTERVAL_MS / 1000} seconds...`);
 
@@ -91,23 +112,37 @@ async function main() {
                         console.log('[CHECK_STATUS] No users marked with TRUE in Column L. Skipping status check.');
                         await control.updateStatus('COMPLETED', 'No users marked with TRUE in Column L.');
                         await control.resetCommand();
+                        await sendTelegramNotification('ℹ️ <b>IPO Status Check Skipped</b>\nNo users marked with Column L (<code>checkForThis = TRUE</code>) in Google Sheets.');
                     } else {
                         await control.updateStatus('IN_PROGRESS', `Running status check for ${usersToCheck.length} users and ${stocks.length} stocks...`);
 
+                        const summaryResults: { user: string; stock: string; status: string }[] = [];
                         await runCheckStatus(usersToCheck, stocks, async (stockName, userName, status) => {
                             await addResultToSheet(stockName, userName, status);
+                            summaryResults.push({ user: userName, stock: stockName, status });
                         });
 
                         await control.updateStatus('COMPLETED', 'Status check finished successfully.');
                         await control.resetCommand();
                         console.log('CHECK_STATUS process completed.');
+
+                        const resultLines = summaryResults.map(r => `• <b>${r.user}</b> (${r.stock}): <code>${r.status}</code>`).join('\n');
+                        await sendTelegramNotification(
+                            `📋 <b>IPO Status Check Completed</b>\n\n` +
+                            (resultLines || 'All accounts processed.')
+                        ).catch(() => {});
                     }
                 } catch (e: any) {
-                    console.error('Error during CHECK_STATUS execution:', e?.message || e);
+                    const shortErr = formatShortError(e);
+                    console.error('Error during CHECK_STATUS execution:', shortErr);
+                    await sendTelegramNotification(
+                        `🚨 <b>CHECK_STATUS Process Error</b>\n` +
+                        `Error: <code>${shortErr}</code>`
+                    );
                     try {
-                        await control.updateStatus('ERROR', `Status check failed: ${e?.message || e}`);
+                        await control.updateStatus('ERROR', `Status check failed: ${shortErr}`);
                         await control.resetCommand();
-                    } catch (_) {}
+                    } catch (_) { }
                 }
 
             } else if (command === 'PROMOTER_UNLOCK_CHECK' && status !== 'IN_PROGRESS') {
@@ -117,12 +152,12 @@ async function main() {
                 try {
                     const { fetchPromoterUnlockData } = require('./promoterUnlock');
                     const { overrideSheetData } = require('./googleSheetsService');
-                    
+
                     const { headers, data } = await fetchPromoterUnlockData();
                     await control.updateStatus('IN_PROGRESS', `Updating Google Sheet tab: PromoterShareUnlock...`);
-                    
+
                     await overrideSheetData('PromoterShareUnlock', headers, data);
-                    
+
                     await control.updateStatus('COMPLETED', `Scraped ${data.length} rows successfully.`);
                     await control.resetCommand();
                     console.log('PROMOTER_UNLOCK_CHECK process completed.');
@@ -137,10 +172,10 @@ async function main() {
 
                 try {
                     const { fetchFundamentalData } = require('./fundaScraper');
-                    
+
                     const { headers, data } = await fetchFundamentalData();
                     // fundaScraper internally saves the data to Google Sheets
-                    
+
                     await control.updateStatus('COMPLETED', `Scraped ${data.length} rows successfully.`);
                     await control.resetCommand();
                     console.log('EXTRACT_FUNDA_DATA process completed.');
@@ -149,10 +184,70 @@ async function main() {
                     await control.resetCommand();
                 }
 
+            } else if (command === 'EXTRACT_PORTFOLIO' && status !== 'IN_PROGRESS') {
+                console.log('Detected command: EXTRACT_PORTFOLIO. Starting portfolio scraper...');
+                await control.updateStatus('IN_PROGRESS', 'Scraping portfolio data...');
+
+                try {
+                    const { scrapePortfolio } = require('./portfolioScraper');
+                    const users = await fetchUsersFromSheet();
+
+                    const validUsers = users.filter((u: any) => u.username && u.password && u.dp && u.checkPortfolio === true);
+
+                    if (validUsers.length > 0) {
+                        let successCount = 0;
+                        for (const validUser of validUsers) {
+                            try {
+                                await scrapePortfolio(validUser);
+                                successCount++;
+                            } catch (err) {
+                                console.error(`Failed to scrape portfolio for user ${validUser.username}:`, err);
+                            }
+                        }
+                        await control.updateStatus('COMPLETED', `Portfolio scraped successfully for ${successCount} users.`);
+                    } else {
+                        await control.updateStatus('ERROR', 'No valid user found with checkPortfolio=TRUE for portfolio scraping.');
+                    }
+                    await control.resetCommand();
+                } catch (e: any) {
+                    await control.updateStatus('ERROR', `Portfolio scraper failed: ${e.message}`);
+                    await control.resetCommand();
+                }
+
+            } else if (command === 'EXTRACT_TECH_SIGNALS' && status !== 'IN_PROGRESS') {
+                console.log('Detected command: EXTRACT_TECH_SIGNALS. Starting technical signals scraper...');
+                await control.updateStatus('IN_PROGRESS', 'Scraping technical signals...');
+
+                try {
+                    const { scrapeTechnicalSignals } = require('./techScraper');
+                    await scrapeTechnicalSignals();
+                    await control.updateStatus('COMPLETED', 'Technical signals scraped successfully.');
+                    await control.resetCommand();
+                } catch (e: any) {
+                    await control.updateStatus('ERROR', `Technical signals scraper failed: ${e.message}`);
+                    await control.resetCommand();
+                }
+
+            } else if (command === 'EXTRACT_52_WEEK' && status !== 'IN_PROGRESS') {
+                console.log('Detected command: EXTRACT_52_WEEK. Starting 52-week scraper...');
+                await control.updateStatus('IN_PROGRESS', 'Scraping 52-week High and Low stocks...');
+
+                try {
+                    const { scrape52WeekHighLow } = require('./week52Scraper');
+                    const results = await scrape52WeekHighLow();
+                    await control.updateStatus('COMPLETED', `52-week data scraped successfully (${results.length} stocks).`);
+                    await control.resetCommand();
+                    console.log('EXTRACT_52_WEEK process completed.');
+                } catch (e: any) {
+                    await control.updateStatus('ERROR', `52-week scraper failed: ${e.message}`);
+                    await control.resetCommand();
+                }
+
+
             } else if (command === 'START_SCHEDULER' && status !== 'SCHEDULER_RUNNING') {
                 console.log('Detected command: START_SCHEDULER. Starting scheduler...');
                 await control.updateStatus('IN_PROGRESS', 'Fetching user data for scheduler...');
-                    
+
                 const users = await fetchUsersFromSheet();
                 initializeScheduler(users);
 
@@ -172,11 +267,11 @@ async function main() {
 
         try {
             const scheduledTime = await getTmsScheduleTime();
-            
+
             // If the time has changed, update the schedule
             if (scheduledTime && scheduledTime !== currentTmsScheduleTime) {
                 const scheduledDate = new Date(scheduledTime);
-                
+
                 if (!isNaN(scheduledDate.getTime())) {
                     if (tmsScheduledJob) {
                         tmsScheduledJob.cancel();
@@ -217,6 +312,9 @@ async function main() {
         } catch (e: any) {
             console.error('Error handling TMS scheduled time:', e.message);
         }
+
+        // Drain any pending notifications queued during network dropouts
+        await flushNotificationQueue().catch(() => {});
 
         await new Promise(resolve => setTimeout(resolve, POLLING_INTERVAL_MS));
     }

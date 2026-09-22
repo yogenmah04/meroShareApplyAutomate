@@ -11,3 +11,7 @@ tms_user_data/
 # Secrets
 .env
 users.json
+notification_queue/
+*.log
+week52_high_low.json
+
