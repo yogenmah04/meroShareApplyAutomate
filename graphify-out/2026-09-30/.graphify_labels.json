@@ -1,0 +1,22 @@
+{
+  "0": "⚙️ Core System & Orchestration",
+  "1": "googleSheetsService.ts",
+  "2": "checkStatus.ts",
+  "3": "dependencies",
+  "4": "package.json",
+  "5": "System Architecture & Technical Documentation",
+  "6": "nepseAccumulation.js",
+  "7": "📁 File & Function Breakdown",
+  "8": "scripts",
+  "9": "Meroshare Automated IPO Scheduler",
+  "10": "tmsAutomation.ts",
+  "11": "nepseScraper.ts",
+  "12": "autonomousParser.ts",
+  "13": "naasaLogin.ts",
+  "14": "saveAuthSession.ts",
+  "15": "testStealth.ts",
+  "16": "playwright.config.ts",
+  "17": "example.spec.ts",
+  "18": "login.spec.ts",
+  "19": "work.md"
+}
