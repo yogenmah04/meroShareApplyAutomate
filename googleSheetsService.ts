@@ -382,3 +382,4 @@ export async function override52WeekData(records: Week52Record[]) {
   });
 }
 
+export { doc, callWithRetry };

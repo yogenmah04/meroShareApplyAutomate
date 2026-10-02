@@ -5,6 +5,7 @@ import { sendTelegramNotification, flushNotificationQueue } from './notification
 import { initializeScheduler } from './scheduler';
 import { scheduleNepseScraper } from './nepseScraper';
 import { startTelegramBotListener } from './telegramBotService';
+import { start10MinSLTPMonitor, scanPortfolioSLTP, getLiveMarketData } from './sltpMonitorService';
 import * as dotenv from 'dotenv';
 import schedule from 'node-schedule';
 import { ensureDesktopDisplay } from './humanUtils';
@@ -46,6 +47,7 @@ async function main() {
     // Start parallel scheduled jobs
     scheduleNepseScraper();
     startTelegramBotListener().catch(err => console.error('[Telegram Bot] Listener startup error:', err));
+    start10MinSLTPMonitor();
 
     const promoterUnlockScheduleRule = "35 11 * * *"; // 11:35 AM
     const fundaScraperScheduleRule = "40 11 * * *"; // 11:40 AM
@@ -245,6 +247,36 @@ async function main() {
                     await control.resetCommand();
                 }
 
+            } else if (command === 'SCAN_SL_TP' && status !== 'IN_PROGRESS') {
+                console.log('Detected command: SCAN_SL_TP. Scanning "yogen" sheet for SL & TP hits...');
+                await control.updateStatus('IN_PROGRESS', 'Scanning "yogen" sheet against live market data...');
+
+                try {
+                    const result = await scanPortfolioSLTP(false);
+                    const msg = result.newTriggersCount > 0
+                        ? `Finished: ${result.newTriggersCount} stock(s) triggered SL/TP.`
+                        : `Finished: 0 new hits (${result.scannedRows} rows scanned).`;
+                    await control.updateStatus('COMPLETED', msg);
+                    await control.resetCommand();
+                    console.log('SCAN_SL_TP completed successfully.');
+                } catch (e: any) {
+                    await control.updateStatus('ERROR', `SL/TP scan failed: ${e.message}`);
+                    await control.resetCommand();
+                }
+
+            } else if (command === 'FETCH_LIVE_TRADING' && status !== 'IN_PROGRESS') {
+                console.log('Detected command: FETCH_LIVE_TRADING. Fetching live trading data...');
+                await control.updateStatus('IN_PROGRESS', 'Fetching ShareSansar live trading data...');
+
+                try {
+                    const liveMap = await getLiveMarketData();
+                    await control.updateStatus('COMPLETED', `Live trading updated (${Object.keys(liveMap).length} stocks).`);
+                    await control.resetCommand();
+                    console.log('FETCH_LIVE_TRADING completed successfully.');
+                } catch (e: any) {
+                    await control.updateStatus('ERROR', `Live trading fetch failed: ${e.message}`);
+                    await control.resetCommand();
+                }
 
             } else if (command === 'START_SCHEDULER' && status !== 'SCHEDULER_RUNNING') {
                 console.log('Detected command: START_SCHEDULER. Starting scheduler...');

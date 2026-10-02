@@ -94,6 +94,10 @@ export function getCommandCenterKeyboard() {
     return {
         inline_keyboard: [
             [
+                { text: '🎯 Scan SL/TP (\'yogen\')', callback_data: 'cmd_scansltp' },
+                { text: '📊 Fetch Live Trading', callback_data: 'cmd_livetrading' }
+            ],
+            [
                 { text: '📋 Check IPO Status', callback_data: 'cmd_check_status' },
                 { text: '💼 Scrape Portfolio', callback_data: 'cmd_portfolio' }
             ],
@@ -395,7 +399,68 @@ async function handleTelegramCommand(command: string, chatId: string) {
         return;
     }
 
-    // 7. STOP
+    // 7. SCAN SL / TP ('yogen' sheet)
+    if (cmd === 'scansltp' || cmd === 'sltp' || cmd === 'sttp' || cmd === 'cmd_scansltp') {
+        runTaskAsync('SCAN_SL_TP', async () => {
+            await sendTelegramMessage('⏳ <b>Scanning "yogen" Sheet for SL & TP Hits...</b>\nFetching live market data and matching rows (Col L=ST, Col M=TP)...', undefined, chatId);
+
+            const { scanPortfolioSLTP } = require('./sltpMonitorService');
+            const result = await scanPortfolioSLTP(false);
+
+            if (!result.success) {
+                await sendTelegramMessage(`❌ <b>SL/TP Scan Failed:</b> ${result.error}`, getCommandCenterKeyboard(), chatId);
+                return;
+            }
+
+            if (result.newTriggersCount === 0) {
+                await sendTelegramMessage(
+                    `✅ <b>SL/TP Scan Finished</b>\n\n` +
+                    `• <b>Scanned Rows in 'yogen':</b> <code>${result.scannedRows}</code>\n` +
+                    `• <b>Active Targets Monitored:</b> <code>${result.matchedStocks}</code>\n` +
+                    `• <b>New Hits Triggered:</b> <code>0</code> (No Stop Loss or Take Profit targets breached)\n` +
+                    `• <b>Timestamp:</b> <i>${result.timestamp}</i>`,
+                    getCommandCenterKeyboard(),
+                    chatId
+                );
+            } else {
+                const lines = result.triggers.map((t: any) =>
+                    `• <b>${t.symbol}</b>: <code>${t.triggerType}</code>\n  LTP: ${t.ltp} (${t.pctChange}%) | Low: ${t.dayLow} (SL: ${t.sl}) | High: ${t.dayHigh} (TP: ${t.tp})`
+                ).join('\n');
+
+                await sendTelegramMessage(
+                    `🚨 <b>${result.newTriggersCount} Stock(s) Triggered SL / TP!</b>\n\n` +
+                    lines + `\n\n` +
+                    `<i>Logged to Google Sheet tab: 'SL_TP_Hits'</i>`,
+                    getCommandCenterKeyboard(),
+                    chatId
+                );
+            }
+        }, chatId);
+        return;
+    }
+
+    // 8. FETCH LIVE TRADING DATA
+    if (cmd === 'livetrading' || cmd === 'live' || cmd === 'cmd_livetrading') {
+        runTaskAsync('FETCH_LIVE_TRADING', async () => {
+            await sendTelegramMessage('⏳ <b>Fetching Live Trading Data...</b>\nQuerying ShareSansar NEPSE live table...', undefined, chatId);
+
+            const { getLiveMarketData } = require('./sltpMonitorService');
+            const liveMap = await getLiveMarketData();
+            const count = Object.keys(liveMap).length;
+
+            await sendTelegramMessage(
+                `📊 <b>Live Trading Data Updated</b>\n\n` +
+                `• <b>Total Stocks Fetched:</b> <code>${count}</code>\n` +
+                `• <b>Updated Tab:</b> <code>'live trading'</code>\n` +
+                `• <b>Server Time:</b> <i>${new Date().toLocaleTimeString()}</i>`,
+                getCommandCenterKeyboard(),
+                chatId
+            );
+        }, chatId);
+        return;
+    }
+
+    // 9. STOP
     if (cmd === 'stop' || cmd === 'cmd_stop') {
         await initSheets().catch(() => {});
         const control = await getControlCommand().catch(() => null);
