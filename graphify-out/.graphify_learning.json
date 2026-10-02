@@ -1,0 +1,149 @@
+{
+  "generated_at": "2026-09-30T10:25:14.876308+00:00",
+  "nodes": {
+    "nepsescraper": {
+      "code_fingerprint": "bea75b3d5f277a0370af7c3d4cd3b85a8d712c5c1c6d3621b3752cef41180731",
+      "label": "nepseScraper.ts",
+      "last": "2026-09-29T05:09:17.374045+00:00",
+      "provenance": [
+        {
+          "date": "2026-09-29T05:09:17.374045+00:00",
+          "outcome": "useful",
+          "q": "what about for running in nepseScraper.ts at ' const scheduleRuleAfternoon = \"0 05 16 * * *\";' in google sheet script"
+        },
+        {
+          "date": "2026-09-29T04:48:42.375520+00:00",
+          "outcome": "useful",
+          "q": "can we implement nepseScraper.ts code in google sheet script which is located in folder 'shareInforScript'"
+        }
+      ],
+      "score": 1.944116403,
+      "source_file": "nepseScraper.ts",
+      "status": "preferred",
+      "uses": 2
+    },
+    "nepsescraper_schedulenepsescraper": {
+      "code_fingerprint": "bea75b3d5f277a0370af7c3d4cd3b85a8d712c5c1c6d3621b3752cef41180731",
+      "label": "scheduleNepseScraper()",
+      "last": "2026-09-29T05:09:17.374045+00:00",
+      "provenance": [
+        {
+          "date": "2026-09-29T05:09:17.374045+00:00",
+          "outcome": "useful",
+          "q": "what about for running in nepseScraper.ts at ' const scheduleRuleAfternoon = \"0 05 16 * * *\";' in google sheet script"
+        },
+        {
+          "date": "2026-09-29T04:48:42.375520+00:00",
+          "outcome": "useful",
+          "q": "can we implement nepseScraper.ts code in google sheet script which is located in folder 'shareInforScript'"
+        }
+      ],
+      "score": 1.944116403,
+      "source_file": "nepseScraper.ts",
+      "status": "preferred",
+      "uses": 2
+    },
+    "nepsescraper_scrapenepseandsave": {
+      "code_fingerprint": "bea75b3d5f277a0370af7c3d4cd3b85a8d712c5c1c6d3621b3752cef41180731",
+      "label": "scrapeNepseAndSave()",
+      "last": "2026-09-29T04:48:42.375520+00:00",
+      "provenance": [
+        {
+          "date": "2026-09-29T04:48:42.375520+00:00",
+          "outcome": "useful",
+          "q": "can we implement nepseScraper.ts code in google sheet script which is located in folder 'shareInforScript'"
+        }
+      ],
+      "score": 0.971897685,
+      "source_file": "nepseScraper.ts",
+      "status": "tentative",
+      "uses": 1
+    },
+    "package_main": {
+      "code_fingerprint": "ec9c15d83e2593d6b4fc6c9513ecaa41ef3e274c184f096ec9e853cda1854a3d",
+      "label": "main",
+      "last": "2026-09-04T06:28:45.887476+00:00",
+      "provenance": [
+        {
+          "date": "2026-09-04T06:28:45.887476+00:00",
+          "outcome": "useful",
+          "q": "fix this error using supervisor for npm run watch-sheets"
+        }
+      ],
+      "score": 0.546335542,
+      "source_file": "package.json",
+      "status": "tentative",
+      "uses": 1
+    },
+    "shareinfoscript_nepsestatusappsscript": {
+      "code_fingerprint": "4ed12f24ad828b26d3725b2aa67144cda3ec4945d39528e4ae143b4650769731",
+      "label": "nepseStatusAppsScript.js",
+      "last": "2026-09-29T05:09:17.374045+00:00",
+      "provenance": [
+        {
+          "date": "2026-09-29T05:09:17.374045+00:00",
+          "outcome": "useful",
+          "q": "what about for running in nepseScraper.ts at ' const scheduleRuleAfternoon = \"0 05 16 * * *\";' in google sheet script"
+        },
+        {
+          "date": "2026-09-29T04:57:52.103288+00:00",
+          "outcome": "useful",
+          "q": "implement this code in google sheet script nepseStatusAppsScript.js and triggered at 11:01 am every day and update in report B1 sheet"
+        }
+      ],
+      "score": 1.94425929,
+      "source_file": "shareInfoScript/nepseStatusAppsScript.js",
+      "status": "preferred",
+      "uses": 2
+    },
+    "shareinfoscript_nepsestatusappsscript_scrapenepsestatusdaily": {
+      "code_fingerprint": "4ed12f24ad828b26d3725b2aa67144cda3ec4945d39528e4ae143b4650769731",
+      "label": "scrapeNepseStatusDaily()",
+      "last": "2026-09-29T04:57:52.103288+00:00",
+      "provenance": [
+        {
+          "date": "2026-09-29T04:57:52.103288+00:00",
+          "outcome": "useful",
+          "q": "implement this code in google sheet script nepseStatusAppsScript.js and triggered at 11:01 am every day and update in report B1 sheet"
+        }
+      ],
+      "score": 0.972040572,
+      "source_file": "shareInfoScript/nepseStatusAppsScript.js",
+      "status": "tentative",
+      "uses": 1
+    },
+    "shareinfoscript_nepsestatusappsscript_setupnepse1101trigger": {
+      "code_fingerprint": "4ed12f24ad828b26d3725b2aa67144cda3ec4945d39528e4ae143b4650769731",
+      "label": "setupNepse1101Trigger()",
+      "last": "2026-09-29T04:57:52.103288+00:00",
+      "provenance": [
+        {
+          "date": "2026-09-29T04:57:52.103288+00:00",
+          "outcome": "useful",
+          "q": "implement this code in google sheet script nepseStatusAppsScript.js and triggered at 11:01 am every day and update in report B1 sheet"
+        }
+      ],
+      "score": 0.972040572,
+      "source_file": "shareInfoScript/nepseStatusAppsScript.js",
+      "status": "tentative",
+      "uses": 1
+    },
+    "shareinfoscript_nepsestatusappsscript_setupnepsealltriggers": {
+      "code_fingerprint": "4ed12f24ad828b26d3725b2aa67144cda3ec4945d39528e4ae143b4650769731",
+      "label": "setupNepseAllTriggers()",
+      "last": "2026-09-29T05:09:17.374045+00:00",
+      "provenance": [
+        {
+          "date": "2026-09-29T05:09:17.374045+00:00",
+          "outcome": "useful",
+          "q": "what about for running in nepseScraper.ts at ' const scheduleRuleAfternoon = \"0 05 16 * * *\";' in google sheet script"
+        }
+      ],
+      "score": 0.972218718,
+      "source_file": "shareInfoScript/nepseStatusAppsScript.js",
+      "status": "tentative",
+      "uses": 1
+    }
+  },
+  "version": 1
+}
