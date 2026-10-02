@@ -1,16 +1,16 @@
 # Graph Report - meroshare  (2026-10-02)
 
 ## Corpus Check
-- 72 files · ~40,202 words
+- 75 files · ~45,568 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 484 nodes · 751 edges · 57 communities (50 shown, 7 thin omitted)
+- 520 nodes · 856 edges · 58 communities (51 shown, 7 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `aab2c7dd`
+- Built from commit: `7dd0cfc9`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -53,35 +53,36 @@
 - Q:  i have one way notification telegram integration now i need two way communication where google sheet command controls also hit from telegram msg, make a plan for that implementation
 - Q: read TELEGRAM_TWO_WAY_CONTROL_PLAN.md and implement phase 1
 - Q: how to run or test the two way communication implemetation
+- initSheets
 
 ## God Nodes (most connected - your core abstractions)
-1. `main()` - 26 edges
-2. `handleTelegramCommand()` - 23 edges
-3. `jitterSleep()` - 18 edges
-4. `scripts` - 18 edges
-5. `initSheets()` - 17 edges
-6. `getRandomUserAgent()` - 17 edges
-7. `launchBrowserWithViewMode()` - 16 edges
-8. `callWithRetry()` - 15 edges
-9. `humanClick()` - 13 edges
-10. `runCheckStatus()` - 12 edges
+1. `main()` - 30 edges
+2. `initSheets()` - 27 edges
+3. `handleTelegramCommand()` - 26 edges
+4. `callWithRetry()` - 19 edges
+5. `jitterSleep()` - 18 edges
+6. `scripts` - 18 edges
+7. `getRandomUserAgent()` - 17 edges
+8. `launchBrowserWithViewMode()` - 16 edges
+9. `sendTelegramNotification()` - 14 edges
+10. `humanClick()` - 13 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `runAutomation()` --calls--> `initSheets()`  [EXTRACTED]
-  tmsAutomation.ts → googleSheetsService.ts
-- `run()` --calls--> `getRandomUserAgent()`  [EXTRACTED]
-  testBody.ts → humanUtils.ts
-- `main()` --calls--> `scheduleNepseScraper()`  [EXTRACTED]
-  syncService.ts → nepseScraper.ts
-- `main()` --calls--> `flushNotificationQueue()`  [EXTRACTED]
-  syncService.ts → notificationService.ts
-- `runAutomation()` --calls--> `formatShortError()`  [EXTRACTED]
-  automate.ts → checkStatus.ts
+- `fetchFundamentalData()` --calls--> `initSheets()`  [EXTRACTED]
+  fundaScraper.ts → googleSheetsService.ts
+- `syncLiveTradingSheet()` --calls--> `callWithRetry()`  [EXTRACTED]
+  sltpMonitorService.ts → googleSheetsService.ts
+- `pollSLTPHitsQueue()` --calls--> `callWithRetry()`  [EXTRACTED]
+  sltpQueueService.ts → googleSheetsService.ts
+- `scrapePortfolio()` --calls--> `initSheets()`  [EXTRACTED]
+  portfolioScraper.ts → googleSheetsService.ts
+- `main()` --calls--> `initSheets()`  [EXTRACTED]
+  syncService.ts → googleSheetsService.ts
 
 ## Import Cycles
 - None detected.
 
-## Communities (57 total, 7 thin omitted)
+## Communities (58 total, 7 thin omitted)
 
 ### Community 0 - "⚙️ Core System & Orchestration"
 Cohesion: 0.05
@@ -89,7 +90,7 @@ Nodes (37): 1. Authentication & Security, 1. Layered Architecture Pattern, 2. Hu
 
 ### Community 1 - "googleSheetsService.ts"
 Cohesion: 0.13
-Nodes (50): runAutomation(), formatShortError(), login(), runCheckStatus(), StatusEntry, StockReport, User, fetchFundamentalData() (+42 more)
+Nodes (48): runAutomation(), formatShortError(), login(), runCheckStatus(), StatusEntry, StockReport, User, fetchFundamentalData() (+40 more)
 
 ### Community 2 - "Potential Outcomes & Capabilities Derived from `🗃️ DailyClose` Data"
 Cohesion: 0.10
@@ -180,8 +181,8 @@ Cohesion: 1.00
 Nodes (3): analyzeBuyTpSl(), average(), stdev()
 
 ### Community 34 - "sltpHit.js"
-Cohesion: 0.38
-Nodes (9): getExistingHitsToday(), getLiveTradingDataMap(), getOrCreateAlertSheet(), parsePriceNum(), remove10MinLiveScanTrigger(), runLiveFetchAndScanSLTP(), scanStocksForSLTP(), sendTelegramAlertsBatch() (+1 more)
+Cohesion: 0.19
+Nodes (21): formatPurchaseDate(), generateUniqueStockId(), getExistingHitsTodayMap(), getExistingSLTPStocksMap(), getLiveTradingDataMap(), getOrCreateSLTPHitsSheet(), getOrCreateSLTPStocksSheet(), isHitFromToday() (+13 more)
 
 ### Community 35 - "SupportBounce_Vol_Rsi.js"
 Cohesion: 0.83
@@ -207,8 +208,12 @@ Nodes (4): Answer, Outcome, Q: read TELEGRAM_TWO_WAY_CONTROL_PLAN.md and impleme
 Cohesion: 0.40
 Nodes (4): Answer, Outcome, Q: how to run or test the two way communication implemetation, Source Nodes
 
+### Community 57 - "initSheets"
+Cohesion: 0.17
+Nodes (22): doc, initSheets(), fetchShareSansarLiveHtml(), generateUniqueStockId(), getLiveMarketData(), isHitRecordedToday(), isNepseMarketOpen(), LiveStockData (+14 more)
+
 ## Knowledge Gaps
-- **175 isolated node(s):** `User`, `StatusEntry`, `StockReport`, `formattedKey`, `serviceAccountAuth` (+170 more)
+- **178 isolated node(s):** `User`, `StatusEntry`, `StockReport`, `formattedKey`, `serviceAccountAuth` (+173 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **7 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -222,17 +227,17 @@ Nodes (4): Answer, Outcome, Q: how to run or test the two way communication impl
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `dependencies` connect `dependencies` to `scripts`?**
+- **Why does `initSheets()` connect `initSheets` to `googleSheetsService.ts`, `tmsAutomation.ts`?**
   _High betweenness centrality (0.007) - this node is a cross-community bridge._
+- **Why does `dependencies` connect `dependencies` to `scripts`?**
+  _High betweenness centrality (0.006) - this node is a cross-community bridge._
 - **What connects `User`, `StatusEntry`, `StockReport` to the rest of the system?**
-  _175 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _178 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `⚙️ Core System & Orchestration` be split into smaller, more focused modules?**
   _Cohesion score 0.05263157894736842 - nodes in this community are weakly interconnected._
 - **Should `googleSheetsService.ts` be split into smaller, more focused modules?**
-  _Cohesion score 0.12692307692307692 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.12698412698412698 - nodes in this community are weakly interconnected._
 - **Should `Potential Outcomes & Capabilities Derived from `🗃️ DailyClose` Data` be split into smaller, more focused modules?**
   _Cohesion score 0.09523809523809523 - nodes in this community are weakly interconnected._
 - **Should `dependencies` be split into smaller, more focused modules?**
   _Cohesion score 0.10526315789473684 - nodes in this community are weakly interconnected._
-- **Should `scripts` be split into smaller, more focused modules?**
-  _Cohesion score 0.05714285714285714 - nodes in this community are weakly interconnected._

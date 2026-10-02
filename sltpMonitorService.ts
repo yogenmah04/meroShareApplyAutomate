@@ -1,6 +1,6 @@
 import https from 'https';
 import { doc, initSheets, callWithRetry } from './googleSheetsService';
-import { sendTelegramNotification } from './notificationService';
+import { pollSLTPHitsQueue } from './sltpQueueService';
 
 export interface LiveStockData {
     symbol: string;
@@ -15,6 +15,7 @@ export interface LiveStockData {
 }
 
 export interface SLTPTriggerResult {
+    uniqueId: string;
     symbol: string;
     triggerType: 'SL HIT' | 'TP HIT' | 'BOTH HIT';
     triggerBadge: string;
@@ -24,7 +25,6 @@ export interface SLTPTriggerResult {
     dayHigh: number;
     dayLow: number;
     pctChange: number;
-    rowValues: any[];
     time: string;
 }
 
@@ -40,7 +40,8 @@ export interface ScanSummary {
 
 const YOGEN_SHEET_NAME = 'yogen';
 const YOGEN_START_ROW = 6; // 1-indexed (Row 6)
-const ALERT_SHEET_NAME = 'SL_TP_Hits';
+const STOCKS_FILTER_SHEET_NAME = 'SLTP-stocks';
+const HITS_ALERT_SHEET_NAME = 'SL-TP-Hits';
 
 /**
  * Checks if current market is open:
@@ -189,6 +190,17 @@ function parsePriceNum(val: any): number {
 }
 
 /**
+ * Generates a clean Unique ID: symbol-kitta-Purchase Price-Purchase date
+ */
+export function generateUniqueStockId(symbol: any, kitta: any, purchasePrice: any, purchaseDate: any): string {
+    const cleanSym = String(symbol || '').trim().toUpperCase().replace(/[^A-Z0-9]/g, '');
+    const cleanKitta = String(kitta || '0').trim().replace(/,/g, '');
+    const cleanPrice = String(purchasePrice || '0').trim().replace(/,/g, '');
+    const cleanDate = String(purchaseDate || 'NODATE').trim().replace(/[^A-Za-z0-9]/g, '-');
+    return `${cleanSym}-${cleanKitta}-${cleanPrice}-${cleanDate}`;
+}
+
+/**
  * Gets live market data: attempts live fetch first, falls back to 'live trading' sheet tab
  */
 export async function getLiveMarketData(): Promise<Record<string, LiveStockData>> {
@@ -271,7 +283,6 @@ async function syncLiveTradingSheet(rawRows: any[][]): Promise<void> {
             sheet = await doc.addSheet({ title: 'live trading' });
         }
 
-        // Prepare rows (excluding header row)
         const header = rawRows[0];
         const dataRows = rawRows.slice(1).map(r => ({
             'S.No': r[0],
@@ -297,82 +308,145 @@ async function syncLiveTradingSheet(rawRows: any[][]): Promise<void> {
     });
 }
 
-/**
- * Gets or creates the 'SL_TP_Hits' sheet tab with formatted headers
- */
-async function getOrCreateAlertSheet(): Promise<any> {
-    await initSheets();
-    let alertSheet = doc.sheetsByTitle[ALERT_SHEET_NAME];
-    if (alertSheet) return alertSheet;
+// =============================================================================
+// STAGE 1: Initial Stock Filter & Duplicate Prevention (yogen -> SLTP-stocks)
+// =============================================================================
 
+/**
+ * Stage 1: Filters eligible stocks from 'yogen' (Row 6 onwards) with SL > 0 or TP > 0,
+ * generates Unique ID, and syncs to 'SLTP-stocks' without duplicates.
+ */
+export async function syncYogenToSLTPStocks(): Promise<{ added: number; updated: number; total: number }> {
+    await initSheets();
+    const yogenSheet = doc.sheetsByTitle[YOGEN_SHEET_NAME];
+    if (!yogenSheet) {
+        console.error(`Sheet tab '${YOGEN_SHEET_NAME}' not found.`);
+        return { added: 0, updated: 0, total: 0 };
+    }
+
+    // Get or Create 'SLTP-stocks' sheet
+    let sltpStocksSheet = doc.sheetsByTitle[STOCKS_FILTER_SHEET_NAME];
     const headers = [
+        'Unique ID',
         'Symbol',
         'Sector',
-        'Kitta',
-        'Share Value',
-        'Total',
-        'Purchase Price',
-        'Purchase Total',
-        'Profit/Loss',
-        'Date',
-        'Days',
-        'Profit %',
-        'Stop Loss (ST)',
-        'Take Profit (TP)',
-        'Trigger Event',
-        'Triggered At',
-        'Live LTP',
-        'Day High',
-        'Day Low',
-        'Day % Change'
+        'kitta',
+        'share value',
+        'total',
+        'purchase price',
+        'purchase total',
+        'profit / loss',
+        'purchase date',
+        'count days',
+        'profit or loss %',
+        'ST (Stop Loss)',
+        'TP (Take Profit)',
+        'Last Synced'
     ];
 
-    alertSheet = await doc.addSheet({
-        title: ALERT_SHEET_NAME,
-        headerValues: headers
-    });
+    if (!sltpStocksSheet) {
+        sltpStocksSheet = await doc.addSheet({
+            title: STOCKS_FILTER_SHEET_NAME,
+            headerValues: headers
+        });
+        console.log(`Created new sheet tab: '${STOCKS_FILTER_SHEET_NAME}'`);
+    }
 
-    console.log(`Created new sheet tab: '${ALERT_SHEET_NAME}'`);
-    return alertSheet;
-}
+    const rowCount = yogenSheet.rowCount;
+    if (rowCount < YOGEN_START_ROW) {
+        return { added: 0, updated: 0, total: 0 };
+    }
 
-/**
- * Returns existing hit keys logged today in 'SL_TP_Hits' to prevent duplicate alerts
- */
-async function getExistingHitsToday(alertSheet: any, todayDateStr: string): Promise<Record<string, boolean>> {
-    const map: Record<string, boolean> = {};
-    try {
-        const rows = await alertSheet.getRows();
-        for (const r of rows) {
-            const raw = (r as any)._rawData || [];
-            const sym = String(r.get('Symbol') || raw[0] || '').trim().toUpperCase();
-            const triggerEvent = String(r.get('Trigger Event') || raw[13] || '').trim();
-            const trigAt = String(r.get('Triggered At') || raw[14] || '').trim();
+    const endRow = Math.min(rowCount, 200);
+    await yogenSheet.loadCells(`A${YOGEN_START_ROW}:M${endRow}`);
 
-            if (sym && trigAt.includes(todayDateStr)) {
-                const eventNorm = triggerEvent.includes('BOTH') ? 'BOTH HIT' : (triggerEvent.includes('SL') ? 'SL HIT' : 'TP HIT');
-                const key = `${todayDateStr}_${sym}_${eventNorm}`;
-                map[key] = true;
-            }
+    // Read existing Unique IDs in 'SLTP-stocks'
+    const existingRows = await sltpStocksSheet.getRows();
+    const existingMap = new Map<string, any>();
+    for (const r of existingRows) {
+        const uid = String(r.get('Unique ID') || '').trim();
+        if (uid) existingMap.set(uid, r);
+    }
+
+    const timestamp = new Date().toLocaleString('en-US', { timeZone: 'Asia/Kathmandu' });
+    let added = 0;
+    let updated = 0;
+    const rowsToAdd: any[] = [];
+
+    for (let r = YOGEN_START_ROW - 1; r < endRow; r++) {
+        const symVal = yogenSheet.getCell(r, 0).value;
+        if (!symVal) continue;
+
+        const symbol = String(symVal).trim().toUpperCase();
+        if (!symbol || symbol === 'SYMBOL' || symbol === 'TOTAL') continue;
+
+        const kitta = yogenSheet.getCell(r, 2).value ?? '0';
+        const purchasePrice = yogenSheet.getCell(r, 5).value ?? '0';
+        const purchaseDate = yogenSheet.getCell(r, 8).value ?? 'NODATE';
+
+        const sl = parsePriceNum(yogenSheet.getCell(r, 11).value);
+        const tp = parsePriceNum(yogenSheet.getCell(r, 12).value);
+
+        // Filter: Must have SL > 0 or TP > 0
+        if (sl <= 0 && tp <= 0) continue;
+
+        const uniqueId = generateUniqueStockId(symbol, kitta, purchasePrice, purchaseDate);
+
+        const rowData = {
+            'Unique ID': uniqueId,
+            'Symbol': symbol,
+            'Sector': yogenSheet.getCell(r, 1).value ?? '',
+            'kitta': kitta,
+            'share value': yogenSheet.getCell(r, 3).value ?? '',
+            'total': yogenSheet.getCell(r, 4).value ?? '',
+            'purchase price': purchasePrice,
+            'purchase total': yogenSheet.getCell(r, 6).value ?? '',
+            'profit / loss': yogenSheet.getCell(r, 7).value ?? '',
+            'purchase date': purchaseDate,
+            'count days': yogenSheet.getCell(r, 9).value ?? '',
+            'profit or loss %': yogenSheet.getCell(r, 10).value ?? '',
+            'ST (Stop Loss)': sl,
+            'TP (Take Profit)': tp,
+            'Last Synced': timestamp
+        };
+
+        if (existingMap.has(uniqueId)) {
+            // Update existing row
+            const existingRow = existingMap.get(uniqueId);
+            existingRow.set('share value', rowData['share value']);
+            existingRow.set('total', rowData['total']);
+            existingRow.set('profit / loss', rowData['profit / loss']);
+            existingRow.set('profit or loss %', rowData['profit or loss %']);
+            existingRow.set('ST (Stop Loss)', sl);
+            existingRow.set('TP (Take Profit)', tp);
+            existingRow.set('Last Synced', timestamp);
+            await existingRow.save().catch(() => {});
+            updated++;
+        } else {
+            // Append new row
+            rowsToAdd.push(rowData);
+            existingMap.set(uniqueId, rowData);
+            added++;
         }
-    } catch (_) {}
-    return map;
+    }
+
+    if (rowsToAdd.length > 0) {
+        await sltpStocksSheet.addRows(rowsToAdd);
+    }
+
+    console.log(`✅ [Stage 1 Complete] 'SLTP-stocks' synced: ${added} added, ${updated} updated, ${existingMap.size} total.`);
+    return { added, updated, total: existingMap.size };
 }
 
+// =============================================================================
+// STAGE 2: Live Price Monitoring & Hit Detection (SLTP-stocks -> SL-TP-Hits)
+// =============================================================================
+
 /**
- * Main SL & TP Scanner Function
- * 
- * - Reads 'yogen' sheet tab starting from row index 6 (1-based)
- * - Col A: Symbol, Col L: Stop Loss (ST), Col M: Take Profit (TP)
- * - Matches against Live Market Data:
- *     - Only processes rows present in live data (otherwise discards)
- *     - Discards rows where both SL and TP are empty / <= 0
- *     - Triggers SL if Day Low <= ST
- *     - Triggers TP if Day High >= TP
- * - Logs triggered rows (Cols A to M + trigger metadata) to 'SL_TP_Hits'
- * - Sends instant Telegram notification
+ * Stage 2: Compares 'SLTP-stocks' against live market data.
+ * Records hit events into 'SL-TP-Hits' with Status = FALSE for Stage 3 queue pickup.
  */
-export async function scanPortfolioSLTP(isScheduledRun = false): Promise<ScanSummary> {
+export async function scanSLTPStocksAgainstLive(isScheduledRun = false): Promise<ScanSummary> {
     const timestamp = new Date().toLocaleString('en-US', { timeZone: 'Asia/Kathmandu' });
     const todayDateStr = new Date().toISOString().split('T')[0];
 
@@ -394,29 +468,38 @@ export async function scanPortfolioSLTP(isScheduledRun = false): Promise<ScanSum
         console.log(`[SL/TP Monitor] 'Report'!B1 says '${marketStatus.statusText}'. Proceeding with live scan.`);
     }
 
-    console.log(`🔍 [SL/TP Monitor] Starting scan for 'yogen' sheet at ${timestamp}...`);
-
     await initSheets();
-    const yogenSheet = doc.sheetsByTitle[YOGEN_SHEET_NAME];
-    if (!yogenSheet) {
-        const err = `Sheet tab '${YOGEN_SHEET_NAME}' not found in Google Sheets.`;
-        console.error(err);
-        return {
-            success: false,
-            scannedRows: 0,
-            matchedStocks: 0,
-            newTriggersCount: 0,
-            triggers: [],
-            timestamp,
-            error: err
-        };
+
+    // 1. Ensure 'SLTP-stocks' is present and populated
+    let sltpSheet = doc.sheetsByTitle[STOCKS_FILTER_SHEET_NAME];
+    if (!sltpSheet) {
+        console.log(`'${STOCKS_FILTER_SHEET_NAME}' not found. Running Stage 1 sync first...`);
+        await syncYogenToSLTPStocks();
+        sltpSheet = doc.sheetsByTitle[STOCKS_FILTER_SHEET_NAME];
+        if (!sltpSheet) {
+            return {
+                success: false,
+                scannedRows: 0,
+                matchedStocks: 0,
+                newTriggersCount: 0,
+                triggers: [],
+                timestamp,
+                error: `Sheet '${STOCKS_FILTER_SHEET_NAME}' could not be initialized.`
+            };
+        }
     }
 
-    // 1. Fetch Live Market Data
+    const sltpRows = await sltpSheet.getRows();
+    if (sltpRows.length === 0) {
+        console.log(`'${STOCKS_FILTER_SHEET_NAME}' is empty. Running Stage 1 sync...`);
+        await syncYogenToSLTPStocks();
+    }
+
+    const refreshedSltpRows = await sltpSheet.getRows();
+
+    // 2. Fetch Live Market Data
     const liveMap = await getLiveMarketData();
     if (Object.keys(liveMap).length === 0) {
-        const err = 'No live trading data could be obtained. Aborting SL/TP scan.';
-        console.error(err);
         return {
             success: false,
             scannedRows: 0,
@@ -424,81 +507,84 @@ export async function scanPortfolioSLTP(isScheduledRun = false): Promise<ScanSum
             newTriggersCount: 0,
             triggers: [],
             timestamp,
-            error: err
+            error: 'No live trading data available'
         };
     }
 
-    // 2. Read 'yogen' sheet: Row 6 onwards (offset 5 from start, Row 5 is header)
-    // We load cells for rows 6..lastRow, cols 0..12 (Cols A to M)
-    const rowCount = yogenSheet.rowCount;
-    if (rowCount < YOGEN_START_ROW) {
-        return {
-            success: true,
-            scannedRows: 0,
-            matchedStocks: 0,
-            newTriggersCount: 0,
-            triggers: [],
-            timestamp
-        };
+    // 3. Get or Create 'SL-TP-Hits' sheet
+    let hitsSheet = doc.sheetsByTitle[HITS_ALERT_SHEET_NAME];
+    const hitHeaders = [
+        'Unique ID',
+        'Symbol',
+        'Sector',
+        'kitta',
+        'share value',
+        'total',
+        'purchase price',
+        'purchase total',
+        'profit / loss',
+        'purchase date',
+        'count days',
+        'profit or loss %',
+        'ST (Stop Loss)',
+        'TP (Take Profit)',
+        'Trigger Event',
+        'Triggered At',
+        'Live LTP',
+        'Day High',
+        'Day Low',
+        'Day % Change',
+        'Status',
+        'Processed At'
+    ];
+
+    if (!hitsSheet) {
+        hitsSheet = await doc.addSheet({
+            title: HITS_ALERT_SHEET_NAME,
+            headerValues: hitHeaders
+        });
+        console.log(`Created new sheet tab: '${HITS_ALERT_SHEET_NAME}'`);
     }
 
-    // Load cells from Row 6 (0-indexed row 5) to rowCount (capped at 200 for speed)
-    const endRow = Math.min(rowCount, 200);
-    await yogenSheet.loadCells(`A${YOGEN_START_ROW}:M${endRow}`);
+    // Read existing hits today to prevent duplicate rows
+    const existingHitRows = await hitsSheet.getRows();
+    const existingHitsToday = new Set<string>();
+    for (const r of existingHitRows) {
+        const uid = String(r.get('Unique ID') || '').trim();
+        const trigAt = String(r.get('Triggered At') || '').trim();
+        const trigEvent = String(r.get('Trigger Event') || '').trim();
+        if (uid && isHitRecordedToday(trigAt, todayDateStr)) {
+            const eventNorm = trigEvent.includes('BOTH') ? 'BOTH HIT' : (trigEvent.includes('STOP LOSS') ? 'SL HIT' : 'TP HIT');
+            existingHitsToday.add(`${todayDateStr}_${uid}_${eventNorm}`);
+        }
+    }
 
-    // 3. Prepare Target Sheet 'SL_TP_Hits'
-    const alertSheet = await getOrCreateAlertSheet();
-    const existingHits = await getExistingHitsToday(alertSheet, todayDateStr);
-
+    const newHitRows: any[] = [];
     const triggeredList: SLTPTriggerResult[] = [];
-    const rowsToAppend: any[] = [];
-    const telegramAlertLines: string[] = [];
     let matchedCount = 0;
-    let validRowsScanned = 0;
 
-    for (let r = YOGEN_START_ROW - 1; r < endRow; r++) {
-        const rawSym = yogenSheet.getCell(r, 0).value;
-        if (!rawSym) continue;
+    for (const row of refreshedSltpRows) {
+        const uniqueId = String(row.get('Unique ID') || '').trim();
+        const symbol = String(row.get('Symbol') || '').trim().toUpperCase();
+        if (!uniqueId || !symbol) continue;
 
-        const symbol = String(rawSym).trim().toUpperCase();
-        if (!symbol || symbol === 'SYMBOL' || symbol === 'TOTAL') continue;
-        validRowsScanned++;
+        const sl = parsePriceNum(row.get('ST (Stop Loss)') || row.get('ST'));
+        const tp = parsePriceNum(row.get('TP (Take Profit)') || row.get('TP'));
 
-        // Col L (index 11): Stop Loss (ST)
-        const sl = parsePriceNum(yogenSheet.getCell(r, 11).value);
-        // Col M (index 12): Take Profit (TP)
-        const tp = parsePriceNum(yogenSheet.getCell(r, 12).value);
+        if (sl <= 0 && tp <= 0) continue;
 
-        // Discard row if both SL and TP are not set (> 0)
-        if (sl <= 0 && tp <= 0) {
-            continue;
-        }
-
-        // Discard if symbol is not present in live data
         const live = liveMap[symbol];
-        if (!live) {
-            continue;
-        }
+        if (!live) continue;
         matchedCount++;
 
         let isSlHit = false;
         let isTpHit = false;
 
-        // Condition 1: SL hit day low (Day Low <= SL)
-        if (sl > 0 && live.low > 0 && live.low <= sl) {
-            isSlHit = true;
-        }
+        if (sl > 0 && live.low > 0 && live.low <= sl) isSlHit = true;
+        if (tp > 0 && live.high > 0 && live.high >= tp) isTpHit = true;
 
-        // Condition 2: TP hit / crossed day high (Day High >= TP)
-        if (tp > 0 && live.high > 0 && live.high >= tp) {
-            isTpHit = true;
-        }
+        if (!isSlHit && !isTpHit) continue;
 
-        if (!isSlHit && !isTpHit) {
-            continue;
-        }
-
-        // Determine Trigger Type
         let triggerType: 'SL HIT' | 'TP HIT' | 'BOTH HIT' = 'SL HIT';
         let triggerBadge = '';
         if (isSlHit && isTpHit) {
@@ -512,34 +598,38 @@ export async function scanPortfolioSLTP(isScheduledRun = false): Promise<ScanSum
             triggerBadge = '🎯 TAKE PROFIT HIT (High >= TP)';
         }
 
-        // Deduplication check
-        const hitKey = `${todayDateStr}_${symbol}_${triggerType}`;
-        if (existingHits[hitKey]) {
-            // Already logged today
-            continue;
-        }
-        existingHits[hitKey] = true;
+        const hitKey = `${todayDateStr}_${uniqueId}_${triggerType}`;
+        if (existingHitsToday.has(hitKey)) continue;
+        existingHitsToday.add(hitKey);
 
-        // Read original row values (Cols A to M)
-        const rowValues: any[] = [];
-        for (let c = 0; c < 13; c++) {
-            rowValues.push(yogenSheet.getCell(r, c).value ?? '');
-        }
+        const hitRow = {
+            'Unique ID': uniqueId,
+            'Symbol': symbol,
+            'Sector': row.get('Sector') || '',
+            'kitta': row.get('kitta') || '',
+            'share value': row.get('share value') || '',
+            'total': row.get('total') || '',
+            'purchase price': row.get('purchase price') || '',
+            'purchase total': row.get('purchase total') || '',
+            'profit / loss': row.get('profit / loss') || '',
+            'purchase date': row.get('purchase date') || '',
+            'count days': row.get('count days') || '',
+            'profit or loss %': row.get('profit or loss %') || '',
+            'ST (Stop Loss)': sl,
+            'TP (Take Profit)': tp,
+            'Trigger Event': triggerBadge,
+            'Triggered At': timestamp,
+            'Live LTP': live.ltp,
+            'Day High': live.high,
+            'Day Low': live.low,
+            'Day % Change': live.pctChange,
+            'Status': false, // FALSE for Stage 3 queue pickup!
+            'Processed At': ''
+        };
 
-        // Form full alert row
-        const alertRow = [
-            ...rowValues,
-            triggerBadge,
-            timestamp,
-            live.ltp,
-            live.high,
-            live.low,
-            live.pctChange
-        ];
-
-        rowsToAppend.push(alertRow);
-
-        const triggerItem: SLTPTriggerResult = {
+        newHitRows.push(hitRow);
+        triggeredList.push({
+            uniqueId,
             symbol,
             triggerType,
             triggerBadge,
@@ -549,69 +639,27 @@ export async function scanPortfolioSLTP(isScheduledRun = false): Promise<ScanSum
             dayHigh: live.high,
             dayLow: live.low,
             pctChange: live.pctChange,
-            rowValues,
             time: timestamp
-        };
-        triggeredList.push(triggerItem);
-
-        // Telegram Message snippet
-        telegramAlertLines.push(
-            (isSlHit && isTpHit ? '⚠️' : (isSlHit ? '🛑' : '🎯')) +
-            ` <b>${symbol} ${triggerType}</b>\n` +
-            `• <b>LTP:</b> ${live.ltp} (${live.pctChange >= 0 ? '+' : ''}${live.pctChange}%)\n` +
-            `• <b>Day Range:</b> Low ${live.low} — High ${live.high}\n` +
-            (sl > 0 ? `• <b>Stop Loss (Col L):</b> ${sl}${isSlHit ? ' 🚨 <i>BREACHED</i>' : ''}\n` : '') +
-            (tp > 0 ? `• <b>Take Profit (Col M):</b> ${tp}${isTpHit ? ' 🎯 <i>CROSSED</i>' : ''}\n` : '') +
-            `• <b>Time:</b> <i>${timestamp}</i>`
-        );
-
-        console.log(`⚡ [${triggerType}] ${symbol} -> LTP: ${live.ltp}, Low: ${live.low} (SL: ${sl}), High: ${live.high} (TP: ${tp})`);
-    }
-
-    // 4. Append new triggered rows to 'SL_TP_Hits' sheet tab
-    if (rowsToAppend.length > 0) {
-        await callWithRetry(async () => {
-            const rawRowsMapped = rowsToAppend.map(r => ({
-                'Symbol': r[0],
-                'Sector': r[1],
-                'Kitta': r[2],
-                'Share Value': r[3],
-                'Total': r[4],
-                'Purchase Price': r[5],
-                'Purchase Total': r[6],
-                'Profit/Loss': r[7],
-                'Date': r[8],
-                'Days': r[9],
-                'Profit %': r[10],
-                'Stop Loss (ST)': r[11],
-                'Take Profit (TP)': r[12],
-                'Trigger Event': r[13],
-                'Triggered At': r[14],
-                'Live LTP': r[15],
-                'Day High': r[16],
-                'Day Low': r[17],
-                'Day % Change': r[18]
-            }));
-            await alertSheet.addRows(rawRowsMapped);
         });
-        console.log(`Appended ${rowsToAppend.length} triggered row(s) to '${ALERT_SHEET_NAME}'.`);
+
+        console.log(`⚡ [Stage 2 Hit] ${uniqueId} -> LTP: ${live.ltp}, Low: ${live.low} (SL: ${sl}), High: ${live.high} (TP: ${tp})`);
     }
 
-    // 5. Send Telegram notification if new triggers occurred
-    if (telegramAlertLines.length > 0) {
-        const header = `🚨 <b>NEPSE PORTFOLIO ALERT: SL/TP TRIGGERED ('yogen')</b>\n\n`;
-        const footer = `\n\n<i>Logged to Google Sheet tab '${ALERT_SHEET_NAME}'</i>`;
-        const fullMessage = header + telegramAlertLines.join('\n\n───────────────\n\n') + footer;
-        await sendTelegramNotification(fullMessage).catch(err => {
-            console.error('Failed to dispatch Telegram SL/TP alert:', err.message);
-        });
+    if (newHitRows.length > 0) {
+        await hitsSheet.addRows(newHitRows);
+        console.log(`Appended ${newHitRows.length} hit row(s) to '${HITS_ALERT_SHEET_NAME}' with Status=FALSE.`);
     }
 
-    console.log(`✅ [SL/TP Scan Finished] Scanned ${validRowsScanned} rows (${matchedCount} with active SL/TP). New triggers: ${triggeredList.length}`);
+    // Immediately trigger Stage 3 Queue processing so any new hits are notified on Telegram
+    await pollSLTPHitsQueue().catch(err => {
+        console.error('Error during immediate Stage 3 queue flush:', err.message);
+    });
+
+    console.log(`✅ [Stage 2 Complete] Scanned ${refreshedSltpRows.length} stocks (${matchedCount} active). New hits: ${triggeredList.length}`);
 
     return {
         success: true,
-        scannedRows: validRowsScanned,
+        scannedRows: refreshedSltpRows.length,
         matchedStocks: matchedCount,
         newTriggersCount: triggeredList.length,
         triggers: triggeredList,
@@ -620,7 +668,15 @@ export async function scanPortfolioSLTP(isScheduledRun = false): Promise<ScanSum
 }
 
 /**
- * Starts the automated 10-minute SL/TP Live Monitor scheduler
+ * Backward compatibility alias for single entry point
+ */
+export async function scanPortfolioSLTP(isScheduledRun = false): Promise<ScanSummary> {
+    await syncYogenToSLTPStocks();
+    return scanSLTPStocksAgainstLive(isScheduledRun);
+}
+
+/**
+ * Starts the automated 10-minute live scanner interval
  */
 let sltpTimer: NodeJS.Timeout | null = null;
 
@@ -628,7 +684,7 @@ export function start10MinSLTPMonitor(): void {
     if (sltpTimer) return;
 
     console.log('⏰ [SL/TP Monitor] Starting automated 10-minute live scanner interval...');
-    // Run initial scan in 5 seconds
+    // Initial scan in 5 seconds
     setTimeout(() => {
         scanPortfolioSLTP(true).catch(e => console.error('[SL/TP Monitor] Initial scan error:', e.message));
     }, 5000);
@@ -646,3 +702,24 @@ export function stop10MinSLTPMonitor(): void {
         console.log('[SL/TP Monitor] 10-minute scanner stopped.');
     }
 }
+
+/**
+ * Checks whether a Triggered At value corresponds to today's date
+ */
+function isHitRecordedToday(trigAt: string, todayIsoDateStr: string): boolean {
+    if (!trigAt) return false;
+    // Check ISO yyyy-MM-dd
+    if (trigAt.includes(todayIsoDateStr)) return true;
+    // Check M/D/YYYY or MM/DD/YYYY
+    const parts = todayIsoDateStr.split('-');
+    if (parts.length === 3) {
+        const m = parseInt(parts[1], 10);
+        const d = parseInt(parts[2], 10);
+        const y = parts[0];
+        if (trigAt.includes(`${m}/${d}/${y}`) || trigAt.includes(`${parts[1]}/${parts[2]}/${y}`)) {
+            return true;
+        }
+    }
+    return false;
+}
+

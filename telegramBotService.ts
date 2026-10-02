@@ -430,7 +430,7 @@ async function handleTelegramCommand(command: string, chatId: string) {
                 await sendTelegramMessage(
                     `🚨 <b>${result.newTriggersCount} Stock(s) Triggered SL / TP!</b>\n\n` +
                     lines + `\n\n` +
-                    `<i>Logged to Google Sheet tab: 'SL_TP_Hits'</i>`,
+                    `<i>Logged to Google Sheet tab: 'SL-TP-Hits'</i>`,
                     getCommandCenterKeyboard(),
                     chatId
                 );

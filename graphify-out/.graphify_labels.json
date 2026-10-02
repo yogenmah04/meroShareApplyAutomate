@@ -55,5 +55,6 @@
   "53": "Q: what can we get usefull data from technical data and 52highlow stored in google sheet",
   "54": "Q:  i have one way notification telegram integration now i need two way communication where google sheet command controls also hit from telegram msg, make a plan for that implementation",
   "55": "Q: read TELEGRAM_TWO_WAY_CONTROL_PLAN.md and implement phase 1",
-  "56": "Q: how to run or test the two way communication implemetation"
+  "56": "Q: how to run or test the two way communication implemetation",
+  "57": "initSheets"
 }

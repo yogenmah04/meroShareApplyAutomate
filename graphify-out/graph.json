@@ -69,6 +69,58 @@
       "source_location": "L15"
     },
     {
+      "id": "sltpmonitorservice_livestockdata",
+      "label": "LiveStockData",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 57,
+      "community_name": "initSheets",
+      "file_type": "code",
+      "norm_label": "livestockdata",
+      "source_file": "sltpMonitorService.ts",
+      "source_location": "L5"
+    },
+    {
+      "id": "sltpmonitorservice_scansummary",
+      "label": "ScanSummary",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 57,
+      "community_name": "initSheets",
+      "file_type": "code",
+      "norm_label": "scansummary",
+      "source_file": "sltpMonitorService.ts",
+      "source_location": "L31"
+    },
+    {
+      "id": "sltpmonitorservice_sltptriggerresult",
+      "label": "SLTPTriggerResult",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 57,
+      "community_name": "initSheets",
+      "file_type": "code",
+      "norm_label": "sltptriggerresult",
+      "source_file": "sltpMonitorService.ts",
+      "source_location": "L17"
+    },
+    {
+      "id": "sltpqueueservice_unprocessedhit",
+      "label": "UnprocessedHit",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 57,
+      "community_name": "initSheets",
+      "file_type": "code",
+      "norm_label": "unprocessedhit",
+      "source_file": "sltpQueueService.ts",
+      "source_location": "L6"
+    },
+    {
       "id": "automate_runautomation",
       "label": "runAutomation()",
       "_callable": true,
@@ -199,18 +251,6 @@
       "norm_label": "gettmsscheduletime()",
       "source_file": "googleSheetsService.ts",
       "source_location": "L264"
-    },
-    {
-      "id": "googlesheetsservice_initsheets",
-      "label": "initSheets()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "googleSheetsService.ts",
-      "file_type": "code",
-      "norm_label": "initsheets()",
-      "source_file": "googleSheetsService.ts",
-      "source_location": "L67"
     },
     {
       "id": "googlesheetsservice_markuserasipoapplied",
@@ -426,7 +466,7 @@
       "file_type": "code",
       "norm_label": "main()",
       "source_file": "syncService.ts",
-      "source_location": "L31"
+      "source_location": "L33"
     },
     {
       "id": "techscraper_scrapetechnicalsignals",
@@ -474,7 +514,7 @@
       "file_type": "code",
       "norm_label": "handletelegramcommand()",
       "source_file": "telegramBotService.ts",
-      "source_location": "L134"
+      "source_location": "L138"
     },
     {
       "id": "telegrambotservice_runtaskasync",
@@ -486,7 +526,7 @@
       "file_type": "code",
       "norm_label": "runtaskasync()",
       "source_file": "telegramBotService.ts",
-      "source_location": "L422"
+      "source_location": "L487"
     },
     {
       "id": "telegrambotservice_sendcommandcentermenu",
@@ -498,7 +538,7 @@
       "file_type": "code",
       "norm_label": "sendcommandcentermenu()",
       "source_file": "telegramBotService.ts",
-      "source_location": "L123"
+      "source_location": "L127"
     },
     {
       "id": "telegrambotservice_sendtelegrammessage",
@@ -522,7 +562,7 @@
       "file_type": "code",
       "norm_label": "starttelegrambotlistener()",
       "source_file": "telegramBotService.ts",
-      "source_location": "L455"
+      "source_location": "L520"
     },
     {
       "id": "telegrambotservice_stoptelegrambotlistener",
@@ -534,7 +574,7 @@
       "file_type": "code",
       "norm_label": "stoptelegrambotlistener()",
       "source_file": "telegramBotService.ts",
-      "source_location": "L524"
+      "source_location": "L589"
     },
     {
       "id": "telegrambotservice_telegramapi",
@@ -930,7 +970,7 @@
       "file_type": "code",
       "norm_label": "parselivetradingtable()",
       "source_file": "shareInfoScript/liveTradingData.js",
-      "source_location": "L241"
+      "source_location": "L247"
     },
     {
       "id": "shareinfoscript_livetradingdata_writeresultstosheet",
@@ -1449,16 +1489,52 @@
       "source_location": "L294"
     },
     {
-      "id": "shareinfoscript_sltphit_getexistinghitstoday",
-      "label": "getExistingHitsToday()",
+      "id": "shareinfoscript_sltphit_formatpurchasedate",
+      "label": "formatPurchaseDate()",
       "_callable": true,
       "_origin": "ast",
       "community": 34,
       "community_name": "sltpHit.js",
       "file_type": "code",
-      "norm_label": "getexistinghitstoday()",
+      "norm_label": "formatpurchasedate()",
       "source_file": "shareInfoScript/sltpHit.js",
-      "source_location": "L301"
+      "source_location": "L157"
+    },
+    {
+      "id": "shareinfoscript_sltphit_generateuniquestockid",
+      "label": "generateUniqueStockId()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 34,
+      "community_name": "sltpHit.js",
+      "file_type": "code",
+      "norm_label": "generateuniquestockid()",
+      "source_file": "shareInfoScript/sltpHit.js",
+      "source_location": "L146"
+    },
+    {
+      "id": "shareinfoscript_sltphit_getexistinghitstodaymap",
+      "label": "getExistingHitsTodayMap()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 34,
+      "community_name": "sltpHit.js",
+      "file_type": "code",
+      "norm_label": "getexistinghitstodaymap()",
+      "source_file": "shareInfoScript/sltpHit.js",
+      "source_location": "L601"
+    },
+    {
+      "id": "shareinfoscript_sltphit_getexistingsltpstocksmap",
+      "label": "getExistingSLTPStocksMap()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 34,
+      "community_name": "sltpHit.js",
+      "file_type": "code",
+      "norm_label": "getexistingsltpstocksmap()",
+      "source_file": "shareInfoScript/sltpHit.js",
+      "source_location": "L214"
     },
     {
       "id": "shareinfoscript_sltphit_getlivetradingdatamap",
@@ -1470,19 +1546,43 @@
       "file_type": "code",
       "norm_label": "getlivetradingdatamap()",
       "source_file": "shareInfoScript/sltpHit.js",
-      "source_location": "L219"
+      "source_location": "L650"
     },
     {
-      "id": "shareinfoscript_sltphit_getorcreatealertsheet",
-      "label": "getOrCreateAlertSheet()",
+      "id": "shareinfoscript_sltphit_getorcreatesltphitssheet",
+      "label": "getOrCreateSLTPHitsSheet()",
       "_callable": true,
       "_origin": "ast",
       "community": 34,
       "community_name": "sltpHit.js",
       "file_type": "code",
-      "norm_label": "getorcreatealertsheet()",
+      "norm_label": "getorcreatesltphitssheet()",
       "source_file": "shareInfoScript/sltpHit.js",
-      "source_location": "L253"
+      "source_location": "L557"
+    },
+    {
+      "id": "shareinfoscript_sltphit_getorcreatesltpstockssheet",
+      "label": "getOrCreateSLTPStocksSheet()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 34,
+      "community_name": "sltpHit.js",
+      "file_type": "code",
+      "norm_label": "getorcreatesltpstockssheet()",
+      "source_file": "shareInfoScript/sltpHit.js",
+      "source_location": "L177"
+    },
+    {
+      "id": "shareinfoscript_sltphit_ishitfromtoday",
+      "label": "isHitFromToday()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 34,
+      "community_name": "sltpHit.js",
+      "file_type": "code",
+      "norm_label": "ishitfromtoday()",
+      "source_file": "shareInfoScript/sltpHit.js",
+      "source_location": "L625"
     },
     {
       "id": "shareinfoscript_sltphit_parsepricenum",
@@ -1494,19 +1594,43 @@
       "file_type": "code",
       "norm_label": "parsepricenum()",
       "source_file": "shareInfoScript/sltpHit.js",
-      "source_location": "L325"
+      "source_location": "L684"
     },
     {
-      "id": "shareinfoscript_sltphit_remove10minlivescantrigger",
-      "label": "remove10MinLiveScanTrigger()",
+      "id": "shareinfoscript_sltphit_removealltradingautomationtriggers",
+      "label": "removeAllTradingAutomationTriggers()",
       "_callable": true,
       "_origin": "ast",
       "community": 34,
       "community_name": "sltpHit.js",
       "file_type": "code",
-      "norm_label": "remove10minlivescantrigger()",
+      "norm_label": "removealltradingautomationtriggers()",
       "source_file": "shareInfoScript/sltpHit.js",
-      "source_location": "L407"
+      "source_location": "L788"
+    },
+    {
+      "id": "shareinfoscript_sltphit_removetriggerbyfunctionname",
+      "label": "removeTriggerByFunctionName()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 34,
+      "community_name": "sltpHit.js",
+      "file_type": "code",
+      "norm_label": "removetriggerbyfunctionname()",
+      "source_file": "shareInfoScript/sltpHit.js",
+      "source_location": "L800"
+    },
+    {
+      "id": "shareinfoscript_sltphit_run10minlivetradingandscan",
+      "label": "run10MinLiveTradingAndScan()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 34,
+      "community_name": "sltpHit.js",
+      "file_type": "code",
+      "norm_label": "run10minlivetradingandscan()",
+      "source_file": "shareInfoScript/sltpHit.js",
+      "source_location": "L699"
     },
     {
       "id": "shareinfoscript_sltphit_runlivefetchandscansltp",
@@ -1518,7 +1642,31 @@
       "file_type": "code",
       "norm_label": "runlivefetchandscansltp()",
       "source_file": "shareInfoScript/sltpHit.js",
-      "source_location": "L368"
+      "source_location": "L725"
+    },
+    {
+      "id": "shareinfoscript_sltphit_scansltpstocksagainstlive",
+      "label": "scanSLTPStocksAgainstLive()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 34,
+      "community_name": "sltpHit.js",
+      "file_type": "code",
+      "norm_label": "scansltpstocksagainstlive()",
+      "source_file": "shareInfoScript/sltpHit.js",
+      "source_location": "L241"
+    },
+    {
+      "id": "shareinfoscript_sltphit_scansltpstocksagainstlivemanual",
+      "label": "scanSLTPStocksAgainstLiveManual()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 34,
+      "community_name": "sltpHit.js",
+      "file_type": "code",
+      "norm_label": "scansltpstocksagainstlivemanual()",
+      "source_file": "shareInfoScript/sltpHit.js",
+      "source_location": "L482"
     },
     {
       "id": "shareinfoscript_sltphit_scanstocksforsltp",
@@ -1530,19 +1678,7 @@
       "file_type": "code",
       "norm_label": "scanstocksforsltp()",
       "source_file": "shareInfoScript/sltpHit.js",
-      "source_location": "L32"
-    },
-    {
-      "id": "shareinfoscript_sltphit_sendtelegramalertsbatch",
-      "label": "sendTelegramAlertsBatch()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 34,
-      "community_name": "sltpHit.js",
-      "file_type": "code",
-      "norm_label": "sendtelegramalertsbatch()",
-      "source_file": "shareInfoScript/sltpHit.js",
-      "source_location": "L336"
+      "source_location": "L729"
     },
     {
       "id": "shareinfoscript_sltphit_setup10minlivescantrigger",
@@ -1554,7 +1690,55 @@
       "file_type": "code",
       "norm_label": "setup10minlivescantrigger()",
       "source_file": "shareInfoScript/sltpHit.js",
-      "source_location": "L384"
+      "source_location": "L751"
+    },
+    {
+      "id": "shareinfoscript_sltphit_setupalltradingautomationtriggers",
+      "label": "setupAllTradingAutomationTriggers()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 34,
+      "community_name": "sltpHit.js",
+      "file_type": "code",
+      "norm_label": "setupalltradingautomationtriggers()",
+      "source_file": "shareInfoScript/sltpHit.js",
+      "source_location": "L766"
+    },
+    {
+      "id": "shareinfoscript_sltphit_setuphourlysltpsynctrigger",
+      "label": "setupHourlySLTPSyncTrigger()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 34,
+      "community_name": "sltpHit.js",
+      "file_type": "code",
+      "norm_label": "setuphourlysltpsynctrigger()",
+      "source_file": "shareInfoScript/sltpHit.js",
+      "source_location": "L737"
+    },
+    {
+      "id": "shareinfoscript_sltphit_syncyogentosltpstocks",
+      "label": "syncYogenToSLTPStocks()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 34,
+      "community_name": "sltpHit.js",
+      "file_type": "code",
+      "norm_label": "syncyogentosltpstocks()",
+      "source_file": "shareInfoScript/sltpHit.js",
+      "source_location": "L38"
+    },
+    {
+      "id": "shareinfoscript_sltphit_syncyogentosltpstocksmanual",
+      "label": "syncYogenToSLTPStocksManual()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 34,
+      "community_name": "sltpHit.js",
+      "file_type": "code",
+      "norm_label": "syncyogentosltpstocksmanual()",
+      "source_file": "shareInfoScript/sltpHit.js",
+      "source_location": "L530"
     },
     {
       "id": "shareinfoscript_supportbounce_vol_rsi_average",
@@ -1951,6 +2135,222 @@
       "norm_label": "findsymbolsnearpoints()",
       "source_file": "shareInfoScript/supNregisLowHigh.js",
       "source_location": "L1"
+    },
+    {
+      "id": "googlesheetsservice_initsheets",
+      "label": "initSheets()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 57,
+      "community_name": "initSheets",
+      "file_type": "code",
+      "norm_label": "initsheets()",
+      "source_file": "googleSheetsService.ts",
+      "source_location": "L67"
+    },
+    {
+      "id": "sltpmonitorservice_fetchsharesansarlivehtml",
+      "label": "fetchShareSansarLiveHtml()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 57,
+      "community_name": "initSheets",
+      "file_type": "code",
+      "norm_label": "fetchsharesansarlivehtml()",
+      "source_file": "sltpMonitorService.ts",
+      "source_location": "L80"
+    },
+    {
+      "id": "sltpmonitorservice_generateuniquestockid",
+      "label": "generateUniqueStockId()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 57,
+      "community_name": "initSheets",
+      "file_type": "code",
+      "norm_label": "generateuniquestockid()",
+      "source_file": "sltpMonitorService.ts",
+      "source_location": "L195"
+    },
+    {
+      "id": "sltpmonitorservice_getlivemarketdata",
+      "label": "getLiveMarketData()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 57,
+      "community_name": "initSheets",
+      "file_type": "code",
+      "norm_label": "getlivemarketdata()",
+      "source_file": "sltpMonitorService.ts",
+      "source_location": "L206"
+    },
+    {
+      "id": "sltpmonitorservice_ishitrecordedtoday",
+      "label": "isHitRecordedToday()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 57,
+      "community_name": "initSheets",
+      "file_type": "code",
+      "norm_label": "ishitrecordedtoday()",
+      "source_file": "sltpMonitorService.ts",
+      "source_location": "L709"
+    },
+    {
+      "id": "sltpmonitorservice_isnepsemarketopen",
+      "label": "isNepseMarketOpen()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 57,
+      "community_name": "initSheets",
+      "file_type": "code",
+      "norm_label": "isnepsemarketopen()",
+      "source_file": "sltpMonitorService.ts",
+      "source_location": "L52"
+    },
+    {
+      "id": "sltpmonitorservice_parselivetradingtablehtml",
+      "label": "parseLiveTradingTableHtml()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 57,
+      "community_name": "initSheets",
+      "file_type": "code",
+      "norm_label": "parselivetradingtablehtml()",
+      "source_file": "sltpMonitorService.ts",
+      "source_location": "L109"
+    },
+    {
+      "id": "sltpmonitorservice_parsepricenum",
+      "label": "parsePriceNum()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 57,
+      "community_name": "initSheets",
+      "file_type": "code",
+      "norm_label": "parsepricenum()",
+      "source_file": "sltpMonitorService.ts",
+      "source_location": "L184"
+    },
+    {
+      "id": "sltpmonitorservice_readlivetradingfromsheet",
+      "label": "readLiveTradingFromSheet()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 57,
+      "community_name": "initSheets",
+      "file_type": "code",
+      "norm_label": "readlivetradingfromsheet()",
+      "source_file": "sltpMonitorService.ts",
+      "source_location": "L233"
+    },
+    {
+      "id": "sltpmonitorservice_scanportfoliosltp",
+      "label": "scanPortfolioSLTP()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 57,
+      "community_name": "initSheets",
+      "file_type": "code",
+      "norm_label": "scanportfoliosltp()",
+      "source_file": "sltpMonitorService.ts",
+      "source_location": "L673"
+    },
+    {
+      "id": "sltpmonitorservice_scansltpstocksagainstlive",
+      "label": "scanSLTPStocksAgainstLive()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 57,
+      "community_name": "initSheets",
+      "file_type": "code",
+      "norm_label": "scansltpstocksagainstlive()",
+      "source_file": "sltpMonitorService.ts",
+      "source_location": "L449"
+    },
+    {
+      "id": "sltpmonitorservice_start10minsltpmonitor",
+      "label": "start10MinSLTPMonitor()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 57,
+      "community_name": "initSheets",
+      "file_type": "code",
+      "norm_label": "start10minsltpmonitor()",
+      "source_file": "sltpMonitorService.ts",
+      "source_location": "L683"
+    },
+    {
+      "id": "sltpmonitorservice_stop10minsltpmonitor",
+      "label": "stop10MinSLTPMonitor()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 57,
+      "community_name": "initSheets",
+      "file_type": "code",
+      "norm_label": "stop10minsltpmonitor()",
+      "source_file": "sltpMonitorService.ts",
+      "source_location": "L698"
+    },
+    {
+      "id": "sltpmonitorservice_synclivetradingsheet",
+      "label": "syncLiveTradingSheet()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 57,
+      "community_name": "initSheets",
+      "file_type": "code",
+      "norm_label": "synclivetradingsheet()",
+      "source_file": "sltpMonitorService.ts",
+      "source_location": "L278"
+    },
+    {
+      "id": "sltpmonitorservice_syncyogentosltpstocks",
+      "label": "syncYogenToSLTPStocks()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 57,
+      "community_name": "initSheets",
+      "file_type": "code",
+      "norm_label": "syncyogentosltpstocks()",
+      "source_file": "sltpMonitorService.ts",
+      "source_location": "L319"
+    },
+    {
+      "id": "sltpqueueservice_escapehtml",
+      "label": "escapeHtml()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 57,
+      "community_name": "initSheets",
+      "file_type": "code",
+      "norm_label": "escapehtml()",
+      "source_file": "sltpQueueService.ts",
+      "source_location": "L25"
+    },
+    {
+      "id": "sltpqueueservice_pollsltphitsqueue",
+      "label": "pollSLTPHitsQueue()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 57,
+      "community_name": "initSheets",
+      "file_type": "code",
+      "norm_label": "pollsltphitsqueue()",
+      "source_file": "sltpQueueService.ts",
+      "source_location": "L41"
+    },
+    {
+      "id": "test_nric_inspect",
+      "label": "inspect()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 57,
+      "community_name": "initSheets",
+      "file_type": "code",
+      "norm_label": "inspect()",
+      "source_file": "test_nric.ts",
+      "source_location": "L3"
     },
     {
       "id": "nepseaccumulation_analyzesignals",
@@ -2799,17 +3199,6 @@
       "norm_label": "googlesheetsservice.ts",
       "source_file": "googleSheetsService.ts",
       "source_location": "L1"
-    },
-    {
-      "id": "googlesheetsservice_doc",
-      "label": "doc",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "googleSheetsService.ts",
-      "file_type": "code",
-      "norm_label": "doc",
-      "source_file": "googleSheetsService.ts",
-      "source_location": "L28"
     },
     {
       "id": "googlesheetsservice_formattedkey",
@@ -5300,6 +5689,50 @@
       "source_location": "L20"
     },
     {
+      "id": "googlesheetsservice_doc",
+      "label": "doc",
+      "_origin": "ast",
+      "community": 57,
+      "community_name": "initSheets",
+      "file_type": "code",
+      "norm_label": "doc",
+      "source_file": "googleSheetsService.ts",
+      "source_location": "L28"
+    },
+    {
+      "id": "sltpmonitorservice",
+      "label": "sltpMonitorService.ts",
+      "_origin": "ast",
+      "community": 57,
+      "community_name": "initSheets",
+      "file_type": "code",
+      "norm_label": "sltpmonitorservice.ts",
+      "source_file": "sltpMonitorService.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "sltpqueueservice",
+      "label": "sltpQueueService.ts",
+      "_origin": "ast",
+      "community": 57,
+      "community_name": "initSheets",
+      "file_type": "code",
+      "norm_label": "sltpqueueservice.ts",
+      "source_file": "sltpQueueService.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "test_nric",
+      "label": "test_nric.ts",
+      "_origin": "ast",
+      "community": 57,
+      "community_name": "initSheets",
+      "file_type": "code",
+      "norm_label": "test_nric.ts",
+      "source_file": "test_nric.ts",
+      "source_location": "L1"
+    },
+    {
       "id": "nepseaccumulation",
       "label": "nepseAccumulation.js",
       "_origin": "ast",
@@ -7046,6 +7479,18 @@
       "weight": 1.0
     },
     {
+      "source": "shareinfoscript_sltphit_getexistinghitstodaymap",
+      "target": "shareinfoscript_sltphit_ishitfromtoday",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "shareInfoScript/sltpHit.js",
+      "source_location": "L614",
+      "weight": 1.0
+    },
+    {
       "source": "shareinfoscript_sltphit_getlivetradingdatamap",
       "target": "shareinfoscript_sltphit_parsepricenum",
       "relation": "calls",
@@ -7054,35 +7499,59 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "shareInfoScript/sltpHit.js",
-      "source_location": "L233",
+      "source_location": "L664",
+      "weight": 1.0
+    },
+    {
+      "source": "shareinfoscript_sltphit_removealltradingautomationtriggers",
+      "target": "shareinfoscript_sltphit_removetriggerbyfunctionname",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "shareInfoScript/sltpHit.js",
+      "source_location": "L790",
+      "weight": 1.0
+    },
+    {
+      "source": "shareinfoscript_sltphit_run10minlivetradingandscan",
+      "target": "shareinfoscript_sltphit_scansltpstocksagainstlive",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "shareInfoScript/sltpHit.js",
+      "source_location": "L715",
       "weight": 1.0
     },
     {
       "source": "shareinfoscript_sltphit_runlivefetchandscansltp",
-      "target": "shareinfoscript_sltphit_scanstocksforsltp",
+      "target": "shareinfoscript_sltphit_run10minlivetradingandscan",
       "relation": "calls",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "shareInfoScript/sltpHit.js",
-      "source_location": "L374",
+      "source_location": "L726",
       "weight": 1.0
     },
     {
-      "source": "shareinfoscript_sltphit_scanstocksforsltp",
-      "target": "shareinfoscript_sltphit_sendtelegramalertsbatch",
+      "source": "shareinfoscript_sltphit_scansltpstocksagainstlive",
+      "target": "shareinfoscript_sltphit_syncyogentosltpstocks",
       "relation": "calls",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "shareInfoScript/sltpHit.js",
-      "source_location": "L208",
+      "source_location": "L279",
       "weight": 1.0
     },
     {
-      "source": "shareinfoscript_sltphit_scanstocksforsltp",
+      "source": "shareinfoscript_sltphit_scansltpstocksagainstlive",
       "target": "shareinfoscript_sltphit_getlivetradingdatamap",
       "relation": "calls",
       "_origin": "ast",
@@ -7090,35 +7559,35 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "shareInfoScript/sltpHit.js",
-      "source_location": "L48",
+      "source_location": "L304",
       "weight": 1.0
     },
     {
-      "source": "shareinfoscript_sltphit_scanstocksforsltp",
-      "target": "shareinfoscript_sltphit_getorcreatealertsheet",
+      "source": "shareinfoscript_sltphit_scansltpstocksagainstlive",
+      "target": "shareinfoscript_sltphit_getorcreatesltphitssheet",
       "relation": "calls",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "shareInfoScript/sltpHit.js",
-      "source_location": "L72",
+      "source_location": "L327",
       "weight": 1.0
     },
     {
-      "source": "shareinfoscript_sltphit_scanstocksforsltp",
-      "target": "shareinfoscript_sltphit_getexistinghitstoday",
+      "source": "shareinfoscript_sltphit_scansltpstocksagainstlive",
+      "target": "shareinfoscript_sltphit_getexistinghitstodaymap",
       "relation": "calls",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "shareInfoScript/sltpHit.js",
-      "source_location": "L73",
+      "source_location": "L330",
       "weight": 1.0
     },
     {
-      "source": "shareinfoscript_sltphit_scanstocksforsltp",
+      "source": "shareinfoscript_sltphit_scansltpstocksagainstlive",
       "target": "shareinfoscript_sltphit_parsepricenum",
       "relation": "calls",
       "_origin": "ast",
@@ -7126,19 +7595,163 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "shareInfoScript/sltpHit.js",
-      "source_location": "L92",
+      "source_location": "L345",
       "weight": 1.0
     },
     {
-      "source": "shareinfoscript_sltphit_setup10minlivescantrigger",
-      "target": "shareinfoscript_sltphit_remove10minlivescantrigger",
+      "source": "shareinfoscript_sltphit_scansltpstocksagainstlivemanual",
+      "target": "shareinfoscript_sltphit_scansltpstocksagainstlive",
       "relation": "calls",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "shareInfoScript/sltpHit.js",
-      "source_location": "L385",
+      "source_location": "L489",
+      "weight": 1.0
+    },
+    {
+      "source": "shareinfoscript_sltphit_scanstocksforsltp",
+      "target": "shareinfoscript_sltphit_syncyogentosltpstocks",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "shareInfoScript/sltpHit.js",
+      "source_location": "L730",
+      "weight": 1.0
+    },
+    {
+      "source": "shareinfoscript_sltphit_scanstocksforsltp",
+      "target": "shareinfoscript_sltphit_scansltpstocksagainstlive",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "shareInfoScript/sltpHit.js",
+      "source_location": "L731",
+      "weight": 1.0
+    },
+    {
+      "source": "shareinfoscript_sltphit_setup10minlivescantrigger",
+      "target": "shareinfoscript_sltphit_removetriggerbyfunctionname",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "shareInfoScript/sltpHit.js",
+      "source_location": "L752",
+      "weight": 1.0
+    },
+    {
+      "source": "shareinfoscript_sltphit_setupalltradingautomationtriggers",
+      "target": "shareinfoscript_sltphit_setuphourlysltpsynctrigger",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "shareInfoScript/sltpHit.js",
+      "source_location": "L767",
+      "weight": 1.0
+    },
+    {
+      "source": "shareinfoscript_sltphit_setupalltradingautomationtriggers",
+      "target": "shareinfoscript_sltphit_setup10minlivescantrigger",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "shareInfoScript/sltpHit.js",
+      "source_location": "L768",
+      "weight": 1.0
+    },
+    {
+      "source": "shareinfoscript_sltphit_setuphourlysltpsynctrigger",
+      "target": "shareinfoscript_sltphit_removetriggerbyfunctionname",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "shareInfoScript/sltpHit.js",
+      "source_location": "L738",
+      "weight": 1.0
+    },
+    {
+      "source": "shareinfoscript_sltphit_syncyogentosltpstocks",
+      "target": "shareinfoscript_sltphit_getorcreatesltpstockssheet",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "shareInfoScript/sltpHit.js",
+      "source_location": "L58",
+      "weight": 1.0
+    },
+    {
+      "source": "shareinfoscript_sltphit_syncyogentosltpstocks",
+      "target": "shareinfoscript_sltphit_getexistingsltpstocksmap",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "shareInfoScript/sltpHit.js",
+      "source_location": "L61",
+      "weight": 1.0
+    },
+    {
+      "source": "shareinfoscript_sltphit_syncyogentosltpstocks",
+      "target": "shareinfoscript_sltphit_formatpurchasedate",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "shareInfoScript/sltpHit.js",
+      "source_location": "L84",
+      "weight": 1.0
+    },
+    {
+      "source": "shareinfoscript_sltphit_syncyogentosltpstocks",
+      "target": "shareinfoscript_sltphit_parsepricenum",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "shareInfoScript/sltpHit.js",
+      "source_location": "L87",
+      "weight": 1.0
+    },
+    {
+      "source": "shareinfoscript_sltphit_syncyogentosltpstocks",
+      "target": "shareinfoscript_sltphit_generateuniquestockid",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "shareInfoScript/sltpHit.js",
+      "source_location": "L98",
+      "weight": 1.0
+    },
+    {
+      "source": "shareinfoscript_sltphit_syncyogentosltpstocksmanual",
+      "target": "shareinfoscript_sltphit_syncyogentosltpstocks",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "shareInfoScript/sltpHit.js",
+      "source_location": "L537",
       "weight": 1.0
     },
     {
@@ -7442,147 +8055,327 @@
       "weight": 1.0
     },
     {
-      "source": "syncservice_main",
-      "target": "googlesheetsservice_fetchusersfromsheet",
+      "source": "sltpmonitorservice_getlivemarketdata",
+      "target": "sltpmonitorservice_fetchsharesansarlivehtml",
       "relation": "calls",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "call",
-      "source_file": "syncService.ts",
-      "source_location": "L107",
+      "source_file": "sltpMonitorService.ts",
+      "source_location": "L209",
       "weight": 1.0
     },
     {
-      "source": "syncservice_main",
-      "target": "googlesheetsservice_fetchstocksfromsheet",
+      "source": "sltpmonitorservice_getlivemarketdata",
+      "target": "sltpmonitorservice_parselivetradingtablehtml",
       "relation": "calls",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "call",
-      "source_file": "syncService.ts",
-      "source_location": "L108",
+      "source_file": "sltpMonitorService.ts",
+      "source_location": "L210",
       "weight": 1.0
     },
     {
-      "source": "syncservice_main",
-      "target": "checkstatus_runcheckstatus",
+      "source": "sltpmonitorservice_getlivemarketdata",
+      "target": "sltpmonitorservice_synclivetradingsheet",
       "relation": "calls",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "call",
-      "source_file": "syncService.ts",
-      "source_location": "L122",
+      "source_file": "sltpMonitorService.ts",
+      "source_location": "L216",
       "weight": 1.0
     },
     {
-      "source": "syncservice_main",
-      "target": "googlesheetsservice_addresulttosheet",
+      "source": "sltpmonitorservice_getlivemarketdata",
+      "target": "sltpmonitorservice_readlivetradingfromsheet",
       "relation": "calls",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "call",
-      "source_file": "syncService.ts",
-      "source_location": "L123",
+      "source_file": "sltpMonitorService.ts",
+      "source_location": "L227",
       "weight": 1.0
     },
     {
-      "source": "syncservice_main",
-      "target": "checkstatus_formatshorterror",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "syncService.ts",
-      "source_location": "L138",
-      "weight": 1.0
-    },
-    {
-      "source": "syncservice_main",
-      "target": "scheduler_initializescheduler",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "syncService.ts",
-      "source_location": "L254",
-      "weight": 1.0
-    },
-    {
-      "source": "syncservice_main",
-      "target": "googlesheetsservice_gettmsscheduletime",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "syncService.ts",
-      "source_location": "L271",
-      "weight": 1.0
-    },
-    {
-      "source": "syncservice_main",
-      "target": "notificationservice_flushnotificationqueue",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "syncService.ts",
-      "source_location": "L319",
-      "weight": 1.0
-    },
-    {
-      "source": "syncservice_main",
+      "source": "sltpmonitorservice_isnepsemarketopen",
       "target": "googlesheetsservice_initsheets",
       "relation": "calls",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "call",
-      "source_file": "syncService.ts",
-      "source_location": "L34",
+      "source_file": "sltpMonitorService.ts",
+      "source_location": "L54",
       "weight": 1.0
     },
     {
-      "source": "syncservice_main",
+      "source": "sltpmonitorservice_parselivetradingtablehtml",
+      "target": "sltpmonitorservice_parsepricenum",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "sltpMonitorService.ts",
+      "source_location": "L142",
+      "weight": 1.0
+    },
+    {
+      "source": "sltpmonitorservice_readlivetradingfromsheet",
+      "target": "googlesheetsservice_initsheets",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "sltpMonitorService.ts",
+      "source_location": "L234",
+      "weight": 1.0
+    },
+    {
+      "source": "sltpmonitorservice_readlivetradingfromsheet",
+      "target": "sltpmonitorservice_parsepricenum",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "sltpMonitorService.ts",
+      "source_location": "L249",
+      "weight": 1.0
+    },
+    {
+      "source": "sltpmonitorservice_scanportfoliosltp",
+      "target": "sltpmonitorservice_syncyogentosltpstocks",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "sltpMonitorService.ts",
+      "source_location": "L674",
+      "weight": 1.0
+    },
+    {
+      "source": "sltpmonitorservice_scanportfoliosltp",
+      "target": "sltpmonitorservice_scansltpstocksagainstlive",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "sltpMonitorService.ts",
+      "source_location": "L675",
+      "weight": 1.0
+    },
+    {
+      "source": "sltpmonitorservice_scansltpstocksagainstlive",
+      "target": "sltpmonitorservice_isnepsemarketopen",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "sltpMonitorService.ts",
+      "source_location": "L455",
+      "weight": 1.0
+    },
+    {
+      "source": "sltpmonitorservice_scansltpstocksagainstlive",
+      "target": "googlesheetsservice_initsheets",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "sltpMonitorService.ts",
+      "source_location": "L471",
+      "weight": 1.0
+    },
+    {
+      "source": "sltpmonitorservice_scansltpstocksagainstlive",
+      "target": "sltpmonitorservice_syncyogentosltpstocks",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "sltpMonitorService.ts",
+      "source_location": "L477",
+      "weight": 1.0
+    },
+    {
+      "source": "sltpmonitorservice_scansltpstocksagainstlive",
+      "target": "sltpmonitorservice_getlivemarketdata",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "sltpMonitorService.ts",
+      "source_location": "L501",
+      "weight": 1.0
+    },
+    {
+      "source": "sltpmonitorservice_scansltpstocksagainstlive",
+      "target": "sltpmonitorservice_ishitrecordedtoday",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "sltpMonitorService.ts",
+      "source_location": "L556",
+      "weight": 1.0
+    },
+    {
+      "source": "sltpmonitorservice_scansltpstocksagainstlive",
+      "target": "sltpmonitorservice_parsepricenum",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "sltpMonitorService.ts",
+      "source_location": "L571",
+      "weight": 1.0
+    },
+    {
+      "source": "sltpmonitorservice_scansltpstocksagainstlive",
+      "target": "sltpqueueservice_pollsltphitsqueue",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "sltpMonitorService.ts",
+      "source_location": "L654",
+      "weight": 1.0
+    },
+    {
+      "source": "sltpmonitorservice_start10minsltpmonitor",
+      "target": "sltpmonitorservice_scanportfoliosltp",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "sltpMonitorService.ts",
+      "source_location": "L689",
+      "weight": 1.0
+    },
+    {
+      "source": "sltpmonitorservice_synclivetradingsheet",
+      "target": "googlesheetsservice_callwithretry",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "sltpMonitorService.ts",
+      "source_location": "L279",
+      "weight": 1.0
+    },
+    {
+      "source": "sltpmonitorservice_synclivetradingsheet",
+      "target": "googlesheetsservice_initsheets",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "sltpMonitorService.ts",
+      "source_location": "L280",
+      "weight": 1.0
+    },
+    {
+      "source": "sltpmonitorservice_syncyogentosltpstocks",
+      "target": "googlesheetsservice_initsheets",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "sltpMonitorService.ts",
+      "source_location": "L320",
+      "weight": 1.0
+    },
+    {
+      "source": "sltpmonitorservice_syncyogentosltpstocks",
+      "target": "sltpmonitorservice_parsepricenum",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "sltpMonitorService.ts",
+      "source_location": "L387",
+      "weight": 1.0
+    },
+    {
+      "source": "sltpmonitorservice_syncyogentosltpstocks",
+      "target": "sltpmonitorservice_generateuniquestockid",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "sltpMonitorService.ts",
+      "source_location": "L393",
+      "weight": 1.0
+    },
+    {
+      "source": "sltpqueueservice_pollsltphitsqueue",
       "target": "notificationservice_sendtelegramnotification",
       "relation": "calls",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "call",
-      "source_file": "syncService.ts",
-      "source_location": "L35",
+      "source_file": "sltpQueueService.ts",
+      "source_location": "L109",
       "weight": 1.0
     },
     {
-      "source": "syncservice_main",
-      "target": "nepsescraper_schedulenepsescraper",
+      "source": "sltpqueueservice_pollsltphitsqueue",
+      "target": "googlesheetsservice_callwithretry",
       "relation": "calls",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "call",
-      "source_file": "syncService.ts",
-      "source_location": "L47",
+      "source_file": "sltpQueueService.ts",
+      "source_location": "L118",
       "weight": 1.0
     },
     {
-      "source": "syncservice_main",
-      "target": "telegrambotservice_starttelegrambotlistener",
+      "source": "sltpqueueservice_pollsltphitsqueue",
+      "target": "googlesheetsservice_initsheets",
       "relation": "calls",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "call",
-      "source_file": "syncService.ts",
-      "source_location": "L48",
+      "source_file": "sltpQueueService.ts",
+      "source_location": "L43",
+      "weight": 1.0
+    },
+    {
+      "source": "sltpqueueservice_pollsltphitsqueue",
+      "target": "sltpqueueservice_escapehtml",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "sltpQueueService.ts",
+      "source_location": "L96",
       "weight": 1.0
     },
     {
@@ -7594,7 +8387,199 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "syncService.ts",
-      "source_location": "L99",
+      "source_location": "L102",
+      "weight": 1.0
+    },
+    {
+      "source": "syncservice_main",
+      "target": "googlesheetsservice_fetchusersfromsheet",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "syncService.ts",
+      "source_location": "L110",
+      "weight": 1.0
+    },
+    {
+      "source": "syncservice_main",
+      "target": "googlesheetsservice_fetchstocksfromsheet",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "syncService.ts",
+      "source_location": "L111",
+      "weight": 1.0
+    },
+    {
+      "source": "syncservice_main",
+      "target": "checkstatus_runcheckstatus",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "syncService.ts",
+      "source_location": "L125",
+      "weight": 1.0
+    },
+    {
+      "source": "syncservice_main",
+      "target": "googlesheetsservice_addresulttosheet",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "syncService.ts",
+      "source_location": "L126",
+      "weight": 1.0
+    },
+    {
+      "source": "syncservice_main",
+      "target": "checkstatus_formatshorterror",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "syncService.ts",
+      "source_location": "L141",
+      "weight": 1.0
+    },
+    {
+      "source": "syncservice_main",
+      "target": "sltpmonitorservice_scanportfoliosltp",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "syncService.ts",
+      "source_location": "L256",
+      "weight": 1.0
+    },
+    {
+      "source": "syncservice_main",
+      "target": "sltpmonitorservice_getlivemarketdata",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "syncService.ts",
+      "source_location": "L273",
+      "weight": 1.0
+    },
+    {
+      "source": "syncservice_main",
+      "target": "scheduler_initializescheduler",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "syncService.ts",
+      "source_location": "L287",
+      "weight": 1.0
+    },
+    {
+      "source": "syncservice_main",
+      "target": "googlesheetsservice_gettmsscheduletime",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "syncService.ts",
+      "source_location": "L304",
+      "weight": 1.0
+    },
+    {
+      "source": "syncservice_main",
+      "target": "sltpqueueservice_pollsltphitsqueue",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "syncService.ts",
+      "source_location": "L352",
+      "weight": 1.0
+    },
+    {
+      "source": "syncservice_main",
+      "target": "notificationservice_flushnotificationqueue",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "syncService.ts",
+      "source_location": "L355",
+      "weight": 1.0
+    },
+    {
+      "source": "syncservice_main",
+      "target": "googlesheetsservice_initsheets",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "syncService.ts",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "syncservice_main",
+      "target": "notificationservice_sendtelegramnotification",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "syncService.ts",
+      "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "syncservice_main",
+      "target": "nepsescraper_schedulenepsescraper",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "syncService.ts",
+      "source_location": "L49",
+      "weight": 1.0
+    },
+    {
+      "source": "syncservice_main",
+      "target": "telegrambotservice_starttelegrambotlistener",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "syncService.ts",
+      "source_location": "L50",
+      "weight": 1.0
+    },
+    {
+      "source": "syncservice_main",
+      "target": "sltpmonitorservice_start10minsltpmonitor",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "syncService.ts",
+      "source_location": "L51",
       "weight": 1.0
     },
     {
@@ -7678,7 +8663,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "telegramBotService.ts",
-      "source_location": "L140",
+      "source_location": "L144",
       "weight": 1.0
     },
     {
@@ -7690,7 +8675,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "telegramBotService.ts",
-      "source_location": "L147",
+      "source_location": "L151",
       "weight": 1.0
     },
     {
@@ -7702,7 +8687,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "telegramBotService.ts",
-      "source_location": "L148",
+      "source_location": "L152",
       "weight": 1.0
     },
     {
@@ -7714,7 +8699,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "telegramBotService.ts",
-      "source_location": "L149",
+      "source_location": "L153",
       "weight": 1.0
     },
     {
@@ -7726,7 +8711,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "telegramBotService.ts",
-      "source_location": "L162",
+      "source_location": "L166",
       "weight": 1.0
     },
     {
@@ -7738,7 +8723,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "telegramBotService.ts",
-      "source_location": "L162",
+      "source_location": "L166",
       "weight": 1.0
     },
     {
@@ -7750,7 +8735,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "telegramBotService.ts",
-      "source_location": "L211",
+      "source_location": "L215",
       "weight": 1.0
     },
     {
@@ -7762,7 +8747,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "telegramBotService.ts",
-      "source_location": "L219",
+      "source_location": "L223",
       "weight": 1.0
     },
     {
@@ -7774,7 +8759,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "telegramBotService.ts",
-      "source_location": "L232",
+      "source_location": "L236",
       "weight": 1.0
     },
     {
@@ -7786,7 +8771,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "telegramBotService.ts",
-      "source_location": "L233",
+      "source_location": "L237",
       "weight": 1.0
     },
     {
@@ -7798,7 +8783,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "telegramBotService.ts",
-      "source_location": "L358",
+      "source_location": "L362",
       "weight": 1.0
     },
     {
@@ -7810,7 +8795,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "telegramBotService.ts",
-      "source_location": "L431",
+      "source_location": "L496",
       "weight": 1.0
     },
     {
@@ -7822,7 +8807,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "telegramBotService.ts",
-      "source_location": "L432",
+      "source_location": "L497",
       "weight": 1.0
     },
     {
@@ -7834,7 +8819,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "telegramBotService.ts",
-      "source_location": "L435",
+      "source_location": "L500",
       "weight": 1.0
     },
     {
@@ -7846,7 +8831,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "telegramBotService.ts",
-      "source_location": "L441",
+      "source_location": "L506",
       "weight": 1.0
     },
     {
@@ -7858,7 +8843,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "telegramBotService.ts",
-      "source_location": "L128",
+      "source_location": "L132",
       "weight": 1.0
     },
     {
@@ -7870,7 +8855,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "telegramBotService.ts",
-      "source_location": "L128",
+      "source_location": "L132",
       "weight": 1.0
     },
     {
@@ -7894,7 +8879,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "telegramBotService.ts",
-      "source_location": "L467",
+      "source_location": "L532",
       "weight": 1.0
     },
     {
@@ -7906,7 +8891,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "telegramBotService.ts",
-      "source_location": "L471",
+      "source_location": "L536",
       "weight": 1.0
     },
     {
@@ -7918,7 +8903,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "telegramBotService.ts",
-      "source_location": "L503",
+      "source_location": "L568",
       "weight": 1.0
     },
     {
@@ -7930,7 +8915,19 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "telegramBotService.ts",
-      "source_location": "L507",
+      "source_location": "L572",
+      "weight": 1.0
+    },
+    {
+      "source": "test_nric_inspect",
+      "target": "googlesheetsservice_initsheets",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "test_nric.ts",
+      "source_location": "L4",
       "weight": 1.0
     },
     {
@@ -8870,6 +9867,102 @@
       "weight": 1.0
     },
     {
+      "source": "sltpmonitorservice",
+      "target": "googlesheetsservice_callwithretry",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "sltpMonitorService.ts",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "sltpmonitorservice",
+      "target": "googlesheetsservice_doc",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "sltpMonitorService.ts",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "sltpmonitorservice",
+      "target": "googlesheetsservice_initsheets",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "sltpMonitorService.ts",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "sltpmonitorservice",
+      "target": "sltpqueueservice_pollsltphitsqueue",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "sltpMonitorService.ts",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "sltpqueueservice",
+      "target": "googlesheetsservice_callwithretry",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "sltpQueueService.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "sltpqueueservice",
+      "target": "googlesheetsservice_doc",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "sltpQueueService.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "sltpqueueservice",
+      "target": "googlesheetsservice_initsheets",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "sltpQueueService.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "sltpqueueservice",
+      "target": "notificationservice_sendtelegramnotification",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "sltpQueueService.ts",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
       "source": "syncservice",
       "target": "googlesheetsservice_addresulttosheet",
       "relation": "imports",
@@ -8950,7 +10043,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "syncService.ts",
-      "source_location": "L10",
+      "source_location": "L12",
       "weight": 1.0
     },
     {
@@ -9038,6 +10131,66 @@
       "weight": 1.0
     },
     {
+      "source": "syncservice",
+      "target": "sltpmonitorservice_getlivemarketdata",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "syncService.ts",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "syncservice",
+      "target": "sltpmonitorservice_scanportfoliosltp",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "syncService.ts",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "syncservice",
+      "target": "sltpmonitorservice_start10minsltpmonitor",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "syncService.ts",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "syncservice",
+      "target": "sltpmonitorservice_syncyogentosltpstocks",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "syncService.ts",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "syncservice",
+      "target": "sltpqueueservice_pollsltphitsqueue",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "syncService.ts",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
       "source": "syncservice_main",
       "target": "promoterunlock_fetchpromoterunlockdata",
       "relation": "imports",
@@ -9046,7 +10199,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "syncService.ts",
-      "source_location": "L155",
+      "source_location": "L158",
       "weight": 1.0
     },
     {
@@ -9058,7 +10211,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "syncService.ts",
-      "source_location": "L156",
+      "source_location": "L159",
       "weight": 1.0
     },
     {
@@ -9070,7 +10223,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "syncService.ts",
-      "source_location": "L176",
+      "source_location": "L179",
       "weight": 1.0
     },
     {
@@ -9082,7 +10235,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "syncService.ts",
-      "source_location": "L194",
+      "source_location": "L197",
       "weight": 1.0
     },
     {
@@ -9094,7 +10247,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "syncService.ts",
-      "source_location": "L224",
+      "source_location": "L227",
       "weight": 1.0
     },
     {
@@ -9106,7 +10259,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "syncService.ts",
-      "source_location": "L238",
+      "source_location": "L241",
       "weight": 1.0
     },
     {
@@ -9298,7 +10451,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "telegramBotService.ts",
-      "source_location": "L260",
+      "source_location": "L264",
       "weight": 1.0
     },
     {
@@ -9310,7 +10463,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "telegramBotService.ts",
-      "source_location": "L305",
+      "source_location": "L309",
       "weight": 1.0
     },
     {
@@ -9322,7 +10475,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "telegramBotService.ts",
-      "source_location": "L330",
+      "source_location": "L334",
       "weight": 1.0
     },
     {
@@ -9334,7 +10487,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "telegramBotService.ts",
-      "source_location": "L355",
+      "source_location": "L359",
       "weight": 1.0
     },
     {
@@ -9346,7 +10499,55 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "telegramBotService.ts",
-      "source_location": "L382",
+      "source_location": "L386",
+      "weight": 1.0
+    },
+    {
+      "source": "telegrambotservice_handletelegramcommand",
+      "target": "sltpmonitorservice_scanportfoliosltp",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "telegramBotService.ts",
+      "source_location": "L407",
+      "weight": 1.0
+    },
+    {
+      "source": "telegrambotservice_handletelegramcommand",
+      "target": "sltpmonitorservice_getlivemarketdata",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "telegramBotService.ts",
+      "source_location": "L447",
+      "weight": 1.0
+    },
+    {
+      "source": "test_nric",
+      "target": "googlesheetsservice_doc",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "test_nric.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "test_nric",
+      "target": "googlesheetsservice_initsheets",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "test_nric.ts",
+      "source_location": "L1",
       "weight": 1.0
     },
     {
@@ -9638,6 +10839,54 @@
       "weight": 1.0
     },
     {
+      "source": "sltpmonitorservice",
+      "target": "googlesheetsservice",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "sltpMonitorService.ts",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "sltpmonitorservice",
+      "target": "sltpqueueservice",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "sltpMonitorService.ts",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "sltpqueueservice",
+      "target": "googlesheetsservice",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "sltpQueueService.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "sltpqueueservice",
+      "target": "notificationservice",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "sltpQueueService.ts",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
       "source": "syncservice",
       "target": "googlesheetsservice",
       "relation": "imports_from",
@@ -9658,7 +10907,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "syncService.ts",
-      "source_location": "L10",
+      "source_location": "L12",
       "weight": 1.0
     },
     {
@@ -9722,6 +10971,30 @@
       "weight": 1.0
     },
     {
+      "source": "syncservice",
+      "target": "sltpmonitorservice",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "syncService.ts",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "syncservice",
+      "target": "sltpqueueservice",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "syncService.ts",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
       "source": "syncservice_main",
       "target": "promoterunlock",
       "relation": "imports_from",
@@ -9730,7 +11003,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "syncService.ts",
-      "source_location": "L155",
+      "source_location": "L158",
       "weight": 1.0
     },
     {
@@ -9742,7 +11015,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "syncService.ts",
-      "source_location": "L156",
+      "source_location": "L159",
       "weight": 1.0
     },
     {
@@ -9754,7 +11027,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "syncService.ts",
-      "source_location": "L176",
+      "source_location": "L179",
       "weight": 1.0
     },
     {
@@ -9766,7 +11039,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "syncService.ts",
-      "source_location": "L194",
+      "source_location": "L197",
       "weight": 1.0
     },
     {
@@ -9778,7 +11051,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "syncService.ts",
-      "source_location": "L224",
+      "source_location": "L227",
       "weight": 1.0
     },
     {
@@ -9790,7 +11063,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "syncService.ts",
-      "source_location": "L238",
+      "source_location": "L241",
       "weight": 1.0
     },
     {
@@ -9874,7 +11147,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "telegramBotService.ts",
-      "source_location": "L260",
+      "source_location": "L264",
       "weight": 1.0
     },
     {
@@ -9886,7 +11159,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "telegramBotService.ts",
-      "source_location": "L305",
+      "source_location": "L309",
       "weight": 1.0
     },
     {
@@ -9898,7 +11171,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "telegramBotService.ts",
-      "source_location": "L330",
+      "source_location": "L334",
       "weight": 1.0
     },
     {
@@ -9910,7 +11183,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "telegramBotService.ts",
-      "source_location": "L355",
+      "source_location": "L359",
       "weight": 1.0
     },
     {
@@ -9922,7 +11195,31 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "telegramBotService.ts",
-      "source_location": "L382",
+      "source_location": "L386",
+      "weight": 1.0
+    },
+    {
+      "source": "telegrambotservice_handletelegramcommand",
+      "target": "sltpmonitorservice",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "telegramBotService.ts",
+      "source_location": "L447",
+      "weight": 1.0
+    },
+    {
+      "source": "test_nric",
+      "target": "googlesheetsservice",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "test_nric.ts",
+      "source_location": "L1",
       "weight": 1.0
     },
     {
@@ -12436,7 +13733,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "shareInfoScript/liveTradingData.js",
-      "source_location": "L241",
+      "source_location": "L247",
       "weight": 1.0
     },
     {
@@ -12914,46 +14211,134 @@
     },
     {
       "source": "shareinfoscript_sltphit",
+      "target": "shareinfoscript_sltphit_generateuniquestockid",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "shareInfoScript/sltpHit.js",
+      "source_location": "L146",
+      "weight": 1.0
+    },
+    {
+      "source": "shareinfoscript_sltphit",
+      "target": "shareinfoscript_sltphit_formatpurchasedate",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "shareInfoScript/sltpHit.js",
+      "source_location": "L157",
+      "weight": 1.0
+    },
+    {
+      "source": "shareinfoscript_sltphit",
+      "target": "shareinfoscript_sltphit_getorcreatesltpstockssheet",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "shareInfoScript/sltpHit.js",
+      "source_location": "L177",
+      "weight": 1.0
+    },
+    {
+      "source": "shareinfoscript_sltphit",
+      "target": "shareinfoscript_sltphit_getexistingsltpstocksmap",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "shareInfoScript/sltpHit.js",
+      "source_location": "L214",
+      "weight": 1.0
+    },
+    {
+      "source": "shareinfoscript_sltphit",
+      "target": "shareinfoscript_sltphit_scansltpstocksagainstlive",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "shareInfoScript/sltpHit.js",
+      "source_location": "L241",
+      "weight": 1.0
+    },
+    {
+      "source": "shareinfoscript_sltphit",
+      "target": "shareinfoscript_sltphit_syncyogentosltpstocks",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "shareInfoScript/sltpHit.js",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "shareinfoscript_sltphit",
+      "target": "shareinfoscript_sltphit_scansltpstocksagainstlivemanual",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "shareInfoScript/sltpHit.js",
+      "source_location": "L482",
+      "weight": 1.0
+    },
+    {
+      "source": "shareinfoscript_sltphit",
+      "target": "shareinfoscript_sltphit_syncyogentosltpstocksmanual",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "shareInfoScript/sltpHit.js",
+      "source_location": "L530",
+      "weight": 1.0
+    },
+    {
+      "source": "shareinfoscript_sltphit",
+      "target": "shareinfoscript_sltphit_getorcreatesltphitssheet",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "shareInfoScript/sltpHit.js",
+      "source_location": "L557",
+      "weight": 1.0
+    },
+    {
+      "source": "shareinfoscript_sltphit",
+      "target": "shareinfoscript_sltphit_getexistinghitstodaymap",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "shareInfoScript/sltpHit.js",
+      "source_location": "L601",
+      "weight": 1.0
+    },
+    {
+      "source": "shareinfoscript_sltphit",
+      "target": "shareinfoscript_sltphit_ishitfromtoday",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "shareInfoScript/sltpHit.js",
+      "source_location": "L625",
+      "weight": 1.0
+    },
+    {
+      "source": "shareinfoscript_sltphit",
       "target": "shareinfoscript_sltphit_getlivetradingdatamap",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "shareInfoScript/sltpHit.js",
-      "source_location": "L219",
-      "weight": 1.0
-    },
-    {
-      "source": "shareinfoscript_sltphit",
-      "target": "shareinfoscript_sltphit_getorcreatealertsheet",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "shareInfoScript/sltpHit.js",
-      "source_location": "L253",
-      "weight": 1.0
-    },
-    {
-      "source": "shareinfoscript_sltphit",
-      "target": "shareinfoscript_sltphit_getexistinghitstoday",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "shareInfoScript/sltpHit.js",
-      "source_location": "L301",
-      "weight": 1.0
-    },
-    {
-      "source": "shareinfoscript_sltphit",
-      "target": "shareinfoscript_sltphit_scanstocksforsltp",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "shareInfoScript/sltpHit.js",
-      "source_location": "L32",
+      "source_location": "L650",
       "weight": 1.0
     },
     {
@@ -12964,18 +14349,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "shareInfoScript/sltpHit.js",
-      "source_location": "L325",
+      "source_location": "L684",
       "weight": 1.0
     },
     {
       "source": "shareinfoscript_sltphit",
-      "target": "shareinfoscript_sltphit_sendtelegramalertsbatch",
+      "target": "shareinfoscript_sltphit_run10minlivetradingandscan",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "shareInfoScript/sltpHit.js",
-      "source_location": "L336",
+      "source_location": "L699",
       "weight": 1.0
     },
     {
@@ -12986,7 +14371,29 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "shareInfoScript/sltpHit.js",
-      "source_location": "L368",
+      "source_location": "L725",
+      "weight": 1.0
+    },
+    {
+      "source": "shareinfoscript_sltphit",
+      "target": "shareinfoscript_sltphit_scanstocksforsltp",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "shareInfoScript/sltpHit.js",
+      "source_location": "L729",
+      "weight": 1.0
+    },
+    {
+      "source": "shareinfoscript_sltphit",
+      "target": "shareinfoscript_sltphit_setuphourlysltpsynctrigger",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "shareInfoScript/sltpHit.js",
+      "source_location": "L737",
       "weight": 1.0
     },
     {
@@ -12997,18 +14404,40 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "shareInfoScript/sltpHit.js",
-      "source_location": "L384",
+      "source_location": "L751",
       "weight": 1.0
     },
     {
       "source": "shareinfoscript_sltphit",
-      "target": "shareinfoscript_sltphit_remove10minlivescantrigger",
+      "target": "shareinfoscript_sltphit_setupalltradingautomationtriggers",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "shareInfoScript/sltpHit.js",
-      "source_location": "L407",
+      "source_location": "L766",
+      "weight": 1.0
+    },
+    {
+      "source": "shareinfoscript_sltphit",
+      "target": "shareinfoscript_sltphit_removealltradingautomationtriggers",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "shareInfoScript/sltpHit.js",
+      "source_location": "L788",
+      "weight": 1.0
+    },
+    {
+      "source": "shareinfoscript_sltphit",
+      "target": "shareinfoscript_sltphit_removetriggerbyfunctionname",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "shareInfoScript/sltpHit.js",
+      "source_location": "L800",
       "weight": 1.0
     },
     {
@@ -13331,6 +14760,226 @@
       "weight": 1.0
     },
     {
+      "source": "sltpmonitorservice",
+      "target": "sltpmonitorservice_parselivetradingtablehtml",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "sltpMonitorService.ts",
+      "source_location": "L109",
+      "weight": 1.0
+    },
+    {
+      "source": "sltpmonitorservice",
+      "target": "sltpmonitorservice_sltptriggerresult",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "sltpMonitorService.ts",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "sltpmonitorservice",
+      "target": "sltpmonitorservice_parsepricenum",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "sltpMonitorService.ts",
+      "source_location": "L184",
+      "weight": 1.0
+    },
+    {
+      "source": "sltpmonitorservice",
+      "target": "sltpmonitorservice_generateuniquestockid",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "sltpMonitorService.ts",
+      "source_location": "L195",
+      "weight": 1.0
+    },
+    {
+      "source": "sltpmonitorservice",
+      "target": "sltpmonitorservice_getlivemarketdata",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "sltpMonitorService.ts",
+      "source_location": "L206",
+      "weight": 1.0
+    },
+    {
+      "source": "sltpmonitorservice",
+      "target": "sltpmonitorservice_readlivetradingfromsheet",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "sltpMonitorService.ts",
+      "source_location": "L233",
+      "weight": 1.0
+    },
+    {
+      "source": "sltpmonitorservice",
+      "target": "sltpmonitorservice_synclivetradingsheet",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "sltpMonitorService.ts",
+      "source_location": "L278",
+      "weight": 1.0
+    },
+    {
+      "source": "sltpmonitorservice",
+      "target": "sltpmonitorservice_scansummary",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "sltpMonitorService.ts",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "sltpmonitorservice",
+      "target": "sltpmonitorservice_syncyogentosltpstocks",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "sltpMonitorService.ts",
+      "source_location": "L319",
+      "weight": 1.0
+    },
+    {
+      "source": "sltpmonitorservice",
+      "target": "sltpmonitorservice_scansltpstocksagainstlive",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "sltpMonitorService.ts",
+      "source_location": "L449",
+      "weight": 1.0
+    },
+    {
+      "source": "sltpmonitorservice",
+      "target": "sltpmonitorservice_livestockdata",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "sltpMonitorService.ts",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "sltpmonitorservice",
+      "target": "sltpmonitorservice_isnepsemarketopen",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "sltpMonitorService.ts",
+      "source_location": "L52",
+      "weight": 1.0
+    },
+    {
+      "source": "sltpmonitorservice",
+      "target": "sltpmonitorservice_scanportfoliosltp",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "sltpMonitorService.ts",
+      "source_location": "L673",
+      "weight": 1.0
+    },
+    {
+      "source": "sltpmonitorservice",
+      "target": "sltpmonitorservice_start10minsltpmonitor",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "sltpMonitorService.ts",
+      "source_location": "L683",
+      "weight": 1.0
+    },
+    {
+      "source": "sltpmonitorservice",
+      "target": "sltpmonitorservice_stop10minsltpmonitor",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "sltpMonitorService.ts",
+      "source_location": "L698",
+      "weight": 1.0
+    },
+    {
+      "source": "sltpmonitorservice",
+      "target": "sltpmonitorservice_ishitrecordedtoday",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "sltpMonitorService.ts",
+      "source_location": "L709",
+      "weight": 1.0
+    },
+    {
+      "source": "sltpmonitorservice",
+      "target": "sltpmonitorservice_fetchsharesansarlivehtml",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "sltpMonitorService.ts",
+      "source_location": "L80",
+      "weight": 1.0
+    },
+    {
+      "source": "sltpqueueservice",
+      "target": "sltpqueueservice_escapehtml",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "sltpQueueService.ts",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "sltpqueueservice",
+      "target": "sltpqueueservice_pollsltphitsqueue",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "sltpQueueService.ts",
+      "source_location": "L41",
+      "weight": 1.0
+    },
+    {
+      "source": "sltpqueueservice",
+      "target": "sltpqueueservice_unprocessedhit",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "sltpQueueService.ts",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
       "source": "supervisor",
       "target": "supervisor_script_cwd",
       "relation": "contains",
@@ -13371,7 +15020,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "syncService.ts",
-      "source_location": "L31",
+      "source_location": "L33",
       "weight": 1.0
     },
     {
@@ -14130,7 +15779,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "telegramBotService.ts",
-      "source_location": "L123",
+      "source_location": "L127",
       "weight": 1.0
     },
     {
@@ -14141,7 +15790,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "telegramBotService.ts",
-      "source_location": "L134",
+      "source_location": "L138",
       "weight": 1.0
     },
     {
@@ -14163,7 +15812,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "telegramBotService.ts",
-      "source_location": "L422",
+      "source_location": "L487",
       "weight": 1.0
     },
     {
@@ -14174,7 +15823,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "telegramBotService.ts",
-      "source_location": "L455",
+      "source_location": "L520",
       "weight": 1.0
     },
     {
@@ -14185,7 +15834,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "telegramBotService.ts",
-      "source_location": "L524",
+      "source_location": "L589",
       "weight": 1.0
     },
     {
@@ -14219,6 +15868,17 @@
       "confidence_score": 1.0,
       "source_file": "telegramBotService.ts",
       "source_location": "L93",
+      "weight": 1.0
+    },
+    {
+      "source": "test_nric",
+      "target": "test_nric_inspect",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "test_nric.ts",
+      "source_location": "L3",
       "weight": 1.0
     },
     {
@@ -14355,5 +16015,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "aab2c7dd7aa8832585219310ba13226325cd3259"
+  "built_at_commit": "7dd0cfc98088da6fcf9b6053390aab84c3199f1b"
 }

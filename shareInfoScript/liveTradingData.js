@@ -223,8 +223,14 @@ function fetchLiveTradingData() {
   checkPointsFromSheet();
   findSymbolsNearPoints();
 
-  // Scan 'yogen' sheet for SL / TP hits with freshly updated live data
-  if (typeof scanStocksForSLTP === 'function') {
+  // Stage 2: Scan 'SLTP-stocks' for SL/TP hits with freshly updated live data
+  if (typeof scanSLTPStocksAgainstLive === 'function') {
+    try {
+      scanSLTPStocksAgainstLive(true);
+    } catch (err) {
+      Logger.log("scanSLTPStocksAgainstLive error during live data fetch: " + err.message);
+    }
+  } else if (typeof scanStocksForSLTP === 'function') {
     try {
       scanStocksForSLTP();
     } catch (err) {

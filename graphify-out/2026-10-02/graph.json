@@ -61,8 +61,8 @@
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 1,
-      "community_name": "googleSheetsService.ts",
+      "community": 5,
+      "community_name": "notificationService.ts",
       "file_type": "code",
       "norm_label": "queuedmessage",
       "source_file": "notificationService.ts",
@@ -357,66 +357,6 @@
       "source_location": "L76"
     },
     {
-      "id": "nepsescraper_schedulenepsescraper",
-      "label": "scheduleNepseScraper()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "googleSheetsService.ts",
-      "file_type": "code",
-      "norm_label": "schedulenepsescraper()",
-      "source_file": "nepseScraper.ts",
-      "source_location": "L138"
-    },
-    {
-      "id": "notificationservice_enqueuenotification",
-      "label": "enqueueNotification()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "googleSheetsService.ts",
-      "file_type": "code",
-      "norm_label": "enqueuenotification()",
-      "source_file": "notificationService.ts",
-      "source_location": "L30"
-    },
-    {
-      "id": "notificationservice_flushnotificationqueue",
-      "label": "flushNotificationQueue()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "googleSheetsService.ts",
-      "file_type": "code",
-      "norm_label": "flushnotificationqueue()",
-      "source_file": "notificationService.ts",
-      "source_location": "L117"
-    },
-    {
-      "id": "notificationservice_getpendingcount",
-      "label": "getPendingCount()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "googleSheetsService.ts",
-      "file_type": "code",
-      "norm_label": "getpendingcount()",
-      "source_file": "notificationService.ts",
-      "source_location": "L51"
-    },
-    {
-      "id": "notificationservice_senddirecttelegram",
-      "label": "sendDirectTelegram()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "googleSheetsService.ts",
-      "file_type": "code",
-      "norm_label": "senddirecttelegram()",
-      "source_file": "notificationService.ts",
-      "source_location": "L62"
-    },
-    {
       "id": "notificationservice_sendtelegramnotification",
       "label": "sendTelegramNotification()",
       "_callable": true,
@@ -427,18 +367,6 @@
       "norm_label": "sendtelegramnotification()",
       "source_file": "notificationService.ts",
       "source_location": "L222"
-    },
-    {
-      "id": "notificationservice_startqueueworker",
-      "label": "startQueueWorker()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "googleSheetsService.ts",
-      "file_type": "code",
-      "norm_label": "startqueueworker()",
-      "source_file": "notificationService.ts",
-      "source_location": "L206"
     },
     {
       "id": "portfolioscraper_scrapeportfolio",
@@ -498,7 +426,7 @@
       "file_type": "code",
       "norm_label": "main()",
       "source_file": "syncService.ts",
-      "source_location": "L30"
+      "source_location": "L31"
     },
     {
       "id": "techscraper_scrapetechnicalsignals",
@@ -511,6 +439,114 @@
       "norm_label": "scrapetechnicalsignals()",
       "source_file": "techScraper.ts",
       "source_location": "L13"
+    },
+    {
+      "id": "telegrambotservice_answercallbackquery",
+      "label": "answerCallbackQuery()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "googleSheetsService.ts",
+      "file_type": "code",
+      "norm_label": "answercallbackquery()",
+      "source_file": "telegramBotService.ts",
+      "source_location": "L83"
+    },
+    {
+      "id": "telegrambotservice_getcommandcenterkeyboard",
+      "label": "getCommandCenterKeyboard()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "googleSheetsService.ts",
+      "file_type": "code",
+      "norm_label": "getcommandcenterkeyboard()",
+      "source_file": "telegramBotService.ts",
+      "source_location": "L93"
+    },
+    {
+      "id": "telegrambotservice_handletelegramcommand",
+      "label": "handleTelegramCommand()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "googleSheetsService.ts",
+      "file_type": "code",
+      "norm_label": "handletelegramcommand()",
+      "source_file": "telegramBotService.ts",
+      "source_location": "L134"
+    },
+    {
+      "id": "telegrambotservice_runtaskasync",
+      "label": "runTaskAsync()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "googleSheetsService.ts",
+      "file_type": "code",
+      "norm_label": "runtaskasync()",
+      "source_file": "telegramBotService.ts",
+      "source_location": "L422"
+    },
+    {
+      "id": "telegrambotservice_sendcommandcentermenu",
+      "label": "sendCommandCenterMenu()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "googleSheetsService.ts",
+      "file_type": "code",
+      "norm_label": "sendcommandcentermenu()",
+      "source_file": "telegramBotService.ts",
+      "source_location": "L123"
+    },
+    {
+      "id": "telegrambotservice_sendtelegrammessage",
+      "label": "sendTelegramMessage()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "googleSheetsService.ts",
+      "file_type": "code",
+      "norm_label": "sendtelegrammessage()",
+      "source_file": "telegramBotService.ts",
+      "source_location": "L67"
+    },
+    {
+      "id": "telegrambotservice_starttelegrambotlistener",
+      "label": "startTelegramBotListener()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "googleSheetsService.ts",
+      "file_type": "code",
+      "norm_label": "starttelegrambotlistener()",
+      "source_file": "telegramBotService.ts",
+      "source_location": "L455"
+    },
+    {
+      "id": "telegrambotservice_stoptelegrambotlistener",
+      "label": "stopTelegramBotListener()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "googleSheetsService.ts",
+      "file_type": "code",
+      "norm_label": "stoptelegrambotlistener()",
+      "source_file": "telegramBotService.ts",
+      "source_location": "L524"
+    },
+    {
+      "id": "telegrambotservice_telegramapi",
+      "label": "telegramApi()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "googleSheetsService.ts",
+      "file_type": "code",
+      "norm_label": "telegramapi()",
+      "source_file": "telegramBotService.ts",
+      "source_location": "L22"
     },
     {
       "id": "testbody_run",
@@ -667,6 +703,18 @@
       "norm_label": "runautomation()",
       "source_file": "tmsAutomation.ts",
       "source_location": "L172"
+    },
+    {
+      "id": "nepsescraper_schedulenepsescraper",
+      "label": "scheduleNepseScraper()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 11,
+      "community_name": "nepseScraper.ts",
+      "file_type": "code",
+      "norm_label": "schedulenepsescraper()",
+      "source_file": "nepseScraper.ts",
+      "source_location": "L138"
     },
     {
       "id": "nepsescraper_scrapenepseandsave",
@@ -882,7 +930,7 @@
       "file_type": "code",
       "norm_label": "parselivetradingtable()",
       "source_file": "shareInfoScript/liveTradingData.js",
-      "source_location": "L232"
+      "source_location": "L241"
     },
     {
       "id": "shareinfoscript_livetradingdata_writeresultstosheet",
@@ -1401,28 +1449,76 @@
       "source_location": "L294"
     },
     {
-      "id": "shareinfoscript_sltphit_findlivestockdata",
-      "label": "findLiveStockData()",
+      "id": "shareinfoscript_sltphit_getexistinghitstoday",
+      "label": "getExistingHitsToday()",
       "_callable": true,
       "_origin": "ast",
       "community": 34,
       "community_name": "sltpHit.js",
       "file_type": "code",
-      "norm_label": "findlivestockdata()",
+      "norm_label": "getexistinghitstoday()",
       "source_file": "shareInfoScript/sltpHit.js",
-      "source_location": "L57"
+      "source_location": "L301"
     },
     {
-      "id": "shareinfoscript_sltphit_getlivestockdata",
-      "label": "getLiveStockData()",
+      "id": "shareinfoscript_sltphit_getlivetradingdatamap",
+      "label": "getLiveTradingDataMap()",
       "_callable": true,
       "_origin": "ast",
       "community": 34,
       "community_name": "sltpHit.js",
       "file_type": "code",
-      "norm_label": "getlivestockdata()",
+      "norm_label": "getlivetradingdatamap()",
       "source_file": "shareInfoScript/sltpHit.js",
-      "source_location": "L80"
+      "source_location": "L219"
+    },
+    {
+      "id": "shareinfoscript_sltphit_getorcreatealertsheet",
+      "label": "getOrCreateAlertSheet()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 34,
+      "community_name": "sltpHit.js",
+      "file_type": "code",
+      "norm_label": "getorcreatealertsheet()",
+      "source_file": "shareInfoScript/sltpHit.js",
+      "source_location": "L253"
+    },
+    {
+      "id": "shareinfoscript_sltphit_parsepricenum",
+      "label": "parsePriceNum()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 34,
+      "community_name": "sltpHit.js",
+      "file_type": "code",
+      "norm_label": "parsepricenum()",
+      "source_file": "shareInfoScript/sltpHit.js",
+      "source_location": "L325"
+    },
+    {
+      "id": "shareinfoscript_sltphit_remove10minlivescantrigger",
+      "label": "remove10MinLiveScanTrigger()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 34,
+      "community_name": "sltpHit.js",
+      "file_type": "code",
+      "norm_label": "remove10minlivescantrigger()",
+      "source_file": "shareInfoScript/sltpHit.js",
+      "source_location": "L407"
+    },
+    {
+      "id": "shareinfoscript_sltphit_runlivefetchandscansltp",
+      "label": "runLiveFetchAndScanSLTP()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 34,
+      "community_name": "sltpHit.js",
+      "file_type": "code",
+      "norm_label": "runlivefetchandscansltp()",
+      "source_file": "shareInfoScript/sltpHit.js",
+      "source_location": "L368"
     },
     {
       "id": "shareinfoscript_sltphit_scanstocksforsltp",
@@ -1434,7 +1530,31 @@
       "file_type": "code",
       "norm_label": "scanstocksforsltp()",
       "source_file": "shareInfoScript/sltpHit.js",
-      "source_location": "L1"
+      "source_location": "L32"
+    },
+    {
+      "id": "shareinfoscript_sltphit_sendtelegramalertsbatch",
+      "label": "sendTelegramAlertsBatch()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 34,
+      "community_name": "sltpHit.js",
+      "file_type": "code",
+      "norm_label": "sendtelegramalertsbatch()",
+      "source_file": "shareInfoScript/sltpHit.js",
+      "source_location": "L336"
+    },
+    {
+      "id": "shareinfoscript_sltphit_setup10minlivescantrigger",
+      "label": "setup10MinLiveScanTrigger()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 34,
+      "community_name": "sltpHit.js",
+      "file_type": "code",
+      "norm_label": "setup10minlivescantrigger()",
+      "source_file": "shareInfoScript/sltpHit.js",
+      "source_location": "L384"
     },
     {
       "id": "shareinfoscript_supportbounce_vol_rsi_average",
@@ -1533,26 +1653,26 @@
       "source_location": "L9"
     },
     {
-      "id": "shareinfoscript_apiaccessforai_doget",
-      "label": "doGet()",
+      "id": "shareinfoscript_apiaccessforai_apiaccessdoget",
+      "label": "apiAccessDoGet()",
       "_callable": true,
       "_origin": "ast",
       "community": 38,
       "community_name": "apiAccessForAI.js",
       "file_type": "code",
-      "norm_label": "doget()",
+      "norm_label": "apiaccessdoget()",
       "source_file": "shareInfoScript/apiAccessForAI.js",
       "source_location": "L1"
     },
     {
-      "id": "shareinfoscript_apiaccessforai_dopost",
-      "label": "doPost()",
+      "id": "shareinfoscript_apiaccessforai_apiaccessdopost",
+      "label": "apiAccessDoPost()",
       "_callable": true,
       "_origin": "ast",
       "community": 38,
       "community_name": "apiAccessForAI.js",
       "file_type": "code",
-      "norm_label": "dopost()",
+      "norm_label": "apiaccessdopost()",
       "source_file": "shareInfoScript/apiAccessForAI.js",
       "source_location": "L17"
     },
@@ -1653,26 +1773,26 @@
       "source_location": "L1"
     },
     {
-      "id": "shareinfoscript_testapi_doget",
-      "label": "doGet()",
+      "id": "shareinfoscript_testapi_testapidoget",
+      "label": "testApiDoGet()",
       "_callable": true,
       "_origin": "ast",
       "community": 43,
       "community_name": "testapi.js",
       "file_type": "code",
-      "norm_label": "doget()",
+      "norm_label": "testapidoget()",
       "source_file": "shareInfoScript/testapi.js",
-      "source_location": "L34"
+      "source_location": "L35"
     },
     {
-      "id": "shareinfoscript_testapi_dopost",
-      "label": "doPost()",
+      "id": "shareinfoscript_testapi_testapidopost",
+      "label": "testApiDoPost()",
       "_callable": true,
       "_origin": "ast",
       "community": 43,
       "community_name": "testapi.js",
       "file_type": "code",
-      "norm_label": "dopost()",
+      "norm_label": "testapidopost()",
       "source_file": "shareInfoScript/testapi.js",
       "source_location": "L1"
     },
@@ -1749,14 +1869,74 @@
       "source_location": "L6"
     },
     {
-      "id": "shareinfoscript_perplexityconsumeapi_dopost",
-      "label": "doPost()",
+      "id": "notificationservice_enqueuenotification",
+      "label": "enqueueNotification()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "notificationService.ts",
+      "file_type": "code",
+      "norm_label": "enqueuenotification()",
+      "source_file": "notificationService.ts",
+      "source_location": "L30"
+    },
+    {
+      "id": "notificationservice_flushnotificationqueue",
+      "label": "flushNotificationQueue()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "notificationService.ts",
+      "file_type": "code",
+      "norm_label": "flushnotificationqueue()",
+      "source_file": "notificationService.ts",
+      "source_location": "L117"
+    },
+    {
+      "id": "notificationservice_getpendingcount",
+      "label": "getPendingCount()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "notificationService.ts",
+      "file_type": "code",
+      "norm_label": "getpendingcount()",
+      "source_file": "notificationService.ts",
+      "source_location": "L51"
+    },
+    {
+      "id": "notificationservice_senddirecttelegram",
+      "label": "sendDirectTelegram()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "notificationService.ts",
+      "file_type": "code",
+      "norm_label": "senddirecttelegram()",
+      "source_file": "notificationService.ts",
+      "source_location": "L62"
+    },
+    {
+      "id": "notificationservice_startqueueworker",
+      "label": "startQueueWorker()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "notificationService.ts",
+      "file_type": "code",
+      "norm_label": "startqueueworker()",
+      "source_file": "notificationService.ts",
+      "source_location": "L206"
+    },
+    {
+      "id": "shareinfoscript_perplexityconsumeapi_handleperplexitynewspost",
+      "label": "handlePerplexityNewsPost()",
       "_callable": true,
       "_origin": "ast",
       "community": 50,
       "community_name": "perplexityConsumeApi.js",
       "file_type": "code",
-      "norm_label": "dopost()",
+      "norm_label": "handleperplexitynewspost()",
       "source_file": "shareInfoScript/perplexityConsumeApi.js",
       "source_location": "L2"
     },
@@ -2121,6 +2301,126 @@
       "source_location": "L56"
     },
     {
+      "id": "system",
+      "label": "system.md",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "\u2699\ufe0f Core System & Orchestration",
+      "file_type": "document",
+      "node_kind": "page",
+      "norm_label": "system.md",
+      "source_file": "system.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "system_1_authentication_security",
+      "label": "1. Authentication & Security",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "\u2699\ufe0f Core System & Orchestration",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "1. authentication & security",
+      "source_file": "system.md",
+      "source_location": "L28"
+    },
+    {
+      "id": "system_1_layered_architecture_pattern",
+      "label": "1. Layered Architecture Pattern",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "\u2699\ufe0f Core System & Orchestration",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "1. layered architecture pattern",
+      "source_file": "system.md",
+      "source_location": "L95"
+    },
+    {
+      "id": "system_2_human_behavior_simulation_pattern_humanutils_ts",
+      "label": "2. Human Behavior Simulation Pattern (`humanUtils.ts`)",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "\u2699\ufe0f Core System & Orchestration",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "2. human behavior simulation pattern (`humanutils.ts`)",
+      "source_file": "system.md",
+      "source_location": "L101"
+    },
+    {
+      "id": "system_2_network_resilience_rate_limiting",
+      "label": "2. Network Resilience & Rate Limiting",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "\u2699\ufe0f Core System & Orchestration",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "2. network resilience & rate limiting",
+      "source_file": "system.md",
+      "source_location": "L32"
+    },
+    {
+      "id": "system_3_anti_bot_stealth_integration",
+      "label": "3. Anti-Bot Stealth Integration",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "\u2699\ufe0f Core System & Orchestration",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "3. anti-bot stealth integration",
+      "source_file": "system.md",
+      "source_location": "L108"
+    },
+    {
+      "id": "system_3_detailed_tab_by_tab_schema_modification_rules",
+      "label": "3. Detailed Tab-by-Tab Schema & Modification Rules",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "\u2699\ufe0f Core System & Orchestration",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "3. detailed tab-by-tab schema & modification rules",
+      "source_file": "system.md",
+      "source_location": "L36"
+    },
+    {
+      "id": "system_4_resilient_network_concurrency_pattern",
+      "label": "4. Resilient Network & Concurrency Pattern",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "\u2699\ufe0f Core System & Orchestration",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "4. resilient network & concurrency pattern",
+      "source_file": "system.md",
+      "source_location": "L112"
+    },
+    {
+      "id": "system_5_persistent_context_pattern",
+      "label": "5. Persistent Context Pattern",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "\u2699\ufe0f Core System & Orchestration",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "5. persistent context pattern",
+      "source_file": "system.md",
+      "source_location": "L116"
+    },
+    {
+      "id": "system_aim_of_the_application",
+      "label": "\ud83c\udfaf Aim of the Application",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "\u2699\ufe0f Core System & Orchestration",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "\ud83c\udfaf aim of the application",
+      "source_file": "system.md",
+      "source_location": "L7"
+    },
+    {
       "id": "system_automate_ts",
       "label": "`automate.ts`",
       "_origin": "ast",
@@ -2157,6 +2457,18 @@
       "source_location": "L176"
     },
     {
+      "id": "system_coding_style_architectural_patterns",
+      "label": "\ud83e\uddec Coding Style & Architectural Patterns",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "\u2699\ufe0f Core System & Orchestration",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "\ud83e\uddec coding style & architectural patterns",
+      "source_file": "system.md",
+      "source_location": "L93"
+    },
+    {
       "id": "system_configuration_documentation_files",
       "label": "\ud83d\udccb Configuration & Documentation Files",
       "_origin": "ast",
@@ -2181,6 +2493,18 @@
       "source_location": "L152"
     },
     {
+      "id": "system_development_dependencies_devdependencies",
+      "label": "Development Dependencies (`devDependencies`)",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "\u2699\ufe0f Core System & Orchestration",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "development dependencies (`devdependencies`)",
+      "source_file": "system.md",
+      "source_location": "L139"
+    },
+    {
       "id": "system_file_by_file_intentions_responsibilities",
       "label": "\ud83d\udcc4 File-by-File Intentions & Responsibilities",
       "_origin": "ast",
@@ -2193,6 +2517,18 @@
       "source_location": "L150"
     },
     {
+      "id": "system_folder_structure",
+      "label": "\ud83d\udcc2 Folder Structure",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "\u2699\ufe0f Core System & Orchestration",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "\ud83d\udcc2 folder structure",
+      "source_file": "system.md",
+      "source_location": "L51"
+    },
+    {
       "id": "system_fundascraper_ts",
       "label": "`fundaScraper.ts`",
       "_origin": "ast",
@@ -2203,6 +2539,18 @@
       "norm_label": "`fundascraper.ts`",
       "source_file": "system.md",
       "source_location": "L204"
+    },
+    {
+      "id": "system_google_sheets_integration_modification_engine",
+      "label": "\ud83d\udcca Google Sheets Integration & Modification Engine",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "\u2699\ufe0f Core System & Orchestration",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "\ud83d\udcca google sheets integration & modification engine",
+      "source_file": "system.md",
+      "source_location": "L24"
     },
     {
       "id": "system_googlesheetsservice_ts",
@@ -2277,6 +2625,18 @@
       "source_location": "L218"
     },
     {
+      "id": "system_production_dependencies_dependencies",
+      "label": "Production Dependencies (`dependencies`)",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "\u2699\ufe0f Core System & Orchestration",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "production dependencies (`dependencies`)",
+      "source_file": "system.md",
+      "source_location": "L125"
+    },
+    {
       "id": "system_promoterunlock_ts",
       "label": "`promoterUnlock.ts`",
       "_origin": "ast",
@@ -2337,6 +2697,18 @@
       "source_location": "L154"
     },
     {
+      "id": "system_system_architecture_technical_documentation",
+      "label": "System Architecture & Technical Documentation",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "\u2699\ufe0f Core System & Orchestration",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "system architecture & technical documentation",
+      "source_file": "system.md",
+      "source_location": "L1"
+    },
+    {
       "id": "system_testbody_ts",
       "label": "`testBody.ts`",
       "_origin": "ast",
@@ -2371,6 +2743,18 @@
       "norm_label": "`tmsautomation.ts`",
       "source_file": "system.md",
       "source_location": "L192"
+    },
+    {
+      "id": "system_used_libraries_exact_versions",
+      "label": "\ud83d\udcda Used Libraries & Exact Versions",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "\u2699\ufe0f Core System & Orchestration",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "\ud83d\udcda used libraries & exact versions",
+      "source_file": "system.md",
+      "source_location": "L121"
     },
     {
       "id": "automate",
@@ -2472,28 +2856,6 @@
       "source_location": "L1"
     },
     {
-      "id": "notificationservice",
-      "label": "notificationService.ts",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "googleSheetsService.ts",
-      "file_type": "code",
-      "norm_label": "notificationservice.ts",
-      "source_file": "notificationService.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "notificationservice_queue_dir",
-      "label": "QUEUE_DIR",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "googleSheetsService.ts",
-      "file_type": "code",
-      "norm_label": "queue_dir",
-      "source_file": "notificationService.ts",
-      "source_location": "L8"
-    },
-    {
       "id": "portfolioscraper",
       "label": "portfolioScraper.ts",
       "_origin": "ast",
@@ -2546,6 +2908,17 @@
       "file_type": "code",
       "norm_label": "techscraper.ts",
       "source_file": "techScraper.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "telegrambotservice",
+      "label": "telegramBotService.ts",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "googleSheetsService.ts",
+      "file_type": "code",
+      "norm_label": "telegrambotservice.ts",
+      "source_file": "telegramBotService.ts",
       "source_location": "L1"
     },
     {
@@ -3452,7 +3825,7 @@
       "file_type": "code",
       "norm_label": "dependencies",
       "source_file": "package.json",
-      "source_location": "L33"
+      "source_location": "L34"
     },
     {
       "id": "package_dependencies_dotenv",
@@ -3463,7 +3836,7 @@
       "file_type": "code",
       "norm_label": "dotenv",
       "source_file": "package.json",
-      "source_location": "L35"
+      "source_location": "L36"
     },
     {
       "id": "package_dependencies_google_auth_library",
@@ -3474,7 +3847,7 @@
       "file_type": "code",
       "norm_label": "google-auth-library",
       "source_file": "package.json",
-      "source_location": "L36"
+      "source_location": "L37"
     },
     {
       "id": "package_dependencies_google_spreadsheet",
@@ -3485,7 +3858,7 @@
       "file_type": "code",
       "norm_label": "google-spreadsheet",
       "source_file": "package.json",
-      "source_location": "L37"
+      "source_location": "L38"
     },
     {
       "id": "package_dependencies_node_schedule",
@@ -3496,7 +3869,7 @@
       "file_type": "code",
       "norm_label": "node-schedule",
       "source_file": "package.json",
-      "source_location": "L38"
+      "source_location": "L39"
     },
     {
       "id": "package_dependencies_p_limit",
@@ -3507,7 +3880,7 @@
       "file_type": "code",
       "norm_label": "p-limit",
       "source_file": "package.json",
-      "source_location": "L39"
+      "source_location": "L40"
     },
     {
       "id": "package_dependencies_playwright_extra",
@@ -3518,7 +3891,7 @@
       "file_type": "code",
       "norm_label": "playwright-extra",
       "source_file": "package.json",
-      "source_location": "L40"
+      "source_location": "L41"
     },
     {
       "id": "package_dependencies_puppeteer_extra_plugin_stealth",
@@ -3529,7 +3902,7 @@
       "file_type": "code",
       "norm_label": "puppeteer-extra-plugin-stealth",
       "source_file": "package.json",
-      "source_location": "L41"
+      "source_location": "L42"
     },
     {
       "id": "package_dependencies_types_node_schedule",
@@ -3540,7 +3913,7 @@
       "file_type": "code",
       "norm_label": "@types/node-schedule",
       "source_file": "package.json",
-      "source_location": "L34"
+      "source_location": "L35"
     },
     {
       "id": "package_dependencies_xlsx",
@@ -3551,7 +3924,7 @@
       "file_type": "code",
       "norm_label": "xlsx",
       "source_file": "package.json",
-      "source_location": "L42"
+      "source_location": "L43"
     },
     {
       "id": "dotenv",
@@ -3562,7 +3935,7 @@
       "file_type": "concept",
       "norm_label": "dotenv",
       "source_file": "package.json",
-      "source_location": "L35"
+      "source_location": "L36"
     },
     {
       "id": "google_auth_library",
@@ -3573,7 +3946,7 @@
       "file_type": "concept",
       "norm_label": "google-auth-library",
       "source_file": "package.json",
-      "source_location": "L36"
+      "source_location": "L37"
     },
     {
       "id": "google_spreadsheet",
@@ -3584,7 +3957,7 @@
       "file_type": "concept",
       "norm_label": "google-spreadsheet",
       "source_file": "package.json",
-      "source_location": "L37"
+      "source_location": "L38"
     },
     {
       "id": "node_schedule",
@@ -3595,7 +3968,7 @@
       "file_type": "concept",
       "norm_label": "node-schedule",
       "source_file": "package.json",
-      "source_location": "L38"
+      "source_location": "L39"
     },
     {
       "id": "p_limit",
@@ -3606,7 +3979,7 @@
       "file_type": "concept",
       "norm_label": "p-limit",
       "source_file": "package.json",
-      "source_location": "L39"
+      "source_location": "L40"
     },
     {
       "id": "playwright_extra",
@@ -3617,7 +3990,7 @@
       "file_type": "concept",
       "norm_label": "playwright-extra",
       "source_file": "package.json",
-      "source_location": "L40"
+      "source_location": "L41"
     },
     {
       "id": "puppeteer_extra_plugin_stealth",
@@ -3628,7 +4001,7 @@
       "file_type": "concept",
       "norm_label": "puppeteer-extra-plugin-stealth",
       "source_file": "package.json",
-      "source_location": "L41"
+      "source_location": "L42"
     },
     {
       "id": "types_node_schedule",
@@ -3639,7 +4012,7 @@
       "file_type": "concept",
       "norm_label": "@types/node-schedule",
       "source_file": "package.json",
-      "source_location": "L34"
+      "source_location": "L35"
     },
     {
       "id": "xlsx",
@@ -3650,7 +4023,7 @@
       "file_type": "concept",
       "norm_label": "xlsx",
       "source_file": "package.json",
-      "source_location": "L42"
+      "source_location": "L43"
     },
     {
       "id": "graphify_out_memory_query_20260929_045752_implement_this_code_in_google_sheet_script_nepsest",
@@ -3907,7 +4280,7 @@
       "file_type": "code",
       "norm_label": "author",
       "source_file": "package.json",
-      "source_location": "L25"
+      "source_location": "L26"
     },
     {
       "id": "package_description",
@@ -3929,7 +4302,7 @@
       "file_type": "code",
       "norm_label": "devdependencies",
       "source_file": "package.json",
-      "source_location": "L27"
+      "source_location": "L28"
     },
     {
       "id": "package_devdependencies_playwright_test",
@@ -3940,7 +4313,7 @@
       "file_type": "code",
       "norm_label": "@playwright/test",
       "source_file": "package.json",
-      "source_location": "L28"
+      "source_location": "L29"
     },
     {
       "id": "package_devdependencies_ts_node",
@@ -3951,7 +4324,7 @@
       "file_type": "code",
       "norm_label": "ts-node",
       "source_file": "package.json",
-      "source_location": "L30"
+      "source_location": "L31"
     },
     {
       "id": "package_devdependencies_types_node",
@@ -3962,7 +4335,7 @@
       "file_type": "code",
       "norm_label": "@types/node",
       "source_file": "package.json",
-      "source_location": "L29"
+      "source_location": "L30"
     },
     {
       "id": "package_devdependencies_typescript",
@@ -3973,7 +4346,7 @@
       "file_type": "code",
       "norm_label": "typescript",
       "source_file": "package.json",
-      "source_location": "L31"
+      "source_location": "L32"
     },
     {
       "id": "package_keywords",
@@ -3984,7 +4357,7 @@
       "file_type": "code",
       "norm_label": "keywords",
       "source_file": "package.json",
-      "source_location": "L24"
+      "source_location": "L25"
     },
     {
       "id": "package_license",
@@ -3995,7 +4368,7 @@
       "file_type": "code",
       "norm_label": "license",
       "source_file": "package.json",
-      "source_location": "L26"
+      "source_location": "L27"
     },
     {
       "id": "package_main",
@@ -4141,6 +4514,17 @@
       "source_location": "L18"
     },
     {
+      "id": "package_scripts_start_bot",
+      "label": "start-bot",
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "scripts",
+      "file_type": "code",
+      "norm_label": "start-bot",
+      "source_file": "package.json",
+      "source_location": "L23"
+    },
+    {
       "id": "package_scripts_start_naasa",
       "label": "start-naasa",
       "_origin": "ast",
@@ -4226,7 +4610,7 @@
       "file_type": "concept",
       "norm_label": "@playwright/test",
       "source_file": "package.json",
-      "source_location": "L28"
+      "source_location": "L29"
     },
     {
       "id": "ts_node",
@@ -4237,7 +4621,7 @@
       "file_type": "concept",
       "norm_label": "ts-node",
       "source_file": "package.json",
-      "source_location": "L30"
+      "source_location": "L31"
     },
     {
       "id": "types_node",
@@ -4248,7 +4632,7 @@
       "file_type": "concept",
       "norm_label": "@types/node",
       "source_file": "package.json",
-      "source_location": "L29"
+      "source_location": "L30"
     },
     {
       "id": "typescript",
@@ -4259,7 +4643,7 @@
       "file_type": "concept",
       "norm_label": "typescript",
       "source_file": "package.json",
-      "source_location": "L31"
+      "source_location": "L32"
     },
     {
       "id": "shareinfoscript_goldprice",
@@ -4372,208 +4756,26 @@
       "source_location": "L1"
     },
     {
-      "id": "system",
-      "label": "system.md",
+      "id": "notificationservice",
+      "label": "notificationService.ts",
       "_origin": "ast",
       "community": 5,
-      "community_name": "System Architecture & Technical Documentation",
-      "file_type": "document",
-      "node_kind": "page",
-      "norm_label": "system.md",
-      "source_file": "system.md",
+      "community_name": "notificationService.ts",
+      "file_type": "code",
+      "norm_label": "notificationservice.ts",
+      "source_file": "notificationService.ts",
       "source_location": "L1"
     },
     {
-      "id": "system_1_authentication_security",
-      "label": "1. Authentication & Security",
+      "id": "notificationservice_queue_dir",
+      "label": "QUEUE_DIR",
       "_origin": "ast",
       "community": 5,
-      "community_name": "System Architecture & Technical Documentation",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "1. authentication & security",
-      "source_file": "system.md",
-      "source_location": "L28"
-    },
-    {
-      "id": "system_1_layered_architecture_pattern",
-      "label": "1. Layered Architecture Pattern",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "System Architecture & Technical Documentation",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "1. layered architecture pattern",
-      "source_file": "system.md",
-      "source_location": "L95"
-    },
-    {
-      "id": "system_2_human_behavior_simulation_pattern_humanutils_ts",
-      "label": "2. Human Behavior Simulation Pattern (`humanUtils.ts`)",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "System Architecture & Technical Documentation",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "2. human behavior simulation pattern (`humanutils.ts`)",
-      "source_file": "system.md",
-      "source_location": "L101"
-    },
-    {
-      "id": "system_2_network_resilience_rate_limiting",
-      "label": "2. Network Resilience & Rate Limiting",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "System Architecture & Technical Documentation",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "2. network resilience & rate limiting",
-      "source_file": "system.md",
-      "source_location": "L32"
-    },
-    {
-      "id": "system_3_anti_bot_stealth_integration",
-      "label": "3. Anti-Bot Stealth Integration",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "System Architecture & Technical Documentation",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "3. anti-bot stealth integration",
-      "source_file": "system.md",
-      "source_location": "L108"
-    },
-    {
-      "id": "system_3_detailed_tab_by_tab_schema_modification_rules",
-      "label": "3. Detailed Tab-by-Tab Schema & Modification Rules",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "System Architecture & Technical Documentation",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "3. detailed tab-by-tab schema & modification rules",
-      "source_file": "system.md",
-      "source_location": "L36"
-    },
-    {
-      "id": "system_4_resilient_network_concurrency_pattern",
-      "label": "4. Resilient Network & Concurrency Pattern",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "System Architecture & Technical Documentation",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "4. resilient network & concurrency pattern",
-      "source_file": "system.md",
-      "source_location": "L112"
-    },
-    {
-      "id": "system_5_persistent_context_pattern",
-      "label": "5. Persistent Context Pattern",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "System Architecture & Technical Documentation",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "5. persistent context pattern",
-      "source_file": "system.md",
-      "source_location": "L116"
-    },
-    {
-      "id": "system_aim_of_the_application",
-      "label": "\ud83c\udfaf Aim of the Application",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "System Architecture & Technical Documentation",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "\ud83c\udfaf aim of the application",
-      "source_file": "system.md",
-      "source_location": "L7"
-    },
-    {
-      "id": "system_coding_style_architectural_patterns",
-      "label": "\ud83e\uddec Coding Style & Architectural Patterns",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "System Architecture & Technical Documentation",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "\ud83e\uddec coding style & architectural patterns",
-      "source_file": "system.md",
-      "source_location": "L93"
-    },
-    {
-      "id": "system_development_dependencies_devdependencies",
-      "label": "Development Dependencies (`devDependencies`)",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "System Architecture & Technical Documentation",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "development dependencies (`devdependencies`)",
-      "source_file": "system.md",
-      "source_location": "L139"
-    },
-    {
-      "id": "system_folder_structure",
-      "label": "\ud83d\udcc2 Folder Structure",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "System Architecture & Technical Documentation",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "\ud83d\udcc2 folder structure",
-      "source_file": "system.md",
-      "source_location": "L51"
-    },
-    {
-      "id": "system_google_sheets_integration_modification_engine",
-      "label": "\ud83d\udcca Google Sheets Integration & Modification Engine",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "System Architecture & Technical Documentation",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "\ud83d\udcca google sheets integration & modification engine",
-      "source_file": "system.md",
-      "source_location": "L24"
-    },
-    {
-      "id": "system_production_dependencies_dependencies",
-      "label": "Production Dependencies (`dependencies`)",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "System Architecture & Technical Documentation",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "production dependencies (`dependencies`)",
-      "source_file": "system.md",
-      "source_location": "L125"
-    },
-    {
-      "id": "system_system_architecture_technical_documentation",
-      "label": "System Architecture & Technical Documentation",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "System Architecture & Technical Documentation",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "system architecture & technical documentation",
-      "source_file": "system.md",
-      "source_location": "L1"
-    },
-    {
-      "id": "system_used_libraries_exact_versions",
-      "label": "\ud83d\udcda Used Libraries & Exact Versions",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "System Architecture & Technical Documentation",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "\ud83d\udcda used libraries & exact versions",
-      "source_file": "system.md",
-      "source_location": "L121"
+      "community_name": "notificationService.ts",
+      "file_type": "code",
+      "norm_label": "queue_dir",
+      "source_file": "notificationService.ts",
+      "source_location": "L8"
     },
     {
       "id": "shareinfoscript_perplexityconsumeapi",
@@ -4959,6 +5161,142 @@
       "node_kind": "heading",
       "norm_label": "source nodes",
       "source_file": "graphify-out/memory/query_20261002_034123_i_have_one_way_notification_telegram_integration.md",
+      "source_location": "L20"
+    },
+    {
+      "id": "graphify_out_memory_query_20261002_041027_read_telegram_two_way_control_plan_md_and_implemen",
+      "label": "query_20261002_041027_read_telegram_two_way_control_plan_md_and_implemen.md",
+      "_origin": "ast",
+      "community": 55,
+      "community_name": "Q: read TELEGRAM_TWO_WAY_CONTROL_PLAN.md and implement phase 1",
+      "file_type": "document",
+      "frontmatter": {
+        "type": "query",
+        "date": "2026-10-02T04:10:27.707696+00:00",
+        "question": "read TELEGRAM_TWO_WAY_CONTROL_PLAN.md and implement phase 1",
+        "contributor": "graphify",
+        "outcome": "useful",
+        "source_nodes": "[&quot;webapp&quot;, &quot;TELEGRAM_TWO_WAY_CONTROL_PLAN.md&quot;, &quot;appsscript.json&quot;, &quot;menu.js&quot;]"
+      },
+      "node_kind": "page",
+      "norm_label": "query_20261002_041027_read_telegram_two_way_control_plan_md_and_implemen.md",
+      "source_file": "graphify-out/memory/query_20261002_041027_read_telegram_two_way_control_plan_md_and_implemen.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "graphify_out_memory_query_20261002_041027_read_telegram_two_way_control_plan_md_and_implemen_answer",
+      "label": "Answer",
+      "_origin": "ast",
+      "community": 55,
+      "community_name": "Q: read TELEGRAM_TWO_WAY_CONTROL_PLAN.md and implement phase 1",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "answer",
+      "source_file": "graphify-out/memory/query_20261002_041027_read_telegram_two_way_control_plan_md_and_implemen.md",
+      "source_location": "L12"
+    },
+    {
+      "id": "graphify_out_memory_query_20261002_041027_read_telegram_two_way_control_plan_md_and_implemen_outcome",
+      "label": "Outcome",
+      "_origin": "ast",
+      "community": 55,
+      "community_name": "Q: read TELEGRAM_TWO_WAY_CONTROL_PLAN.md and implement phase 1",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "outcome",
+      "source_file": "graphify-out/memory/query_20261002_041027_read_telegram_two_way_control_plan_md_and_implemen.md",
+      "source_location": "L16"
+    },
+    {
+      "id": "graphify_out_memory_query_20261002_041027_read_telegram_two_way_control_plan_md_and_implemen_q_read_telegram_two_way_control_plan_md_and_implement_phase_1",
+      "label": "Q: read TELEGRAM_TWO_WAY_CONTROL_PLAN.md and implement phase 1",
+      "_origin": "ast",
+      "community": 55,
+      "community_name": "Q: read TELEGRAM_TWO_WAY_CONTROL_PLAN.md and implement phase 1",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "q: read telegram_two_way_control_plan.md and implement phase 1",
+      "source_file": "graphify-out/memory/query_20261002_041027_read_telegram_two_way_control_plan_md_and_implemen.md",
+      "source_location": "L10"
+    },
+    {
+      "id": "graphify_out_memory_query_20261002_041027_read_telegram_two_way_control_plan_md_and_implemen_source_nodes",
+      "label": "Source Nodes",
+      "_origin": "ast",
+      "community": 55,
+      "community_name": "Q: read TELEGRAM_TWO_WAY_CONTROL_PLAN.md and implement phase 1",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "source nodes",
+      "source_file": "graphify-out/memory/query_20261002_041027_read_telegram_two_way_control_plan_md_and_implemen.md",
+      "source_location": "L20"
+    },
+    {
+      "id": "graphify_out_memory_query_20261002_041538_how_to_run_or_test_the_two_way_communication_imple",
+      "label": "query_20261002_041538_how_to_run_or_test_the_two_way_communication_imple.md",
+      "_origin": "ast",
+      "community": 56,
+      "community_name": "Q: how to run or test the two way communication implemetation",
+      "file_type": "document",
+      "frontmatter": {
+        "type": "query",
+        "date": "2026-10-02T04:15:38.557944+00:00",
+        "question": "how to run or test the two way communication implemetation",
+        "contributor": "graphify",
+        "outcome": "useful",
+        "source_nodes": "[&quot;telegramWebhook.js&quot;, &quot;menu.js&quot;, &quot;appsscript.json&quot;, &quot;syncService.ts&quot;]"
+      },
+      "node_kind": "page",
+      "norm_label": "query_20261002_041538_how_to_run_or_test_the_two_way_communication_imple.md",
+      "source_file": "graphify-out/memory/query_20261002_041538_how_to_run_or_test_the_two_way_communication_imple.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "graphify_out_memory_query_20261002_041538_how_to_run_or_test_the_two_way_communication_imple_answer",
+      "label": "Answer",
+      "_origin": "ast",
+      "community": 56,
+      "community_name": "Q: how to run or test the two way communication implemetation",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "answer",
+      "source_file": "graphify-out/memory/query_20261002_041538_how_to_run_or_test_the_two_way_communication_imple.md",
+      "source_location": "L12"
+    },
+    {
+      "id": "graphify_out_memory_query_20261002_041538_how_to_run_or_test_the_two_way_communication_imple_outcome",
+      "label": "Outcome",
+      "_origin": "ast",
+      "community": 56,
+      "community_name": "Q: how to run or test the two way communication implemetation",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "outcome",
+      "source_file": "graphify-out/memory/query_20261002_041538_how_to_run_or_test_the_two_way_communication_imple.md",
+      "source_location": "L16"
+    },
+    {
+      "id": "graphify_out_memory_query_20261002_041538_how_to_run_or_test_the_two_way_communication_imple_q_how_to_run_or_test_the_two_way_communication_implemetation",
+      "label": "Q: how to run or test the two way communication implemetation",
+      "_origin": "ast",
+      "community": 56,
+      "community_name": "Q: how to run or test the two way communication implemetation",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "q: how to run or test the two way communication implemetation",
+      "source_file": "graphify-out/memory/query_20261002_041538_how_to_run_or_test_the_two_way_communication_imple.md",
+      "source_location": "L10"
+    },
+    {
+      "id": "graphify_out_memory_query_20261002_041538_how_to_run_or_test_the_two_way_communication_imple_source_nodes",
+      "label": "Source Nodes",
+      "_origin": "ast",
+      "community": 56,
+      "community_name": "Q: how to run or test the two way communication implemetation",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "source nodes",
+      "source_file": "graphify-out/memory/query_20261002_041538_how_to_run_or_test_the_two_way_communication_imple.md",
       "source_location": "L20"
     },
     {
@@ -6708,27 +7046,99 @@
       "weight": 1.0
     },
     {
-      "source": "shareinfoscript_sltphit_scanstocksforsltp",
-      "target": "shareinfoscript_sltphit_getlivestockdata",
+      "source": "shareinfoscript_sltphit_getlivetradingdatamap",
+      "target": "shareinfoscript_sltphit_parsepricenum",
       "relation": "calls",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "shareInfoScript/sltpHit.js",
-      "source_location": "L21",
+      "source_location": "L233",
+      "weight": 1.0
+    },
+    {
+      "source": "shareinfoscript_sltphit_runlivefetchandscansltp",
+      "target": "shareinfoscript_sltphit_scanstocksforsltp",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "shareInfoScript/sltpHit.js",
+      "source_location": "L374",
       "weight": 1.0
     },
     {
       "source": "shareinfoscript_sltphit_scanstocksforsltp",
-      "target": "shareinfoscript_sltphit_findlivestockdata",
+      "target": "shareinfoscript_sltphit_sendtelegramalertsbatch",
       "relation": "calls",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "shareInfoScript/sltpHit.js",
-      "source_location": "L34",
+      "source_location": "L208",
+      "weight": 1.0
+    },
+    {
+      "source": "shareinfoscript_sltphit_scanstocksforsltp",
+      "target": "shareinfoscript_sltphit_getlivetradingdatamap",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "shareInfoScript/sltpHit.js",
+      "source_location": "L48",
+      "weight": 1.0
+    },
+    {
+      "source": "shareinfoscript_sltphit_scanstocksforsltp",
+      "target": "shareinfoscript_sltphit_getorcreatealertsheet",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "shareInfoScript/sltpHit.js",
+      "source_location": "L72",
+      "weight": 1.0
+    },
+    {
+      "source": "shareinfoscript_sltphit_scanstocksforsltp",
+      "target": "shareinfoscript_sltphit_getexistinghitstoday",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "shareInfoScript/sltpHit.js",
+      "source_location": "L73",
+      "weight": 1.0
+    },
+    {
+      "source": "shareinfoscript_sltphit_scanstocksforsltp",
+      "target": "shareinfoscript_sltphit_parsepricenum",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "shareInfoScript/sltpHit.js",
+      "source_location": "L92",
+      "weight": 1.0
+    },
+    {
+      "source": "shareinfoscript_sltphit_setup10minlivescantrigger",
+      "target": "shareinfoscript_sltphit_remove10minlivescantrigger",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "shareInfoScript/sltpHit.js",
+      "source_location": "L385",
       "weight": 1.0
     },
     {
@@ -7040,7 +7450,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "syncService.ts",
-      "source_location": "L105",
+      "source_location": "L107",
       "weight": 1.0
     },
     {
@@ -7052,7 +7462,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "syncService.ts",
-      "source_location": "L106",
+      "source_location": "L108",
       "weight": 1.0
     },
     {
@@ -7064,7 +7474,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "syncService.ts",
-      "source_location": "L120",
+      "source_location": "L122",
       "weight": 1.0
     },
     {
@@ -7076,7 +7486,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "syncService.ts",
-      "source_location": "L121",
+      "source_location": "L123",
       "weight": 1.0
     },
     {
@@ -7088,7 +7498,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "syncService.ts",
-      "source_location": "L136",
+      "source_location": "L138",
       "weight": 1.0
     },
     {
@@ -7100,7 +7510,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "syncService.ts",
-      "source_location": "L252",
+      "source_location": "L254",
       "weight": 1.0
     },
     {
@@ -7112,7 +7522,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "syncService.ts",
-      "source_location": "L269",
+      "source_location": "L271",
       "weight": 1.0
     },
     {
@@ -7124,7 +7534,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "syncService.ts",
-      "source_location": "L317",
+      "source_location": "L319",
       "weight": 1.0
     },
     {
@@ -7136,7 +7546,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "syncService.ts",
-      "source_location": "L33",
+      "source_location": "L34",
       "weight": 1.0
     },
     {
@@ -7148,7 +7558,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "syncService.ts",
-      "source_location": "L34",
+      "source_location": "L35",
       "weight": 1.0
     },
     {
@@ -7160,7 +7570,19 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "syncService.ts",
-      "source_location": "L46",
+      "source_location": "L47",
+      "weight": 1.0
+    },
+    {
+      "source": "syncservice_main",
+      "target": "telegrambotservice_starttelegrambotlistener",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "syncService.ts",
+      "source_location": "L48",
       "weight": 1.0
     },
     {
@@ -7172,7 +7594,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "syncService.ts",
-      "source_location": "L97",
+      "source_location": "L99",
       "weight": 1.0
     },
     {
@@ -7233,6 +7655,282 @@
       "context": "call",
       "source_file": "techScraper.ts",
       "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "telegrambotservice_answercallbackquery",
+      "target": "telegrambotservice_telegramapi",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "telegramBotService.ts",
+      "source_location": "L84",
+      "weight": 1.0
+    },
+    {
+      "source": "telegrambotservice_handletelegramcommand",
+      "target": "telegrambotservice_sendcommandcentermenu",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "telegramBotService.ts",
+      "source_location": "L140",
+      "weight": 1.0
+    },
+    {
+      "source": "telegrambotservice_handletelegramcommand",
+      "target": "googlesheetsservice_initsheets",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "telegramBotService.ts",
+      "source_location": "L147",
+      "weight": 1.0
+    },
+    {
+      "source": "telegrambotservice_handletelegramcommand",
+      "target": "googlesheetsservice_getcontrolcommand",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "telegramBotService.ts",
+      "source_location": "L148",
+      "weight": 1.0
+    },
+    {
+      "source": "telegrambotservice_handletelegramcommand",
+      "target": "googlesheetsservice_fetchusersfromsheet",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "telegramBotService.ts",
+      "source_location": "L149",
+      "weight": 1.0
+    },
+    {
+      "source": "telegrambotservice_handletelegramcommand",
+      "target": "telegrambotservice_getcommandcenterkeyboard",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "telegramBotService.ts",
+      "source_location": "L162",
+      "weight": 1.0
+    },
+    {
+      "source": "telegrambotservice_handletelegramcommand",
+      "target": "telegrambotservice_sendtelegrammessage",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "telegramBotService.ts",
+      "source_location": "L162",
+      "weight": 1.0
+    },
+    {
+      "source": "telegrambotservice_handletelegramcommand",
+      "target": "telegrambotservice_runtaskasync",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "telegramBotService.ts",
+      "source_location": "L211",
+      "weight": 1.0
+    },
+    {
+      "source": "telegrambotservice_handletelegramcommand",
+      "target": "googlesheetsservice_fetchstocksfromsheet",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "telegramBotService.ts",
+      "source_location": "L219",
+      "weight": 1.0
+    },
+    {
+      "source": "telegrambotservice_handletelegramcommand",
+      "target": "checkstatus_runcheckstatus",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "telegramBotService.ts",
+      "source_location": "L232",
+      "weight": 1.0
+    },
+    {
+      "source": "telegrambotservice_handletelegramcommand",
+      "target": "googlesheetsservice_addresulttosheet",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "telegramBotService.ts",
+      "source_location": "L233",
+      "weight": 1.0
+    },
+    {
+      "source": "telegrambotservice_handletelegramcommand",
+      "target": "googlesheetsservice_overridesheetdata",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "telegramBotService.ts",
+      "source_location": "L358",
+      "weight": 1.0
+    },
+    {
+      "source": "telegrambotservice_runtaskasync",
+      "target": "checkstatus_formatshorterror",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "telegramBotService.ts",
+      "source_location": "L431",
+      "weight": 1.0
+    },
+    {
+      "source": "telegrambotservice_runtaskasync",
+      "target": "telegrambotservice_sendtelegrammessage",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "telegramBotService.ts",
+      "source_location": "L432",
+      "weight": 1.0
+    },
+    {
+      "source": "telegrambotservice_runtaskasync",
+      "target": "telegrambotservice_getcommandcenterkeyboard",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "telegramBotService.ts",
+      "source_location": "L435",
+      "weight": 1.0
+    },
+    {
+      "source": "telegrambotservice_runtaskasync",
+      "target": "googlesheetsservice_getcontrolcommand",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "telegramBotService.ts",
+      "source_location": "L441",
+      "weight": 1.0
+    },
+    {
+      "source": "telegrambotservice_sendcommandcentermenu",
+      "target": "telegrambotservice_getcommandcenterkeyboard",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "telegramBotService.ts",
+      "source_location": "L128",
+      "weight": 1.0
+    },
+    {
+      "source": "telegrambotservice_sendcommandcentermenu",
+      "target": "telegrambotservice_sendtelegrammessage",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "telegramBotService.ts",
+      "source_location": "L128",
+      "weight": 1.0
+    },
+    {
+      "source": "telegrambotservice_sendtelegrammessage",
+      "target": "telegrambotservice_telegramapi",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "telegramBotService.ts",
+      "source_location": "L76",
+      "weight": 1.0
+    },
+    {
+      "source": "telegrambotservice_starttelegrambotlistener",
+      "target": "telegrambotservice_telegramapi",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "telegramBotService.ts",
+      "source_location": "L467",
+      "weight": 1.0
+    },
+    {
+      "source": "telegrambotservice_starttelegrambotlistener",
+      "target": "telegrambotservice_sendcommandcentermenu",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "telegramBotService.ts",
+      "source_location": "L471",
+      "weight": 1.0
+    },
+    {
+      "source": "telegrambotservice_starttelegrambotlistener",
+      "target": "telegrambotservice_answercallbackquery",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "telegramBotService.ts",
+      "source_location": "L503",
+      "weight": 1.0
+    },
+    {
+      "source": "telegrambotservice_starttelegrambotlistener",
+      "target": "telegrambotservice_handletelegramcommand",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "telegramBotService.ts",
+      "source_location": "L507",
       "weight": 1.0
     },
     {
@@ -7856,7 +8554,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L35",
+      "source_location": "L36",
       "weight": 1.0
     },
     {
@@ -7868,7 +8566,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L36",
+      "source_location": "L37",
       "weight": 1.0
     },
     {
@@ -7880,7 +8578,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L37",
+      "source_location": "L38",
       "weight": 1.0
     },
     {
@@ -7892,7 +8590,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L38",
+      "source_location": "L39",
       "weight": 1.0
     },
     {
@@ -7904,7 +8602,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L39",
+      "source_location": "L40",
       "weight": 1.0
     },
     {
@@ -7916,7 +8614,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L40",
+      "source_location": "L41",
       "weight": 1.0
     },
     {
@@ -7928,7 +8626,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L41",
+      "source_location": "L42",
       "weight": 1.0
     },
     {
@@ -7940,7 +8638,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L34",
+      "source_location": "L35",
       "weight": 1.0
     },
     {
@@ -7952,7 +8650,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L42",
+      "source_location": "L43",
       "weight": 1.0
     },
     {
@@ -7964,7 +8662,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L28",
+      "source_location": "L29",
       "weight": 1.0
     },
     {
@@ -7976,7 +8674,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L30",
+      "source_location": "L31",
       "weight": 1.0
     },
     {
@@ -7988,7 +8686,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L29",
+      "source_location": "L30",
       "weight": 1.0
     },
     {
@@ -8000,7 +8698,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L31",
+      "source_location": "L32",
       "weight": 1.0
     },
     {
@@ -8245,6 +8943,18 @@
     },
     {
       "source": "syncservice",
+      "target": "humanutils_ensuredesktopdisplay",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "syncService.ts",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "syncservice",
       "target": "checkstatus_formatshorterror",
       "relation": "imports",
       "_origin": "ast",
@@ -8317,14 +9027,14 @@
     },
     {
       "source": "syncservice",
-      "target": "humanutils_ensuredesktopdisplay",
+      "target": "telegrambotservice_starttelegrambotlistener",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "syncService.ts",
-      "source_location": "L9",
+      "source_location": "L7",
       "weight": 1.0
     },
     {
@@ -8336,7 +9046,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "syncService.ts",
-      "source_location": "L153",
+      "source_location": "L155",
       "weight": 1.0
     },
     {
@@ -8348,7 +9058,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "syncService.ts",
-      "source_location": "L154",
+      "source_location": "L156",
       "weight": 1.0
     },
     {
@@ -8360,7 +9070,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "syncService.ts",
-      "source_location": "L174",
+      "source_location": "L176",
       "weight": 1.0
     },
     {
@@ -8372,7 +9082,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "syncService.ts",
-      "source_location": "L192",
+      "source_location": "L194",
       "weight": 1.0
     },
     {
@@ -8384,7 +9094,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "syncService.ts",
-      "source_location": "L222",
+      "source_location": "L224",
       "weight": 1.0
     },
     {
@@ -8396,7 +9106,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "syncService.ts",
-      "source_location": "L236",
+      "source_location": "L238",
       "weight": 1.0
     },
     {
@@ -8457,6 +9167,186 @@
       "context": "import",
       "source_file": "techScraper.ts",
       "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "telegrambotservice",
+      "target": "googlesheetsservice_addresulttosheet",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "telegramBotService.ts",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "telegrambotservice",
+      "target": "googlesheetsservice_fetchstocksfromsheet",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "telegramBotService.ts",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "telegrambotservice",
+      "target": "googlesheetsservice_fetchusersfromsheet",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "telegramBotService.ts",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "telegrambotservice",
+      "target": "googlesheetsservice_getcontrolcommand",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "telegramBotService.ts",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "telegrambotservice",
+      "target": "googlesheetsservice_initsheets",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "telegramBotService.ts",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "telegrambotservice",
+      "target": "googlesheetsservice_overridesheetdata",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "telegramBotService.ts",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "telegrambotservice",
+      "target": "checkstatus_formatshorterror",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "telegramBotService.ts",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "telegrambotservice",
+      "target": "checkstatus_runcheckstatus",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "telegramBotService.ts",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "telegrambotservice",
+      "target": "notificationservice_sendtelegramnotification",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "telegramBotService.ts",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "telegrambotservice",
+      "target": "humanutils_ensuredesktopdisplay",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "telegramBotService.ts",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "telegrambotservice_handletelegramcommand",
+      "target": "portfolioscraper_scrapeportfolio",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "telegramBotService.ts",
+      "source_location": "L260",
+      "weight": 1.0
+    },
+    {
+      "source": "telegrambotservice_handletelegramcommand",
+      "target": "week52scraper_scrape52weekhighlow",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "telegramBotService.ts",
+      "source_location": "L305",
+      "weight": 1.0
+    },
+    {
+      "source": "telegrambotservice_handletelegramcommand",
+      "target": "fundascraper_fetchfundamentaldata",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "telegramBotService.ts",
+      "source_location": "L330",
+      "weight": 1.0
+    },
+    {
+      "source": "telegrambotservice_handletelegramcommand",
+      "target": "promoterunlock_fetchpromoterunlockdata",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "telegramBotService.ts",
+      "source_location": "L355",
+      "weight": 1.0
+    },
+    {
+      "source": "telegrambotservice_handletelegramcommand",
+      "target": "techscraper_scrapetechnicalsignals",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "telegramBotService.ts",
+      "source_location": "L382",
       "weight": 1.0
     },
     {
@@ -8761,6 +9651,18 @@
     },
     {
       "source": "syncservice",
+      "target": "humanutils",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "syncService.ts",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "syncservice",
       "target": "checkstatus",
       "relation": "imports_from",
       "_origin": "ast",
@@ -8809,14 +9711,14 @@
     },
     {
       "source": "syncservice",
-      "target": "humanutils",
+      "target": "telegrambotservice",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "syncService.ts",
-      "source_location": "L9",
+      "source_location": "L7",
       "weight": 1.0
     },
     {
@@ -8828,7 +9730,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "syncService.ts",
-      "source_location": "L153",
+      "source_location": "L155",
       "weight": 1.0
     },
     {
@@ -8840,7 +9742,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "syncService.ts",
-      "source_location": "L154",
+      "source_location": "L156",
       "weight": 1.0
     },
     {
@@ -8852,7 +9754,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "syncService.ts",
-      "source_location": "L174",
+      "source_location": "L176",
       "weight": 1.0
     },
     {
@@ -8864,7 +9766,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "syncService.ts",
-      "source_location": "L192",
+      "source_location": "L194",
       "weight": 1.0
     },
     {
@@ -8876,7 +9778,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "syncService.ts",
-      "source_location": "L222",
+      "source_location": "L224",
       "weight": 1.0
     },
     {
@@ -8888,7 +9790,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "syncService.ts",
-      "source_location": "L236",
+      "source_location": "L238",
       "weight": 1.0
     },
     {
@@ -8913,6 +9815,114 @@
       "context": "import",
       "source_file": "techScraper.ts",
       "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "telegrambotservice",
+      "target": "googlesheetsservice",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "telegramBotService.ts",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "telegrambotservice",
+      "target": "checkstatus",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "telegramBotService.ts",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "telegrambotservice",
+      "target": "notificationservice",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "telegramBotService.ts",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "telegrambotservice",
+      "target": "humanutils",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "telegramBotService.ts",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "telegrambotservice_handletelegramcommand",
+      "target": "portfolioscraper",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "telegramBotService.ts",
+      "source_location": "L260",
+      "weight": 1.0
+    },
+    {
+      "source": "telegrambotservice_handletelegramcommand",
+      "target": "week52scraper",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "telegramBotService.ts",
+      "source_location": "L305",
+      "weight": 1.0
+    },
+    {
+      "source": "telegrambotservice_handletelegramcommand",
+      "target": "fundascraper",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "telegramBotService.ts",
+      "source_location": "L330",
+      "weight": 1.0
+    },
+    {
+      "source": "telegrambotservice_handletelegramcommand",
+      "target": "promoterunlock",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "telegramBotService.ts",
+      "source_location": "L355",
+      "weight": 1.0
+    },
+    {
+      "source": "telegrambotservice_handletelegramcommand",
+      "target": "techscraper",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "telegramBotService.ts",
+      "source_location": "L382",
       "weight": 1.0
     },
     {
@@ -9571,6 +10581,94 @@
       "weight": 1.0
     },
     {
+      "source": "graphify_out_memory_query_20261002_041027_read_telegram_two_way_control_plan_md_and_implemen",
+      "target": "graphify_out_memory_query_20261002_041027_read_telegram_two_way_control_plan_md_and_implemen_q_read_telegram_two_way_control_plan_md_and_implement_phase_1",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "graphify-out/memory/query_20261002_041027_read_telegram_two_way_control_plan_md_and_implemen.md",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "graphify_out_memory_query_20261002_041027_read_telegram_two_way_control_plan_md_and_implemen_q_read_telegram_two_way_control_plan_md_and_implement_phase_1",
+      "target": "graphify_out_memory_query_20261002_041027_read_telegram_two_way_control_plan_md_and_implemen_answer",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "graphify-out/memory/query_20261002_041027_read_telegram_two_way_control_plan_md_and_implemen.md",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "graphify_out_memory_query_20261002_041027_read_telegram_two_way_control_plan_md_and_implemen_q_read_telegram_two_way_control_plan_md_and_implement_phase_1",
+      "target": "graphify_out_memory_query_20261002_041027_read_telegram_two_way_control_plan_md_and_implemen_outcome",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "graphify-out/memory/query_20261002_041027_read_telegram_two_way_control_plan_md_and_implemen.md",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "graphify_out_memory_query_20261002_041027_read_telegram_two_way_control_plan_md_and_implemen_q_read_telegram_two_way_control_plan_md_and_implement_phase_1",
+      "target": "graphify_out_memory_query_20261002_041027_read_telegram_two_way_control_plan_md_and_implemen_source_nodes",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "graphify-out/memory/query_20261002_041027_read_telegram_two_way_control_plan_md_and_implemen.md",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "graphify_out_memory_query_20261002_041538_how_to_run_or_test_the_two_way_communication_imple",
+      "target": "graphify_out_memory_query_20261002_041538_how_to_run_or_test_the_two_way_communication_imple_q_how_to_run_or_test_the_two_way_communication_implemetation",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "graphify-out/memory/query_20261002_041538_how_to_run_or_test_the_two_way_communication_imple.md",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "graphify_out_memory_query_20261002_041538_how_to_run_or_test_the_two_way_communication_imple_q_how_to_run_or_test_the_two_way_communication_implemetation",
+      "target": "graphify_out_memory_query_20261002_041538_how_to_run_or_test_the_two_way_communication_imple_answer",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "graphify-out/memory/query_20261002_041538_how_to_run_or_test_the_two_way_communication_imple.md",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "graphify_out_memory_query_20261002_041538_how_to_run_or_test_the_two_way_communication_imple_q_how_to_run_or_test_the_two_way_communication_implemetation",
+      "target": "graphify_out_memory_query_20261002_041538_how_to_run_or_test_the_two_way_communication_imple_outcome",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "graphify-out/memory/query_20261002_041538_how_to_run_or_test_the_two_way_communication_imple.md",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "graphify_out_memory_query_20261002_041538_how_to_run_or_test_the_two_way_communication_imple_q_how_to_run_or_test_the_two_way_communication_implemetation",
+      "target": "graphify_out_memory_query_20261002_041538_how_to_run_or_test_the_two_way_communication_imple_source_nodes",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "graphify-out/memory/query_20261002_041538_how_to_run_or_test_the_two_way_communication_imple.md",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
       "source": "humanutils",
       "target": "humanutils_launchpersistentcontextwithviewmode",
       "relation": "contains",
@@ -9996,7 +11094,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L24",
+      "source_location": "L25",
       "weight": 1.0
     },
     {
@@ -10007,7 +11105,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L25",
+      "source_location": "L26",
       "weight": 1.0
     },
     {
@@ -10018,7 +11116,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L26",
+      "source_location": "L27",
       "weight": 1.0
     },
     {
@@ -10029,7 +11127,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L27",
+      "source_location": "L28",
       "weight": 1.0
     },
     {
@@ -10051,7 +11149,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L33",
+      "source_location": "L34",
       "weight": 1.0
     },
     {
@@ -10095,7 +11193,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L34",
+      "source_location": "L35",
       "weight": 1.0
     },
     {
@@ -10106,7 +11204,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L35",
+      "source_location": "L36",
       "weight": 1.0
     },
     {
@@ -10117,7 +11215,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L36",
+      "source_location": "L37",
       "weight": 1.0
     },
     {
@@ -10128,7 +11226,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L37",
+      "source_location": "L38",
       "weight": 1.0
     },
     {
@@ -10139,7 +11237,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L38",
+      "source_location": "L39",
       "weight": 1.0
     },
     {
@@ -10150,7 +11248,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L39",
+      "source_location": "L40",
       "weight": 1.0
     },
     {
@@ -10161,7 +11259,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L40",
+      "source_location": "L41",
       "weight": 1.0
     },
     {
@@ -10172,7 +11270,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L41",
+      "source_location": "L42",
       "weight": 1.0
     },
     {
@@ -10183,7 +11281,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L42",
+      "source_location": "L43",
       "weight": 1.0
     },
     {
@@ -10194,7 +11292,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L28",
+      "source_location": "L29",
       "weight": 1.0
     },
     {
@@ -10205,7 +11303,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L29",
+      "source_location": "L30",
       "weight": 1.0
     },
     {
@@ -10216,7 +11314,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L30",
+      "source_location": "L31",
       "weight": 1.0
     },
     {
@@ -10227,7 +11325,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L31",
+      "source_location": "L32",
       "weight": 1.0
     },
     {
@@ -10371,6 +11469,17 @@
       "confidence_score": 1.0,
       "source_file": "package.json",
       "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "package_scripts",
+      "target": "package_scripts_start_bot",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "package.json",
+      "source_location": "L23",
       "weight": 1.0
     },
     {
@@ -10628,7 +11737,7 @@
     },
     {
       "source": "shareinfoscript_apiaccessforai",
-      "target": "shareinfoscript_apiaccessforai_doget",
+      "target": "shareinfoscript_apiaccessforai_apiaccessdoget",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -10639,7 +11748,7 @@
     },
     {
       "source": "shareinfoscript_apiaccessforai",
-      "target": "shareinfoscript_apiaccessforai_dopost",
+      "target": "shareinfoscript_apiaccessforai_apiaccessdopost",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -11327,7 +12436,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "shareInfoScript/liveTradingData.js",
-      "source_location": "L232",
+      "source_location": "L241",
       "weight": 1.0
     },
     {
@@ -11640,7 +12749,7 @@
     },
     {
       "source": "shareinfoscript_perplexityconsumeapi",
-      "target": "shareinfoscript_perplexityconsumeapi_dopost",
+      "target": "shareinfoscript_perplexityconsumeapi_handleperplexitynewspost",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -11805,35 +12914,101 @@
     },
     {
       "source": "shareinfoscript_sltphit",
+      "target": "shareinfoscript_sltphit_getlivetradingdatamap",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "shareInfoScript/sltpHit.js",
+      "source_location": "L219",
+      "weight": 1.0
+    },
+    {
+      "source": "shareinfoscript_sltphit",
+      "target": "shareinfoscript_sltphit_getorcreatealertsheet",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "shareInfoScript/sltpHit.js",
+      "source_location": "L253",
+      "weight": 1.0
+    },
+    {
+      "source": "shareinfoscript_sltphit",
+      "target": "shareinfoscript_sltphit_getexistinghitstoday",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "shareInfoScript/sltpHit.js",
+      "source_location": "L301",
+      "weight": 1.0
+    },
+    {
+      "source": "shareinfoscript_sltphit",
       "target": "shareinfoscript_sltphit_scanstocksforsltp",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "shareInfoScript/sltpHit.js",
-      "source_location": "L1",
+      "source_location": "L32",
       "weight": 1.0
     },
     {
       "source": "shareinfoscript_sltphit",
-      "target": "shareinfoscript_sltphit_findlivestockdata",
+      "target": "shareinfoscript_sltphit_parsepricenum",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "shareInfoScript/sltpHit.js",
-      "source_location": "L57",
+      "source_location": "L325",
       "weight": 1.0
     },
     {
       "source": "shareinfoscript_sltphit",
-      "target": "shareinfoscript_sltphit_getlivestockdata",
+      "target": "shareinfoscript_sltphit_sendtelegramalertsbatch",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "shareInfoScript/sltpHit.js",
-      "source_location": "L80",
+      "source_location": "L336",
+      "weight": 1.0
+    },
+    {
+      "source": "shareinfoscript_sltphit",
+      "target": "shareinfoscript_sltphit_runlivefetchandscansltp",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "shareInfoScript/sltpHit.js",
+      "source_location": "L368",
+      "weight": 1.0
+    },
+    {
+      "source": "shareinfoscript_sltphit",
+      "target": "shareinfoscript_sltphit_setup10minlivescantrigger",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "shareInfoScript/sltpHit.js",
+      "source_location": "L384",
+      "weight": 1.0
+    },
+    {
+      "source": "shareinfoscript_sltphit",
+      "target": "shareinfoscript_sltphit_remove10minlivescantrigger",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "shareInfoScript/sltpHit.js",
+      "source_location": "L407",
       "weight": 1.0
     },
     {
@@ -12135,7 +13310,7 @@
     },
     {
       "source": "shareinfoscript_testapi",
-      "target": "shareinfoscript_testapi_dopost",
+      "target": "shareinfoscript_testapi_testapidopost",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -12146,13 +13321,13 @@
     },
     {
       "source": "shareinfoscript_testapi",
-      "target": "shareinfoscript_testapi_doget",
+      "target": "shareinfoscript_testapi_testapidoget",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "shareInfoScript/testapi.js",
-      "source_location": "L34",
+      "source_location": "L35",
       "weight": 1.0
     },
     {
@@ -12196,7 +13371,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "syncService.ts",
-      "source_location": "L30",
+      "source_location": "L31",
       "weight": 1.0
     },
     {
@@ -12945,6 +14120,105 @@
       "confidence_score": 1.0,
       "source_file": "TELEGRAM_TWO_WAY_CONTROL_PLAN.md",
       "source_location": "L74",
+      "weight": 1.0
+    },
+    {
+      "source": "telegrambotservice",
+      "target": "telegrambotservice_sendcommandcentermenu",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "telegramBotService.ts",
+      "source_location": "L123",
+      "weight": 1.0
+    },
+    {
+      "source": "telegrambotservice",
+      "target": "telegrambotservice_handletelegramcommand",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "telegramBotService.ts",
+      "source_location": "L134",
+      "weight": 1.0
+    },
+    {
+      "source": "telegrambotservice",
+      "target": "telegrambotservice_telegramapi",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "telegramBotService.ts",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "telegrambotservice",
+      "target": "telegrambotservice_runtaskasync",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "telegramBotService.ts",
+      "source_location": "L422",
+      "weight": 1.0
+    },
+    {
+      "source": "telegrambotservice",
+      "target": "telegrambotservice_starttelegrambotlistener",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "telegramBotService.ts",
+      "source_location": "L455",
+      "weight": 1.0
+    },
+    {
+      "source": "telegrambotservice",
+      "target": "telegrambotservice_stoptelegrambotlistener",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "telegramBotService.ts",
+      "source_location": "L524",
+      "weight": 1.0
+    },
+    {
+      "source": "telegrambotservice",
+      "target": "telegrambotservice_sendtelegrammessage",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "telegramBotService.ts",
+      "source_location": "L67",
+      "weight": 1.0
+    },
+    {
+      "source": "telegrambotservice",
+      "target": "telegrambotservice_answercallbackquery",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "telegramBotService.ts",
+      "source_location": "L83",
+      "weight": 1.0
+    },
+    {
+      "source": "telegrambotservice",
+      "target": "telegrambotservice_getcommandcenterkeyboard",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "telegramBotService.ts",
+      "source_location": "L93",
       "weight": 1.0
     },
     {

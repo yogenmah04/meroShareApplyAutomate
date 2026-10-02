@@ -5,7 +5,8 @@ import { sendTelegramNotification, flushNotificationQueue } from './notification
 import { initializeScheduler } from './scheduler';
 import { scheduleNepseScraper } from './nepseScraper';
 import { startTelegramBotListener } from './telegramBotService';
-import { start10MinSLTPMonitor, scanPortfolioSLTP, getLiveMarketData } from './sltpMonitorService';
+import { start10MinSLTPMonitor, scanPortfolioSLTP, getLiveMarketData, syncYogenToSLTPStocks } from './sltpMonitorService';
+import { pollSLTPHitsQueue } from './sltpQueueService';
 import * as dotenv from 'dotenv';
 import schedule from 'node-schedule';
 import { ensureDesktopDisplay } from './humanUtils';
@@ -346,6 +347,9 @@ async function main() {
         } catch (e: any) {
             console.error('Error handling TMS scheduled time:', e.message);
         }
+
+        // Stage 3: Poll 'SL-TP-Hits' queue every 30 seconds and send Telegram alerts
+        await pollSLTPHitsQueue().catch(err => console.error('[SL-TP Queue Error]:', err.message));
 
         // Drain any pending notifications queued during network dropouts
         await flushNotificationQueue().catch(() => {});

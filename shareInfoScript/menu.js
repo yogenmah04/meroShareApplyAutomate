@@ -7,9 +7,10 @@ function onOpen() {
   var ui = SpreadsheetApp.getUi();
   
   ui.createMenu('📊 NEPSE Command Center')
-    .addItem('Scan SL/TP in "yogen"', 'scanStocksForSLTP')
-    .addItem('Setup 10-Min Live SL/TP Trigger', 'setup10MinLiveScanTrigger')
-    .addItem('Remove 10-Min Live Trigger', 'remove10MinLiveScanTrigger')
+    .addItem('1. Sync "yogen" -> "SLTP-stocks" (Stage 1)', 'syncYogenToSLTPStocksManual')
+    .addItem('2. Scan "SLTP-stocks" for Hits (Stage 2)', 'scanSLTPStocksAgainstLiveManual')
+    .addItem('Setup All Trading Automation Triggers (Hourly & 10-Min)', 'setupAllTradingAutomationTriggers')
+    .addItem('Remove All Trading Automation Triggers', 'removeAllTradingAutomationTriggers')
     .addSeparator()
     .addItem('Refresh Signal Sheet', 'createSignalSheet')
     .addSeparator()
