@@ -60,9 +60,9 @@
     "semantic_hash": ""
   },
   "package.json": {
-    "mtime": 1790917540.54133,
-    "seen": 1790931025.2378,
-    "ast_hash": "3bbf0d19144aaebc832adf45495e8710",
+    "mtime": 1790059049.2453961,
+    "seen": 1790762625.7414346,
+    "ast_hash": "984ccb65c37106a4b8d7182aab92fced",
     "semantic_hash": ""
   },
   "playwright.config.ts": {
@@ -90,9 +90,9 @@
     "semantic_hash": ""
   },
   "syncService.ts": {
-    "mtime": 1790917566.1751263,
-    "seen": 1790931025.2378285,
-    "ast_hash": "330d59668f31e337290224bba8bc4f15",
+    "mtime": 1790059025.7676978,
+    "seen": 1790762625.7414854,
+    "ast_hash": "4b0f6122ecaf1227e1a3cc872b595504",
     "semantic_hash": ""
   },
   "testBody.ts": {
@@ -198,14 +198,14 @@
     "semantic_hash": ""
   },
   "shareInfoScript/apiAccessForAI.js": {
-    "mtime": 1790913954.7253041,
-    "seen": 1790931025.237809,
-    "ast_hash": "9560f9df73bb5a0ed9266c28594da649",
+    "mtime": 1790652828.1632426,
+    "seen": 1790762625.7414522,
+    "ast_hash": "1d9f7bc35c9740acc7e63a04dfed16be",
     "semantic_hash": ""
   },
   "shareInfoScript/appsscript.json": {
-    "mtime": 1790918526.5524633,
-    "seen": 1790931025.23781,
+    "mtime": 1790652828.1632426,
+    "seen": 1790762625.741454,
     "ast_hash": "8805f0cc1bedc1e4097a0fcf2491e83f",
     "semantic_hash": ""
   },
@@ -264,15 +264,15 @@
     "semantic_hash": ""
   },
   "shareInfoScript/liveTradingData.js": {
-    "mtime": 1790928237.2901049,
-    "seen": 1790931025.2378175,
-    "ast_hash": "c8e2e6d4cdff2a169678b060a3a5f595",
+    "mtime": 1790652828.1632426,
+    "seen": 1790762625.7414687,
+    "ast_hash": "2eb14f136491f7224b18ad7eeef7c5c8",
     "semantic_hash": ""
   },
   "shareInfoScript/menu.js": {
-    "mtime": 1790928250.9084797,
-    "seen": 1790931025.2378185,
-    "ast_hash": "814991fdd9ba5999bd61f3d6cd7aca05",
+    "mtime": 1790658514.4480233,
+    "seen": 1790762625.7414696,
+    "ast_hash": "ce468517c76bc976e6a603052e108b18",
     "semantic_hash": ""
   },
   "shareInfoScript/nepseChargesCalulator.js": {
@@ -300,9 +300,9 @@
     "semantic_hash": ""
   },
   "shareInfoScript/perplexityConsumeApi.js": {
-    "mtime": 1790913944.866574,
-    "seen": 1790931025.2378216,
-    "ast_hash": "5b04f57817bae2e41492ed22a2303cb2",
+    "mtime": 1790652828.1632426,
+    "seen": 1790762625.741475,
+    "ast_hash": "ee2e33dea9f08c6187a4b5ba98d228f9",
     "semantic_hash": ""
   },
   "shareInfoScript/readHtml.js": {
@@ -324,9 +324,9 @@
     "semantic_hash": ""
   },
   "shareInfoScript/sltpHit.js": {
-    "mtime": 1790928223.3937242,
-    "seen": 1790931025.2378247,
-    "ast_hash": "7a75fdb6e1c3527866d982c011ebf9ec",
+    "mtime": 1790652828.1632426,
+    "seen": 1790762625.7414796,
+    "ast_hash": "d4e957660b633c9e20b9cb9b18d3c9f2",
     "semantic_hash": ""
   },
   "shareInfoScript/storeDailyClose.js": {
@@ -342,9 +342,9 @@
     "semantic_hash": ""
   },
   "shareInfoScript/testapi.js": {
-    "mtime": 1790916330.7620687,
-    "seen": 1790931025.237827,
-    "ast_hash": "d77c6b815813d60655320ef21e3e26fe",
+    "mtime": 1790652828.1632426,
+    "seen": 1790762625.7414827,
+    "ast_hash": "5bf8a0594267a17c76e357ee5031cd56",
     "semantic_hash": ""
   },
   "supervisor.ts": {
@@ -423,24 +423,6 @@
     "mtime": 1790912483.2031193,
     "seen": 1790913168.0463161,
     "ast_hash": "d4a7b736bee358f81f5cec45bc689af5",
-    "semantic_hash": ""
-  },
-  "telegramBotService.ts": {
-    "mtime": 1790917518.196635,
-    "seen": 1790931025.2378314,
-    "ast_hash": "ad0a1ccfe3a4a4b31a7e24da366982dc",
-    "semantic_hash": ""
-  },
-  "graphify-out/memory/query_20261002_041027_read_telegram_two_way_control_plan_md_and_implemen.md": {
-    "mtime": 1790914227.70674,
-    "seen": 1790931025.2378452,
-    "ast_hash": "ab62c1d4d055c3aa0d2c78d441c27240",
-    "semantic_hash": ""
-  },
-  "graphify-out/memory/query_20261002_041538_how_to_run_or_test_the_two_way_communication_imple.md": {
-    "mtime": 1790914538.5571322,
-    "seen": 1790931025.2378464,
-    "ast_hash": "9722da56ae05dacd469c22b0b7a4e3f9",
     "semantic_hash": ""
   }
 }

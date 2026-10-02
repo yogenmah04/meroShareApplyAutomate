@@ -4,6 +4,7 @@ import { runCheckStatus, formatShortError } from './checkStatus';
 import { sendTelegramNotification, flushNotificationQueue } from './notificationService';
 import { initializeScheduler } from './scheduler';
 import { scheduleNepseScraper } from './nepseScraper';
+import { startTelegramBotListener } from './telegramBotService';
 import * as dotenv from 'dotenv';
 import schedule from 'node-schedule';
 import { ensureDesktopDisplay } from './humanUtils';
@@ -44,6 +45,7 @@ async function main() {
 
     // Start parallel scheduled jobs
     scheduleNepseScraper();
+    startTelegramBotListener().catch(err => console.error('[Telegram Bot] Listener startup error:', err));
 
     const promoterUnlockScheduleRule = "35 11 * * *"; // 11:35 AM
     const fundaScraperScheduleRule = "40 11 * * *"; // 11:40 AM

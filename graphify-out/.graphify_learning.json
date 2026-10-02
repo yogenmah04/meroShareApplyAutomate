@@ -1,6 +1,54 @@
 {
-  "generated_at": "2026-09-30T10:25:14.876308+00:00",
+  "generated_at": "2026-10-02T03:38:52.642150+00:00",
   "nodes": {
+    "googlesheetsservice_override52weekdata": {
+      "code_fingerprint": "7038bfaff85a3c980b68653476037d0516a4f949a666e56c44e50eb73074aed1",
+      "label": "override52WeekData()",
+      "last": "2026-10-01T04:43:25.196049+00:00",
+      "provenance": [
+        {
+          "date": "2026-10-01T04:43:25.196049+00:00",
+          "outcome": "useful",
+          "q": "what can we get usefull data from technical data and 52highlow stored in google sheet"
+        }
+      ],
+      "score": 0.97817243,
+      "source_file": "googleSheetsService.ts",
+      "status": "tentative",
+      "uses": 1
+    },
+    "googlesheetsservice_overridetechnicalsignalsdata": {
+      "code_fingerprint": "7038bfaff85a3c980b68653476037d0516a4f949a666e56c44e50eb73074aed1",
+      "label": "overrideTechnicalSignalsData()",
+      "last": "2026-10-01T04:43:25.196049+00:00",
+      "provenance": [
+        {
+          "date": "2026-10-01T04:43:25.196049+00:00",
+          "outcome": "useful",
+          "q": "what can we get usefull data from technical data and 52highlow stored in google sheet"
+        }
+      ],
+      "score": 0.97817243,
+      "source_file": "googleSheetsService.ts",
+      "status": "tentative",
+      "uses": 1
+    },
+    "googlesheetsservice_week52record": {
+      "code_fingerprint": "7038bfaff85a3c980b68653476037d0516a4f949a666e56c44e50eb73074aed1",
+      "label": "Week52Record",
+      "last": "2026-10-01T04:43:25.196049+00:00",
+      "provenance": [
+        {
+          "date": "2026-10-01T04:43:25.196049+00:00",
+          "outcome": "useful",
+          "q": "what can we get usefull data from technical data and 52highlow stored in google sheet"
+        }
+      ],
+      "score": 0.97817243,
+      "source_file": "googleSheetsService.ts",
+      "status": "tentative",
+      "uses": 1
+    },
     "nepsescraper": {
       "code_fingerprint": "bea75b3d5f277a0370af7c3d4cd3b85a8d712c5c1c6d3621b3752cef41180731",
       "label": "nepseScraper.ts",
@@ -17,7 +65,7 @@
           "q": "can we implement nepseScraper.ts code in google sheet script which is located in folder 'shareInforScript'"
         }
       ],
-      "score": 1.944116403,
+      "score": 1.868466454,
       "source_file": "nepseScraper.ts",
       "status": "preferred",
       "uses": 2
@@ -38,7 +86,7 @@
           "q": "can we implement nepseScraper.ts code in google sheet script which is located in folder 'shareInforScript'"
         }
       ],
-      "score": 1.944116403,
+      "score": 1.868466454,
       "source_file": "nepseScraper.ts",
       "status": "preferred",
       "uses": 2
@@ -54,7 +102,7 @@
           "q": "can we implement nepseScraper.ts code in google sheet script which is located in folder 'shareInforScript'"
         }
       ],
-      "score": 0.971897685,
+      "score": 0.934078957,
       "source_file": "nepseScraper.ts",
       "status": "tentative",
       "uses": 1
@@ -70,7 +118,7 @@
           "q": "fix this error using supervisor for npm run watch-sheets"
         }
       ],
-      "score": 0.546335542,
+      "score": 0.525076395,
       "source_file": "package.json",
       "status": "tentative",
       "uses": 1
@@ -91,7 +139,7 @@
           "q": "implement this code in google sheet script nepseStatusAppsScript.js and triggered at 11:01 am every day and update in report B1 sheet"
         }
       ],
-      "score": 1.94425929,
+      "score": 1.86860378,
       "source_file": "shareInfoScript/nepseStatusAppsScript.js",
       "status": "preferred",
       "uses": 2
@@ -107,7 +155,7 @@
           "q": "implement this code in google sheet script nepseStatusAppsScript.js and triggered at 11:01 am every day and update in report B1 sheet"
         }
       ],
-      "score": 0.972040572,
+      "score": 0.934216283,
       "source_file": "shareInfoScript/nepseStatusAppsScript.js",
       "status": "tentative",
       "uses": 1
@@ -123,7 +171,7 @@
           "q": "implement this code in google sheet script nepseStatusAppsScript.js and triggered at 11:01 am every day and update in report B1 sheet"
         }
       ],
-      "score": 0.972040572,
+      "score": 0.934216283,
       "source_file": "shareInfoScript/nepseStatusAppsScript.js",
       "status": "tentative",
       "uses": 1
@@ -139,8 +187,72 @@
           "q": "what about for running in nepseScraper.ts at ' const scheduleRuleAfternoon = \"0 05 16 * * *\";' in google sheet script"
         }
       ],
-      "score": 0.972218718,
+      "score": 0.934387497,
       "source_file": "shareInfoScript/nepseStatusAppsScript.js",
+      "status": "tentative",
+      "uses": 1
+    },
+    "shareinfoscript_supnregislowhigh_findsymbolsnearpoints": {
+      "code_fingerprint": "c05cbbaa1e41621dd080d67499c0fdf379f622672ba43fe20dc3d8246043349a",
+      "label": "findSymbolsNearPoints()",
+      "last": "2026-10-01T04:43:25.196049+00:00",
+      "provenance": [
+        {
+          "date": "2026-10-01T04:43:25.196049+00:00",
+          "outcome": "useful",
+          "q": "what can we get usefull data from technical data and 52highlow stored in google sheet"
+        }
+      ],
+      "score": 0.97817243,
+      "source_file": "shareInfoScript/supNregisLowHigh.js",
+      "status": "tentative",
+      "uses": 1
+    },
+    "shareinfoscript_supportbounce_vol_rsi_swingbuytoday": {
+      "code_fingerprint": "decd1bf2607e6c6659ff963a2d8a3a27fae7f5574bb05d0faed1eb0c37ae034b",
+      "label": "swingBuyToday()",
+      "last": "2026-10-01T04:43:25.196049+00:00",
+      "provenance": [
+        {
+          "date": "2026-10-01T04:43:25.196049+00:00",
+          "outcome": "useful",
+          "q": "what can we get usefull data from technical data and 52highlow stored in google sheet"
+        }
+      ],
+      "score": 0.97817243,
+      "source_file": "shareInfoScript/SupportBounce_Vol_Rsi.js",
+      "status": "tentative",
+      "uses": 1
+    },
+    "techscraper_scrapetechnicalsignals": {
+      "code_fingerprint": "85730ceee1d4bc7e31c8482f1b804f68a40db0705501a189c316b86aba04d4e6",
+      "label": "scrapeTechnicalSignals()",
+      "last": "2026-10-01T04:43:25.196049+00:00",
+      "provenance": [
+        {
+          "date": "2026-10-01T04:43:25.196049+00:00",
+          "outcome": "useful",
+          "q": "what can we get usefull data from technical data and 52highlow stored in google sheet"
+        }
+      ],
+      "score": 0.97817243,
+      "source_file": "techScraper.ts",
+      "status": "tentative",
+      "uses": 1
+    },
+    "week52scraper_scrape52weekhighlow": {
+      "code_fingerprint": "d1aad2683fb15d4354c57da788a2979679a21b34262f8656f09fc9cd720fc54b",
+      "label": "scrape52WeekHighLow()",
+      "last": "2026-10-01T04:43:25.196049+00:00",
+      "provenance": [
+        {
+          "date": "2026-10-01T04:43:25.196049+00:00",
+          "outcome": "useful",
+          "q": "what can we get usefull data from technical data and 52highlow stored in google sheet"
+        }
+      ],
+      "score": 0.97817243,
+      "source_file": "week52Scraper.ts",
       "status": "tentative",
       "uses": 1
     }
