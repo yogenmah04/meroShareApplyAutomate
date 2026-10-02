@@ -1,0 +1,15 @@
+# Ignore everything by default
+**/*
+
+# Include Apps Script manifest
+!appsscript.json
+
+# Include root Apps Script code files
+!*.js
+!*.gs
+
+# Explicitly ignore local tooling and output
+graphify-out/**
+node_modules/**
+.git/**
+.vscode/**
