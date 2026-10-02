@@ -43,25 +43,34 @@ const YOGEN_START_ROW = 6; // 1-indexed (Row 6)
 const ALERT_SHEET_NAME = 'SL_TP_Hits';
 
 /**
- * Checks if current time is within NEPSE market trading hours (Sunday-Thursday, 11:00 AM - 3:00 PM Nepal Time UTC+5:45)
+ * Checks if current market is open:
+ * Reads 'Report' sheet tab cell B1.
+ * If 'market close' (case-insensitive) is present, then market is closed.
+ * Otherwise, it is open.
  */
-export function isNepseMarketOpen(): boolean {
-    const now = new Date();
-    // Nepal is UTC + 5:45
-    const nepalTimeMs = now.getTime() + (5 * 60 + 45) * 60 * 1000;
-    const nepalDate = new Date(nepalTimeMs);
+export async function isNepseMarketOpen(): Promise<{ isOpen: boolean; statusText: string }> {
+    try {
+        await initSheets();
+        const reportSheet = doc.sheetsByTitle['Report'];
+        if (!reportSheet) {
+            console.warn("Sheet tab 'Report' not found. Defaulting to market open.");
+            return { isOpen: true, statusText: 'Report tab not found' };
+        }
 
-    const day = nepalDate.getUTCDay(); // 0 = Sunday, 4 = Thursday, 5 = Friday, 6 = Saturday
-    const hours = nepalDate.getUTCHours();
-    const minutes = nepalDate.getUTCMinutes();
-    const totalMinutes = hours * 60 + minutes;
+        await reportSheet.loadCells('B1');
+        const cellValue = String(reportSheet.getCellByA1('B1').value || '').trim();
+        const lower = cellValue.toLowerCase();
 
-    // Trading days: Sunday (0) to Thursday (4)
-    const isTradingDay = day >= 0 && day <= 4;
-    // Trading hours: 11:00 AM (660 mins) to 3:00 PM (900 mins)
-    const isTradingHours = totalMinutes >= 660 && totalMinutes <= 900;
+        // If "market close" is present then closed, otherwise open
+        if (lower.includes('market close') || lower.includes('closed') || lower === 'close') {
+            return { isOpen: false, statusText: cellValue || 'Market Close' };
+        }
 
-    return isTradingDay && isTradingHours;
+        return { isOpen: true, statusText: cellValue || 'Market Open' };
+    } catch (err: any) {
+        console.warn(`Error reading Report!B1: ${err.message}. Defaulting to market open.`);
+        return { isOpen: true, statusText: 'Error reading Report!B1' };
+    }
 }
 
 /**
@@ -367,18 +376,22 @@ export async function scanPortfolioSLTP(isScheduledRun = false): Promise<ScanSum
     const timestamp = new Date().toLocaleString('en-US', { timeZone: 'Asia/Kathmandu' });
     const todayDateStr = new Date().toISOString().split('T')[0];
 
-    // Market hours guard for scheduled automated runs
-    if (isScheduledRun && !isNepseMarketOpen()) {
-        console.log(`[SL/TP Monitor] NEPSE market is closed at ${timestamp}. Skipping scheduled scan.`);
-        return {
-            success: true,
-            scannedRows: 0,
-            matchedStocks: 0,
-            newTriggersCount: 0,
-            triggers: [],
-            timestamp,
-            error: 'Market Closed'
-        };
+    // Market open guard for scheduled automated runs: check Report!B1
+    if (isScheduledRun) {
+        const marketStatus = await isNepseMarketOpen();
+        if (!marketStatus.isOpen) {
+            console.log(`[SL/TP Monitor] 'Report'!B1 says '${marketStatus.statusText}'. Market is closed at ${timestamp}. Skipping scheduled scan.`);
+            return {
+                success: true,
+                scannedRows: 0,
+                matchedStocks: 0,
+                newTriggersCount: 0,
+                triggers: [],
+                timestamp,
+                error: `Market Closed (${marketStatus.statusText})`
+            };
+        }
+        console.log(`[SL/TP Monitor] 'Report'!B1 says '${marketStatus.statusText}'. Proceeding with live scan.`);
     }
 
     console.log(`🔍 [SL/TP Monitor] Starting scan for 'yogen' sheet at ${timestamp}...`);

@@ -366,7 +366,17 @@ function sendTelegramAlertsBatch(alertMessages) {
  * Designed to run every 10 minutes during market hours
  */
 function runLiveFetchAndScanSLTP() {
-  Logger.log("[10-Min Trigger] Running live data fetch & SL/TP scan...");
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var reportSheet = ss.getSheetByName("Report");
+  if (reportSheet) {
+    var status = String(reportSheet.getRange("B1").getValue() || "").trim().toLowerCase();
+    if (status.indexOf("market close") !== -1 || status.indexOf("closed") !== -1 || status === "close") {
+      Logger.log("[10-Min Trigger] Skipping: 'Report'!B1 indicates Market is closed ('" + status + "').");
+      return;
+    }
+  }
+
+  Logger.log("[10-Min Trigger] Running live data fetch & SL/TP scan ('Report'!B1 is open)...");
   try {
     if (typeof fetchLiveTradingData === "function") {
       fetchLiveTradingData(); // Fetches live data & automatically calls scanStocksForSLTP
