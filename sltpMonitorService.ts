@@ -194,18 +194,41 @@ function parsePriceNum(val: any): number {
  */
 export function formatPurchaseDate(val: any): string {
     if (!val) return 'NODATE';
-    if (val instanceof Date) {
-        return val.toISOString().split('T')[0];
+    if (val instanceof Date && !isNaN(val.getTime())) {
+        const y = val.getFullYear();
+        const m = String(val.getMonth() + 1).padStart(2, '0');
+        const d = String(val.getDate()).padStart(2, '0');
+        return `${y}-${m}-${d}`;
     }
-    if (typeof val === 'number') {
+
+    const num = Number(val);
+    if (!isNaN(num) && num > 30000 && num < 65000) {
         try {
-            const d = new Date(Math.round((val - 25569) * 86400 * 1000));
-            return d.toISOString().split('T')[0];
+            const d = new Date(Math.round((num - 25569) * 86400 * 1000));
+            if (!isNaN(d.getTime())) {
+                return d.toISOString().split('T')[0];
+            }
         } catch (_) {
             return String(val);
         }
     }
-    return String(val).trim().replace(/[\/\s]/g, '-');
+
+    const s = String(val).trim();
+    if (!s) return 'NODATE';
+
+    const isoMatch = s.match(/^(\d{4})[-\/](\d{1,2})[-\/](\d{1,2})/);
+    if (isoMatch) {
+        return `${isoMatch[1]}-${isoMatch[2].padStart(2, '0')}-${isoMatch[3].padStart(2, '0')}`;
+    }
+
+    const usMatch = s.match(/^(\d{1,2})[-\/](\d{1,2})[-\/](\d{2,4})/);
+    if (usMatch) {
+        let y = usMatch[3];
+        if (y.length === 2) y = Number(y) > 50 ? `19${y}` : `20${y}`;
+        return `${y}-${usMatch[1].padStart(2, '0')}-${usMatch[2].padStart(2, '0')}`;
+    }
+
+    return s.replace(/[\/\s]/g, '-');
 }
 
 /**

@@ -108,7 +108,7 @@ function syncYogenToSLTPStocks() {
       row[5],  // Col G: purchase price
       row[6],  // Col H: purchase total
       row[7],  // Col I: profit / loss
-      row[8],  // Col J: purchase date
+      purchaseDate, // Col J: purchase date (consistently formatted as YYYY-MM-DD)
       row[9],  // Col K: count days
       row[10], // Col L: profit or loss %
       row[11], // Col M: ST (Stop Loss)
@@ -156,19 +156,40 @@ function generateUniqueStockId(symbol, kitta, purchasePrice, purchaseDate) {
  */
 function formatPurchaseDate(val) {
   if (!val) return "NODATE";
-  if (val instanceof Date) {
+  if (val instanceof Date && !isNaN(val.getTime())) {
     return Utilities.formatDate(val, "Asia/Kathmandu", "yyyy-MM-dd");
   }
-  if (typeof val === "number") {
-    // Excel/Sheets serial date number
+
+  var num = Number(val);
+  if (!isNaN(num) && num > 30000 && num < 65000) {
     try {
-      var d = new Date(Math.round((val - 25569) * 86400 * 1000));
+      var d = new Date(Math.round((num - 25569) * 86400 * 1000));
       return Utilities.formatDate(d, "Asia/Kathmandu", "yyyy-MM-dd");
     } catch (_) {
       return String(val);
     }
   }
-  return String(val).trim().replace(/[\/\s]/g, "-");
+
+  var s = String(val).trim();
+  if (!s) return "NODATE";
+
+  // ISO format YYYY-MM-DD or YYYY/MM/DD
+  var isoMatch = s.match(/^(\d{4})[-\/](\d{1,2})[-\/](\d{1,2})/);
+  if (isoMatch) {
+    var pad = function(n) { return String(n).padStart(2, "0"); };
+    return isoMatch[1] + "-" + pad(isoMatch[2]) + "-" + pad(isoMatch[3]);
+  }
+
+  // US format MM/DD/YYYY or M/D/YY
+  var usMatch = s.match(/^(\d{1,2})[-\/](\d{1,2})[-\/](\d{2,4})/);
+  if (usMatch) {
+    var y = usMatch[3];
+    if (y.length === 2) y = Number(y) > 50 ? "19" + y : "20" + y;
+    var pad = function(n) { return String(n).padStart(2, "0"); };
+    return y + "-" + pad(usMatch[1]) + "-" + pad(usMatch[2]);
+  }
+
+  return s.replace(/[\/\s]/g, "-");
 }
 
 /**

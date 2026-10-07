@@ -1,21 +1,21 @@
 # Graph Report - meroshare  (2026-10-07)
 
 ## Corpus Check
-- 84 files · ~48,356 words
+- 85 files · ~50,856 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 570 nodes · 908 edges · 67 communities (60 shown, 7 thin omitted)
+- 592 nodes · 942 edges · 67 communities (60 shown, 7 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `bca61408`
+- Built from commit: `c39702ee`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
-- sltpMonitorService.ts
+- initSheets
 - ⚙️ Core System & Orchestration
 - scripts
 - googleSheetsService.ts
@@ -25,10 +25,10 @@
 - dependencies
 - 6. Step-by-Step Implementation Steps
 - nepseAccumulation.js
-- Meroshare Automated IPO Scheduler
+- MeroShare Automation & NEPSE Trading Suite
 - compilerOptions
 - liveTradingData.js
-- 📁 File & Function Breakdown
+- 📁 Component Breakdown
 - riskMgmt.js
 - tmsAutomation.ts
 - nepseStatusAppsScript.js
@@ -66,36 +66,36 @@
 
 ## God Nodes (most connected - your core abstractions)
 1. `main()` - 30 edges
-2. `initSheets()` - 27 edges
+2. `initSheets()` - 29 edges
 3. `handleTelegramCommand()` - 27 edges
 4. `callWithRetry()` - 20 edges
-5. `jitterSleep()` - 18 edges
-6. `scripts` - 18 edges
+5. `scripts` - 19 edges
+6. `jitterSleep()` - 18 edges
 7. `getRandomUserAgent()` - 17 edges
 8. `launchBrowserWithViewMode()` - 16 edges
 9. `sendTelegramNotification()` - 16 edges
 10. `humanClick()` - 13 edges
 
 ## Surprising Connections (you probably didn't know these)
+- `fetchFundamentalData()` --calls--> `initSheets()`  [EXTRACTED]
+  fundaScraper.ts → googleSheetsService.ts
 - `syncLiveTradingSheet()` --calls--> `callWithRetry()`  [EXTRACTED]
   sltpMonitorService.ts → googleSheetsService.ts
-- `isNepseMarketOpen()` --calls--> `initSheets()`  [EXTRACTED]
-  sltpMonitorService.ts → googleSheetsService.ts
-- `readLiveTradingFromSheet()` --calls--> `initSheets()`  [EXTRACTED]
-  sltpMonitorService.ts → googleSheetsService.ts
-- `scanSLTPStocksAgainstLive()` --calls--> `initSheets()`  [EXTRACTED]
-  sltpMonitorService.ts → googleSheetsService.ts
-- `syncLiveTradingSheet()` --calls--> `initSheets()`  [EXTRACTED]
-  sltpMonitorService.ts → googleSheetsService.ts
+- `pollSLTPHitsQueue()` --calls--> `callWithRetry()`  [EXTRACTED]
+  sltpQueueService.ts → googleSheetsService.ts
+- `scrapePortfolio()` --calls--> `initSheets()`  [EXTRACTED]
+  portfolioScraper.ts → googleSheetsService.ts
+- `main()` --calls--> `initSheets()`  [EXTRACTED]
+  syncService.ts → googleSheetsService.ts
 
 ## Import Cycles
 - 3-file cycle: `sltpMonitorService.ts -> sltpQueueService.ts -> telegramBotService.ts -> sltpMonitorService.ts`
 
 ## Communities (67 total, 7 thin omitted)
 
-### Community 0 - "sltpMonitorService.ts"
-Cohesion: 0.20
-Nodes (16): fetchShareSansarLiveHtml(), formatPurchaseDate(), generateUniqueStockId(), getLiveMarketData(), isNepseMarketOpen(), LiveStockData, parseLiveTradingTableHtml(), parsePriceNum() (+8 more)
+### Community 0 - "initSheets"
+Cohesion: 0.16
+Nodes (24): doc, initSheets(), fetchShareSansarLiveHtml(), formatPurchaseDate(), generateUniqueStockId(), getLiveMarketData(), isNepseMarketOpen(), LiveStockData (+16 more)
 
 ### Community 1 - "⚙️ Core System & Orchestration"
 Cohesion: 0.05
@@ -103,11 +103,11 @@ Nodes (37): 1. Authentication & Security, 1. Layered Architecture Pattern, 2. Hu
 
 ### Community 2 - "scripts"
 Cohesion: 0.06
-Nodes (34): author, description, devDependencies, @playwright/test, ts-node, @types/node, typescript, keywords (+26 more)
+Nodes (35): author, description, devDependencies, @playwright/test, ts-node, @types/node, typescript, keywords (+27 more)
 
 ### Community 3 - "googleSheetsService.ts"
-Cohesion: 0.11
-Nodes (58): runAutomation(), formatShortError(), login(), runCheckStatus(), StatusEntry, StockReport, User, fetchFundamentalData() (+50 more)
+Cohesion: 0.12
+Nodes (51): runAutomation(), formatShortError(), login(), runCheckStatus(), StatusEntry, StockReport, User, fetchFundamentalData() (+43 more)
 
 ### Community 4 - "Potential Outcomes & Capabilities Derived from `🗃️ DailyClose` Data"
 Cohesion: 0.10
@@ -133,9 +133,9 @@ Nodes (18): 1. Overview & Objective, 2. Architecture & Communication Flow, 3. Co
 Cohesion: 0.16
 Nodes (12): calcAvgVol(), { chromium }, CONFIG, extractPriceHistory(), fetchFloorsheet(), fetchStockData(), fs, INSTITUTIONAL_BROKERS (+4 more)
 
-### Community 10 - "Meroshare Automated IPO Scheduler"
-Cohesion: 0.12
-Nodes (15): 1. Configuration, 1. Manual Execution (CLI), 2. How to Run, 2. Remote Trigger via Google Sheets, 3. Scheduled Daily Run, 3. Viewing Results, 52-Week High & Low Stock Scraper, Configuration (+7 more)
+### Community 10 - "MeroShare Automation & NEPSE Trading Suite"
+Cohesion: 0.08
+Nodes (23): 1. Preparation, 1. Prerequisites, 2. Execution, 2. Install Dependencies, 3. Environment Variables (`.env`), 3. Workflow, 🏗️ Architecture & Data Flow, 🚦 Available NPM Scripts (+15 more)
 
 ### Community 11 - "compilerOptions"
 Cohesion: 0.12
@@ -145,9 +145,9 @@ Nodes (15): ES2020, google-apps-script, **/*.gs, **/*.js, node_modules, compiler
 Cohesion: 0.30
 Nodes (13): arrayDiff(), canWeFetch(), checkPointsFromSheet(), divideWithoutDecimal(), fetchLiveTradingData(), fetchTradingData(), findMatchingSymbols(), getListedSymbolsPoints() (+5 more)
 
-### Community 13 - "📁 File & Function Breakdown"
-Cohesion: 0.15
-Nodes (12): 1. `syncService.ts` (The Orchestrator), 2. `googleSheetsService.ts` (The Data Bridge), 3. `checkStatus.ts` (The Status Checker), 4. `automate.ts` (The IPO Applicant), 5. `scheduler.ts` (The Time-Based Trigger), 6. `humanUtils.ts` (The Stealth Toolkit), 7. `testStealth.ts` (The Debugger), 🏗️ Architecture Overview (+4 more)
+### Community 13 - "📁 Component Breakdown"
+Cohesion: 0.08
+Nodes (23): 1. `syncService.ts` (Master Orchestrator Daemon), 1. `yogen` (Source Portfolio), 2. `googleSheetsService.ts` (Google Sheets Data Bridge), 2. `SLTP-stocks` (Filtered Active Holdings), 3. `SL-TP-Hits` (Alert & Execution Queue), 3. `sltpMonitorService.ts` (Stop Loss / Take Profit Engine), 4. `autoBuySellScript` (TMS Execution Queue), 4. `sltpQueueService.ts` (Queue & Notification Dispatcher) (+15 more)
 
 ### Community 14 - "riskMgmt.js"
 Cohesion: 0.36
@@ -258,7 +258,7 @@ Cohesion: 0.40
 Nodes (4): Answer, Outcome, Q: TMS Automation popup notification error page.waitForSelector dashboard-wrapper closed, Source Nodes
 
 ## Knowledge Gaps
-- **207 isolated node(s):** `User`, `StatusEntry`, `StockReport`, `formattedKey`, `serviceAccountAuth` (+202 more)
+- **223 isolated node(s):** `User`, `StatusEntry`, `StockReport`, `formattedKey`, `serviceAccountAuth` (+218 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **7 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -272,17 +272,17 @@ Nodes (4): Answer, Outcome, Q: TMS Automation popup notification error page.wait
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `initSheets()` connect `googleSheetsService.ts` to `sltpMonitorService.ts`, `tmsAutomation.ts`?**
+- **Why does `initSheets()` connect `initSheets` to `googleSheetsService.ts`, `tmsAutomation.ts`?**
   _High betweenness centrality (0.006) - this node is a cross-community bridge._
 - **Why does `dependencies` connect `dependencies` to `scripts`?**
   _High betweenness centrality (0.005) - this node is a cross-community bridge._
 - **What connects `User`, `StatusEntry`, `StockReport` to the rest of the system?**
-  _207 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _223 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `⚙️ Core System & Orchestration` be split into smaller, more focused modules?**
   _Cohesion score 0.05263157894736842 - nodes in this community are weakly interconnected._
 - **Should `scripts` be split into smaller, more focused modules?**
-  _Cohesion score 0.05714285714285714 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.05555555555555555 - nodes in this community are weakly interconnected._
 - **Should `googleSheetsService.ts` be split into smaller, more focused modules?**
-  _Cohesion score 0.10594594594594595 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.11841491841491841 - nodes in this community are weakly interconnected._
 - **Should `Potential Outcomes & Capabilities Derived from `🗃️ DailyClose` Data` be split into smaller, more focused modules?**
   _Cohesion score 0.09523809523809523 - nodes in this community are weakly interconnected._
