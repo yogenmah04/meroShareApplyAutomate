@@ -1,5 +1,5 @@
 {
-  "0": "sltpMonitorService.ts",
+  "0": "handleTelegramCommand",
   "1": "⚙️ Core System & Orchestration",
   "2": "scripts",
   "3": "googleSheetsService.ts",
@@ -14,7 +14,7 @@
   "12": "liveTradingData.js",
   "13": "📁 File & Function Breakdown",
   "14": "riskMgmt.js",
-  "15": "tmsAutomation.ts",
+  "15": "sendTelegramNotification",
   "16": "nepseStatusAppsScript.js",
   "17": "Q: when tmsAuomation.ts is failed to complete the process, push the failed notificaiton in telegram to user use the queue mechanisum",
   "18": "appsscript.json",
@@ -56,14 +56,5 @@
   "54": "playwright.config.ts",
   "55": "example.spec.ts",
   "56": "login.spec.ts",
-  "57": "work.md",
-  "58": "Q: when reply come from telegram user as 'proceed_sell' it append in 'autoBuySellScript' payload data correct as SN-> correct Symbol-> correct qty-> correct price -> incorrect ( correct is = >put price as blank) cell B1 -> incorrect (correct is current timestamp + 1min)",
-  "59": "notificationService.ts",
-  "60": "Q: Cell B1 time 'Kathmandu current time: now' +2 min",
-  "61": "Q: Cell B1 time 'Kathmandu current time: now' +3 min",
-  "62": "Q: Cell B1 time 'Kathmandu current time: now' +5 min",
-  "63": "Q: there is alwasys issue in Cell B1 time why ?, i need 'Kathmandu current time: now' + add extra 2 min",
-  "64": "Q: in autoBuySellScript sheet tab there is price column i say it need to blank and in B1 there should be current datetime stamp plus 2 min why it is not reflecting as i have already restart the supervisor",
-  "65": "Q: To clear a formula set cell value null error when appending auto buy sell trade",
-  "66": "Q: TMS Automation popup notification error page.waitForSelector dashboard-wrapper closed"
+  "57": "work.md"
 }

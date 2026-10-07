@@ -319,6 +319,13 @@ async function main() {
                             exec('npm run start-tms', (error, stdout, stderr) => {
                                 if (error) {
                                     console.error(`TMS Automation execution error: ${error.message}`);
+                                    sendTelegramNotification(
+                                        `🚨 <b>TMS Scheduled Process Failed</b>\n\n` +
+                                        `• <b>Task:</b> <code>npm run start-tms</code>\n` +
+                                        `• <b>Scheduled Time:</b> <i>${scheduledTime}</i>\n` +
+                                        `• <b>Error:</b> <code>${error.message}</code>\n` +
+                                        `• <b>Time:</b> <i>${new Date().toLocaleString()}</i>`
+                                    ).catch(() => {});
                                     return;
                                 }
                                 if (stderr) console.error(`TMS Automation stderr: ${stderr}`);

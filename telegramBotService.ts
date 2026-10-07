@@ -1,6 +1,6 @@
 import * as dotenv from 'dotenv';
 import https from 'https';
-import { initSheets, getControlCommand, fetchUsersFromSheet, fetchStocksFromSheet, addResultToSheet, overrideSheetData } from './googleSheetsService';
+import { initSheets, getControlCommand, fetchUsersFromSheet, fetchStocksFromSheet, addResultToSheet, overrideSheetData, appendAutoBuySellTrade } from './googleSheetsService';
 import { runCheckStatus, formatShortError } from './checkStatus';
 import { sendTelegramNotification } from './notificationService';
 import { ensureDesktopDisplay } from './humanUtils';
@@ -15,6 +15,21 @@ let isPolling = false;
 let isBusy = false;
 let activeTaskName = '';
 let lastUpdateId = 0;
+
+export interface PendingHit {
+    symbol: string;
+    qty: string;
+    price: string;
+    uniqueId?: string;
+    timestamp: number;
+}
+
+let latestPendingHit: PendingHit | null = null;
+const processedTradeKeys = new Map<string, number>();
+
+export function registerPendingHit(hit: PendingHit) {
+    latestPendingHit = hit;
+}
 
 /**
  * Low-level Telegram Bot API request using IPv4 priority
@@ -195,6 +210,107 @@ async function handleTelegramCommand(command: string, chatId: string) {
         } catch (e: any) {
             await sendTelegramMessage(`❌ Error fetching users: <code>${e.message}</code>`, undefined, chatId);
         }
+        return;
+    }
+
+    // Dismiss Alert
+    if (cmd.startsWith('dismiss_alert:') || cmd === 'dismiss' || cmd === 'cmd_dismiss') {
+        const dismissedSym = command.includes(':') ? command.split(':')[1]?.trim().toUpperCase() : '';
+        await sendTelegramMessage(
+            `⚪ <b>Alert Dismissed</b>\n` +
+            (dismissedSym ? `Alert for <b>${dismissedSym}</b> was dismissed.` : `Notification dismissed.`),
+            undefined,
+            chatId
+        );
+        return;
+    }
+
+    // PROCEED: Place SELL order in 'autoBuySellScript' tab
+    if (cmd.startsWith('proceed_sell:') || cmd.startsWith('proceed') || cmd.startsWith('cmd_proceed')) {
+        let symbol = '';
+        let qty = '';
+        let price = '';
+
+        if (command.includes(':')) {
+            // Callback button format: proceed_sell:SYMBOL:QTY:PRICE
+            const parts = command.split(':');
+            symbol = (parts[1] || '').trim().toUpperCase();
+            qty = (parts[2] || '0').trim();
+            price = (parts[3] || '0').trim();
+        } else {
+            // Text command format: /proceed [SYMBOL] [QTY] [PRICE] or simply /proceed
+            const tokens = command.trim().split(/\s+/);
+            if (tokens.length >= 4) {
+                symbol = (tokens[1] || '').trim().toUpperCase();
+                qty = (tokens[2] || '0').trim();
+                price = (tokens[3] || '0').trim();
+            } else if (latestPendingHit) {
+                symbol = latestPendingHit.symbol;
+                qty = latestPendingHit.qty;
+                price = latestPendingHit.price;
+            }
+        }
+
+        if (!symbol) {
+            await sendTelegramMessage(
+                `ℹ️ <b>No Pending Alert Found</b>\n\n` +
+                `To append a SELL order manually to <code>autoBuySellScript</code>, use:\n` +
+                `<code>/proceed &lt;SYMBOL&gt; &lt;QTY&gt; &lt;PRICE&gt;</code>\n\n` +
+                `<i>Example:</i> <code>/proceed NABIL 50 1105</code>`,
+                undefined,
+                chatId
+            );
+            return;
+        }
+
+        // Prevent duplicate multiple clicks within 15 seconds
+        const tradeKey = `${symbol}_${qty}_${price}`;
+        const lastExecuted = processedTradeKeys.get(tradeKey);
+        if (lastExecuted && Date.now() - lastExecuted < 15000) {
+            await sendTelegramMessage(
+                `⚠️ <b>Order Already Processed</b>\n\n` +
+                `A SELL order for <b>${symbol}</b> (${qty} kitta) was already added to <code>autoBuySellScript</code>. Duplicate ignored.`,
+                undefined,
+                chatId
+            );
+            return;
+        }
+        processedTradeKeys.set(tradeKey, Date.now());
+
+        runTaskAsync('APPEND_AUTO_SELL', async () => {
+            try {
+                await sendTelegramMessage(
+                    `⏳ <b>Processing Proceed Order...</b>\n` +
+                    `Appending <b>SELL</b> order for <b>${symbol}</b> (${qty} kitta @ Market / Blank Price) to Google Sheet tab <code>autoBuySellScript</code>...`,
+                    undefined,
+                    chatId
+                );
+
+                await initSheets();
+                const result = await appendAutoBuySellTrade({
+                    symbol,
+                    qty,
+                    price: '', // Blank price for Market / Dynamic execution
+                    action: 'SELL'
+                });
+
+                const successCard =
+                    `✅ <b>Order Placed in 'autoBuySellScript'</b>\n\n` +
+                    `• <b>Action:</b> <code>SELL</code>\n` +
+                    `• <b>Stock Symbol:</b> <b>${result.symbol}</b>\n` +
+                    `• <b>Quantity:</b> <code>${result.qty} kitta</code>\n` +
+                    `• <b>Price:</b> <code>Market / Dynamic (Blank)</code>\n` +
+                    `• <b>S.N / Row:</b> <code>#${result.sn} (Row ${result.rowNumber})</code>\n` +
+                    `• <b>Scheduled Execution Time (Cell B1):</b> <i>${result.time} (+2 min)</i>\n` +
+                    `• <b>Target Sheet Tab:</b> <code>autoBuySellScript</code>\n\n` +
+                    `<i>The SELL order has been appended and scheduled for automated TMS execution.</i>`;
+
+                await sendTelegramMessage(successCard, getCommandCenterKeyboard(), chatId);
+            } catch (err: any) {
+                processedTradeKeys.delete(tradeKey);
+                throw err;
+            }
+        }, chatId);
         return;
     }
 

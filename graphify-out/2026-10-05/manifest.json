@@ -30,9 +30,9 @@
     "semantic_hash": "00990171b6bffc4a75d0a7659c866c03"
   },
   "googleSheetsService.ts": {
-    "mtime": 1791199817.7601037,
-    "seen": 1791347382.701569,
-    "ast_hash": "33f6cee7fcebf0bbdd6b2e68eb37bb30",
+    "mtime": 1791182046.7187667,
+    "seen": 1791193960.2551007,
+    "ast_hash": "63627a2964ac3f33ee36bb9eb7d45446",
     "semantic_hash": ""
   },
   "humanUtils.ts": {
@@ -120,9 +120,9 @@
     "semantic_hash": "be78a07e2429752598c87d559a404ad1"
   },
   "tmsAutomation.ts": {
-    "mtime": 1791200504.1999185,
-    "seen": 1791347382.701613,
-    "ast_hash": "26bf2f219a7ccbddbb53c7778132d257",
+    "mtime": 1791190128.600116,
+    "seen": 1791193960.2551422,
+    "ast_hash": "8352e58b01427af12a6d2bd55d7f1f03",
     "semantic_hash": ""
   },
   ".github/workflows/playwright.yml": {
@@ -426,9 +426,9 @@
     "semantic_hash": "d4a7b736bee358f81f5cec45bc689af5"
   },
   "telegramBotService.ts": {
-    "mtime": 1791199833.797599,
-    "seen": 1791347382.7016084,
-    "ast_hash": "80e47aa7d95d31e7cdfe3db586e0c26c",
+    "mtime": 1791182109.1760542,
+    "seen": 1791193960.2551377,
+    "ast_hash": "1de88e2126bc8da529134ab691fa6f39",
     "semantic_hash": ""
   },
   "graphify-out/memory/query_20261002_041027_read_telegram_two_way_control_plan_md_and_implemen.md": {
@@ -465,54 +465,6 @@
     "mtime": 1791190108.0675886,
     "seen": 1791193960.2551534,
     "ast_hash": "75c0db01c93635f391b63e8b3d3b17b6",
-    "semantic_hash": ""
-  },
-  "graphify-out/memory/query_20261005_110201_when_reply_come_from_telegram_user_as__proceed_sel.md": {
-    "mtime": 1791198121.887375,
-    "seen": 1791198455.7785058,
-    "ast_hash": "dd3c3e5811c10c424096d6b03da5439f",
-    "semantic_hash": ""
-  },
-  "graphify-out/memory/query_20261005_110929_cell_b1_time__kathmandu_current_time__now___2_min.md": {
-    "mtime": 1791198569.7757185,
-    "seen": 1791347382.7016268,
-    "ast_hash": "dd9ab767f52f97b587a136ceaa490075",
-    "semantic_hash": ""
-  },
-  "graphify-out/memory/query_20261005_111333_cell_b1_time__kathmandu_current_time__now___3_min.md": {
-    "mtime": 1791198813.8746598,
-    "seen": 1791347382.701628,
-    "ast_hash": "d1acf5b0c60c0a10b8504638cedd1419",
-    "semantic_hash": ""
-  },
-  "graphify-out/memory/query_20261005_111526_cell_b1_time__kathmandu_current_time__now___5_min.md": {
-    "mtime": 1791198926.2322533,
-    "seen": 1791347382.7016284,
-    "ast_hash": "18e43f9838b04aec552aafd2757de958",
-    "semantic_hash": ""
-  },
-  "graphify-out/memory/query_20261005_111816_there_is_alwasys_issue_in_cell_b1_time_why____i_ne.md": {
-    "mtime": 1791199096.4356441,
-    "seen": 1791347382.7016292,
-    "ast_hash": "428c201202efc6f5cb6b228e2946846c",
-    "semantic_hash": ""
-  },
-  "graphify-out/memory/query_20261005_112815_in_autobuysellscript_sheet_tab_there_is_price_colu.md": {
-    "mtime": 1791199695.6083267,
-    "seen": 1791347382.7016299,
-    "ast_hash": "8c93a4285b0732bfef6207c89943a7f1",
-    "semantic_hash": ""
-  },
-  "graphify-out/memory/query_20261005_113151_to_clear_a_formula_set_cell_value_null_error_when.md": {
-    "mtime": 1791199911.9350116,
-    "seen": 1791347382.7016304,
-    "ast_hash": "452bc8ef9c769934ed2c1e298708c2c1",
-    "semantic_hash": ""
-  },
-  "graphify-out/memory/query_20261005_114330_tms_automation_popup_notification_error_page_waitf.md": {
-    "mtime": 1791200610.1576235,
-    "seen": 1791347382.701631,
-    "ast_hash": "5168542ee404c560b91355504ee4f48a",
     "semantic_hash": ""
   }
 }

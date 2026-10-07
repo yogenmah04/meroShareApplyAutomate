@@ -1,5 +1,6 @@
 import { doc, initSheets, callWithRetry } from './googleSheetsService';
 import { sendTelegramNotification } from './notificationService';
+import { registerPendingHit } from './telegramBotService';
 
 const HITS_SHEET_NAME = 'SL-TP-Hits';
 
@@ -92,6 +93,20 @@ export async function pollSLTPHitsQueue(): Promise<{ processedCount: number }> {
             const isTp = triggerEvent.toLowerCase().includes('take profit') || triggerEvent.toLowerCase().includes('tp');
             const icon = isSl && isTp ? '⚠️' : (isSl ? '🛑' : '🎯');
 
+            // Determine target price for SELL order
+            const tradePrice = (liveLtp && parseFloat(liveLtp) > 0)
+                ? liveLtp
+                : ((purchasePrice && parseFloat(purchasePrice) > 0) ? purchasePrice : '0');
+
+            // Register hit for /proceed command support
+            registerPendingHit({
+                symbol,
+                qty: kitta,
+                price: tradePrice,
+                uniqueId,
+                timestamp: Date.now()
+            });
+
             const message =
                 `${icon} <b>NEPSE PORTFOLIO ALERT: ${escapeHtml(triggerEvent)}</b>\n\n` +
                 `• <b>Stock:</b> <b>${escapeHtml(symbol)}</b> (${escapeHtml(kitta)} kitta @ Rs. ${escapeHtml(purchasePrice)})\n` +
@@ -102,11 +117,29 @@ export async function pollSLTPHitsQueue(): Promise<{ processedCount: number }> {
                 (purchaseDate && purchaseDate !== 'NODATE' ? `• <b>Purchase Date:</b> ${escapeHtml(purchaseDate)}\n` : '') +
                 `• <b>Triggered At:</b> <i>${escapeHtml(triggeredAt)}</i>\n` +
                 `• <b>Unique ID:</b> <code>${escapeHtml(uniqueId)}</code>\n\n` +
-                `<i>Recorded in Google Sheet tab: '${escapeHtml(HITS_SHEET_NAME)}'</i>`;
+                `<i>Recorded in Google Sheet tab: '${escapeHtml(HITS_SHEET_NAME)}'</i>\n\n` +
+                `👇 <b>Choose option proceed:</b>\n` +
+                `Tap <b>Proceed</b> to place SELL order for <b>${escapeHtml(symbol)}</b> (${escapeHtml(kitta)} kitta @ Rs. ${escapeHtml(tradePrice)}) in <code>autoBuySellScript</code>.`;
 
-            // 1. Send instant Telegram Notification
+            // Inline option menu with Proceed button
+            const replyMarkup = {
+                inline_keyboard: [
+                    [
+                        {
+                            text: 'Proceed',
+                            callback_data: `proceed_sell:${symbol}:${kitta}:${tradePrice}`
+                        },
+                        {
+                            text: '❌ Dismiss',
+                            callback_data: `dismiss_alert:${symbol}`
+                        }
+                    ]
+                ]
+            };
+
+            // 1. Send instant Telegram Notification with Proceed option menu
             try {
-                await sendTelegramNotification(message);
+                await sendTelegramNotification(message, replyMarkup);
             } catch (notifyErr: any) {
                 console.error(`[SL-TP Queue] Telegram delivery error for ${symbol}:`, notifyErr.message);
             }

@@ -272,6 +272,104 @@ export async function getTmsScheduleTime() {
   });
 }
 
+export async function appendAutoBuySellTrade(params: {
+  symbol: string;
+  qty: string | number;
+  price?: string | number;
+  action?: string;
+}): Promise<{
+  success: boolean;
+  rowNumber: number;
+  sn: number;
+  symbol: string;
+  qty: string;
+  price: string;
+  action: string;
+  time: string;
+}> {
+  return callWithRetry(async () => {
+    const sheet = doc.sheetsByTitle["autoBuySellScript"];
+    if (!sheet) throw new Error('Sheet "autoBuySellScript" not found');
+
+    // 1. Current Date & Time formatted for Kathmandu + extra 2 minutes (now + 120,000 ms)
+    const now = new Date();
+    const scheduledEpoch = new Date(now.getTime() + 2 * 60 * 1000); // Kathmandu current time: now + 2 min
+    const pad = (n: number) => String(n).padStart(2, '0');
+    const kathmanduTime = new Date(scheduledEpoch.toLocaleString('en-US', { timeZone: 'Asia/Kathmandu' }));
+    const scheduledDateTimeStr = `${kathmanduTime.getFullYear()}-${pad(kathmanduTime.getMonth() + 1)}-${pad(kathmanduTime.getDate())} ${pad(kathmanduTime.getHours())}:${pad(kathmanduTime.getMinutes())}:${pad(kathmanduTime.getSeconds())}`;
+
+    // Load cells up to row 200 (Columns A through F)
+    // Row 0 is Row 1 ("Time", ScheduledTime, ...)
+    // Row 1 is Row 2 (Headers: S.N, Symbol, qty, price, action, ...)
+    // Rows 2+ are Row 3+ (Trades)
+    await sheet.loadCells("A1:F200");
+
+    // 2. Update Cell B1 with Kathmandu current time + extra 2 min
+    const cellB1 = sheet.getCell(0, 1);
+    cellB1.value = scheduledDateTimeStr;
+
+    // 3. Find first empty row starting from row index 2 (Row 3)
+    let targetRowIndex = -1;
+    let lastSN = 0;
+
+    for (let r = 2; r < 200; r++) {
+      const symVal = sheet.getCell(r, 1).value;
+      const snVal = sheet.getCell(r, 0).value;
+      if (snVal !== null && snVal !== undefined && !isNaN(Number(snVal))) {
+        lastSN = Math.max(lastSN, Number(snVal));
+      }
+
+      if (!symVal || String(symVal).trim() === '') {
+        targetRowIndex = r;
+        break;
+      }
+    }
+
+    if (targetRowIndex === -1) {
+      throw new Error('No empty row available in autoBuySellScript (checked up to row 200)');
+    }
+
+    const nextSN = lastSN > 0 ? lastSN + 1 : (targetRowIndex - 1);
+    const action = (params.action || 'SELL').trim().toUpperCase();
+    const symbol = String(params.symbol).trim().toUpperCase();
+    const qty = String(params.qty || '0').trim();
+    const rawPrice = params.price !== undefined && params.price !== null ? String(params.price).trim() : '';
+    // If price is blank or '0', leave it blank in Google Sheet (so dynamic market price can be used)
+    const price = (rawPrice === '' || rawPrice === '0') ? '' : (Number(rawPrice) || rawPrice);
+
+    // Populate Columns:
+    // Col A (0): S.N
+    // Col B (1): Symbol
+    // Col C (2): qty
+    // Col D (3): price (blank if empty/0)
+    // Col E (4): action (SELL)
+    // Col F (5): Formula =C{rowNumber}*D{rowNumber}
+    const rowNumber = targetRowIndex + 1; // 1-indexed for Excel/Sheet formula
+
+    sheet.getCell(targetRowIndex, 0).value = nextSN;
+    sheet.getCell(targetRowIndex, 1).value = symbol;
+    sheet.getCell(targetRowIndex, 2).value = Number(qty) || qty;
+    sheet.getCell(targetRowIndex, 3).value = price;
+    sheet.getCell(targetRowIndex, 4).value = action;
+    sheet.getCell(targetRowIndex, 5).formula = `=C${rowNumber}*D${rowNumber}`;
+
+    await sheet.saveUpdatedCells();
+
+    console.log(`✅ [autoBuySellScript] Appended SELL order: Row ${rowNumber}, S.N ${nextSN}, Symbol ${symbol}, Qty ${qty}, Price ${price || 'BLANK (Market)'}, Action ${action}, Time updated: ${scheduledDateTimeStr}`);
+
+    return {
+      success: true,
+      rowNumber,
+      sn: nextSN,
+      symbol,
+      qty,
+      price: price ? String(price) : '',
+      action,
+      time: scheduledDateTimeStr
+    };
+  });
+}
+
 export async function overridePortfolioData(
   holdings: { symbol: string, quantity: string }[]
 ) {

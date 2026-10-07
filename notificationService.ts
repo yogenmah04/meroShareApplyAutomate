@@ -19,6 +19,7 @@ export interface QueuedMessage {
   attempts: number;
   lastAttempt?: string;
   error?: string;
+  replyMarkup?: any;
 }
 
 let isFlushing = false;
@@ -27,7 +28,7 @@ let workerTimer: NodeJS.Timeout | null = null;
 /**
  * Persists a message to the file-based queue directory on disk.
  */
-export function enqueueNotification(message: string): string {
+export function enqueueNotification(message: string, replyMarkup?: any): string {
   const timestamp = Date.now();
   const rand = Math.random().toString(36).substring(2, 8);
   const id = `${timestamp}_${rand}`;
@@ -37,7 +38,8 @@ export function enqueueNotification(message: string): string {
     id,
     message,
     createdAt: new Date().toISOString(),
-    attempts: 0
+    attempts: 0,
+    replyMarkup
   };
 
   fs.writeFileSync(filePath, JSON.stringify(record, null, 2), 'utf8');
@@ -62,14 +64,19 @@ export function getPendingCount(): number {
 function sendDirectTelegram(
   message: string,
   token: string,
-  chatId: string
+  chatId: string,
+  replyMarkup?: any
 ): Promise<{ success: boolean; status?: number; error?: string; isNetworkError?: boolean }> {
   return new Promise((resolve) => {
-    const postData = JSON.stringify({
+    const payload: any = {
       chat_id: chatId,
       text: message,
       parse_mode: 'HTML'
-    });
+    };
+    if (replyMarkup) {
+      payload.reply_markup = replyMarkup;
+    }
+    const postData = JSON.stringify(payload);
 
     const req = https.request({
       hostname: 'api.telegram.org',
@@ -163,7 +170,7 @@ export async function flushNotificationQueue(): Promise<{ sent: number; remainin
         continue;
       }
 
-      const res = await sendDirectTelegram(record.message, token, chatId);
+      const res = await sendDirectTelegram(record.message, token, chatId, record.replyMarkup);
 
       if (res.success) {
         console.log(`[Notification Queue] Message ${record.id} delivered successfully.`);
@@ -219,8 +226,8 @@ export function startQueueWorker(intervalMs: number = 30000): void {
  * Main notification API: Enqueues message to disk first, then attempts delivery.
  * If offline, message safely stays in notification_queue/ until network is restored.
  */
-export async function sendTelegramNotification(message: string): Promise<void> {
-  enqueueNotification(message);
+export async function sendTelegramNotification(message: string, replyMarkup?: any): Promise<void> {
+  enqueueNotification(message, replyMarkup);
   await flushNotificationQueue();
 }
 

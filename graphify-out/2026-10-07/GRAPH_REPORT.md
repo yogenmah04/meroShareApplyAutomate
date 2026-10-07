@@ -1,11 +1,11 @@
-# Graph Report - meroshare  (2026-10-07)
+# Graph Report - meroshare  (2026-10-05)
 
 ## Corpus Check
-- 84 files · ~48,356 words
+- 77 files · ~46,886 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 570 nodes · 908 edges · 67 communities (60 shown, 7 thin omitted)
+- 534 nodes · 876 edges · 59 communities (52 shown, 7 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
 
@@ -15,7 +15,7 @@
 - Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
-- sltpMonitorService.ts
+- humanUtils.ts
 - ⚙️ Core System & Orchestration
 - scripts
 - googleSheetsService.ts
@@ -55,14 +55,6 @@
 - fetchStockHistory
 - newStrategy.js
 - Q: when reply come from telegram user as 'proceed_sell' it append in 'autoBuySellScript' payload data correct as SN-> correct Symbol-> correct qty-> correct price -> incorrect ( correct is = >put price as blank) cell B1 -> incorrect (correct is current timestamp + 1min)
-- notificationService.ts
-- Q: Cell B1 time 'Kathmandu current time: now' +2 min
-- Q: Cell B1 time 'Kathmandu current time: now' +3 min
-- Q: Cell B1 time 'Kathmandu current time: now' +5 min
-- Q: there is alwasys issue in Cell B1 time why ?, i need 'Kathmandu current time: now' + add extra 2 min
-- Q: in autoBuySellScript sheet tab there is price column i say it need to blank and in B1 there should be current datetime stamp plus 2 min why it is not reflecting as i have already restart the supervisor
-- Q: To clear a formula set cell value null error when appending auto buy sell trade
-- Q: TMS Automation popup notification error page.waitForSelector dashboard-wrapper closed
 
 ## God Nodes (most connected - your core abstractions)
 1. `main()` - 30 edges
@@ -77,25 +69,25 @@
 10. `humanClick()` - 13 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `syncLiveTradingSheet()` --calls--> `callWithRetry()`  [EXTRACTED]
-  sltpMonitorService.ts → googleSheetsService.ts
-- `isNepseMarketOpen()` --calls--> `initSheets()`  [EXTRACTED]
-  sltpMonitorService.ts → googleSheetsService.ts
-- `readLiveTradingFromSheet()` --calls--> `initSheets()`  [EXTRACTED]
-  sltpMonitorService.ts → googleSheetsService.ts
-- `scanSLTPStocksAgainstLive()` --calls--> `initSheets()`  [EXTRACTED]
-  sltpMonitorService.ts → googleSheetsService.ts
-- `syncLiveTradingSheet()` --calls--> `initSheets()`  [EXTRACTED]
-  sltpMonitorService.ts → googleSheetsService.ts
+- `runAutomation()` --calls--> `sendTelegramNotification()`  [EXTRACTED]
+  automate.ts → notificationService.ts
+- `initializeScheduler()` --calls--> `runAutomation()`  [EXTRACTED]
+  scheduler.ts → automate.ts
+- `main()` --calls--> `formatShortError()`  [EXTRACTED]
+  syncService.ts → checkStatus.ts
+- `runTaskAsync()` --calls--> `formatShortError()`  [EXTRACTED]
+  telegramBotService.ts → checkStatus.ts
+- `runCheckStatus()` --calls--> `sendTelegramNotification()`  [EXTRACTED]
+  checkStatus.ts → notificationService.ts
 
 ## Import Cycles
 - 3-file cycle: `sltpMonitorService.ts -> sltpQueueService.ts -> telegramBotService.ts -> sltpMonitorService.ts`
 
-## Communities (67 total, 7 thin omitted)
+## Communities (59 total, 7 thin omitted)
 
-### Community 0 - "sltpMonitorService.ts"
-Cohesion: 0.20
-Nodes (16): fetchShareSansarLiveHtml(), formatPurchaseDate(), generateUniqueStockId(), getLiveMarketData(), isNepseMarketOpen(), LiveStockData, parseLiveTradingTableHtml(), parsePriceNum() (+8 more)
+### Community 0 - "humanUtils.ts"
+Cohesion: 0.18
+Nodes (25): runAutomation(), formatShortError(), login(), runCheckStatus(), StatusEntry, StockReport, User, fetchFundamentalData() (+17 more)
 
 ### Community 1 - "⚙️ Core System & Orchestration"
 Cohesion: 0.05
@@ -106,8 +98,8 @@ Cohesion: 0.06
 Nodes (34): author, description, devDependencies, @playwright/test, ts-node, @types/node, typescript, keywords (+26 more)
 
 ### Community 3 - "googleSheetsService.ts"
-Cohesion: 0.11
-Nodes (58): runAutomation(), formatShortError(), login(), runCheckStatus(), StatusEntry, StockReport, User, fetchFundamentalData() (+50 more)
+Cohesion: 0.09
+Nodes (56): addResultToSheet(), appendAutoBuySellTrade(), callWithRetry(), doc, fetchStocksFromSheet(), fetchUsersFromSheet(), formattedKey, getControlCommand() (+48 more)
 
 ### Community 4 - "Potential Outcomes & Capabilities Derived from `🗃️ DailyClose` Data"
 Cohesion: 0.10
@@ -154,8 +146,8 @@ Cohesion: 0.36
 Nodes (9): calculateBeta(), calculateReturns(), calculateVaR(), covariance(), flattenToNumbers(), getHistoricalPrices(), mean(), stdev() (+1 more)
 
 ### Community 15 - "tmsAutomation.ts"
-Cohesion: 0.49
-Nodes (10): fetchAutoBuySellData(), launchPersistentContextWithViewMode(), clearInput(), delay(), dismissTmsPopups(), executeSingleTrade(), fetchExistingTrades(), humanClick() (+2 more)
+Cohesion: 0.51
+Nodes (9): fetchAutoBuySellData(), launchPersistentContextWithViewMode(), clearInput(), delay(), executeSingleTrade(), fetchExistingTrades(), humanClick(), humanType() (+1 more)
 
 ### Community 16 - "nepseStatusAppsScript.js"
 Cohesion: 0.36
@@ -225,40 +217,8 @@ Nodes (3): average(), calculateRSI(), swingBuyToday()
 Cohesion: 0.40
 Nodes (4): Answer, Outcome, Q: when reply come from telegram user as 'proceed_sell' it append in 'autoBuySellScript' payload data correct as SN-> correct Symbol-> correct qty-> correct price -> incorrect ( correct is = >put price as blank) cell B1 -> incorrect (correct is current timestamp + 1min), Source Nodes
 
-### Community 59 - "notificationService.ts"
-Cohesion: 0.39
-Nodes (7): enqueueNotification(), flushNotificationQueue(), getPendingCount(), QUEUE_DIR, QueuedMessage, sendDirectTelegram(), startQueueWorker()
-
-### Community 60 - "Q: Cell B1 time 'Kathmandu current time: now' +2 min"
-Cohesion: 0.40
-Nodes (4): Answer, Outcome, Q: Cell B1 time 'Kathmandu current time: now' +2 min, Source Nodes
-
-### Community 61 - "Q: Cell B1 time 'Kathmandu current time: now' +3 min"
-Cohesion: 0.40
-Nodes (4): Answer, Outcome, Q: Cell B1 time 'Kathmandu current time: now' +3 min, Source Nodes
-
-### Community 62 - "Q: Cell B1 time 'Kathmandu current time: now' +5 min"
-Cohesion: 0.40
-Nodes (4): Answer, Outcome, Q: Cell B1 time 'Kathmandu current time: now' +5 min, Source Nodes
-
-### Community 63 - "Q: there is alwasys issue in Cell B1 time why ?, i need 'Kathmandu current time: now' + add extra 2 min"
-Cohesion: 0.40
-Nodes (4): Answer, Outcome, Q: there is alwasys issue in Cell B1 time why ?, i need 'Kathmandu current time: now' + add extra 2 min, Source Nodes
-
-### Community 64 - "Q: in autoBuySellScript sheet tab there is price column i say it need to blank and in B1 there should be current datetime stamp plus 2 min why it is not reflecting as i have already restart the supervisor"
-Cohesion: 0.40
-Nodes (4): Answer, Outcome, Q: in autoBuySellScript sheet tab there is price column i say it need to blank and in B1 there should be current datetime stamp plus 2 min why it is not reflecting as i have already restart the supervisor, Source Nodes
-
-### Community 65 - "Q: To clear a formula set cell value null error when appending auto buy sell trade"
-Cohesion: 0.40
-Nodes (4): Answer, Outcome, Q: To clear a formula set cell value null error when appending auto buy sell trade, Source Nodes
-
-### Community 66 - "Q: TMS Automation popup notification error page.waitForSelector dashboard-wrapper closed"
-Cohesion: 0.40
-Nodes (4): Answer, Outcome, Q: TMS Automation popup notification error page.waitForSelector dashboard-wrapper closed, Source Nodes
-
 ## Knowledge Gaps
-- **207 isolated node(s):** `User`, `StatusEntry`, `StockReport`, `formattedKey`, `serviceAccountAuth` (+202 more)
+- **186 isolated node(s):** `User`, `StatusEntry`, `StockReport`, `formattedKey`, `serviceAccountAuth` (+181 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **7 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -272,17 +232,17 @@ Nodes (4): Answer, Outcome, Q: TMS Automation popup notification error page.wait
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `initSheets()` connect `googleSheetsService.ts` to `sltpMonitorService.ts`, `tmsAutomation.ts`?**
+- **Why does `initSheets()` connect `googleSheetsService.ts` to `humanUtils.ts`, `tmsAutomation.ts`?**
   _High betweenness centrality (0.006) - this node is a cross-community bridge._
 - **Why does `dependencies` connect `dependencies` to `scripts`?**
   _High betweenness centrality (0.005) - this node is a cross-community bridge._
 - **What connects `User`, `StatusEntry`, `StockReport` to the rest of the system?**
-  _207 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _186 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `⚙️ Core System & Orchestration` be split into smaller, more focused modules?**
   _Cohesion score 0.05263157894736842 - nodes in this community are weakly interconnected._
 - **Should `scripts` be split into smaller, more focused modules?**
   _Cohesion score 0.05714285714285714 - nodes in this community are weakly interconnected._
 - **Should `googleSheetsService.ts` be split into smaller, more focused modules?**
-  _Cohesion score 0.10594594594594595 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.09090909090909091 - nodes in this community are weakly interconnected._
 - **Should `Potential Outcomes & Capabilities Derived from `🗃️ DailyClose` Data` be split into smaller, more focused modules?**
   _Cohesion score 0.09523809523809523 - nodes in this community are weakly interconnected._

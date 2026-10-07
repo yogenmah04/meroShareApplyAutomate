@@ -1,0 +1,846 @@
+{
+  "communities": {
+    "0": [
+      "automate",
+      "automate_runautomation",
+      "checkstatus",
+      "checkstatus_formatshorterror",
+      "checkstatus_login",
+      "checkstatus_runcheckstatus",
+      "checkstatus_statusentry",
+      "checkstatus_stockreport",
+      "checkstatus_user",
+      "fundascraper",
+      "fundascraper_fetchfundamentaldata",
+      "googlesheetsservice",
+      "googlesheetsservice_addresulttosheet",
+      "googlesheetsservice_callwithretry",
+      "googlesheetsservice_fetchstocksfromsheet",
+      "googlesheetsservice_fetchusersfromsheet",
+      "googlesheetsservice_formattedkey",
+      "googlesheetsservice_getcontrolcommand",
+      "googlesheetsservice_gettmsscheduletime",
+      "googlesheetsservice_limit",
+      "googlesheetsservice_markuserasipoapplied",
+      "googlesheetsservice_override52weekdata",
+      "googlesheetsservice_overrideportfoliodata",
+      "googlesheetsservice_overridesheetdata",
+      "googlesheetsservice_overridetechnicalsignalsdata",
+      "googlesheetsservice_serviceaccountauth",
+      "googlesheetsservice_wait",
+      "googlesheetsservice_week52record",
+      "humanutils",
+      "humanutils_ensuredesktopdisplay",
+      "humanutils_getrandomuseragent",
+      "humanutils_humanclick",
+      "humanutils_humantype",
+      "humanutils_jittersleep",
+      "humanutils_launchbrowserwithviewmode",
+      "notificationservice_sendtelegramnotification",
+      "portfolioscraper",
+      "portfolioscraper_scrapeportfolio",
+      "promoterunlock",
+      "promoterunlock_fetchpromoterunlockdata",
+      "scheduler",
+      "scheduler_initializescheduler",
+      "scheduler_loadusers",
+      "syncservice",
+      "syncservice_main",
+      "techscraper",
+      "techscraper_scrapetechnicalsignals",
+      "telegrambotservice",
+      "telegrambotservice_answercallbackquery",
+      "telegrambotservice_getcommandcenterkeyboard",
+      "telegrambotservice_handletelegramcommand",
+      "telegrambotservice_runtaskasync",
+      "telegrambotservice_sendcommandcentermenu",
+      "telegrambotservice_sendtelegrammessage",
+      "telegrambotservice_starttelegrambotlistener",
+      "telegrambotservice_stoptelegrambotlistener",
+      "telegrambotservice_telegramapi",
+      "testbody",
+      "testbody_run",
+      "week52scraper",
+      "week52scraper_extracttabstocks",
+      "week52scraper_parsepriceanddate",
+      "week52scraper_scrape52weekhighlow"
+    ],
+    "1": [
+      "system",
+      "system_1_authentication_security",
+      "system_1_layered_architecture_pattern",
+      "system_2_human_behavior_simulation_pattern_humanutils_ts",
+      "system_2_network_resilience_rate_limiting",
+      "system_3_anti_bot_stealth_integration",
+      "system_3_detailed_tab_by_tab_schema_modification_rules",
+      "system_4_resilient_network_concurrency_pattern",
+      "system_5_persistent_context_pattern",
+      "system_aim_of_the_application",
+      "system_automate_ts",
+      "system_autonomousparser_ts",
+      "system_checkstatus_ts",
+      "system_coding_style_architectural_patterns",
+      "system_configuration_documentation_files",
+      "system_core_system_orchestration",
+      "system_development_dependencies_devdependencies",
+      "system_file_by_file_intentions_responsibilities",
+      "system_folder_structure",
+      "system_fundascraper_ts",
+      "system_google_sheets_integration_modification_engine",
+      "system_googlesheetsservice_ts",
+      "system_humanutils_ts",
+      "system_market_scrapers_analyzers",
+      "system_naasalogin_ts",
+      "system_nepseaccumulation_js",
+      "system_nepsescraper_ts",
+      "system_production_dependencies_dependencies",
+      "system_promoterunlock_ts",
+      "system_saveauthsession_ts",
+      "system_scheduler_ts",
+      "system_stealth_ai_utilities",
+      "system_syncservice_ts",
+      "system_system_architecture_technical_documentation",
+      "system_testbody_ts",
+      "system_teststealth_ts",
+      "system_tmsautomation_ts",
+      "system_used_libraries_exact_versions"
+    ],
+    "2": [
+      "package",
+      "package_author",
+      "package_description",
+      "package_devdependencies",
+      "package_devdependencies_playwright_test",
+      "package_devdependencies_ts_node",
+      "package_devdependencies_types_node",
+      "package_devdependencies_typescript",
+      "package_keywords",
+      "package_license",
+      "package_main",
+      "package_name",
+      "package_scripts",
+      "package_scripts_auth_kimi",
+      "package_scripts_check_52_week",
+      "package_scripts_check_funda",
+      "package_scripts_check_promoter_unlock",
+      "package_scripts_check_status",
+      "package_scripts_check_tech",
+      "package_scripts_flush_notifications",
+      "package_scripts_parse_id",
+      "package_scripts_scan_accumulation",
+      "package_scripts_scrape_portfolio",
+      "package_scripts_start_bot",
+      "package_scripts_start_naasa",
+      "package_scripts_start_nepse",
+      "package_scripts_start_tms",
+      "package_scripts_supervise_watch_sheets",
+      "package_scripts_test_notification",
+      "package_scripts_watch_sheets",
+      "package_version",
+      "playwright_test",
+      "ts_node",
+      "types_node",
+      "typescript"
+    ],
+    "3": [
+      "googlesheetsservice_doc",
+      "googlesheetsservice_initsheets",
+      "sltpmonitorservice",
+      "sltpmonitorservice_fetchsharesansarlivehtml",
+      "sltpmonitorservice_formatpurchasedate",
+      "sltpmonitorservice_generateuniquestockid",
+      "sltpmonitorservice_getlivemarketdata",
+      "sltpmonitorservice_ishitrecordedtoday",
+      "sltpmonitorservice_isnepsemarketopen",
+      "sltpmonitorservice_livestockdata",
+      "sltpmonitorservice_parselivetradingtablehtml",
+      "sltpmonitorservice_parsepricenum",
+      "sltpmonitorservice_readlivetradingfromsheet",
+      "sltpmonitorservice_scanportfoliosltp",
+      "sltpmonitorservice_scansltpstocksagainstlive",
+      "sltpmonitorservice_scansummary",
+      "sltpmonitorservice_sltptriggerresult",
+      "sltpmonitorservice_start10minsltpmonitor",
+      "sltpmonitorservice_stop10minsltpmonitor",
+      "sltpmonitorservice_synclivetradingsheet",
+      "sltpmonitorservice_syncyogentosltpstocks",
+      "sltpqueueservice",
+      "sltpqueueservice_escapehtml",
+      "sltpqueueservice_pollsltphitsqueue",
+      "sltpqueueservice_unprocessedhit",
+      "test_nric",
+      "test_nric_inspect"
+    ],
+    "4": [
+      "shareinfoscript_daily_store_potential_outcomes",
+      "shareinfoscript_daily_store_potential_outcomes_1_executive_summary_data_schema",
+      "shareinfoscript_daily_store_potential_outcomes_2_1_trend_moving_averages",
+      "shareinfoscript_daily_store_potential_outcomes_2_2_relative_strength_index_rsi_14_momentum_divergence",
+      "shareinfoscript_daily_store_potential_outcomes_2_3_volatility_band_systems_bollinger_bands",
+      "shareinfoscript_daily_store_potential_outcomes_2_technical_momentum_indicators",
+      "shareinfoscript_daily_store_potential_outcomes_3_1_relative_volume_rvol_volume_surges",
+      "shareinfoscript_daily_store_potential_outcomes_3_2_volume_divergence_distribution_detection",
+      "shareinfoscript_daily_store_potential_outcomes_3_4_macd_moving_average_convergence_divergence",
+      "shareinfoscript_daily_store_potential_outcomes_4_1_automated_candlestick_pattern_detection",
+      "shareinfoscript_daily_store_potential_outcomes_4_2_dynamic_support_resistance_generation",
+      "shareinfoscript_daily_store_potential_outcomes_4_price_action_candlestick_pattern_engine",
+      "shareinfoscript_daily_store_potential_outcomes_4_volume_smart_money_accumulation_analytics",
+      "shareinfoscript_daily_store_potential_outcomes_5_1_average_true_range_atr_14_volatility_stops",
+      "shareinfoscript_daily_store_potential_outcomes_5_2_trailing_stop_loss_engine_chandelier_exit",
+      "shareinfoscript_daily_store_potential_outcomes_5_3_drawdown_value_at_risk_var",
+      "shareinfoscript_daily_store_potential_outcomes_5_dynamic_risk_management_portfolio_protection",
+      "shareinfoscript_daily_store_potential_outcomes_6_sector_rotation_relative_strength_rs_ranking",
+      "shareinfoscript_daily_store_potential_outcomes_7_multi_factor_composite_scoring_engine_0_100",
+      "shareinfoscript_daily_store_potential_outcomes_8_automated_multi_channel_alerting_reporting",
+      "shareinfoscript_daily_store_potential_outcomes_potential_outcomes_capabilities_derived_from_dailyclose_data"
+    ],
+    "5": [
+      "shareinfoscript_sltphit",
+      "shareinfoscript_sltphit_formatpurchasedate",
+      "shareinfoscript_sltphit_generateuniquestockid",
+      "shareinfoscript_sltphit_getexistingsltpstocksmap",
+      "shareinfoscript_sltphit_getexistinguniqueidsinhitssheet",
+      "shareinfoscript_sltphit_getlivetradingdatamap",
+      "shareinfoscript_sltphit_getorcreatesltphitssheet",
+      "shareinfoscript_sltphit_getorcreatesltpstockssheet",
+      "shareinfoscript_sltphit_parsepricenum",
+      "shareinfoscript_sltphit_removealltradingautomationtriggers",
+      "shareinfoscript_sltphit_removetriggerbyfunctionname",
+      "shareinfoscript_sltphit_run10minlivetradingandscan",
+      "shareinfoscript_sltphit_runlivefetchandscansltp",
+      "shareinfoscript_sltphit_scansltpstocksagainstlive",
+      "shareinfoscript_sltphit_scansltpstocksagainstlivemanual",
+      "shareinfoscript_sltphit_scanstocksforsltp",
+      "shareinfoscript_sltphit_setup10minlivescantrigger",
+      "shareinfoscript_sltphit_setupalltradingautomationtriggers",
+      "shareinfoscript_sltphit_setuphourlysltpsynctrigger",
+      "shareinfoscript_sltphit_syncyogentosltpstocks",
+      "shareinfoscript_sltphit_syncyogentosltpstocksmanual"
+    ],
+    "6": [
+      "shareinfoscript_storedailyclose",
+      "shareinfoscript_storedailyclose_buildlivemap",
+      "shareinfoscript_storedailyclose_calcrsi",
+      "shareinfoscript_storedailyclose_cleardailyhistory",
+      "shareinfoscript_storedailyclose_computeandwritersidip",
+      "shareinfoscript_storedailyclose_detectdip",
+      "shareinfoscript_storedailyclose_getallowedsymbols",
+      "shareinfoscript_storedailyclose_getrsidipdata",
+      "shareinfoscript_storedailyclose_ismarketopen",
+      "shareinfoscript_storedailyclose_log",
+      "shareinfoscript_storedailyclose_parseprice",
+      "shareinfoscript_storedailyclose_r1",
+      "shareinfoscript_storedailyclose_readdailyhist",
+      "shareinfoscript_storedailyclose_refreshintradaydip",
+      "shareinfoscript_storedailyclose_removetriggers",
+      "shareinfoscript_storedailyclose_rsilabel",
+      "shareinfoscript_storedailyclose_runall",
+      "shareinfoscript_storedailyclose_runwatchlistscreener",
+      "shareinfoscript_storedailyclose_setuptriggers",
+      "shareinfoscript_storedailyclose_stamp",
+      "shareinfoscript_storedailyclose_storedailyclose"
+    ],
+    "7": [
+      "dotenv",
+      "google_auth_library",
+      "google_spreadsheet",
+      "node_schedule",
+      "p_limit",
+      "package_dependencies",
+      "package_dependencies_dotenv",
+      "package_dependencies_google_auth_library",
+      "package_dependencies_google_spreadsheet",
+      "package_dependencies_node_schedule",
+      "package_dependencies_p_limit",
+      "package_dependencies_playwright_extra",
+      "package_dependencies_puppeteer_extra_plugin_stealth",
+      "package_dependencies_types_node_schedule",
+      "package_dependencies_xlsx",
+      "playwright_extra",
+      "puppeteer_extra_plugin_stealth",
+      "types_node_schedule",
+      "xlsx"
+    ],
+    "8": [
+      "telegram_two_way_control_plan",
+      "telegram_two_way_control_plan_1_overview_objective",
+      "telegram_two_way_control_plan_2_architecture_communication_flow",
+      "telegram_two_way_control_plan_3_command_button_mapping_matrix",
+      "telegram_two_way_control_plan_4_detailed_component_implementation",
+      "telegram_two_way_control_plan_5_security_reliability_safeguards",
+      "telegram_two_way_control_plan_6_step_by_step_implementation_steps",
+      "telegram_two_way_control_plan_component_a_google_apps_script_webhook_shareinfoscript_telegramwebhook_js",
+      "telegram_two_way_control_plan_component_b_web_app_manifest_update_shareinfoscript_appsscript_json",
+      "telegram_two_way_control_plan_component_c_menu_integration_shareinfoscript_menu_js",
+      "telegram_two_way_control_plan_component_d_node_daemon_sync_verification_syncservice_ts",
+      "telegram_two_way_control_plan_implementation_plan_two_way_telegram_control_for_google_sheets_node_daemon",
+      "telegram_two_way_control_plan_step_1_create_shareinfoscript_telegramwebhook_js",
+      "telegram_two_way_control_plan_step_2_update_shareinfoscript_appsscript_json",
+      "telegram_two_way_control_plan_step_3_update_shareinfoscript_menu_js",
+      "telegram_two_way_control_plan_step_4_push_to_google_apps_script_via_clasp",
+      "telegram_two_way_control_plan_step_5_bind_telegram_webhook",
+      "telegram_two_way_control_plan_step_6_end_to_end_verification",
+      "telegram_two_way_control_plan_why_this_hybrid_model"
+    ],
+    "9": [
+      "nepseaccumulation",
+      "nepseaccumulation_analyzesignals",
+      "nepseaccumulation_calcavgvol",
+      "nepseaccumulation_chromium",
+      "nepseaccumulation_config",
+      "nepseaccumulation_exporttoexcel",
+      "nepseaccumulation_extractpricehistory",
+      "nepseaccumulation_fetchfloorsheet",
+      "nepseaccumulation_fetchstockdata",
+      "nepseaccumulation_fs",
+      "nepseaccumulation_institutional_brokers",
+      "nepseaccumulation_safetext",
+      "nepseaccumulation_sleep",
+      "nepseaccumulation_sorttop",
+      "nepseaccumulation_symbols",
+      "nepseaccumulation_xlsx"
+    ],
+    "10": [
+      "readme",
+      "readme_1_configuration",
+      "readme_1_manual_execution_cli",
+      "readme_2_how_to_run",
+      "readme_2_remote_trigger_via_google_sheets",
+      "readme_3_scheduled_daily_run",
+      "readme_3_viewing_results",
+      "readme_52_week_high_low_stock_scraper",
+      "readme_configuration",
+      "readme_explanation_of_json_fields",
+      "readme_how_to_run_the_scheduled_flow",
+      "readme_meroshare_automated_ipo_scheduler",
+      "readme_prerequisites",
+      "readme_security_notes",
+      "readme_stock_status_checker",
+      "readme_supervisor_commands"
+    ],
+    "11": [
+      "ref_es2020",
+      "ref_google_apps_script",
+      "ref_gs",
+      "ref_js",
+      "ref_node_modules",
+      "shareinfoscript_jsconfig",
+      "shareinfoscript_jsconfig_compileroptions",
+      "shareinfoscript_jsconfig_compileroptions_allowjs",
+      "shareinfoscript_jsconfig_compileroptions_checkjs",
+      "shareinfoscript_jsconfig_compileroptions_lib",
+      "shareinfoscript_jsconfig_compileroptions_module",
+      "shareinfoscript_jsconfig_compileroptions_moduleresolution",
+      "shareinfoscript_jsconfig_compileroptions_target",
+      "shareinfoscript_jsconfig_compileroptions_types",
+      "shareinfoscript_jsconfig_exclude",
+      "shareinfoscript_jsconfig_include"
+    ],
+    "12": [
+      "shareinfoscript_livetradingdata",
+      "shareinfoscript_livetradingdata_arraydiff",
+      "shareinfoscript_livetradingdata_canwefetch",
+      "shareinfoscript_livetradingdata_checkpointsfromsheet",
+      "shareinfoscript_livetradingdata_dividewithoutdecimal",
+      "shareinfoscript_livetradingdata_fetchlivetradingdata",
+      "shareinfoscript_livetradingdata_fetchtradingdata",
+      "shareinfoscript_livetradingdata_findmatchingsymbols",
+      "shareinfoscript_livetradingdata_getlistedsymbolspoints",
+      "shareinfoscript_livetradingdata_getthreshold",
+      "shareinfoscript_livetradingdata_getuniquearray",
+      "shareinfoscript_livetradingdata_parselivetradingtable",
+      "shareinfoscript_livetradingdata_writeresultstosheet",
+      "shareinfoscript_livetradingdata_writeresultstosheets"
+    ],
+    "13": [
+      "technical_documentation",
+      "technical_documentation_1_syncservice_ts_the_orchestrator",
+      "technical_documentation_2_googlesheetsservice_ts_the_data_bridge",
+      "technical_documentation_3_checkstatus_ts_the_status_checker",
+      "technical_documentation_4_automate_ts_the_ipo_applicant",
+      "technical_documentation_5_scheduler_ts_the_time_based_trigger",
+      "technical_documentation_6_humanutils_ts_the_stealth_toolkit",
+      "technical_documentation_7_teststealth_ts_the_debugger",
+      "technical_documentation_architecture_overview",
+      "technical_documentation_configuration_env",
+      "technical_documentation_file_function_breakdown",
+      "technical_documentation_google_sheet_structure",
+      "technical_documentation_meroshare_automation_technical_documentation"
+    ],
+    "14": [
+      "shareinfoscript_riskmgmt",
+      "shareinfoscript_riskmgmt_calculatebeta",
+      "shareinfoscript_riskmgmt_calculatereturns",
+      "shareinfoscript_riskmgmt_calculatevar",
+      "shareinfoscript_riskmgmt_checkpricealerts",
+      "shareinfoscript_riskmgmt_covariance",
+      "shareinfoscript_riskmgmt_flattentonumbers",
+      "shareinfoscript_riskmgmt_gethistoricalprices",
+      "shareinfoscript_riskmgmt_mean",
+      "shareinfoscript_riskmgmt_stdev",
+      "shareinfoscript_riskmgmt_variance"
+    ],
+    "15": [
+      "googlesheetsservice_fetchautobuyselldata",
+      "humanutils_launchpersistentcontextwithviewmode",
+      "tmsautomation",
+      "tmsautomation_clearinput",
+      "tmsautomation_delay",
+      "tmsautomation_executesingletrade",
+      "tmsautomation_fetchexistingtrades",
+      "tmsautomation_humanclick",
+      "tmsautomation_humantype",
+      "tmsautomation_runautomation"
+    ],
+    "16": [
+      "shareinfoscript_nepsestatusappsscript",
+      "shareinfoscript_nepsestatusappsscript_fetchnepsemarketstatus",
+      "shareinfoscript_nepsestatusappsscript_getheuristicmarketstatus",
+      "shareinfoscript_nepsestatusappsscript_removenepsetriggers",
+      "shareinfoscript_nepsestatusappsscript_savenepsestatustoreport",
+      "shareinfoscript_nepsestatusappsscript_scrapenepsestatusdaily",
+      "shareinfoscript_nepsestatusappsscript_setupnepse1101trigger",
+      "shareinfoscript_nepsestatusappsscript_setupnepse1605trigger",
+      "shareinfoscript_nepsestatusappsscript_setupnepsealltriggers"
+    ],
+    "17": [
+      "notificationservice",
+      "notificationservice_enqueuenotification",
+      "notificationservice_flushnotificationqueue",
+      "notificationservice_getpendingcount",
+      "notificationservice_queue_dir",
+      "notificationservice_queuedmessage",
+      "notificationservice_senddirecttelegram",
+      "notificationservice_startqueueworker"
+    ],
+    "18": [
+      "shareinfoscript_appsscript",
+      "shareinfoscript_appsscript_dependencies",
+      "shareinfoscript_appsscript_exceptionlogging",
+      "shareinfoscript_appsscript_runtimeversion",
+      "shareinfoscript_appsscript_timezone",
+      "shareinfoscript_appsscript_webapp",
+      "shareinfoscript_appsscript_webapp_access",
+      "shareinfoscript_appsscript_webapp_executeas"
+    ],
+    "19": [
+      "shareinfoscript_nodeappstatusnotifier",
+      "shareinfoscript_nodeappstatusnotifier_checknodeappstatusdaily",
+      "shareinfoscript_nodeappstatusnotifier_escapehtml",
+      "shareinfoscript_nodeappstatusnotifier_getappstatusconfig",
+      "shareinfoscript_nodeappstatusnotifier_removedailystatustrigger",
+      "shareinfoscript_nodeappstatusnotifier_sendtelegrammessage",
+      "shareinfoscript_nodeappstatusnotifier_setappstatusconfig",
+      "shareinfoscript_nodeappstatusnotifier_setupdailystatus1030trigger"
+    ],
+    "20": [
+      "nepsescraper",
+      "nepsescraper_doc",
+      "nepsescraper_formattedkey",
+      "nepsescraper_schedulenepsescraper",
+      "nepsescraper_scrapenepseandsave",
+      "nepsescraper_scrapewithretry",
+      "nepsescraper_serviceaccountauth"
+    ],
+    "21": [
+      "shareinfoscript_code",
+      "shareinfoscript_code_apihit",
+      "shareinfoscript_code_fetchdata",
+      "shareinfoscript_code_getdata",
+      "shareinfoscript_code_gg",
+      "shareinfoscript_code_notifier",
+      "shareinfoscript_code_notifiyshareselldate"
+    ],
+    "22": [
+      "shareinfoscript_nepsechargescalulator",
+      "shareinfoscript_nepsechargescalulator_calculatenepsefees",
+      "shareinfoscript_nepsechargescalulator_calculatetotalcost",
+      "shareinfoscript_nepsechargescalulator_nepse_buy_total",
+      "shareinfoscript_nepsechargescalulator_nepse_net_profit",
+      "shareinfoscript_nepsechargescalulator_nepse_sell_net"
+    ],
+    "23": [
+      "graphify_out_memory_query_20260904_062845_fix_this_error_using_supervisor_for_npm_run_watch",
+      "graphify_out_memory_query_20260904_062845_fix_this_error_using_supervisor_for_npm_run_watch_answer",
+      "graphify_out_memory_query_20260904_062845_fix_this_error_using_supervisor_for_npm_run_watch_outcome",
+      "graphify_out_memory_query_20260904_062845_fix_this_error_using_supervisor_for_npm_run_watch_q_fix_this_error_using_supervisor_for_npm_run_watch_sheets",
+      "graphify_out_memory_query_20260904_062845_fix_this_error_using_supervisor_for_npm_run_watch_source_nodes"
+    ],
+    "24": [
+      "graphify_out_memory_query_20260929_044842_can_we_implement_nepsescraper_ts_code_in_google_sh",
+      "graphify_out_memory_query_20260929_044842_can_we_implement_nepsescraper_ts_code_in_google_sh_answer",
+      "graphify_out_memory_query_20260929_044842_can_we_implement_nepsescraper_ts_code_in_google_sh_outcome",
+      "graphify_out_memory_query_20260929_044842_can_we_implement_nepsescraper_ts_code_in_google_sh_q_can_we_implement_nepsescraper_ts_code_in_google_sheet_script_which_is_located_in_folder_shareinforscript",
+      "graphify_out_memory_query_20260929_044842_can_we_implement_nepsescraper_ts_code_in_google_sh_source_nodes"
+    ],
+    "25": [
+      "graphify_out_memory_query_20260929_045752_implement_this_code_in_google_sheet_script_nepsest",
+      "graphify_out_memory_query_20260929_045752_implement_this_code_in_google_sheet_script_nepsest_answer",
+      "graphify_out_memory_query_20260929_045752_implement_this_code_in_google_sheet_script_nepsest_outcome",
+      "graphify_out_memory_query_20260929_045752_implement_this_code_in_google_sheet_script_nepsest_q_implement_this_code_in_google_sheet_script_nepsestatusappsscript_js_and_triggered_at_11_01_am_every_day_and_update_in_report_b1_sheet",
+      "graphify_out_memory_query_20260929_045752_implement_this_code_in_google_sheet_script_nepsest_source_nodes"
+    ],
+    "26": [
+      "graphify_out_memory_query_20260929_050917_what_about_for_running_in_nepsescraper_ts_at_con",
+      "graphify_out_memory_query_20260929_050917_what_about_for_running_in_nepsescraper_ts_at_con_answer",
+      "graphify_out_memory_query_20260929_050917_what_about_for_running_in_nepsescraper_ts_at_con_outcome",
+      "graphify_out_memory_query_20260929_050917_what_about_for_running_in_nepsescraper_ts_at_con_q_what_about_for_running_in_nepsescraper_ts_at_const_scheduleruleafternoon_0_05_16_in_google_sheet_script",
+      "graphify_out_memory_query_20260929_050917_what_about_for_running_in_nepsescraper_ts_at_con_source_nodes"
+    ],
+    "27": [
+      "graphify_out_memory_query_20261001_044325_what_can_we_get_usefull_data_from_technical_data_a",
+      "graphify_out_memory_query_20261001_044325_what_can_we_get_usefull_data_from_technical_data_a_answer",
+      "graphify_out_memory_query_20261001_044325_what_can_we_get_usefull_data_from_technical_data_a_outcome",
+      "graphify_out_memory_query_20261001_044325_what_can_we_get_usefull_data_from_technical_data_a_q_what_can_we_get_usefull_data_from_technical_data_and_52highlow_stored_in_google_sheet",
+      "graphify_out_memory_query_20261001_044325_what_can_we_get_usefull_data_from_technical_data_a_source_nodes"
+    ],
+    "28": [
+      "graphify_out_memory_query_20261002_034123_i_have_one_way_notification_telegram_integration",
+      "graphify_out_memory_query_20261002_034123_i_have_one_way_notification_telegram_integration_answer",
+      "graphify_out_memory_query_20261002_034123_i_have_one_way_notification_telegram_integration_outcome",
+      "graphify_out_memory_query_20261002_034123_i_have_one_way_notification_telegram_integration_q_i_have_one_way_notification_telegram_integration_now_i_need_two_way_communication_where_google_sheet_command_controls_also_hit_from_telegram_msg_make_a_plan_for_that_implementation",
+      "graphify_out_memory_query_20261002_034123_i_have_one_way_notification_telegram_integration_source_nodes"
+    ],
+    "29": [
+      "graphify_out_memory_query_20261002_041027_read_telegram_two_way_control_plan_md_and_implemen",
+      "graphify_out_memory_query_20261002_041027_read_telegram_two_way_control_plan_md_and_implemen_answer",
+      "graphify_out_memory_query_20261002_041027_read_telegram_two_way_control_plan_md_and_implemen_outcome",
+      "graphify_out_memory_query_20261002_041027_read_telegram_two_way_control_plan_md_and_implemen_q_read_telegram_two_way_control_plan_md_and_implement_phase_1",
+      "graphify_out_memory_query_20261002_041027_read_telegram_two_way_control_plan_md_and_implemen_source_nodes"
+    ],
+    "30": [
+      "graphify_out_memory_query_20261002_041538_how_to_run_or_test_the_two_way_communication_imple",
+      "graphify_out_memory_query_20261002_041538_how_to_run_or_test_the_two_way_communication_imple_answer",
+      "graphify_out_memory_query_20261002_041538_how_to_run_or_test_the_two_way_communication_imple_outcome",
+      "graphify_out_memory_query_20261002_041538_how_to_run_or_test_the_two_way_communication_imple_q_how_to_run_or_test_the_two_way_communication_implemetation",
+      "graphify_out_memory_query_20261002_041538_how_to_run_or_test_the_two_way_communication_imple_source_nodes"
+    ],
+    "31": [
+      "shareinfoscript_buypoint",
+      "shareinfoscript_buypoint_analyzebuytpsl",
+      "shareinfoscript_buypoint_average",
+      "shareinfoscript_buypoint_stdev"
+    ],
+    "32": [
+      "shareinfoscript_signla",
+      "shareinfoscript_signla_createsignalsheet",
+      "shareinfoscript_signla_createsignalsheet_fundamentalscore",
+      "shareinfoscript_signla_runsignalengine"
+    ],
+    "33": [
+      "shareinfoscript_supportbounce_vol_rsi",
+      "shareinfoscript_supportbounce_vol_rsi_average",
+      "shareinfoscript_supportbounce_vol_rsi_calculatersi",
+      "shareinfoscript_supportbounce_vol_rsi_swingbuytoday"
+    ],
+    "34": [
+      "shareinfoscript_swingtradingstrategy",
+      "shareinfoscript_swingtradingstrategy_calculateindicators",
+      "shareinfoscript_swingtradingstrategy_generatesignals",
+      "shareinfoscript_swingtradingstrategy_showdebuglog"
+    ],
+    "35": [
+      "supervisor",
+      "supervisor_handleshutdown",
+      "supervisor_script_cwd",
+      "supervisor_startprocess"
+    ],
+    "36": [
+      "autonomousparser",
+      "autonomousparser_delay",
+      "autonomousparser_run"
+    ],
+    "37": [
+      "shareinfoscript_apiaccessforai",
+      "shareinfoscript_apiaccessforai_apiaccessdoget",
+      "shareinfoscript_apiaccessforai_apiaccessdopost"
+    ],
+    "38": [
+      "shareinfoscript_fetchhistoryprice",
+      "shareinfoscript_fetchhistoryprice_fetchstockhistory",
+      "shareinfoscript_fetchhistoryprice_fetchstockhistory_formatdate"
+    ],
+    "39": [
+      "shareinfoscript_goldprice",
+      "shareinfoscript_goldprice_getgoldrates",
+      "shareinfoscript_goldprice_getsilverrate"
+    ],
+    "40": [
+      "shareinfoscript_newstrategy",
+      "shareinfoscript_newstrategy_calculateindicators",
+      "shareinfoscript_newstrategy_generatesignalsnew"
+    ],
+    "41": [
+      "shareinfoscript_readhtml",
+      "shareinfoscript_readhtml_readfundament",
+      "shareinfoscript_readhtml_readlistsecurities"
+    ],
+    "42": [
+      "shareinfoscript_testapi",
+      "shareinfoscript_testapi_testapidoget",
+      "shareinfoscript_testapi_testapidopost"
+    ],
+    "43": [
+      "naasalogin",
+      "naasalogin_runnaasalogin"
+    ],
+    "44": [
+      "saveauthsession",
+      "saveauthsession_run"
+    ],
+    "45": [
+      "shareinfoscript_dividentscraper",
+      "shareinfoscript_dividentscraper_importnabildividends"
+    ],
+    "46": [
+      "shareinfoscript_evaluatebuysignals",
+      "shareinfoscript_evaluatebuysignals_evaluatebuysignals"
+    ],
+    "47": [
+      "shareinfoscript_internationalmarketgoldsilverprice",
+      "shareinfoscript_internationalmarketgoldsilverprice_get_gold_price"
+    ],
+    "48": [
+      "shareinfoscript_intrinsicclaude",
+      "shareinfoscript_intrinsicclaude_createhydropowervaluationtool"
+    ],
+    "49": [
+      "shareinfoscript_intrinsicvalue",
+      "shareinfoscript_intrinsicvalue_calculateintrinsicvalue"
+    ],
+    "50": [
+      "shareinfoscript_menu",
+      "shareinfoscript_menu_onopen"
+    ],
+    "51": [
+      "shareinfoscript_perplexityconsumeapi",
+      "shareinfoscript_perplexityconsumeapi_handleperplexitynewspost"
+    ],
+    "52": [
+      "shareinfoscript_supnregislowhigh",
+      "shareinfoscript_supnregislowhigh_findsymbolsnearpoints"
+    ],
+    "53": [
+      "teststealth",
+      "teststealth_teststealth"
+    ],
+    "54": [
+      "playwright_config"
+    ],
+    "55": [
+      "tests_example_spec"
+    ],
+    "56": [
+      "tests_login_spec"
+    ],
+    "57": [
+      "work"
+    ]
+  },
+  "cohesion": {
+    "0": 0.12698412698412698,
+    "1": 0.05263157894736842,
+    "2": 0.05714285714285714,
+    "3": 0.15669515669515668,
+    "4": 0.09523809523809523,
+    "5": 0.2,
+    "6": 0.2,
+    "7": 0.10526315789473684,
+    "8": 0.10526315789473684,
+    "9": 0.15833333333333333,
+    "10": 0.125,
+    "11": 0.125,
+    "12": 0.2967032967032967,
+    "13": 0.15384615384615385,
+    "14": 0.36363636363636365,
+    "15": 0.5111111111111111,
+    "16": 0.3611111111111111,
+    "17": 0.39285714285714285,
+    "18": 0.25,
+    "19": 0.39285714285714285,
+    "20": 0.38095238095238093,
+    "21": 0.2857142857142857,
+    "22": 0.7333333333333333,
+    "23": 0.4,
+    "24": 0.4,
+    "25": 0.4,
+    "26": 0.4,
+    "27": 0.4,
+    "28": 0.4,
+    "29": 0.4,
+    "30": 0.4,
+    "31": 1.0,
+    "32": 0.6666666666666666,
+    "33": 0.8333333333333334,
+    "34": 0.6666666666666666,
+    "35": 0.5,
+    "36": 1.0,
+    "37": 0.6666666666666666,
+    "38": 0.6666666666666666,
+    "39": 0.6666666666666666,
+    "40": 1.0,
+    "41": 0.6666666666666666,
+    "42": 0.6666666666666666,
+    "43": 1.0,
+    "44": 1.0,
+    "45": 1.0,
+    "46": 1.0,
+    "47": 1.0,
+    "48": 1.0,
+    "49": 1.0,
+    "50": 1.0,
+    "51": 1.0,
+    "52": 1.0,
+    "53": 1.0,
+    "54": 1.0,
+    "55": 1.0,
+    "56": 1.0,
+    "57": 1.0
+  },
+  "gods": [
+    {
+      "id": "syncservice_main",
+      "label": "main()",
+      "degree": 30
+    },
+    {
+      "id": "googlesheetsservice_initsheets",
+      "label": "initSheets()",
+      "degree": 27
+    },
+    {
+      "id": "telegrambotservice_handletelegramcommand",
+      "label": "handleTelegramCommand()",
+      "degree": 26
+    },
+    {
+      "id": "googlesheetsservice_callwithretry",
+      "label": "callWithRetry()",
+      "degree": 19
+    },
+    {
+      "id": "humanutils_jittersleep",
+      "label": "jitterSleep()",
+      "degree": 18
+    },
+    {
+      "id": "package_scripts",
+      "label": "scripts",
+      "degree": 18
+    },
+    {
+      "id": "humanutils_getrandomuseragent",
+      "label": "getRandomUserAgent()",
+      "degree": 17
+    },
+    {
+      "id": "humanutils_launchbrowserwithviewmode",
+      "label": "launchBrowserWithViewMode()",
+      "degree": 16
+    },
+    {
+      "id": "notificationservice_sendtelegramnotification",
+      "label": "sendTelegramNotification()",
+      "degree": 14
+    },
+    {
+      "id": "humanutils_humanclick",
+      "label": "humanClick()",
+      "degree": 13
+    }
+  ],
+  "surprises": [
+    {
+      "source": "fetchFundamentalData()",
+      "target": "initSheets()",
+      "source_files": [
+        "fundaScraper.ts",
+        "googleSheetsService.ts"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "connects across different repos/directories; bridges separate communities"
+    },
+    {
+      "source": "syncLiveTradingSheet()",
+      "target": "callWithRetry()",
+      "source_files": [
+        "sltpMonitorService.ts",
+        "googleSheetsService.ts"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "connects across different repos/directories; bridges separate communities"
+    },
+    {
+      "source": "pollSLTPHitsQueue()",
+      "target": "callWithRetry()",
+      "source_files": [
+        "sltpQueueService.ts",
+        "googleSheetsService.ts"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "connects across different repos/directories; bridges separate communities"
+    },
+    {
+      "source": "scrapePortfolio()",
+      "target": "initSheets()",
+      "source_files": [
+        "portfolioScraper.ts",
+        "googleSheetsService.ts"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "connects across different repos/directories; bridges separate communities"
+    },
+    {
+      "source": "main()",
+      "target": "initSheets()",
+      "source_files": [
+        "syncService.ts",
+        "googleSheetsService.ts"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "connects across different repos/directories; bridges separate communities"
+    }
+  ],
+  "questions": [
+    {
+      "type": "bridge_node",
+      "question": "Why does `initSheets()` connect `Community 3` to `Community 0`, `Community 15`?",
+      "why": "High betweenness centrality (0.007) - this node is a cross-community bridge."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `dependencies` connect `Community 7` to `Community 2`?",
+      "why": "High betweenness centrality (0.006) - this node is a cross-community bridge."
+    },
+    {
+      "type": "isolated_nodes",
+      "question": "What connects `1. Authentication & Security`, `1. Layered Architecture Pattern`, `2. Human Behavior Simulation Pattern (`humanUtils.ts`)` to the rest of the system?",
+      "why": "178 weakly-connected nodes found - possible documentation gaps or missing edges."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `Community 0` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.12698412698412698 - nodes in this community are weakly interconnected."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `Community 1` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.05263157894736842 - nodes in this community are weakly interconnected."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `Community 2` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.05714285714285714 - nodes in this community are weakly interconnected."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `Community 4` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.09523809523809523 - nodes in this community are weakly interconnected."
+    }
+  ]
+}

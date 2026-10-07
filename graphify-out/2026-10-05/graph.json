@@ -4,52 +4,13 @@
   "graph": {},
   "nodes": [
     {
-      "id": "sltpmonitorservice_livestockdata",
-      "label": "LiveStockData",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "sltpMonitorService.ts",
-      "file_type": "code",
-      "norm_label": "livestockdata",
-      "source_file": "sltpMonitorService.ts",
-      "source_location": "L5"
-    },
-    {
-      "id": "sltpmonitorservice_scansummary",
-      "label": "ScanSummary",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "sltpMonitorService.ts",
-      "file_type": "code",
-      "norm_label": "scansummary",
-      "source_file": "sltpMonitorService.ts",
-      "source_location": "L31"
-    },
-    {
-      "id": "sltpmonitorservice_sltptriggerresult",
-      "label": "SLTPTriggerResult",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "sltpMonitorService.ts",
-      "file_type": "code",
-      "norm_label": "sltptriggerresult",
-      "source_file": "sltpMonitorService.ts",
-      "source_location": "L17"
-    },
-    {
       "id": "checkstatus_statusentry",
       "label": "StatusEntry",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 3,
-      "community_name": "googleSheetsService.ts",
+      "community": 0,
+      "community_name": "handleTelegramCommand",
       "file_type": "code",
       "norm_label": "statusentry",
       "source_file": "checkStatus.ts",
@@ -61,8 +22,8 @@
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 3,
-      "community_name": "googleSheetsService.ts",
+      "community": 0,
+      "community_name": "handleTelegramCommand",
       "file_type": "code",
       "norm_label": "stockreport",
       "source_file": "checkStatus.ts",
@@ -74,8 +35,8 @@
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 3,
-      "community_name": "googleSheetsService.ts",
+      "community": 0,
+      "community_name": "handleTelegramCommand",
       "file_type": "code",
       "norm_label": "user",
       "source_file": "checkStatus.ts",
@@ -87,12 +48,64 @@
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 3,
-      "community_name": "googleSheetsService.ts",
+      "community": 0,
+      "community_name": "handleTelegramCommand",
       "file_type": "code",
       "norm_label": "week52record",
       "source_file": "googleSheetsService.ts",
-      "source_location": "L426"
+      "source_location": "L423"
+    },
+    {
+      "id": "notificationservice_queuedmessage",
+      "label": "QueuedMessage",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 15,
+      "community_name": "sendTelegramNotification",
+      "file_type": "code",
+      "norm_label": "queuedmessage",
+      "source_file": "notificationService.ts",
+      "source_location": "L15"
+    },
+    {
+      "id": "sltpmonitorservice_livestockdata",
+      "label": "LiveStockData",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "googleSheetsService.ts",
+      "file_type": "code",
+      "norm_label": "livestockdata",
+      "source_file": "sltpMonitorService.ts",
+      "source_location": "L5"
+    },
+    {
+      "id": "sltpmonitorservice_scansummary",
+      "label": "ScanSummary",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "googleSheetsService.ts",
+      "file_type": "code",
+      "norm_label": "scansummary",
+      "source_file": "sltpMonitorService.ts",
+      "source_location": "L31"
+    },
+    {
+      "id": "sltpmonitorservice_sltptriggerresult",
+      "label": "SLTPTriggerResult",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "googleSheetsService.ts",
+      "file_type": "code",
+      "norm_label": "sltptriggerresult",
+      "source_file": "sltpMonitorService.ts",
+      "source_location": "L17"
     },
     {
       "id": "sltpqueueservice_unprocessedhit",
@@ -121,197 +134,244 @@
       "source_location": "L19"
     },
     {
-      "id": "notificationservice_queuedmessage",
-      "label": "QueuedMessage",
+      "id": "automate_runautomation",
+      "label": "runAutomation()",
       "_callable": true,
-      "_callable_class": true,
       "_origin": "ast",
-      "community": 59,
-      "community_name": "notificationService.ts",
+      "community": 0,
+      "community_name": "handleTelegramCommand",
       "file_type": "code",
-      "norm_label": "queuedmessage",
-      "source_file": "notificationService.ts",
+      "norm_label": "runautomation()",
+      "source_file": "automate.ts",
       "source_location": "L15"
     },
     {
-      "id": "sltpmonitorservice_fetchsharesansarlivehtml",
-      "label": "fetchShareSansarLiveHtml()",
+      "id": "checkstatus_formatshorterror",
+      "label": "formatShortError()",
       "_callable": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "sltpMonitorService.ts",
+      "community_name": "handleTelegramCommand",
       "file_type": "code",
-      "norm_label": "fetchsharesansarlivehtml()",
-      "source_file": "sltpMonitorService.ts",
+      "norm_label": "formatshorterror()",
+      "source_file": "checkStatus.ts",
+      "source_location": "L45"
+    },
+    {
+      "id": "checkstatus_login",
+      "label": "login()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "handleTelegramCommand",
+      "file_type": "code",
+      "norm_label": "login()",
+      "source_file": "checkStatus.ts",
       "source_location": "L80"
     },
     {
-      "id": "sltpmonitorservice_formatpurchasedate",
-      "label": "formatPurchaseDate()",
+      "id": "checkstatus_runcheckstatus",
+      "label": "runCheckStatus()",
       "_callable": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "sltpMonitorService.ts",
+      "community_name": "handleTelegramCommand",
       "file_type": "code",
-      "norm_label": "formatpurchasedate()",
-      "source_file": "sltpMonitorService.ts",
-      "source_location": "L195"
+      "norm_label": "runcheckstatus()",
+      "source_file": "checkStatus.ts",
+      "source_location": "L139"
     },
     {
-      "id": "sltpmonitorservice_generateuniquestockid",
-      "label": "generateUniqueStockId()",
+      "id": "fundascraper_fetchfundamentaldata",
+      "label": "fetchFundamentalData()",
       "_callable": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "sltpMonitorService.ts",
+      "community_name": "handleTelegramCommand",
       "file_type": "code",
-      "norm_label": "generateuniquestockid()",
-      "source_file": "sltpMonitorService.ts",
-      "source_location": "L214"
+      "norm_label": "fetchfundamentaldata()",
+      "source_file": "fundaScraper.ts",
+      "source_location": "L9"
     },
     {
-      "id": "sltpmonitorservice_getlivemarketdata",
-      "label": "getLiveMarketData()",
+      "id": "googlesheetsservice_override52weekdata",
+      "label": "override52WeekData()",
       "_callable": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "sltpMonitorService.ts",
+      "community_name": "handleTelegramCommand",
       "file_type": "code",
-      "norm_label": "getlivemarketdata()",
-      "source_file": "sltpMonitorService.ts",
-      "source_location": "L225"
+      "norm_label": "override52weekdata()",
+      "source_file": "googleSheetsService.ts",
+      "source_location": "L435"
     },
     {
-      "id": "sltpmonitorservice_ishitrecordedtoday",
-      "label": "isHitRecordedToday()",
+      "id": "humanutils_ensuredesktopdisplay",
+      "label": "ensureDesktopDisplay()",
       "_callable": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "sltpMonitorService.ts",
+      "community_name": "handleTelegramCommand",
       "file_type": "code",
-      "norm_label": "ishitrecordedtoday()",
-      "source_file": "sltpMonitorService.ts",
-      "source_location": "L729"
+      "norm_label": "ensuredesktopdisplay()",
+      "source_file": "humanUtils.ts",
+      "source_location": "L47"
     },
     {
-      "id": "sltpmonitorservice_isnepsemarketopen",
-      "label": "isNepseMarketOpen()",
+      "id": "humanutils_getrandomuseragent",
+      "label": "getRandomUserAgent()",
       "_callable": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "sltpMonitorService.ts",
+      "community_name": "handleTelegramCommand",
       "file_type": "code",
-      "norm_label": "isnepsemarketopen()",
-      "source_file": "sltpMonitorService.ts",
-      "source_location": "L52"
+      "norm_label": "getrandomuseragent()",
+      "source_file": "humanUtils.ts",
+      "source_location": "L35"
     },
     {
-      "id": "sltpmonitorservice_parselivetradingtablehtml",
-      "label": "parseLiveTradingTableHtml()",
+      "id": "humanutils_humanclick",
+      "label": "humanClick()",
       "_callable": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "sltpMonitorService.ts",
+      "community_name": "handleTelegramCommand",
       "file_type": "code",
-      "norm_label": "parselivetradingtablehtml()",
-      "source_file": "sltpMonitorService.ts",
-      "source_location": "L109"
+      "norm_label": "humanclick()",
+      "source_file": "humanUtils.ts",
+      "source_location": "L24"
     },
     {
-      "id": "sltpmonitorservice_parsepricenum",
-      "label": "parsePriceNum()",
+      "id": "humanutils_humantype",
+      "label": "humanType()",
       "_callable": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "sltpMonitorService.ts",
+      "community_name": "handleTelegramCommand",
       "file_type": "code",
-      "norm_label": "parsepricenum()",
-      "source_file": "sltpMonitorService.ts",
-      "source_location": "L184"
+      "norm_label": "humantype()",
+      "source_file": "humanUtils.ts",
+      "source_location": "L14"
     },
     {
-      "id": "sltpmonitorservice_readlivetradingfromsheet",
-      "label": "readLiveTradingFromSheet()",
+      "id": "humanutils_jittersleep",
+      "label": "jitterSleep()",
       "_callable": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "sltpMonitorService.ts",
+      "community_name": "handleTelegramCommand",
       "file_type": "code",
-      "norm_label": "readlivetradingfromsheet()",
-      "source_file": "sltpMonitorService.ts",
-      "source_location": "L252"
+      "norm_label": "jittersleep()",
+      "source_file": "humanUtils.ts",
+      "source_location": "L6"
     },
     {
-      "id": "sltpmonitorservice_scanportfoliosltp",
-      "label": "scanPortfolioSLTP()",
+      "id": "humanutils_launchbrowserwithviewmode",
+      "label": "launchBrowserWithViewMode()",
       "_callable": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "sltpMonitorService.ts",
+      "community_name": "handleTelegramCommand",
       "file_type": "code",
-      "norm_label": "scanportfoliosltp()",
-      "source_file": "sltpMonitorService.ts",
-      "source_location": "L693"
+      "norm_label": "launchbrowserwithviewmode()",
+      "source_file": "humanUtils.ts",
+      "source_location": "L76"
     },
     {
-      "id": "sltpmonitorservice_scansltpstocksagainstlive",
-      "label": "scanSLTPStocksAgainstLive()",
+      "id": "portfolioscraper_scrapeportfolio",
+      "label": "scrapePortfolio()",
       "_callable": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "sltpMonitorService.ts",
+      "community_name": "handleTelegramCommand",
       "file_type": "code",
-      "norm_label": "scansltpstocksagainstlive()",
-      "source_file": "sltpMonitorService.ts",
-      "source_location": "L468"
+      "norm_label": "scrapeportfolio()",
+      "source_file": "portfolioScraper.ts",
+      "source_location": "L13"
     },
     {
-      "id": "sltpmonitorservice_start10minsltpmonitor",
-      "label": "start10MinSLTPMonitor()",
+      "id": "promoterunlock_fetchpromoterunlockdata",
+      "label": "fetchPromoterUnlockData()",
       "_callable": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "sltpMonitorService.ts",
+      "community_name": "handleTelegramCommand",
       "file_type": "code",
-      "norm_label": "start10minsltpmonitor()",
-      "source_file": "sltpMonitorService.ts",
-      "source_location": "L703"
+      "norm_label": "fetchpromoterunlockdata()",
+      "source_file": "promoterUnlock.ts",
+      "source_location": "L8"
     },
     {
-      "id": "sltpmonitorservice_stop10minsltpmonitor",
-      "label": "stop10MinSLTPMonitor()",
+      "id": "techscraper_scrapetechnicalsignals",
+      "label": "scrapeTechnicalSignals()",
       "_callable": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "sltpMonitorService.ts",
+      "community_name": "handleTelegramCommand",
       "file_type": "code",
-      "norm_label": "stop10minsltpmonitor()",
-      "source_file": "sltpMonitorService.ts",
-      "source_location": "L718"
+      "norm_label": "scrapetechnicalsignals()",
+      "source_file": "techScraper.ts",
+      "source_location": "L13"
     },
     {
-      "id": "sltpmonitorservice_synclivetradingsheet",
-      "label": "syncLiveTradingSheet()",
+      "id": "telegrambotservice_handletelegramcommand",
+      "label": "handleTelegramCommand()",
       "_callable": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "sltpMonitorService.ts",
+      "community_name": "handleTelegramCommand",
       "file_type": "code",
-      "norm_label": "synclivetradingsheet()",
-      "source_file": "sltpMonitorService.ts",
-      "source_location": "L297"
+      "norm_label": "handletelegramcommand()",
+      "source_file": "telegramBotService.ts",
+      "source_location": "L153"
     },
     {
-      "id": "sltpmonitorservice_syncyogentosltpstocks",
-      "label": "syncYogenToSLTPStocks()",
+      "id": "testbody_run",
+      "label": "run()",
       "_callable": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "sltpMonitorService.ts",
+      "community_name": "handleTelegramCommand",
       "file_type": "code",
-      "norm_label": "syncyogentosltpstocks()",
-      "source_file": "sltpMonitorService.ts",
-      "source_location": "L338"
+      "norm_label": "run()",
+      "source_file": "testBody.ts",
+      "source_location": "L7"
+    },
+    {
+      "id": "week52scraper_extracttabstocks",
+      "label": "extractTabStocks()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "handleTelegramCommand",
+      "file_type": "code",
+      "norm_label": "extracttabstocks()",
+      "source_file": "week52Scraper.ts",
+      "source_location": "L34"
+    },
+    {
+      "id": "week52scraper_parsepriceanddate",
+      "label": "parsePriceAndDate()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "handleTelegramCommand",
+      "file_type": "code",
+      "norm_label": "parsepriceanddate()",
+      "source_file": "week52Scraper.ts",
+      "source_location": "L19"
+    },
+    {
+      "id": "week52scraper_scrape52weekhighlow",
+      "label": "scrape52WeekHighLow()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "handleTelegramCommand",
+      "file_type": "code",
+      "norm_label": "scrape52weekhighlow()",
+      "source_file": "week52Scraper.ts",
+      "source_location": "L115"
     },
     {
       "id": "shareinfoscript_livetradingdata_arraydiff",
@@ -595,7 +655,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 15,
-      "community_name": "tmsAutomation.ts",
+      "community_name": "sendTelegramNotification",
       "file_type": "code",
       "norm_label": "fetchautobuyselldata()",
       "source_file": "googleSheetsService.ts",
@@ -607,11 +667,83 @@
       "_callable": true,
       "_origin": "ast",
       "community": 15,
-      "community_name": "tmsAutomation.ts",
+      "community_name": "sendTelegramNotification",
       "file_type": "code",
       "norm_label": "launchpersistentcontextwithviewmode()",
       "source_file": "humanUtils.ts",
       "source_location": "L117"
+    },
+    {
+      "id": "notificationservice_enqueuenotification",
+      "label": "enqueueNotification()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 15,
+      "community_name": "sendTelegramNotification",
+      "file_type": "code",
+      "norm_label": "enqueuenotification()",
+      "source_file": "notificationService.ts",
+      "source_location": "L31"
+    },
+    {
+      "id": "notificationservice_flushnotificationqueue",
+      "label": "flushNotificationQueue()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 15,
+      "community_name": "sendTelegramNotification",
+      "file_type": "code",
+      "norm_label": "flushnotificationqueue()",
+      "source_file": "notificationService.ts",
+      "source_location": "L124"
+    },
+    {
+      "id": "notificationservice_getpendingcount",
+      "label": "getPendingCount()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 15,
+      "community_name": "sendTelegramNotification",
+      "file_type": "code",
+      "norm_label": "getpendingcount()",
+      "source_file": "notificationService.ts",
+      "source_location": "L53"
+    },
+    {
+      "id": "notificationservice_senddirecttelegram",
+      "label": "sendDirectTelegram()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 15,
+      "community_name": "sendTelegramNotification",
+      "file_type": "code",
+      "norm_label": "senddirecttelegram()",
+      "source_file": "notificationService.ts",
+      "source_location": "L64"
+    },
+    {
+      "id": "notificationservice_sendtelegramnotification",
+      "label": "sendTelegramNotification()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 15,
+      "community_name": "sendTelegramNotification",
+      "file_type": "code",
+      "norm_label": "sendtelegramnotification()",
+      "source_file": "notificationService.ts",
+      "source_location": "L229"
+    },
+    {
+      "id": "notificationservice_startqueueworker",
+      "label": "startQueueWorker()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 15,
+      "community_name": "sendTelegramNotification",
+      "file_type": "code",
+      "norm_label": "startqueueworker()",
+      "source_file": "notificationService.ts",
+      "source_location": "L213"
     },
     {
       "id": "tmsautomation_clearinput",
@@ -619,7 +751,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 15,
-      "community_name": "tmsAutomation.ts",
+      "community_name": "sendTelegramNotification",
       "file_type": "code",
       "norm_label": "clearinput()",
       "source_file": "tmsAutomation.ts",
@@ -631,23 +763,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 15,
-      "community_name": "tmsAutomation.ts",
+      "community_name": "sendTelegramNotification",
       "file_type": "code",
       "norm_label": "delay()",
       "source_file": "tmsAutomation.ts",
       "source_location": "L12"
-    },
-    {
-      "id": "tmsautomation_dismisstmspopups",
-      "label": "dismissTmsPopups()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 15,
-      "community_name": "tmsAutomation.ts",
-      "file_type": "code",
-      "norm_label": "dismisstmspopups()",
-      "source_file": "tmsAutomation.ts",
-      "source_location": "L39"
     },
     {
       "id": "tmsautomation_executesingletrade",
@@ -655,11 +775,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 15,
-      "community_name": "tmsAutomation.ts",
+      "community_name": "sendTelegramNotification",
       "file_type": "code",
       "norm_label": "executesingletrade()",
       "source_file": "tmsAutomation.ts",
-      "source_location": "L126"
+      "source_location": "L70"
     },
     {
       "id": "tmsautomation_fetchexistingtrades",
@@ -667,11 +787,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 15,
-      "community_name": "tmsAutomation.ts",
+      "community_name": "sendTelegramNotification",
       "file_type": "code",
       "norm_label": "fetchexistingtrades()",
       "source_file": "tmsAutomation.ts",
-      "source_location": "L99"
+      "source_location": "L43"
     },
     {
       "id": "tmsautomation_humanclick",
@@ -679,11 +799,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 15,
-      "community_name": "tmsAutomation.ts",
+      "community_name": "sendTelegramNotification",
       "file_type": "code",
       "norm_label": "humanclick()",
       "source_file": "tmsAutomation.ts",
-      "source_location": "L90"
+      "source_location": "L35"
     },
     {
       "id": "tmsautomation_humantype",
@@ -691,7 +811,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 15,
-      "community_name": "tmsAutomation.ts",
+      "community_name": "sendTelegramNotification",
       "file_type": "code",
       "norm_label": "humantype()",
       "source_file": "tmsAutomation.ts",
@@ -703,11 +823,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 15,
-      "community_name": "tmsAutomation.ts",
+      "community_name": "sendTelegramNotification",
       "file_type": "code",
       "norm_label": "runautomation()",
       "source_file": "tmsAutomation.ts",
-      "source_location": "L236"
+      "source_location": "L180"
     },
     {
       "id": "shareinfoscript_nepsestatusappsscript_fetchnepsemarketstatus",
@@ -1046,66 +1166,6 @@
       "source_location": "L34"
     },
     {
-      "id": "automate_runautomation",
-      "label": "runAutomation()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "googleSheetsService.ts",
-      "file_type": "code",
-      "norm_label": "runautomation()",
-      "source_file": "automate.ts",
-      "source_location": "L15"
-    },
-    {
-      "id": "checkstatus_formatshorterror",
-      "label": "formatShortError()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "googleSheetsService.ts",
-      "file_type": "code",
-      "norm_label": "formatshorterror()",
-      "source_file": "checkStatus.ts",
-      "source_location": "L45"
-    },
-    {
-      "id": "checkstatus_login",
-      "label": "login()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "googleSheetsService.ts",
-      "file_type": "code",
-      "norm_label": "login()",
-      "source_file": "checkStatus.ts",
-      "source_location": "L80"
-    },
-    {
-      "id": "checkstatus_runcheckstatus",
-      "label": "runCheckStatus()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "googleSheetsService.ts",
-      "file_type": "code",
-      "norm_label": "runcheckstatus()",
-      "source_file": "checkStatus.ts",
-      "source_location": "L139"
-    },
-    {
-      "id": "fundascraper_fetchfundamentaldata",
-      "label": "fetchFundamentalData()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "googleSheetsService.ts",
-      "file_type": "code",
-      "norm_label": "fetchfundamentaldata()",
-      "source_file": "fundaScraper.ts",
-      "source_location": "L9"
-    },
-    {
       "id": "googlesheetsservice_addresulttosheet",
       "label": "addResultToSheet()",
       "_callable": true,
@@ -1214,18 +1274,6 @@
       "source_location": "L209"
     },
     {
-      "id": "googlesheetsservice_override52weekdata",
-      "label": "override52WeekData()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "googleSheetsService.ts",
-      "file_type": "code",
-      "norm_label": "override52weekdata()",
-      "source_file": "googleSheetsService.ts",
-      "source_location": "L438"
-    },
-    {
       "id": "googlesheetsservice_overrideportfoliodata",
       "label": "overridePortfolioData()",
       "_callable": true,
@@ -1235,7 +1283,7 @@
       "file_type": "code",
       "norm_label": "overrideportfoliodata()",
       "source_file": "googleSheetsService.ts",
-      "source_location": "L373"
+      "source_location": "L370"
     },
     {
       "id": "googlesheetsservice_overridesheetdata",
@@ -1259,7 +1307,7 @@
       "file_type": "code",
       "norm_label": "overridetechnicalsignalsdata()",
       "source_file": "googleSheetsService.ts",
-      "source_location": "L399"
+      "source_location": "L396"
     },
     {
       "id": "googlesheetsservice_wait",
@@ -1272,114 +1320,6 @@
       "norm_label": "wait()",
       "source_file": "googleSheetsService.ts",
       "source_location": "L31"
-    },
-    {
-      "id": "humanutils_ensuredesktopdisplay",
-      "label": "ensureDesktopDisplay()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "googleSheetsService.ts",
-      "file_type": "code",
-      "norm_label": "ensuredesktopdisplay()",
-      "source_file": "humanUtils.ts",
-      "source_location": "L47"
-    },
-    {
-      "id": "humanutils_getrandomuseragent",
-      "label": "getRandomUserAgent()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "googleSheetsService.ts",
-      "file_type": "code",
-      "norm_label": "getrandomuseragent()",
-      "source_file": "humanUtils.ts",
-      "source_location": "L35"
-    },
-    {
-      "id": "humanutils_humanclick",
-      "label": "humanClick()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "googleSheetsService.ts",
-      "file_type": "code",
-      "norm_label": "humanclick()",
-      "source_file": "humanUtils.ts",
-      "source_location": "L24"
-    },
-    {
-      "id": "humanutils_humantype",
-      "label": "humanType()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "googleSheetsService.ts",
-      "file_type": "code",
-      "norm_label": "humantype()",
-      "source_file": "humanUtils.ts",
-      "source_location": "L14"
-    },
-    {
-      "id": "humanutils_jittersleep",
-      "label": "jitterSleep()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "googleSheetsService.ts",
-      "file_type": "code",
-      "norm_label": "jittersleep()",
-      "source_file": "humanUtils.ts",
-      "source_location": "L6"
-    },
-    {
-      "id": "humanutils_launchbrowserwithviewmode",
-      "label": "launchBrowserWithViewMode()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "googleSheetsService.ts",
-      "file_type": "code",
-      "norm_label": "launchbrowserwithviewmode()",
-      "source_file": "humanUtils.ts",
-      "source_location": "L76"
-    },
-    {
-      "id": "notificationservice_sendtelegramnotification",
-      "label": "sendTelegramNotification()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "googleSheetsService.ts",
-      "file_type": "code",
-      "norm_label": "sendtelegramnotification()",
-      "source_file": "notificationService.ts",
-      "source_location": "L229"
-    },
-    {
-      "id": "portfolioscraper_scrapeportfolio",
-      "label": "scrapePortfolio()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "googleSheetsService.ts",
-      "file_type": "code",
-      "norm_label": "scrapeportfolio()",
-      "source_file": "portfolioScraper.ts",
-      "source_location": "L13"
-    },
-    {
-      "id": "promoterunlock_fetchpromoterunlockdata",
-      "label": "fetchPromoterUnlockData()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "googleSheetsService.ts",
-      "file_type": "code",
-      "norm_label": "fetchpromoterunlockdata()",
-      "source_file": "promoterUnlock.ts",
-      "source_location": "L8"
     },
     {
       "id": "scheduler_initializescheduler",
@@ -1404,6 +1344,186 @@
       "norm_label": "loadusers()",
       "source_file": "scheduler.ts",
       "source_location": "L8"
+    },
+    {
+      "id": "sltpmonitorservice_fetchsharesansarlivehtml",
+      "label": "fetchShareSansarLiveHtml()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "googleSheetsService.ts",
+      "file_type": "code",
+      "norm_label": "fetchsharesansarlivehtml()",
+      "source_file": "sltpMonitorService.ts",
+      "source_location": "L80"
+    },
+    {
+      "id": "sltpmonitorservice_formatpurchasedate",
+      "label": "formatPurchaseDate()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "googleSheetsService.ts",
+      "file_type": "code",
+      "norm_label": "formatpurchasedate()",
+      "source_file": "sltpMonitorService.ts",
+      "source_location": "L195"
+    },
+    {
+      "id": "sltpmonitorservice_generateuniquestockid",
+      "label": "generateUniqueStockId()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "googleSheetsService.ts",
+      "file_type": "code",
+      "norm_label": "generateuniquestockid()",
+      "source_file": "sltpMonitorService.ts",
+      "source_location": "L214"
+    },
+    {
+      "id": "sltpmonitorservice_getlivemarketdata",
+      "label": "getLiveMarketData()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "googleSheetsService.ts",
+      "file_type": "code",
+      "norm_label": "getlivemarketdata()",
+      "source_file": "sltpMonitorService.ts",
+      "source_location": "L225"
+    },
+    {
+      "id": "sltpmonitorservice_ishitrecordedtoday",
+      "label": "isHitRecordedToday()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "googleSheetsService.ts",
+      "file_type": "code",
+      "norm_label": "ishitrecordedtoday()",
+      "source_file": "sltpMonitorService.ts",
+      "source_location": "L729"
+    },
+    {
+      "id": "sltpmonitorservice_isnepsemarketopen",
+      "label": "isNepseMarketOpen()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "googleSheetsService.ts",
+      "file_type": "code",
+      "norm_label": "isnepsemarketopen()",
+      "source_file": "sltpMonitorService.ts",
+      "source_location": "L52"
+    },
+    {
+      "id": "sltpmonitorservice_parselivetradingtablehtml",
+      "label": "parseLiveTradingTableHtml()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "googleSheetsService.ts",
+      "file_type": "code",
+      "norm_label": "parselivetradingtablehtml()",
+      "source_file": "sltpMonitorService.ts",
+      "source_location": "L109"
+    },
+    {
+      "id": "sltpmonitorservice_parsepricenum",
+      "label": "parsePriceNum()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "googleSheetsService.ts",
+      "file_type": "code",
+      "norm_label": "parsepricenum()",
+      "source_file": "sltpMonitorService.ts",
+      "source_location": "L184"
+    },
+    {
+      "id": "sltpmonitorservice_readlivetradingfromsheet",
+      "label": "readLiveTradingFromSheet()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "googleSheetsService.ts",
+      "file_type": "code",
+      "norm_label": "readlivetradingfromsheet()",
+      "source_file": "sltpMonitorService.ts",
+      "source_location": "L252"
+    },
+    {
+      "id": "sltpmonitorservice_scanportfoliosltp",
+      "label": "scanPortfolioSLTP()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "googleSheetsService.ts",
+      "file_type": "code",
+      "norm_label": "scanportfoliosltp()",
+      "source_file": "sltpMonitorService.ts",
+      "source_location": "L693"
+    },
+    {
+      "id": "sltpmonitorservice_scansltpstocksagainstlive",
+      "label": "scanSLTPStocksAgainstLive()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "googleSheetsService.ts",
+      "file_type": "code",
+      "norm_label": "scansltpstocksagainstlive()",
+      "source_file": "sltpMonitorService.ts",
+      "source_location": "L468"
+    },
+    {
+      "id": "sltpmonitorservice_start10minsltpmonitor",
+      "label": "start10MinSLTPMonitor()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "googleSheetsService.ts",
+      "file_type": "code",
+      "norm_label": "start10minsltpmonitor()",
+      "source_file": "sltpMonitorService.ts",
+      "source_location": "L703"
+    },
+    {
+      "id": "sltpmonitorservice_stop10minsltpmonitor",
+      "label": "stop10MinSLTPMonitor()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "googleSheetsService.ts",
+      "file_type": "code",
+      "norm_label": "stop10minsltpmonitor()",
+      "source_file": "sltpMonitorService.ts",
+      "source_location": "L718"
+    },
+    {
+      "id": "sltpmonitorservice_synclivetradingsheet",
+      "label": "syncLiveTradingSheet()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "googleSheetsService.ts",
+      "file_type": "code",
+      "norm_label": "synclivetradingsheet()",
+      "source_file": "sltpMonitorService.ts",
+      "source_location": "L297"
+    },
+    {
+      "id": "sltpmonitorservice_syncyogentosltpstocks",
+      "label": "syncYogenToSLTPStocks()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "googleSheetsService.ts",
+      "file_type": "code",
+      "norm_label": "syncyogentosltpstocks()",
+      "source_file": "sltpMonitorService.ts",
+      "source_location": "L338"
     },
     {
       "id": "sltpqueueservice_escapehtml",
@@ -1442,18 +1562,6 @@
       "source_location": "L33"
     },
     {
-      "id": "techscraper_scrapetechnicalsignals",
-      "label": "scrapeTechnicalSignals()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "googleSheetsService.ts",
-      "file_type": "code",
-      "norm_label": "scrapetechnicalsignals()",
-      "source_file": "techScraper.ts",
-      "source_location": "L13"
-    },
-    {
       "id": "telegrambotservice_answercallbackquery",
       "label": "answerCallbackQuery()",
       "_callable": true,
@@ -1478,18 +1586,6 @@
       "source_location": "L108"
     },
     {
-      "id": "telegrambotservice_handletelegramcommand",
-      "label": "handleTelegramCommand()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "googleSheetsService.ts",
-      "file_type": "code",
-      "norm_label": "handletelegramcommand()",
-      "source_file": "telegramBotService.ts",
-      "source_location": "L153"
-    },
-    {
       "id": "telegrambotservice_registerpendinghit",
       "label": "registerPendingHit()",
       "_callable": true,
@@ -1511,7 +1607,7 @@
       "file_type": "code",
       "norm_label": "runtaskasync()",
       "source_file": "telegramBotService.ts",
-      "source_location": "L603"
+      "source_location": "L598"
     },
     {
       "id": "telegrambotservice_sendcommandcentermenu",
@@ -1547,7 +1643,7 @@
       "file_type": "code",
       "norm_label": "starttelegrambotlistener()",
       "source_file": "telegramBotService.ts",
-      "source_location": "L636"
+      "source_location": "L631"
     },
     {
       "id": "telegrambotservice_stoptelegrambotlistener",
@@ -1559,7 +1655,7 @@
       "file_type": "code",
       "norm_label": "stoptelegrambotlistener()",
       "source_file": "telegramBotService.ts",
-      "source_location": "L705"
+      "source_location": "L700"
     },
     {
       "id": "telegrambotservice_telegramapi",
@@ -1584,54 +1680,6 @@
       "norm_label": "inspect()",
       "source_file": "test_nric.ts",
       "source_location": "L3"
-    },
-    {
-      "id": "testbody_run",
-      "label": "run()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "googleSheetsService.ts",
-      "file_type": "code",
-      "norm_label": "run()",
-      "source_file": "testBody.ts",
-      "source_location": "L7"
-    },
-    {
-      "id": "week52scraper_extracttabstocks",
-      "label": "extractTabStocks()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "googleSheetsService.ts",
-      "file_type": "code",
-      "norm_label": "extracttabstocks()",
-      "source_file": "week52Scraper.ts",
-      "source_location": "L34"
-    },
-    {
-      "id": "week52scraper_parsepriceanddate",
-      "label": "parsePriceAndDate()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "googleSheetsService.ts",
-      "file_type": "code",
-      "norm_label": "parsepriceanddate()",
-      "source_file": "week52Scraper.ts",
-      "source_location": "L19"
-    },
-    {
-      "id": "week52scraper_scrape52weekhighlow",
-      "label": "scrape52WeekHighLow()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "googleSheetsService.ts",
-      "file_type": "code",
-      "norm_label": "scrape52weekhighlow()",
-      "source_file": "week52Scraper.ts",
-      "source_location": "L115"
     },
     {
       "id": "shareinfoscript_buypoint_analyzebuytpsl",
@@ -2342,66 +2390,6 @@
       "source_location": "L8"
     },
     {
-      "id": "notificationservice_enqueuenotification",
-      "label": "enqueueNotification()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 59,
-      "community_name": "notificationService.ts",
-      "file_type": "code",
-      "norm_label": "enqueuenotification()",
-      "source_file": "notificationService.ts",
-      "source_location": "L31"
-    },
-    {
-      "id": "notificationservice_flushnotificationqueue",
-      "label": "flushNotificationQueue()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 59,
-      "community_name": "notificationService.ts",
-      "file_type": "code",
-      "norm_label": "flushnotificationqueue()",
-      "source_file": "notificationService.ts",
-      "source_location": "L124"
-    },
-    {
-      "id": "notificationservice_getpendingcount",
-      "label": "getPendingCount()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 59,
-      "community_name": "notificationService.ts",
-      "file_type": "code",
-      "norm_label": "getpendingcount()",
-      "source_file": "notificationService.ts",
-      "source_location": "L53"
-    },
-    {
-      "id": "notificationservice_senddirecttelegram",
-      "label": "sendDirectTelegram()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 59,
-      "community_name": "notificationService.ts",
-      "file_type": "code",
-      "norm_label": "senddirecttelegram()",
-      "source_file": "notificationService.ts",
-      "source_location": "L64"
-    },
-    {
-      "id": "notificationservice_startqueueworker",
-      "label": "startQueueWorker()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 59,
-      "community_name": "notificationService.ts",
-      "file_type": "code",
-      "norm_label": "startqueueworker()",
-      "source_file": "notificationService.ts",
-      "source_location": "L213"
-    },
-    {
       "id": "shareinfoscript_storedailyclose_buildlivemap",
       "label": "buildLiveMap()",
       "_callable": true,
@@ -2750,14 +2738,102 @@
       "source_location": "L433"
     },
     {
-      "id": "sltpmonitorservice",
-      "label": "sltpMonitorService.ts",
+      "id": "automate",
+      "label": "automate.ts",
       "_origin": "ast",
       "community": 0,
-      "community_name": "sltpMonitorService.ts",
+      "community_name": "handleTelegramCommand",
       "file_type": "code",
-      "norm_label": "sltpmonitorservice.ts",
-      "source_file": "sltpMonitorService.ts",
+      "norm_label": "automate.ts",
+      "source_file": "automate.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "checkstatus",
+      "label": "checkStatus.ts",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "handleTelegramCommand",
+      "file_type": "code",
+      "norm_label": "checkstatus.ts",
+      "source_file": "checkStatus.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "fundascraper",
+      "label": "fundaScraper.ts",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "handleTelegramCommand",
+      "file_type": "code",
+      "norm_label": "fundascraper.ts",
+      "source_file": "fundaScraper.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "humanutils",
+      "label": "humanUtils.ts",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "handleTelegramCommand",
+      "file_type": "code",
+      "norm_label": "humanutils.ts",
+      "source_file": "humanUtils.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "portfolioscraper",
+      "label": "portfolioScraper.ts",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "handleTelegramCommand",
+      "file_type": "code",
+      "norm_label": "portfolioscraper.ts",
+      "source_file": "portfolioScraper.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "promoterunlock",
+      "label": "promoterUnlock.ts",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "handleTelegramCommand",
+      "file_type": "code",
+      "norm_label": "promoterunlock.ts",
+      "source_file": "promoterUnlock.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "techscraper",
+      "label": "techScraper.ts",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "handleTelegramCommand",
+      "file_type": "code",
+      "norm_label": "techscraper.ts",
+      "source_file": "techScraper.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "testbody",
+      "label": "testBody.ts",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "handleTelegramCommand",
+      "file_type": "code",
+      "norm_label": "testbody.ts",
+      "source_file": "testBody.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "week52scraper",
+      "label": "week52Scraper.ts",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "handleTelegramCommand",
+      "file_type": "code",
+      "norm_label": "week52scraper.ts",
+      "source_file": "week52Scraper.ts",
       "source_location": "L1"
     },
     {
@@ -3763,11 +3839,33 @@
       "source_location": "L1"
     },
     {
+      "id": "notificationservice",
+      "label": "notificationService.ts",
+      "_origin": "ast",
+      "community": 15,
+      "community_name": "sendTelegramNotification",
+      "file_type": "code",
+      "norm_label": "notificationservice.ts",
+      "source_file": "notificationService.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "notificationservice_queue_dir",
+      "label": "QUEUE_DIR",
+      "_origin": "ast",
+      "community": 15,
+      "community_name": "sendTelegramNotification",
+      "file_type": "code",
+      "norm_label": "queue_dir",
+      "source_file": "notificationService.ts",
+      "source_location": "L8"
+    },
+    {
       "id": "tmsautomation",
       "label": "tmsAutomation.ts",
       "_origin": "ast",
       "community": 15,
-      "community_name": "tmsAutomation.ts",
+      "community_name": "sendTelegramNotification",
       "file_type": "code",
       "norm_label": "tmsautomation.ts",
       "source_file": "tmsAutomation.ts",
@@ -4890,39 +4988,6 @@
       "source_location": "L20"
     },
     {
-      "id": "automate",
-      "label": "automate.ts",
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "googleSheetsService.ts",
-      "file_type": "code",
-      "norm_label": "automate.ts",
-      "source_file": "automate.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "checkstatus",
-      "label": "checkStatus.ts",
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "googleSheetsService.ts",
-      "file_type": "code",
-      "norm_label": "checkstatus.ts",
-      "source_file": "checkStatus.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "fundascraper",
-      "label": "fundaScraper.ts",
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "googleSheetsService.ts",
-      "file_type": "code",
-      "norm_label": "fundascraper.ts",
-      "source_file": "fundaScraper.ts",
-      "source_location": "L1"
-    },
-    {
       "id": "googlesheetsservice",
       "label": "googleSheetsService.ts",
       "_origin": "ast",
@@ -4978,39 +5043,6 @@
       "source_location": "L22"
     },
     {
-      "id": "humanutils",
-      "label": "humanUtils.ts",
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "googleSheetsService.ts",
-      "file_type": "code",
-      "norm_label": "humanutils.ts",
-      "source_file": "humanUtils.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "portfolioscraper",
-      "label": "portfolioScraper.ts",
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "googleSheetsService.ts",
-      "file_type": "code",
-      "norm_label": "portfolioscraper.ts",
-      "source_file": "portfolioScraper.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "promoterunlock",
-      "label": "promoterUnlock.ts",
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "googleSheetsService.ts",
-      "file_type": "code",
-      "norm_label": "promoterunlock.ts",
-      "source_file": "promoterUnlock.ts",
-      "source_location": "L1"
-    },
-    {
       "id": "scheduler",
       "label": "scheduler.ts",
       "_origin": "ast",
@@ -5019,6 +5051,17 @@
       "file_type": "code",
       "norm_label": "scheduler.ts",
       "source_file": "scheduler.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "sltpmonitorservice",
+      "label": "sltpMonitorService.ts",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "googleSheetsService.ts",
+      "file_type": "code",
+      "norm_label": "sltpmonitorservice.ts",
+      "source_file": "sltpMonitorService.ts",
       "source_location": "L1"
     },
     {
@@ -5041,17 +5084,6 @@
       "file_type": "code",
       "norm_label": "syncservice.ts",
       "source_file": "syncService.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "techscraper",
-      "label": "techScraper.ts",
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "googleSheetsService.ts",
-      "file_type": "code",
-      "norm_label": "techscraper.ts",
-      "source_file": "techScraper.ts",
       "source_location": "L1"
     },
     {
@@ -5085,28 +5117,6 @@
       "file_type": "code",
       "norm_label": "test_nric.ts",
       "source_file": "test_nric.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "testbody",
-      "label": "testBody.ts",
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "googleSheetsService.ts",
-      "file_type": "code",
-      "norm_label": "testbody.ts",
-      "source_file": "testBody.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "week52scraper",
-      "label": "week52Scraper.ts",
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "googleSheetsService.ts",
-      "file_type": "code",
-      "norm_label": "week52scraper.ts",
-      "source_file": "week52Scraper.ts",
       "source_location": "L1"
     },
     {
@@ -5750,96 +5760,6 @@
       "source_location": "L1"
     },
     {
-      "id": "graphify_out_memory_query_20261005_110201_when_reply_come_from_telegram_user_as_proceed_sel",
-      "label": "query_20261005_110201_when_reply_come_from_telegram_user_as__proceed_sel.md",
-      "_origin": "ast",
-      "community": 58,
-      "community_name": "Q: when reply come from telegram user as 'proceed_sell' it append in 'autoBuySellScript' payload data correct as SN-> correct Symbol-> correct qty-> correct price -> incorrect ( correct is = >put price as blank) cell B1 -> incorrect (correct is current timestamp + 1min)",
-      "file_type": "document",
-      "frontmatter": {
-        "type": "query",
-        "date": "2026-10-05T11:02:01.887619+00:00",
-        "question": "when reply come from telegram user as &#x27;proceed_sell&#x27; it append in &#x27;autoBuySellScript&#x27; payload data correct as SN-&gt; correct Symbol-&gt; correct qty-&gt; correct price -&gt; incorrect ( correct is = &gt;put price as blank) cell B1 -&gt; incorrect (correct is current timestamp + 1min)",
-        "contributor": "graphify",
-        "outcome": "useful",
-        "source_nodes": "[&quot;appendAutoBuySellTrade()&quot;, &quot;handleTelegramCommand()&quot;, &quot;getTmsScheduleTime()&quot;, &quot;telegramBotService.ts&quot;, &quot;googleSheetsService.ts&quot;, &quot;syncService.ts&quot;]"
-      },
-      "node_kind": "page",
-      "norm_label": "query_20261005_110201_when_reply_come_from_telegram_user_as__proceed_sel.md",
-      "source_file": "graphify-out/memory/query_20261005_110201_when_reply_come_from_telegram_user_as__proceed_sel.md",
-      "source_location": "L1"
-    },
-    {
-      "id": "graphify_out_memory_query_20261005_110201_when_reply_come_from_telegram_user_as_proceed_sel_answer",
-      "label": "Answer",
-      "_origin": "ast",
-      "community": 58,
-      "community_name": "Q: when reply come from telegram user as 'proceed_sell' it append in 'autoBuySellScript' payload data correct as SN-> correct Symbol-> correct qty-> correct price -> incorrect ( correct is = >put price as blank) cell B1 -> incorrect (correct is current timestamp + 1min)",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "answer",
-      "source_file": "graphify-out/memory/query_20261005_110201_when_reply_come_from_telegram_user_as__proceed_sel.md",
-      "source_location": "L12"
-    },
-    {
-      "id": "graphify_out_memory_query_20261005_110201_when_reply_come_from_telegram_user_as_proceed_sel_outcome",
-      "label": "Outcome",
-      "_origin": "ast",
-      "community": 58,
-      "community_name": "Q: when reply come from telegram user as 'proceed_sell' it append in 'autoBuySellScript' payload data correct as SN-> correct Symbol-> correct qty-> correct price -> incorrect ( correct is = >put price as blank) cell B1 -> incorrect (correct is current timestamp + 1min)",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "outcome",
-      "source_file": "graphify-out/memory/query_20261005_110201_when_reply_come_from_telegram_user_as__proceed_sel.md",
-      "source_location": "L16"
-    },
-    {
-      "id": "graphify_out_memory_query_20261005_110201_when_reply_come_from_telegram_user_as_proceed_sel_q_when_reply_come_from_telegram_user_as_proceed_sell_it_append_in_autobuysellscript_payload_data_correct_as_sn_correct_symbol_correct_qty_correct_price_incorrect_correct_is_put_price_as_blank_cell_b1_incorrect_correct_is_current_timestamp_1min",
-      "label": "Q: when reply come from telegram user as 'proceed_sell' it append in 'autoBuySellScript' payload data correct as SN-> correct Symbol-> correct qty-> correct price -> incorrect ( correct is = >put price as blank) cell B1 -> incorrect (correct is current timestamp + 1min)",
-      "_origin": "ast",
-      "community": 58,
-      "community_name": "Q: when reply come from telegram user as 'proceed_sell' it append in 'autoBuySellScript' payload data correct as SN-> correct Symbol-> correct qty-> correct price -> incorrect ( correct is = >put price as blank) cell B1 -> incorrect (correct is current timestamp + 1min)",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "q: when reply come from telegram user as 'proceed_sell' it append in 'autobuysellscript' payload data correct as sn-> correct symbol-> correct qty-> correct price -> incorrect ( correct is = >put price as blank) cell b1 -> incorrect (correct is current timestamp + 1min)",
-      "source_file": "graphify-out/memory/query_20261005_110201_when_reply_come_from_telegram_user_as__proceed_sel.md",
-      "source_location": "L10"
-    },
-    {
-      "id": "graphify_out_memory_query_20261005_110201_when_reply_come_from_telegram_user_as_proceed_sel_source_nodes",
-      "label": "Source Nodes",
-      "_origin": "ast",
-      "community": 58,
-      "community_name": "Q: when reply come from telegram user as 'proceed_sell' it append in 'autoBuySellScript' payload data correct as SN-> correct Symbol-> correct qty-> correct price -> incorrect ( correct is = >put price as blank) cell B1 -> incorrect (correct is current timestamp + 1min)",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "source nodes",
-      "source_file": "graphify-out/memory/query_20261005_110201_when_reply_come_from_telegram_user_as__proceed_sel.md",
-      "source_location": "L20"
-    },
-    {
-      "id": "notificationservice",
-      "label": "notificationService.ts",
-      "_origin": "ast",
-      "community": 59,
-      "community_name": "notificationService.ts",
-      "file_type": "code",
-      "norm_label": "notificationservice.ts",
-      "source_file": "notificationService.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "notificationservice_queue_dir",
-      "label": "QUEUE_DIR",
-      "_origin": "ast",
-      "community": 59,
-      "community_name": "notificationService.ts",
-      "file_type": "code",
-      "norm_label": "queue_dir",
-      "source_file": "notificationService.ts",
-      "source_location": "L8"
-    },
-    {
       "id": "shareinfoscript_storedailyclose",
       "label": "storeDailyClose.js",
       "_origin": "ast",
@@ -5849,482 +5769,6 @@
       "norm_label": "storedailyclose.js",
       "source_file": "shareInfoScript/storeDailyClose.js",
       "source_location": "L1"
-    },
-    {
-      "id": "graphify_out_memory_query_20261005_110929_cell_b1_time_kathmandu_current_time_now_2_min",
-      "label": "query_20261005_110929_cell_b1_time__kathmandu_current_time__now___2_min.md",
-      "_origin": "ast",
-      "community": 60,
-      "community_name": "Q: Cell B1 time 'Kathmandu current time: now' +2 min",
-      "file_type": "document",
-      "frontmatter": {
-        "type": "query",
-        "date": "2026-10-05T11:09:29.776652+00:00",
-        "question": "Cell B1 time &#x27;Kathmandu current time: now&#x27; +2 min",
-        "contributor": "graphify",
-        "outcome": "useful",
-        "source_nodes": "[&quot;appendAutoBuySellTrade()&quot;, &quot;getTmsScheduleTime()&quot;, &quot;syncService.ts&quot;, &quot;googleSheetsService.ts&quot;]"
-      },
-      "node_kind": "page",
-      "norm_label": "query_20261005_110929_cell_b1_time__kathmandu_current_time__now___2_min.md",
-      "source_file": "graphify-out/memory/query_20261005_110929_cell_b1_time__kathmandu_current_time__now___2_min.md",
-      "source_location": "L1"
-    },
-    {
-      "id": "graphify_out_memory_query_20261005_110929_cell_b1_time_kathmandu_current_time_now_2_min_answer",
-      "label": "Answer",
-      "_origin": "ast",
-      "community": 60,
-      "community_name": "Q: Cell B1 time 'Kathmandu current time: now' +2 min",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "answer",
-      "source_file": "graphify-out/memory/query_20261005_110929_cell_b1_time__kathmandu_current_time__now___2_min.md",
-      "source_location": "L12"
-    },
-    {
-      "id": "graphify_out_memory_query_20261005_110929_cell_b1_time_kathmandu_current_time_now_2_min_outcome",
-      "label": "Outcome",
-      "_origin": "ast",
-      "community": 60,
-      "community_name": "Q: Cell B1 time 'Kathmandu current time: now' +2 min",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "outcome",
-      "source_file": "graphify-out/memory/query_20261005_110929_cell_b1_time__kathmandu_current_time__now___2_min.md",
-      "source_location": "L16"
-    },
-    {
-      "id": "graphify_out_memory_query_20261005_110929_cell_b1_time_kathmandu_current_time_now_2_min_q_cell_b1_time_kathmandu_current_time_now_2_min",
-      "label": "Q: Cell B1 time 'Kathmandu current time: now' +2 min",
-      "_origin": "ast",
-      "community": 60,
-      "community_name": "Q: Cell B1 time 'Kathmandu current time: now' +2 min",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "q: cell b1 time 'kathmandu current time: now' +2 min",
-      "source_file": "graphify-out/memory/query_20261005_110929_cell_b1_time__kathmandu_current_time__now___2_min.md",
-      "source_location": "L10"
-    },
-    {
-      "id": "graphify_out_memory_query_20261005_110929_cell_b1_time_kathmandu_current_time_now_2_min_source_nodes",
-      "label": "Source Nodes",
-      "_origin": "ast",
-      "community": 60,
-      "community_name": "Q: Cell B1 time 'Kathmandu current time: now' +2 min",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "source nodes",
-      "source_file": "graphify-out/memory/query_20261005_110929_cell_b1_time__kathmandu_current_time__now___2_min.md",
-      "source_location": "L20"
-    },
-    {
-      "id": "graphify_out_memory_query_20261005_111333_cell_b1_time_kathmandu_current_time_now_3_min",
-      "label": "query_20261005_111333_cell_b1_time__kathmandu_current_time__now___3_min.md",
-      "_origin": "ast",
-      "community": 61,
-      "community_name": "Q: Cell B1 time 'Kathmandu current time: now' +3 min",
-      "file_type": "document",
-      "frontmatter": {
-        "type": "query",
-        "date": "2026-10-05T11:13:33.875444+00:00",
-        "question": "Cell B1 time &#x27;Kathmandu current time: now&#x27; +3 min",
-        "contributor": "graphify",
-        "outcome": "useful",
-        "source_nodes": "[&quot;appendAutoBuySellTrade()&quot;, &quot;getTmsScheduleTime()&quot;, &quot;syncService.ts&quot;, &quot;googleSheetsService.ts&quot;]"
-      },
-      "node_kind": "page",
-      "norm_label": "query_20261005_111333_cell_b1_time__kathmandu_current_time__now___3_min.md",
-      "source_file": "graphify-out/memory/query_20261005_111333_cell_b1_time__kathmandu_current_time__now___3_min.md",
-      "source_location": "L1"
-    },
-    {
-      "id": "graphify_out_memory_query_20261005_111333_cell_b1_time_kathmandu_current_time_now_3_min_answer",
-      "label": "Answer",
-      "_origin": "ast",
-      "community": 61,
-      "community_name": "Q: Cell B1 time 'Kathmandu current time: now' +3 min",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "answer",
-      "source_file": "graphify-out/memory/query_20261005_111333_cell_b1_time__kathmandu_current_time__now___3_min.md",
-      "source_location": "L12"
-    },
-    {
-      "id": "graphify_out_memory_query_20261005_111333_cell_b1_time_kathmandu_current_time_now_3_min_outcome",
-      "label": "Outcome",
-      "_origin": "ast",
-      "community": 61,
-      "community_name": "Q: Cell B1 time 'Kathmandu current time: now' +3 min",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "outcome",
-      "source_file": "graphify-out/memory/query_20261005_111333_cell_b1_time__kathmandu_current_time__now___3_min.md",
-      "source_location": "L16"
-    },
-    {
-      "id": "graphify_out_memory_query_20261005_111333_cell_b1_time_kathmandu_current_time_now_3_min_q_cell_b1_time_kathmandu_current_time_now_3_min",
-      "label": "Q: Cell B1 time 'Kathmandu current time: now' +3 min",
-      "_origin": "ast",
-      "community": 61,
-      "community_name": "Q: Cell B1 time 'Kathmandu current time: now' +3 min",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "q: cell b1 time 'kathmandu current time: now' +3 min",
-      "source_file": "graphify-out/memory/query_20261005_111333_cell_b1_time__kathmandu_current_time__now___3_min.md",
-      "source_location": "L10"
-    },
-    {
-      "id": "graphify_out_memory_query_20261005_111333_cell_b1_time_kathmandu_current_time_now_3_min_source_nodes",
-      "label": "Source Nodes",
-      "_origin": "ast",
-      "community": 61,
-      "community_name": "Q: Cell B1 time 'Kathmandu current time: now' +3 min",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "source nodes",
-      "source_file": "graphify-out/memory/query_20261005_111333_cell_b1_time__kathmandu_current_time__now___3_min.md",
-      "source_location": "L20"
-    },
-    {
-      "id": "graphify_out_memory_query_20261005_111526_cell_b1_time_kathmandu_current_time_now_5_min",
-      "label": "query_20261005_111526_cell_b1_time__kathmandu_current_time__now___5_min.md",
-      "_origin": "ast",
-      "community": 62,
-      "community_name": "Q: Cell B1 time 'Kathmandu current time: now' +5 min",
-      "file_type": "document",
-      "frontmatter": {
-        "type": "query",
-        "date": "2026-10-05T11:15:26.233243+00:00",
-        "question": "Cell B1 time &#x27;Kathmandu current time: now&#x27; +5 min",
-        "contributor": "graphify",
-        "outcome": "useful",
-        "source_nodes": "[&quot;appendAutoBuySellTrade()&quot;, &quot;getTmsScheduleTime()&quot;, &quot;syncService.ts&quot;, &quot;googleSheetsService.ts&quot;]"
-      },
-      "node_kind": "page",
-      "norm_label": "query_20261005_111526_cell_b1_time__kathmandu_current_time__now___5_min.md",
-      "source_file": "graphify-out/memory/query_20261005_111526_cell_b1_time__kathmandu_current_time__now___5_min.md",
-      "source_location": "L1"
-    },
-    {
-      "id": "graphify_out_memory_query_20261005_111526_cell_b1_time_kathmandu_current_time_now_5_min_answer",
-      "label": "Answer",
-      "_origin": "ast",
-      "community": 62,
-      "community_name": "Q: Cell B1 time 'Kathmandu current time: now' +5 min",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "answer",
-      "source_file": "graphify-out/memory/query_20261005_111526_cell_b1_time__kathmandu_current_time__now___5_min.md",
-      "source_location": "L12"
-    },
-    {
-      "id": "graphify_out_memory_query_20261005_111526_cell_b1_time_kathmandu_current_time_now_5_min_outcome",
-      "label": "Outcome",
-      "_origin": "ast",
-      "community": 62,
-      "community_name": "Q: Cell B1 time 'Kathmandu current time: now' +5 min",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "outcome",
-      "source_file": "graphify-out/memory/query_20261005_111526_cell_b1_time__kathmandu_current_time__now___5_min.md",
-      "source_location": "L16"
-    },
-    {
-      "id": "graphify_out_memory_query_20261005_111526_cell_b1_time_kathmandu_current_time_now_5_min_q_cell_b1_time_kathmandu_current_time_now_5_min",
-      "label": "Q: Cell B1 time 'Kathmandu current time: now' +5 min",
-      "_origin": "ast",
-      "community": 62,
-      "community_name": "Q: Cell B1 time 'Kathmandu current time: now' +5 min",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "q: cell b1 time 'kathmandu current time: now' +5 min",
-      "source_file": "graphify-out/memory/query_20261005_111526_cell_b1_time__kathmandu_current_time__now___5_min.md",
-      "source_location": "L10"
-    },
-    {
-      "id": "graphify_out_memory_query_20261005_111526_cell_b1_time_kathmandu_current_time_now_5_min_source_nodes",
-      "label": "Source Nodes",
-      "_origin": "ast",
-      "community": 62,
-      "community_name": "Q: Cell B1 time 'Kathmandu current time: now' +5 min",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "source nodes",
-      "source_file": "graphify-out/memory/query_20261005_111526_cell_b1_time__kathmandu_current_time__now___5_min.md",
-      "source_location": "L20"
-    },
-    {
-      "id": "graphify_out_memory_query_20261005_111816_there_is_alwasys_issue_in_cell_b1_time_why_i_ne",
-      "label": "query_20261005_111816_there_is_alwasys_issue_in_cell_b1_time_why____i_ne.md",
-      "_origin": "ast",
-      "community": 63,
-      "community_name": "Q: there is alwasys issue in Cell B1 time why ?, i need 'Kathmandu current time: now' + add extra 2 min",
-      "file_type": "document",
-      "frontmatter": {
-        "type": "query",
-        "date": "2026-10-05T11:18:16.436939+00:00",
-        "question": "there is alwasys issue in Cell B1 time why ?, i need &#x27;Kathmandu current time: now&#x27; + add extra 2 min",
-        "contributor": "graphify",
-        "outcome": "useful",
-        "source_nodes": "[&quot;appendAutoBuySellTrade()&quot;, &quot;getTmsScheduleTime()&quot;, &quot;syncService.ts&quot;, &quot;googleSheetsService.ts&quot;]"
-      },
-      "node_kind": "page",
-      "norm_label": "query_20261005_111816_there_is_alwasys_issue_in_cell_b1_time_why____i_ne.md",
-      "source_file": "graphify-out/memory/query_20261005_111816_there_is_alwasys_issue_in_cell_b1_time_why____i_ne.md",
-      "source_location": "L1"
-    },
-    {
-      "id": "graphify_out_memory_query_20261005_111816_there_is_alwasys_issue_in_cell_b1_time_why_i_ne_answer",
-      "label": "Answer",
-      "_origin": "ast",
-      "community": 63,
-      "community_name": "Q: there is alwasys issue in Cell B1 time why ?, i need 'Kathmandu current time: now' + add extra 2 min",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "answer",
-      "source_file": "graphify-out/memory/query_20261005_111816_there_is_alwasys_issue_in_cell_b1_time_why____i_ne.md",
-      "source_location": "L12"
-    },
-    {
-      "id": "graphify_out_memory_query_20261005_111816_there_is_alwasys_issue_in_cell_b1_time_why_i_ne_outcome",
-      "label": "Outcome",
-      "_origin": "ast",
-      "community": 63,
-      "community_name": "Q: there is alwasys issue in Cell B1 time why ?, i need 'Kathmandu current time: now' + add extra 2 min",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "outcome",
-      "source_file": "graphify-out/memory/query_20261005_111816_there_is_alwasys_issue_in_cell_b1_time_why____i_ne.md",
-      "source_location": "L16"
-    },
-    {
-      "id": "graphify_out_memory_query_20261005_111816_there_is_alwasys_issue_in_cell_b1_time_why_i_ne_q_there_is_alwasys_issue_in_cell_b1_time_why_i_need_kathmandu_current_time_now_add_extra_2_min",
-      "label": "Q: there is alwasys issue in Cell B1 time why ?, i need 'Kathmandu current time: now' + add extra 2 min",
-      "_origin": "ast",
-      "community": 63,
-      "community_name": "Q: there is alwasys issue in Cell B1 time why ?, i need 'Kathmandu current time: now' + add extra 2 min",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "q: there is alwasys issue in cell b1 time why ?, i need 'kathmandu current time: now' + add extra 2 min",
-      "source_file": "graphify-out/memory/query_20261005_111816_there_is_alwasys_issue_in_cell_b1_time_why____i_ne.md",
-      "source_location": "L10"
-    },
-    {
-      "id": "graphify_out_memory_query_20261005_111816_there_is_alwasys_issue_in_cell_b1_time_why_i_ne_source_nodes",
-      "label": "Source Nodes",
-      "_origin": "ast",
-      "community": 63,
-      "community_name": "Q: there is alwasys issue in Cell B1 time why ?, i need 'Kathmandu current time: now' + add extra 2 min",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "source nodes",
-      "source_file": "graphify-out/memory/query_20261005_111816_there_is_alwasys_issue_in_cell_b1_time_why____i_ne.md",
-      "source_location": "L20"
-    },
-    {
-      "id": "graphify_out_memory_query_20261005_112815_in_autobuysellscript_sheet_tab_there_is_price_colu",
-      "label": "query_20261005_112815_in_autobuysellscript_sheet_tab_there_is_price_colu.md",
-      "_origin": "ast",
-      "community": 64,
-      "community_name": "Q: in autoBuySellScript sheet tab there is price column i say it need to blank and in B1 there should be current datetime stamp plus 2 min why it is not reflecting as i have already restart the supervisor",
-      "file_type": "document",
-      "frontmatter": {
-        "type": "query",
-        "date": "2026-10-05T11:28:15.608110+00:00",
-        "question": "in autoBuySellScript sheet tab there is price column i say it need to blank and in B1 there should be current datetime stamp plus 2 min why it is not reflecting as i have already restart the supervisor",
-        "contributor": "graphify",
-        "outcome": "useful",
-        "source_nodes": "[&quot;appendAutoBuySellTrade()&quot;, &quot;startTelegramBotListener()&quot;, &quot;handleTelegramCommand()&quot;, &quot;syncService.ts&quot;, &quot;googleSheetsService.ts&quot;, &quot;telegramBotService.ts&quot;]"
-      },
-      "node_kind": "page",
-      "norm_label": "query_20261005_112815_in_autobuysellscript_sheet_tab_there_is_price_colu.md",
-      "source_file": "graphify-out/memory/query_20261005_112815_in_autobuysellscript_sheet_tab_there_is_price_colu.md",
-      "source_location": "L1"
-    },
-    {
-      "id": "graphify_out_memory_query_20261005_112815_in_autobuysellscript_sheet_tab_there_is_price_colu_answer",
-      "label": "Answer",
-      "_origin": "ast",
-      "community": 64,
-      "community_name": "Q: in autoBuySellScript sheet tab there is price column i say it need to blank and in B1 there should be current datetime stamp plus 2 min why it is not reflecting as i have already restart the supervisor",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "answer",
-      "source_file": "graphify-out/memory/query_20261005_112815_in_autobuysellscript_sheet_tab_there_is_price_colu.md",
-      "source_location": "L12"
-    },
-    {
-      "id": "graphify_out_memory_query_20261005_112815_in_autobuysellscript_sheet_tab_there_is_price_colu_outcome",
-      "label": "Outcome",
-      "_origin": "ast",
-      "community": 64,
-      "community_name": "Q: in autoBuySellScript sheet tab there is price column i say it need to blank and in B1 there should be current datetime stamp plus 2 min why it is not reflecting as i have already restart the supervisor",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "outcome",
-      "source_file": "graphify-out/memory/query_20261005_112815_in_autobuysellscript_sheet_tab_there_is_price_colu.md",
-      "source_location": "L16"
-    },
-    {
-      "id": "graphify_out_memory_query_20261005_112815_in_autobuysellscript_sheet_tab_there_is_price_colu_q_in_autobuysellscript_sheet_tab_there_is_price_column_i_say_it_need_to_blank_and_in_b1_there_should_be_current_datetime_stamp_plus_2_min_why_it_is_not_reflecting_as_i_have_already_restart_the_supervisor",
-      "label": "Q: in autoBuySellScript sheet tab there is price column i say it need to blank and in B1 there should be current datetime stamp plus 2 min why it is not reflecting as i have already restart the supervisor",
-      "_origin": "ast",
-      "community": 64,
-      "community_name": "Q: in autoBuySellScript sheet tab there is price column i say it need to blank and in B1 there should be current datetime stamp plus 2 min why it is not reflecting as i have already restart the supervisor",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "q: in autobuysellscript sheet tab there is price column i say it need to blank and in b1 there should be current datetime stamp plus 2 min why it is not reflecting as i have already restart the supervisor",
-      "source_file": "graphify-out/memory/query_20261005_112815_in_autobuysellscript_sheet_tab_there_is_price_colu.md",
-      "source_location": "L10"
-    },
-    {
-      "id": "graphify_out_memory_query_20261005_112815_in_autobuysellscript_sheet_tab_there_is_price_colu_source_nodes",
-      "label": "Source Nodes",
-      "_origin": "ast",
-      "community": 64,
-      "community_name": "Q: in autoBuySellScript sheet tab there is price column i say it need to blank and in B1 there should be current datetime stamp plus 2 min why it is not reflecting as i have already restart the supervisor",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "source nodes",
-      "source_file": "graphify-out/memory/query_20261005_112815_in_autobuysellscript_sheet_tab_there_is_price_colu.md",
-      "source_location": "L20"
-    },
-    {
-      "id": "graphify_out_memory_query_20261005_113151_to_clear_a_formula_set_cell_value_null_error_when",
-      "label": "query_20261005_113151_to_clear_a_formula_set_cell_value_null_error_when.md",
-      "_origin": "ast",
-      "community": 65,
-      "community_name": "Q: To clear a formula set cell value null error when appending auto buy sell trade",
-      "file_type": "document",
-      "frontmatter": {
-        "type": "query",
-        "date": "2026-10-05T11:31:51.935875+00:00",
-        "question": "To clear a formula set cell value null error when appending auto buy sell trade",
-        "contributor": "graphify",
-        "outcome": "useful",
-        "source_nodes": "[&quot;appendAutoBuySellTrade()&quot;, &quot;googleSheetsService.ts&quot;]"
-      },
-      "node_kind": "page",
-      "norm_label": "query_20261005_113151_to_clear_a_formula_set_cell_value_null_error_when.md",
-      "source_file": "graphify-out/memory/query_20261005_113151_to_clear_a_formula_set_cell_value_null_error_when.md",
-      "source_location": "L1"
-    },
-    {
-      "id": "graphify_out_memory_query_20261005_113151_to_clear_a_formula_set_cell_value_null_error_when_answer",
-      "label": "Answer",
-      "_origin": "ast",
-      "community": 65,
-      "community_name": "Q: To clear a formula set cell value null error when appending auto buy sell trade",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "answer",
-      "source_file": "graphify-out/memory/query_20261005_113151_to_clear_a_formula_set_cell_value_null_error_when.md",
-      "source_location": "L12"
-    },
-    {
-      "id": "graphify_out_memory_query_20261005_113151_to_clear_a_formula_set_cell_value_null_error_when_outcome",
-      "label": "Outcome",
-      "_origin": "ast",
-      "community": 65,
-      "community_name": "Q: To clear a formula set cell value null error when appending auto buy sell trade",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "outcome",
-      "source_file": "graphify-out/memory/query_20261005_113151_to_clear_a_formula_set_cell_value_null_error_when.md",
-      "source_location": "L16"
-    },
-    {
-      "id": "graphify_out_memory_query_20261005_113151_to_clear_a_formula_set_cell_value_null_error_when_q_to_clear_a_formula_set_cell_value_null_error_when_appending_auto_buy_sell_trade",
-      "label": "Q: To clear a formula set cell value null error when appending auto buy sell trade",
-      "_origin": "ast",
-      "community": 65,
-      "community_name": "Q: To clear a formula set cell value null error when appending auto buy sell trade",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "q: to clear a formula set cell value null error when appending auto buy sell trade",
-      "source_file": "graphify-out/memory/query_20261005_113151_to_clear_a_formula_set_cell_value_null_error_when.md",
-      "source_location": "L10"
-    },
-    {
-      "id": "graphify_out_memory_query_20261005_113151_to_clear_a_formula_set_cell_value_null_error_when_source_nodes",
-      "label": "Source Nodes",
-      "_origin": "ast",
-      "community": 65,
-      "community_name": "Q: To clear a formula set cell value null error when appending auto buy sell trade",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "source nodes",
-      "source_file": "graphify-out/memory/query_20261005_113151_to_clear_a_formula_set_cell_value_null_error_when.md",
-      "source_location": "L20"
-    },
-    {
-      "id": "graphify_out_memory_query_20261005_114330_tms_automation_popup_notification_error_page_waitf",
-      "label": "query_20261005_114330_tms_automation_popup_notification_error_page_waitf.md",
-      "_origin": "ast",
-      "community": 66,
-      "community_name": "Q: TMS Automation popup notification error page.waitForSelector dashboard-wrapper closed",
-      "file_type": "document",
-      "frontmatter": {
-        "type": "query",
-        "date": "2026-10-05T11:43:30.159336+00:00",
-        "question": "TMS Automation popup notification error page.waitForSelector dashboard-wrapper closed",
-        "contributor": "graphify",
-        "outcome": "useful",
-        "source_nodes": "[&quot;runAutomation()&quot;, &quot;executeSingleTrade()&quot;, &quot;humanClick()&quot;, &quot;tmsAutomation.ts&quot;]"
-      },
-      "node_kind": "page",
-      "norm_label": "query_20261005_114330_tms_automation_popup_notification_error_page_waitf.md",
-      "source_file": "graphify-out/memory/query_20261005_114330_tms_automation_popup_notification_error_page_waitf.md",
-      "source_location": "L1"
-    },
-    {
-      "id": "graphify_out_memory_query_20261005_114330_tms_automation_popup_notification_error_page_waitf_answer",
-      "label": "Answer",
-      "_origin": "ast",
-      "community": 66,
-      "community_name": "Q: TMS Automation popup notification error page.waitForSelector dashboard-wrapper closed",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "answer",
-      "source_file": "graphify-out/memory/query_20261005_114330_tms_automation_popup_notification_error_page_waitf.md",
-      "source_location": "L12"
-    },
-    {
-      "id": "graphify_out_memory_query_20261005_114330_tms_automation_popup_notification_error_page_waitf_outcome",
-      "label": "Outcome",
-      "_origin": "ast",
-      "community": 66,
-      "community_name": "Q: TMS Automation popup notification error page.waitForSelector dashboard-wrapper closed",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "outcome",
-      "source_file": "graphify-out/memory/query_20261005_114330_tms_automation_popup_notification_error_page_waitf.md",
-      "source_location": "L16"
-    },
-    {
-      "id": "graphify_out_memory_query_20261005_114330_tms_automation_popup_notification_error_page_waitf_q_tms_automation_popup_notification_error_page_waitforselector_dashboard_wrapper_closed",
-      "label": "Q: TMS Automation popup notification error page.waitForSelector dashboard-wrapper closed",
-      "_origin": "ast",
-      "community": 66,
-      "community_name": "Q: TMS Automation popup notification error page.waitForSelector dashboard-wrapper closed",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "q: tms automation popup notification error page.waitforselector dashboard-wrapper closed",
-      "source_file": "graphify-out/memory/query_20261005_114330_tms_automation_popup_notification_error_page_waitf.md",
-      "source_location": "L10"
-    },
-    {
-      "id": "graphify_out_memory_query_20261005_114330_tms_automation_popup_notification_error_page_waitf_source_nodes",
-      "label": "Source Nodes",
-      "_origin": "ast",
-      "community": 66,
-      "community_name": "Q: TMS Automation popup notification error page.waitForSelector dashboard-wrapper closed",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "source nodes",
-      "source_file": "graphify-out/memory/query_20261005_114330_tms_automation_popup_notification_error_page_waitf.md",
-      "source_location": "L20"
     },
     {
       "id": "package_dependencies",
@@ -7271,7 +6715,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "googleSheetsService.ts",
-      "source_location": "L439",
+      "source_location": "L436",
       "weight": 1.0
     },
     {
@@ -7283,7 +6727,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "googleSheetsService.ts",
-      "source_location": "L376",
+      "source_location": "L373",
       "weight": 1.0
     },
     {
@@ -7307,7 +6751,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "googleSheetsService.ts",
-      "source_location": "L402",
+      "source_location": "L399",
       "weight": 1.0
     },
     {
@@ -9431,7 +8875,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "telegramBotService.ts",
-      "source_location": "L290",
+      "source_location": "L289",
       "weight": 1.0
     },
     {
@@ -9443,7 +8887,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "telegramBotService.ts",
-      "source_location": "L339",
+      "source_location": "L334",
       "weight": 1.0
     },
     {
@@ -9455,7 +8899,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "telegramBotService.ts",
-      "source_location": "L352",
+      "source_location": "L347",
       "weight": 1.0
     },
     {
@@ -9467,7 +8911,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "telegramBotService.ts",
-      "source_location": "L353",
+      "source_location": "L348",
       "weight": 1.0
     },
     {
@@ -9479,7 +8923,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "telegramBotService.ts",
-      "source_location": "L478",
+      "source_location": "L473",
       "weight": 1.0
     },
     {
@@ -9491,7 +8935,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "telegramBotService.ts",
-      "source_location": "L612",
+      "source_location": "L607",
       "weight": 1.0
     },
     {
@@ -9503,7 +8947,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "telegramBotService.ts",
-      "source_location": "L613",
+      "source_location": "L608",
       "weight": 1.0
     },
     {
@@ -9515,7 +8959,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "telegramBotService.ts",
-      "source_location": "L616",
+      "source_location": "L611",
       "weight": 1.0
     },
     {
@@ -9527,7 +8971,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "telegramBotService.ts",
-      "source_location": "L622",
+      "source_location": "L617",
       "weight": 1.0
     },
     {
@@ -9575,7 +9019,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "telegramBotService.ts",
-      "source_location": "L648",
+      "source_location": "L643",
       "weight": 1.0
     },
     {
@@ -9587,7 +9031,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "telegramBotService.ts",
-      "source_location": "L652",
+      "source_location": "L647",
       "weight": 1.0
     },
     {
@@ -9599,7 +9043,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "telegramBotService.ts",
-      "source_location": "L684",
+      "source_location": "L679",
       "weight": 1.0
     },
     {
@@ -9611,7 +9055,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "telegramBotService.ts",
-      "source_location": "L688",
+      "source_location": "L683",
       "weight": 1.0
     },
     {
@@ -9651,54 +9095,6 @@
       "weight": 1.0
     },
     {
-      "source": "tmsautomation_dismisstmspopups",
-      "target": "tmsautomation_delay",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "tmsAutomation.ts",
-      "source_location": "L74",
-      "weight": 1.0
-    },
-    {
-      "source": "tmsautomation_executesingletrade",
-      "target": "tmsautomation_clearinput",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "tmsAutomation.ts",
-      "source_location": "L140",
-      "weight": 1.0
-    },
-    {
-      "source": "tmsautomation_executesingletrade",
-      "target": "tmsautomation_humantype",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "tmsAutomation.ts",
-      "source_location": "L141",
-      "weight": 1.0
-    },
-    {
-      "source": "tmsautomation_executesingletrade",
-      "target": "tmsautomation_delay",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "tmsAutomation.ts",
-      "source_location": "L142",
-      "weight": 1.0
-    },
-    {
       "source": "tmsautomation_executesingletrade",
       "target": "tmsautomation_humanclick",
       "relation": "calls",
@@ -9707,7 +9103,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tmsAutomation.ts",
-      "source_location": "L175",
+      "source_location": "L119",
       "weight": 1.0
     },
     {
@@ -9719,7 +9115,43 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tmsAutomation.ts",
-      "source_location": "L226",
+      "source_location": "L170",
+      "weight": 1.0
+    },
+    {
+      "source": "tmsautomation_executesingletrade",
+      "target": "tmsautomation_clearinput",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "tmsAutomation.ts",
+      "source_location": "L84",
+      "weight": 1.0
+    },
+    {
+      "source": "tmsautomation_executesingletrade",
+      "target": "tmsautomation_humantype",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "tmsAutomation.ts",
+      "source_location": "L85",
+      "weight": 1.0
+    },
+    {
+      "source": "tmsautomation_executesingletrade",
+      "target": "tmsautomation_delay",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "tmsAutomation.ts",
+      "source_location": "L86",
       "weight": 1.0
     },
     {
@@ -9731,19 +9163,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tmsAutomation.ts",
-      "source_location": "L108",
-      "weight": 1.0
-    },
-    {
-      "source": "tmsautomation_humanclick",
-      "target": "tmsautomation_dismisstmspopups",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "tmsAutomation.ts",
-      "source_location": "L91",
+      "source_location": "L52",
       "weight": 1.0
     },
     {
@@ -9755,7 +9175,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tmsAutomation.ts",
-      "source_location": "L95",
+      "source_location": "L39",
       "weight": 1.0
     },
     {
@@ -9779,7 +9199,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tmsAutomation.ts",
-      "source_location": "L237",
+      "source_location": "L181",
       "weight": 1.0
     },
     {
@@ -9791,7 +9211,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tmsAutomation.ts",
-      "source_location": "L238",
+      "source_location": "L182",
       "weight": 1.0
     },
     {
@@ -9803,31 +9223,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tmsAutomation.ts",
-      "source_location": "L251",
-      "weight": 1.0
-    },
-    {
-      "source": "tmsautomation_runautomation",
-      "target": "tmsautomation_dismisstmspopups",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "tmsAutomation.ts",
-      "source_location": "L286",
-      "weight": 1.0
-    },
-    {
-      "source": "tmsautomation_runautomation",
-      "target": "tmsautomation_delay",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "tmsAutomation.ts",
-      "source_location": "L287",
+      "source_location": "L195",
       "weight": 1.0
     },
     {
@@ -9839,7 +9235,19 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tmsAutomation.ts",
-      "source_location": "L301",
+      "source_location": "L212",
+      "weight": 1.0
+    },
+    {
+      "source": "tmsautomation_runautomation",
+      "target": "tmsautomation_delay",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "tmsAutomation.ts",
+      "source_location": "L216",
       "weight": 1.0
     },
     {
@@ -9851,7 +9259,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tmsAutomation.ts",
-      "source_location": "L313",
+      "source_location": "L223",
       "weight": 1.0
     },
     {
@@ -9863,7 +9271,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tmsAutomation.ts",
-      "source_location": "L339",
+      "source_location": "L247",
       "weight": 1.0
     },
     {
@@ -11219,7 +10627,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "telegramBotService.ts",
-      "source_location": "L380",
+      "source_location": "L375",
       "weight": 1.0
     },
     {
@@ -11231,7 +10639,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "telegramBotService.ts",
-      "source_location": "L425",
+      "source_location": "L420",
       "weight": 1.0
     },
     {
@@ -11243,7 +10651,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "telegramBotService.ts",
-      "source_location": "L450",
+      "source_location": "L445",
       "weight": 1.0
     },
     {
@@ -11255,7 +10663,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "telegramBotService.ts",
-      "source_location": "L475",
+      "source_location": "L470",
       "weight": 1.0
     },
     {
@@ -11267,7 +10675,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "telegramBotService.ts",
-      "source_location": "L502",
+      "source_location": "L497",
       "weight": 1.0
     },
     {
@@ -11279,7 +10687,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "telegramBotService.ts",
-      "source_location": "L523",
+      "source_location": "L518",
       "weight": 1.0
     },
     {
@@ -11291,7 +10699,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "telegramBotService.ts",
-      "source_location": "L563",
+      "source_location": "L558",
       "weight": 1.0
     },
     {
@@ -11939,7 +11347,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "telegramBotService.ts",
-      "source_location": "L380",
+      "source_location": "L375",
       "weight": 1.0
     },
     {
@@ -11951,7 +11359,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "telegramBotService.ts",
-      "source_location": "L425",
+      "source_location": "L420",
       "weight": 1.0
     },
     {
@@ -11963,7 +11371,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "telegramBotService.ts",
-      "source_location": "L450",
+      "source_location": "L445",
       "weight": 1.0
     },
     {
@@ -11975,7 +11383,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "telegramBotService.ts",
-      "source_location": "L475",
+      "source_location": "L470",
       "weight": 1.0
     },
     {
@@ -11987,7 +11395,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "telegramBotService.ts",
-      "source_location": "L502",
+      "source_location": "L497",
       "weight": 1.0
     },
     {
@@ -11999,7 +11407,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "telegramBotService.ts",
-      "source_location": "L563",
+      "source_location": "L558",
       "weight": 1.0
     },
     {
@@ -12359,7 +11767,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "googleSheetsService.ts",
-      "source_location": "L373",
+      "source_location": "L370",
       "weight": 1.0
     },
     {
@@ -12370,7 +11778,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "googleSheetsService.ts",
-      "source_location": "L399",
+      "source_location": "L396",
       "weight": 1.0
     },
     {
@@ -12381,7 +11789,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "googleSheetsService.ts",
-      "source_location": "L426",
+      "source_location": "L423",
       "weight": 1.0
     },
     {
@@ -12392,7 +11800,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "googleSheetsService.ts",
-      "source_location": "L438",
+      "source_location": "L435",
       "weight": 1.0
     },
     {
@@ -12821,358 +12229,6 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "graphify-out/memory/query_20261005_084828_when_tmsauomation_ts_is_failed_to_complete_the_pro.md",
-      "source_location": "L20",
-      "weight": 1.0
-    },
-    {
-      "source": "graphify_out_memory_query_20261005_110201_when_reply_come_from_telegram_user_as_proceed_sel",
-      "target": "graphify_out_memory_query_20261005_110201_when_reply_come_from_telegram_user_as_proceed_sel_q_when_reply_come_from_telegram_user_as_proceed_sell_it_append_in_autobuysellscript_payload_data_correct_as_sn_correct_symbol_correct_qty_correct_price_incorrect_correct_is_put_price_as_blank_cell_b1_incorrect_correct_is_current_timestamp_1min",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "graphify-out/memory/query_20261005_110201_when_reply_come_from_telegram_user_as__proceed_sel.md",
-      "source_location": "L10",
-      "weight": 1.0
-    },
-    {
-      "source": "graphify_out_memory_query_20261005_110201_when_reply_come_from_telegram_user_as_proceed_sel_q_when_reply_come_from_telegram_user_as_proceed_sell_it_append_in_autobuysellscript_payload_data_correct_as_sn_correct_symbol_correct_qty_correct_price_incorrect_correct_is_put_price_as_blank_cell_b1_incorrect_correct_is_current_timestamp_1min",
-      "target": "graphify_out_memory_query_20261005_110201_when_reply_come_from_telegram_user_as_proceed_sel_answer",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "graphify-out/memory/query_20261005_110201_when_reply_come_from_telegram_user_as__proceed_sel.md",
-      "source_location": "L12",
-      "weight": 1.0
-    },
-    {
-      "source": "graphify_out_memory_query_20261005_110201_when_reply_come_from_telegram_user_as_proceed_sel_q_when_reply_come_from_telegram_user_as_proceed_sell_it_append_in_autobuysellscript_payload_data_correct_as_sn_correct_symbol_correct_qty_correct_price_incorrect_correct_is_put_price_as_blank_cell_b1_incorrect_correct_is_current_timestamp_1min",
-      "target": "graphify_out_memory_query_20261005_110201_when_reply_come_from_telegram_user_as_proceed_sel_outcome",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "graphify-out/memory/query_20261005_110201_when_reply_come_from_telegram_user_as__proceed_sel.md",
-      "source_location": "L16",
-      "weight": 1.0
-    },
-    {
-      "source": "graphify_out_memory_query_20261005_110201_when_reply_come_from_telegram_user_as_proceed_sel_q_when_reply_come_from_telegram_user_as_proceed_sell_it_append_in_autobuysellscript_payload_data_correct_as_sn_correct_symbol_correct_qty_correct_price_incorrect_correct_is_put_price_as_blank_cell_b1_incorrect_correct_is_current_timestamp_1min",
-      "target": "graphify_out_memory_query_20261005_110201_when_reply_come_from_telegram_user_as_proceed_sel_source_nodes",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "graphify-out/memory/query_20261005_110201_when_reply_come_from_telegram_user_as__proceed_sel.md",
-      "source_location": "L20",
-      "weight": 1.0
-    },
-    {
-      "source": "graphify_out_memory_query_20261005_110929_cell_b1_time_kathmandu_current_time_now_2_min",
-      "target": "graphify_out_memory_query_20261005_110929_cell_b1_time_kathmandu_current_time_now_2_min_q_cell_b1_time_kathmandu_current_time_now_2_min",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "graphify-out/memory/query_20261005_110929_cell_b1_time__kathmandu_current_time__now___2_min.md",
-      "source_location": "L10",
-      "weight": 1.0
-    },
-    {
-      "source": "graphify_out_memory_query_20261005_110929_cell_b1_time_kathmandu_current_time_now_2_min_q_cell_b1_time_kathmandu_current_time_now_2_min",
-      "target": "graphify_out_memory_query_20261005_110929_cell_b1_time_kathmandu_current_time_now_2_min_answer",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "graphify-out/memory/query_20261005_110929_cell_b1_time__kathmandu_current_time__now___2_min.md",
-      "source_location": "L12",
-      "weight": 1.0
-    },
-    {
-      "source": "graphify_out_memory_query_20261005_110929_cell_b1_time_kathmandu_current_time_now_2_min_q_cell_b1_time_kathmandu_current_time_now_2_min",
-      "target": "graphify_out_memory_query_20261005_110929_cell_b1_time_kathmandu_current_time_now_2_min_outcome",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "graphify-out/memory/query_20261005_110929_cell_b1_time__kathmandu_current_time__now___2_min.md",
-      "source_location": "L16",
-      "weight": 1.0
-    },
-    {
-      "source": "graphify_out_memory_query_20261005_110929_cell_b1_time_kathmandu_current_time_now_2_min_q_cell_b1_time_kathmandu_current_time_now_2_min",
-      "target": "graphify_out_memory_query_20261005_110929_cell_b1_time_kathmandu_current_time_now_2_min_source_nodes",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "graphify-out/memory/query_20261005_110929_cell_b1_time__kathmandu_current_time__now___2_min.md",
-      "source_location": "L20",
-      "weight": 1.0
-    },
-    {
-      "source": "graphify_out_memory_query_20261005_111333_cell_b1_time_kathmandu_current_time_now_3_min",
-      "target": "graphify_out_memory_query_20261005_111333_cell_b1_time_kathmandu_current_time_now_3_min_q_cell_b1_time_kathmandu_current_time_now_3_min",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "graphify-out/memory/query_20261005_111333_cell_b1_time__kathmandu_current_time__now___3_min.md",
-      "source_location": "L10",
-      "weight": 1.0
-    },
-    {
-      "source": "graphify_out_memory_query_20261005_111333_cell_b1_time_kathmandu_current_time_now_3_min_q_cell_b1_time_kathmandu_current_time_now_3_min",
-      "target": "graphify_out_memory_query_20261005_111333_cell_b1_time_kathmandu_current_time_now_3_min_answer",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "graphify-out/memory/query_20261005_111333_cell_b1_time__kathmandu_current_time__now___3_min.md",
-      "source_location": "L12",
-      "weight": 1.0
-    },
-    {
-      "source": "graphify_out_memory_query_20261005_111333_cell_b1_time_kathmandu_current_time_now_3_min_q_cell_b1_time_kathmandu_current_time_now_3_min",
-      "target": "graphify_out_memory_query_20261005_111333_cell_b1_time_kathmandu_current_time_now_3_min_outcome",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "graphify-out/memory/query_20261005_111333_cell_b1_time__kathmandu_current_time__now___3_min.md",
-      "source_location": "L16",
-      "weight": 1.0
-    },
-    {
-      "source": "graphify_out_memory_query_20261005_111333_cell_b1_time_kathmandu_current_time_now_3_min_q_cell_b1_time_kathmandu_current_time_now_3_min",
-      "target": "graphify_out_memory_query_20261005_111333_cell_b1_time_kathmandu_current_time_now_3_min_source_nodes",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "graphify-out/memory/query_20261005_111333_cell_b1_time__kathmandu_current_time__now___3_min.md",
-      "source_location": "L20",
-      "weight": 1.0
-    },
-    {
-      "source": "graphify_out_memory_query_20261005_111526_cell_b1_time_kathmandu_current_time_now_5_min",
-      "target": "graphify_out_memory_query_20261005_111526_cell_b1_time_kathmandu_current_time_now_5_min_q_cell_b1_time_kathmandu_current_time_now_5_min",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "graphify-out/memory/query_20261005_111526_cell_b1_time__kathmandu_current_time__now___5_min.md",
-      "source_location": "L10",
-      "weight": 1.0
-    },
-    {
-      "source": "graphify_out_memory_query_20261005_111526_cell_b1_time_kathmandu_current_time_now_5_min_q_cell_b1_time_kathmandu_current_time_now_5_min",
-      "target": "graphify_out_memory_query_20261005_111526_cell_b1_time_kathmandu_current_time_now_5_min_answer",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "graphify-out/memory/query_20261005_111526_cell_b1_time__kathmandu_current_time__now___5_min.md",
-      "source_location": "L12",
-      "weight": 1.0
-    },
-    {
-      "source": "graphify_out_memory_query_20261005_111526_cell_b1_time_kathmandu_current_time_now_5_min_q_cell_b1_time_kathmandu_current_time_now_5_min",
-      "target": "graphify_out_memory_query_20261005_111526_cell_b1_time_kathmandu_current_time_now_5_min_outcome",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "graphify-out/memory/query_20261005_111526_cell_b1_time__kathmandu_current_time__now___5_min.md",
-      "source_location": "L16",
-      "weight": 1.0
-    },
-    {
-      "source": "graphify_out_memory_query_20261005_111526_cell_b1_time_kathmandu_current_time_now_5_min_q_cell_b1_time_kathmandu_current_time_now_5_min",
-      "target": "graphify_out_memory_query_20261005_111526_cell_b1_time_kathmandu_current_time_now_5_min_source_nodes",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "graphify-out/memory/query_20261005_111526_cell_b1_time__kathmandu_current_time__now___5_min.md",
-      "source_location": "L20",
-      "weight": 1.0
-    },
-    {
-      "source": "graphify_out_memory_query_20261005_111816_there_is_alwasys_issue_in_cell_b1_time_why_i_ne",
-      "target": "graphify_out_memory_query_20261005_111816_there_is_alwasys_issue_in_cell_b1_time_why_i_ne_q_there_is_alwasys_issue_in_cell_b1_time_why_i_need_kathmandu_current_time_now_add_extra_2_min",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "graphify-out/memory/query_20261005_111816_there_is_alwasys_issue_in_cell_b1_time_why____i_ne.md",
-      "source_location": "L10",
-      "weight": 1.0
-    },
-    {
-      "source": "graphify_out_memory_query_20261005_111816_there_is_alwasys_issue_in_cell_b1_time_why_i_ne_q_there_is_alwasys_issue_in_cell_b1_time_why_i_need_kathmandu_current_time_now_add_extra_2_min",
-      "target": "graphify_out_memory_query_20261005_111816_there_is_alwasys_issue_in_cell_b1_time_why_i_ne_answer",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "graphify-out/memory/query_20261005_111816_there_is_alwasys_issue_in_cell_b1_time_why____i_ne.md",
-      "source_location": "L12",
-      "weight": 1.0
-    },
-    {
-      "source": "graphify_out_memory_query_20261005_111816_there_is_alwasys_issue_in_cell_b1_time_why_i_ne_q_there_is_alwasys_issue_in_cell_b1_time_why_i_need_kathmandu_current_time_now_add_extra_2_min",
-      "target": "graphify_out_memory_query_20261005_111816_there_is_alwasys_issue_in_cell_b1_time_why_i_ne_outcome",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "graphify-out/memory/query_20261005_111816_there_is_alwasys_issue_in_cell_b1_time_why____i_ne.md",
-      "source_location": "L16",
-      "weight": 1.0
-    },
-    {
-      "source": "graphify_out_memory_query_20261005_111816_there_is_alwasys_issue_in_cell_b1_time_why_i_ne_q_there_is_alwasys_issue_in_cell_b1_time_why_i_need_kathmandu_current_time_now_add_extra_2_min",
-      "target": "graphify_out_memory_query_20261005_111816_there_is_alwasys_issue_in_cell_b1_time_why_i_ne_source_nodes",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "graphify-out/memory/query_20261005_111816_there_is_alwasys_issue_in_cell_b1_time_why____i_ne.md",
-      "source_location": "L20",
-      "weight": 1.0
-    },
-    {
-      "source": "graphify_out_memory_query_20261005_112815_in_autobuysellscript_sheet_tab_there_is_price_colu",
-      "target": "graphify_out_memory_query_20261005_112815_in_autobuysellscript_sheet_tab_there_is_price_colu_q_in_autobuysellscript_sheet_tab_there_is_price_column_i_say_it_need_to_blank_and_in_b1_there_should_be_current_datetime_stamp_plus_2_min_why_it_is_not_reflecting_as_i_have_already_restart_the_supervisor",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "graphify-out/memory/query_20261005_112815_in_autobuysellscript_sheet_tab_there_is_price_colu.md",
-      "source_location": "L10",
-      "weight": 1.0
-    },
-    {
-      "source": "graphify_out_memory_query_20261005_112815_in_autobuysellscript_sheet_tab_there_is_price_colu_q_in_autobuysellscript_sheet_tab_there_is_price_column_i_say_it_need_to_blank_and_in_b1_there_should_be_current_datetime_stamp_plus_2_min_why_it_is_not_reflecting_as_i_have_already_restart_the_supervisor",
-      "target": "graphify_out_memory_query_20261005_112815_in_autobuysellscript_sheet_tab_there_is_price_colu_answer",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "graphify-out/memory/query_20261005_112815_in_autobuysellscript_sheet_tab_there_is_price_colu.md",
-      "source_location": "L12",
-      "weight": 1.0
-    },
-    {
-      "source": "graphify_out_memory_query_20261005_112815_in_autobuysellscript_sheet_tab_there_is_price_colu_q_in_autobuysellscript_sheet_tab_there_is_price_column_i_say_it_need_to_blank_and_in_b1_there_should_be_current_datetime_stamp_plus_2_min_why_it_is_not_reflecting_as_i_have_already_restart_the_supervisor",
-      "target": "graphify_out_memory_query_20261005_112815_in_autobuysellscript_sheet_tab_there_is_price_colu_outcome",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "graphify-out/memory/query_20261005_112815_in_autobuysellscript_sheet_tab_there_is_price_colu.md",
-      "source_location": "L16",
-      "weight": 1.0
-    },
-    {
-      "source": "graphify_out_memory_query_20261005_112815_in_autobuysellscript_sheet_tab_there_is_price_colu_q_in_autobuysellscript_sheet_tab_there_is_price_column_i_say_it_need_to_blank_and_in_b1_there_should_be_current_datetime_stamp_plus_2_min_why_it_is_not_reflecting_as_i_have_already_restart_the_supervisor",
-      "target": "graphify_out_memory_query_20261005_112815_in_autobuysellscript_sheet_tab_there_is_price_colu_source_nodes",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "graphify-out/memory/query_20261005_112815_in_autobuysellscript_sheet_tab_there_is_price_colu.md",
-      "source_location": "L20",
-      "weight": 1.0
-    },
-    {
-      "source": "graphify_out_memory_query_20261005_113151_to_clear_a_formula_set_cell_value_null_error_when",
-      "target": "graphify_out_memory_query_20261005_113151_to_clear_a_formula_set_cell_value_null_error_when_q_to_clear_a_formula_set_cell_value_null_error_when_appending_auto_buy_sell_trade",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "graphify-out/memory/query_20261005_113151_to_clear_a_formula_set_cell_value_null_error_when.md",
-      "source_location": "L10",
-      "weight": 1.0
-    },
-    {
-      "source": "graphify_out_memory_query_20261005_113151_to_clear_a_formula_set_cell_value_null_error_when_q_to_clear_a_formula_set_cell_value_null_error_when_appending_auto_buy_sell_trade",
-      "target": "graphify_out_memory_query_20261005_113151_to_clear_a_formula_set_cell_value_null_error_when_answer",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "graphify-out/memory/query_20261005_113151_to_clear_a_formula_set_cell_value_null_error_when.md",
-      "source_location": "L12",
-      "weight": 1.0
-    },
-    {
-      "source": "graphify_out_memory_query_20261005_113151_to_clear_a_formula_set_cell_value_null_error_when_q_to_clear_a_formula_set_cell_value_null_error_when_appending_auto_buy_sell_trade",
-      "target": "graphify_out_memory_query_20261005_113151_to_clear_a_formula_set_cell_value_null_error_when_outcome",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "graphify-out/memory/query_20261005_113151_to_clear_a_formula_set_cell_value_null_error_when.md",
-      "source_location": "L16",
-      "weight": 1.0
-    },
-    {
-      "source": "graphify_out_memory_query_20261005_113151_to_clear_a_formula_set_cell_value_null_error_when_q_to_clear_a_formula_set_cell_value_null_error_when_appending_auto_buy_sell_trade",
-      "target": "graphify_out_memory_query_20261005_113151_to_clear_a_formula_set_cell_value_null_error_when_source_nodes",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "graphify-out/memory/query_20261005_113151_to_clear_a_formula_set_cell_value_null_error_when.md",
-      "source_location": "L20",
-      "weight": 1.0
-    },
-    {
-      "source": "graphify_out_memory_query_20261005_114330_tms_automation_popup_notification_error_page_waitf",
-      "target": "graphify_out_memory_query_20261005_114330_tms_automation_popup_notification_error_page_waitf_q_tms_automation_popup_notification_error_page_waitforselector_dashboard_wrapper_closed",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "graphify-out/memory/query_20261005_114330_tms_automation_popup_notification_error_page_waitf.md",
-      "source_location": "L10",
-      "weight": 1.0
-    },
-    {
-      "source": "graphify_out_memory_query_20261005_114330_tms_automation_popup_notification_error_page_waitf_q_tms_automation_popup_notification_error_page_waitforselector_dashboard_wrapper_closed",
-      "target": "graphify_out_memory_query_20261005_114330_tms_automation_popup_notification_error_page_waitf_answer",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "graphify-out/memory/query_20261005_114330_tms_automation_popup_notification_error_page_waitf.md",
-      "source_location": "L12",
-      "weight": 1.0
-    },
-    {
-      "source": "graphify_out_memory_query_20261005_114330_tms_automation_popup_notification_error_page_waitf_q_tms_automation_popup_notification_error_page_waitforselector_dashboard_wrapper_closed",
-      "target": "graphify_out_memory_query_20261005_114330_tms_automation_popup_notification_error_page_waitf_outcome",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "graphify-out/memory/query_20261005_114330_tms_automation_popup_notification_error_page_waitf.md",
-      "source_location": "L16",
-      "weight": 1.0
-    },
-    {
-      "source": "graphify_out_memory_query_20261005_114330_tms_automation_popup_notification_error_page_waitf_q_tms_automation_popup_notification_error_page_waitforselector_dashboard_wrapper_closed",
-      "target": "graphify_out_memory_query_20261005_114330_tms_automation_popup_notification_error_page_waitf_source_nodes",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "graphify-out/memory/query_20261005_114330_tms_automation_popup_notification_error_page_waitf.md",
       "source_location": "L20",
       "weight": 1.0
     },
@@ -17067,7 +16123,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "telegramBotService.ts",
-      "source_location": "L603",
+      "source_location": "L598",
       "weight": 1.0
     },
     {
@@ -17078,7 +16134,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "telegramBotService.ts",
-      "source_location": "L636",
+      "source_location": "L631",
       "weight": 1.0
     },
     {
@@ -17089,7 +16145,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "telegramBotService.ts",
-      "source_location": "L705",
+      "source_location": "L700",
       "weight": 1.0
     },
     {
@@ -17160,17 +16216,6 @@
     },
     {
       "source": "tmsautomation",
-      "target": "tmsautomation_executesingletrade",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "tmsAutomation.ts",
-      "source_location": "L126",
-      "weight": 1.0
-    },
-    {
-      "source": "tmsautomation",
       "target": "tmsautomation_humantype",
       "relation": "contains",
       "_origin": "ast",
@@ -17188,7 +16233,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tmsAutomation.ts",
-      "source_location": "L236",
+      "source_location": "L180",
       "weight": 1.0
     },
     {
@@ -17204,24 +16249,13 @@
     },
     {
       "source": "tmsautomation",
-      "target": "tmsautomation_dismisstmspopups",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "tmsAutomation.ts",
-      "source_location": "L39",
-      "weight": 1.0
-    },
-    {
-      "source": "tmsautomation",
       "target": "tmsautomation_humanclick",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tmsAutomation.ts",
-      "source_location": "L90",
+      "source_location": "L35",
       "weight": 1.0
     },
     {
@@ -17232,7 +16266,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tmsAutomation.ts",
-      "source_location": "L99",
+      "source_location": "L43",
+      "weight": 1.0
+    },
+    {
+      "source": "tmsautomation",
+      "target": "tmsautomation_executesingletrade",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tmsAutomation.ts",
+      "source_location": "L70",
       "weight": 1.0
     },
     {

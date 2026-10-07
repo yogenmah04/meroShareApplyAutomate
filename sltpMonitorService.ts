@@ -190,6 +190,25 @@ function parsePriceNum(val: any): number {
 }
 
 /**
+ * Formats purchase date cleanly whether it is a Date object, Excel serial number, or string
+ */
+export function formatPurchaseDate(val: any): string {
+    if (!val) return 'NODATE';
+    if (val instanceof Date) {
+        return val.toISOString().split('T')[0];
+    }
+    if (typeof val === 'number') {
+        try {
+            const d = new Date(Math.round((val - 25569) * 86400 * 1000));
+            return d.toISOString().split('T')[0];
+        } catch (_) {
+            return String(val);
+        }
+    }
+    return String(val).trim().replace(/[\/\s]/g, '-');
+}
+
+/**
  * Generates a clean Unique ID: symbol-kitta-Purchase Price-Purchase date
  */
 export function generateUniqueStockId(symbol: any, kitta: any, purchasePrice: any, purchaseDate: any): string {
@@ -382,7 +401,7 @@ export async function syncYogenToSLTPStocks(): Promise<{ added: number; updated:
 
         const kitta = yogenSheet.getCell(r, 2).value ?? '0';
         const purchasePrice = yogenSheet.getCell(r, 5).value ?? '0';
-        const purchaseDate = yogenSheet.getCell(r, 8).value ?? 'NODATE';
+        const purchaseDate = formatPurchaseDate(yogenSheet.getCell(r, 8).value);
 
         const sl = parsePriceNum(yogenSheet.getCell(r, 11).value);
         const tp = parsePriceNum(yogenSheet.getCell(r, 12).value);
@@ -546,16 +565,13 @@ export async function scanSLTPStocksAgainstLive(isScheduledRun = false): Promise
         console.log(`Created new sheet tab: '${HITS_ALERT_SHEET_NAME}'`);
     }
 
-    // Read existing hits today to prevent duplicate rows
+    // Read existing Unique IDs in 'SL-TP-Hits' to prevent duplicate entries
     const existingHitRows = await hitsSheet.getRows();
-    const existingHitsToday = new Set<string>();
+    const existingHitsUniqueIds = new Set<string>();
     for (const r of existingHitRows) {
         const uid = String(r.get('Unique ID') || '').trim();
-        const trigAt = String(r.get('Triggered At') || '').trim();
-        const trigEvent = String(r.get('Trigger Event') || '').trim();
-        if (uid && isHitRecordedToday(trigAt, todayDateStr)) {
-            const eventNorm = trigEvent.includes('BOTH') ? 'BOTH HIT' : (trigEvent.includes('STOP LOSS') ? 'SL HIT' : 'TP HIT');
-            existingHitsToday.add(`${todayDateStr}_${uid}_${eventNorm}`);
+        if (uid) {
+            existingHitsUniqueIds.add(uid);
         }
     }
 
@@ -585,6 +601,14 @@ export async function scanSLTPStocksAgainstLive(isScheduledRun = false): Promise
 
         if (!isSlHit && !isTpHit) continue;
 
+        // Unique ID Deduplication Check:
+        // If that unique id is already present in 'SL-TP-Hits', do not put it!
+        if (existingHitsUniqueIds.has(uniqueId)) {
+            console.log(`ℹ️ [Skipped] Unique ID '${uniqueId}' is already present in '${HITS_ALERT_SHEET_NAME}'. Skipping duplicate entry.`);
+            continue;
+        }
+        existingHitsUniqueIds.add(uniqueId);
+
         let triggerType: 'SL HIT' | 'TP HIT' | 'BOTH HIT' = 'SL HIT';
         let triggerBadge = '';
         if (isSlHit && isTpHit) {
@@ -597,10 +621,6 @@ export async function scanSLTPStocksAgainstLive(isScheduledRun = false): Promise
             triggerType = 'TP HIT';
             triggerBadge = '🎯 TAKE PROFIT HIT (High >= TP)';
         }
-
-        const hitKey = `${todayDateStr}_${uniqueId}_${triggerType}`;
-        if (existingHitsToday.has(hitKey)) continue;
-        existingHitsToday.add(hitKey);
 
         const hitRow = {
             'Unique ID': uniqueId,

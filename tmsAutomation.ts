@@ -4,6 +4,7 @@ import path from "path";
 import * as dotenv from "dotenv";
 import { initSheets, fetchAutoBuySellData } from "./googleSheetsService";
 import { launchPersistentContextWithViewMode } from "./humanUtils";
+import { sendTelegramNotification } from "./notificationService";
 
 dotenv.config();
 chromium.use(stealth());
@@ -31,7 +32,63 @@ async function clearInput(page: any, selector: string) {
   await delay(300);
 }
 
+/**
+ * Automatically detects and dismisses popup notifications, announcements,
+ * Force Login dialogs, or advisory modals that appear in NEPSE TMS.
+ */
+async function dismissTmsPopups(page: any) {
+  try {
+    if (!page || page.isClosed()) return;
+
+    // Common dismiss / confirm buttons across TMS Angular, Bootstrap, and SweetAlert
+    const dismissButtons = [
+      'button:has-text("Close")',
+      'button:has-text("OK")',
+      'button:has-text("Ok")',
+      'button:has-text("Continue")',
+      'button:has-text("Proceed")',
+      'button:has-text("I Understand")',
+      'button:has-text("Got it")',
+      'button:has-text("Yes")',
+      'button:has-text("Later")',
+      'button:has-text("Remind me later")',
+      'button:has-text("Dismiss")',
+      'button:has-text("Accept")',
+      'button:has-text("Agree")',
+      'button:has-text("Cancel")',
+      'button.close',
+      'button.btn-close',
+      '[aria-label="Close"]',
+      '.modal-header .close',
+      '.modal-header button',
+      '.modal-footer button.btn-primary',
+      '.modal-footer button'
+    ];
+
+    for (const btnSelector of dismissButtons) {
+      const btn = page.locator(btnSelector).first();
+      if (await btn.isVisible({ timeout: 250 }).catch(() => false)) {
+        const text = (await btn.innerText().catch(() => '')).trim();
+        console.log(`🔔 [TMS Popup] Detected popup notification. Dismissing with button: "${text || btnSelector}"...`);
+        await btn.click({ force: true, timeout: 2000 }).catch(() => {});
+        await delay(400);
+      }
+    }
+
+    // If modal backdrop is still present, send Escape
+    const backdrop = page.locator('.modal-backdrop, .cdk-overlay-backdrop, .swal2-container');
+    if (await backdrop.first().isVisible({ timeout: 200 }).catch(() => false)) {
+      console.log(`🔔 [TMS Popup] Modal backdrop detected. Pressing Escape key...`);
+      await page.keyboard.press('Escape').catch(() => {});
+      await delay(300);
+    }
+  } catch (err) {
+    // Non-fatal: continue
+  }
+}
+
 async function humanClick(page: any, selector: string) {
+  await dismissTmsPopups(page);
   const element = page.locator(selector);
   await element.waitFor({ state: "visible" });
   await element.scrollIntoViewIfNeeded();
@@ -164,8 +221,15 @@ async function executeSingleTrade(
       console.log(`⚠️ Note: Timeout while clearing fields or resetting toggle (toast might be blocking). Proceeding to next row.`);
     }
 
-  } catch (err) {
+  } catch (err: any) {
     console.error(`❌ Trade Execution Error for ${symbol}:`, err);
+    await sendTelegramNotification(
+      `🚨 <b>TMS Trade Execution Failed</b>\n\n` +
+      `• <b>Stock:</b> <b>${symbol}</b>\n` +
+      `• <b>Action:</b> <code>${action}</code> (${qty} kitta @ Rs. ${price})\n` +
+      `• <b>Error:</b> <code>${err?.message || String(err)}</code>\n` +
+      `• <b>Time:</b> <i>${new Date().toLocaleTimeString()}</i>`
+    ).catch(() => {});
   }
 }
 
@@ -186,7 +250,7 @@ async function runAutomation() {
   const userDataDir = path.join(__dirname, "tms_user_data");
   const context = await launchPersistentContextWithViewMode(chromium, userDataDir);
 
-  const page = await context.newPage();
+  const page = context.pages().length > 0 ? context.pages()[0] : await context.newPage();
   await page.goto("https://tms52.nepsetms.com.np/tms/client/dashboard");
 
   // 1. Session / Login Handling
@@ -197,15 +261,49 @@ async function runAutomation() {
     );
     await page.fill("#password-field", process.env.TMS_PASS || "");
     console.log("👉 Please solve CAPTCHA/OTP manually...");
-    await page.waitForSelector(".dashboard-wrapper", { timeout: 0 });
+
+    // Actively check for dashboard while dismissing popups / Force Login dialogs
+    const loginTimeoutMs = 180000; // 3 min manual login window
+    const loginStart = Date.now();
+    let dashboardReached = false;
+
+    while (Date.now() - loginStart < loginTimeoutMs) {
+      if (page.isClosed()) {
+        throw new Error("Target page, context or browser has been closed.");
+      }
+
+      // Check if dashboard or navigation menubar is visible
+      const isDashboard = await page.locator('.dashboard-wrapper, app-menubar, aside.main-sidebar, aside.sidebar').first().isVisible({ timeout: 500 }).catch(() => false);
+      const isClientUrl = page.url().includes('/tms/client') && !page.url().includes('login');
+
+      if (isDashboard || isClientUrl) {
+        dashboardReached = true;
+        console.log("✅ TMS Dashboard reached.");
+        break;
+      }
+
+      // Auto-dismiss popup notifications / Force Login modals on login screen
+      await dismissTmsPopups(page);
+      await delay(1000);
+    }
+
+    if (!dashboardReached) {
+      throw new Error("Timed out waiting for TMS login and dashboard (3 min).");
+    }
   }
 
+  // Dismiss any announcement / notification popups appearing on dashboard load
+  await delay(1000);
+  await dismissTmsPopups(page);
+
   // 2. Navigation to Daily Order Book (Open Trades)
+  await dismissTmsPopups(page);
   await humanClick(
     page,
     "xpath=/html/body/app-root/tms/app-menubar/aside/nav/ul/li[10]/a",
   );
   await delay(800);
+  await dismissTmsPopups(page);
   await humanClick(
     page,
     "xpath=/html/body/app-root/tms/app-menubar/aside/nav/ul/li[10]/ul/li[2]/a",
@@ -216,11 +314,13 @@ async function runAutomation() {
   console.log(`📊 Found ${existingTrades.length} open trades in the daily order book.`);
 
   // Now navigate to Order Entry page
+  await dismissTmsPopups(page);
   await humanClick(
     page,
     "xpath=/html/body/app-root/tms/app-menubar/aside/nav/ul/li[10]/ul/li[1]/a",
   );
   await delay(2000);
+  await dismissTmsPopups(page);
 
   for (const trade of trades) {
     // Check if trade already exists
@@ -243,4 +343,15 @@ async function runAutomation() {
   console.log("🎉 All trades processed.");
 }
 
-runAutomation().catch(console.error);
+runAutomation().catch(async (err: any) => {
+  console.error("TMS Automation process failure:", err);
+  await sendTelegramNotification(
+    `🚨 <b>TMS Automation Failed to Complete</b>\n\n` +
+    `• <b>Script:</b> <code>tmsAutomation.ts</code>\n` +
+    `• <b>Status:</b> ❌ <i>Process Aborted</i>\n` +
+    `• <b>Error:</b> <code>${err?.message || String(err)}</code>\n` +
+    `• <b>Time:</b> <i>${new Date().toLocaleString()}</i>\n\n` +
+    `<i>Queued and dispatched via notificationService.</i>`
+  ).catch(() => {});
+  process.exit(1);
+});

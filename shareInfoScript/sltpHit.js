@@ -327,7 +327,7 @@ function scanSLTPStocksAgainstLive(isScheduled) {
   var hitsSheet = getOrCreateSLTPHitsSheet(ss);
   var todayDate = Utilities.formatDate(new Date(), "Asia/Kathmandu", "yyyy-MM-dd");
   var timestamp = Utilities.formatDate(new Date(), "Asia/Kathmandu", "yyyy-MM-dd HH:mm:ss");
-  var existingHitsToday = getExistingHitsTodayMap(hitsSheet, todayDate);
+  var existingHitsUniqueIds = getExistingUniqueIdsInHitsSheet(hitsSheet);
 
   var newHitsToAppend = [];
   var matchedCount = 0;
@@ -368,6 +368,15 @@ function scanSLTPStocksAgainstLive(isScheduled) {
 
     if (!isSlHit && !isTpHit) continue;
 
+    // Unique ID Deduplication Check:
+    // If that unique id is already present in 'SL-TP-Hits', do not put it!
+    if (existingHitsUniqueIds[uniqueId]) {
+      skippedAlreadyRecorded++;
+      Logger.log("ℹ️ [Skipped] Unique ID '" + uniqueId + "' is already present in '" + HITS_ALERT_SHEET + "'. Skipping duplicate entry.");
+      continue;
+    }
+    existingHitsUniqueIds[uniqueId] = true; // Mark as added to prevent duplicate within same batch
+
     // Trigger Type & Badge
     var triggerType = "";
     var triggerBadge = "";
@@ -381,15 +390,6 @@ function scanSLTPStocksAgainstLive(isScheduled) {
       triggerType = "TP HIT";
       triggerBadge = "🎯 TAKE PROFIT HIT (High >= TP)";
     }
-
-    // Deduplication check: Avoid adding duplicate rows for the same unique stock + trigger today
-    var hitKey = todayDate + "_" + uniqueId + "_" + triggerType;
-    if (existingHitsToday[hitKey]) {
-      skippedAlreadyRecorded++;
-      Logger.log("ℹ️ Already recorded today: " + hitKey);
-      continue; // Already recorded today
-    }
-    existingHitsToday[hitKey] = true;
 
     // Build Hit Row for 'SL-TP-Hits'
     // Cols A to N: Original data from 'SLTP-stocks' (Unique ID + Cols A..M of yogen)
@@ -505,7 +505,7 @@ function scanSLTPStocksAgainstLiveManual() {
       }
       msg += "\n📬 New hits are set to Status = FALSE.\nNode.js queue service will send Telegram alerts within 30 seconds.";
     } else if (res.alreadyRecordedCount > 0) {
-      msg += "\nℹ️ " + res.alreadyRecordedCount + " hit(s) reached trigger price but are ALREADY recorded earlier today in 'SL-TP-Hits' (duplicate protection prevented duplicate entry).";
+      msg += "\nℹ️ " + res.alreadyRecordedCount + " stock(s) matched SL/TP conditions, but their Unique ID is ALREADY present in 'SL-TP-Hits' sheet tab.\n(Skipped to prevent duplicate entries).";
     } else {
       msg += "\nℹ️ No stop loss or take profit targets reached in current live prices.";
     }
@@ -596,52 +596,22 @@ function getOrCreateSLTPHitsSheet(ss) {
 }
 
 /**
- * Reads existing hits from 'SL-TP-Hits' logged today to prevent duplicate rows
+ * Reads all existing Unique IDs (Column A) from 'SL-TP-Hits' sheet tab.
+ * If that Unique ID is present in that sheet tab, it will be skipped.
  */
-function getExistingHitsTodayMap(sheet, todayDateStr) {
+function getExistingUniqueIdsInHitsSheet(sheet) {
   var map = {};
   var lastRow = sheet.getLastRow();
   if (lastRow <= 1) return map;
 
-  var data = sheet.getRange(2, 1, lastRow - 1, 16).getValues();
-  for (var i = 0; i < data.length; i++) {
-    var uid = String(data[i][0] || "").trim();
-    var triggerEvent = String(data[i][14] || "").trim();
-    var trigAtVal = data[i][15];
-
-    if (!uid) continue;
-
-    if (isHitFromToday(trigAtVal, todayDateStr)) {
-      var eventType = triggerEvent.indexOf("BOTH") !== -1 ? "BOTH HIT" : (triggerEvent.indexOf("STOP LOSS") !== -1 ? "SL HIT" : "TP HIT");
-      map[todayDateStr + "_" + uid + "_" + eventType] = true;
+  var colAValues = sheet.getRange(2, 1, lastRow - 1, 1).getValues();
+  for (var i = 0; i < colAValues.length; i++) {
+    var uid = String(colAValues[i][0] || "").trim();
+    if (uid) {
+      map[uid] = true;
     }
   }
   return map;
-}
-
-/**
- * Checks whether a Triggered At value corresponds to today's date
- */
-function isHitFromToday(val, todayDateStr) {
-  if (!val) return false;
-  if (val instanceof Date) {
-    var dStr = Utilities.formatDate(val, "Asia/Kathmandu", "yyyy-MM-dd");
-    return dStr === todayDateStr;
-  }
-  var str = String(val).trim();
-  // Check yyyy-MM-dd
-  if (str.indexOf(todayDateStr) !== -1) return true;
-  // Check M/D/YYYY or MM/DD/YYYY
-  var parts = todayDateStr.split("-"); // [yyyy, mm, dd]
-  if (parts.length === 3) {
-    var m = parseInt(parts[1], 10);
-    var d = parseInt(parts[2], 10);
-    var y = parts[0];
-    var mdy1 = m + "/" + d + "/" + y;
-    var mdy2 = parts[1] + "/" + parts[2] + "/" + y;
-    if (str.indexOf(mdy1) !== -1 || str.indexOf(mdy2) !== -1) return true;
-  }
-  return false;
 }
 
 /**
